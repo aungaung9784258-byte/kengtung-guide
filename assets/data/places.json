@@ -1,0 +1,574 @@
+[
+  {
+    "id": "naung-tung-lake",
+    "name": {
+      "en": "Naung Tung Lake",
+      "my": "နောင်တုံကန်"
+    },
+    "category": "place",
+    "description": {
+      "en": "The calm lake at the centre of Kengtung and the heart of local life. A paved walking path circles the water, and the evening light over the hills is the town's classic view.",
+      "my": "ကျိုင်းတုံမြို့လယ်ရှိ အေးချမ်းသော ရေကန်ဖြစ်ပြီး ဒေသခံတို့၏ ဘဝနှင့် တွဲဖက်နေသည်။ ကန်ပတ်လမ်းလျှောက်နိုင်ပြီး ညနေခင်း အလင်းရောင်မှာ အလွန်လှပသည်။"
+    },
+    "address": {
+      "en": "City centre, Kengtung",
+      "my": "မြို့လယ်၊ ကျိုင်းတုံ"
+    },
+    "lat": 21.2913,
+    "lng": 99.6002,
+    "openHours": "Open 24 hours",
+    "rating": 4.6,
+    "tags": [
+      "lake",
+      "walk",
+      "sunset"
+    ],
+    "images": [
+      "assets/images/lake.jpg",
+      "assets/images/hero_kengtung.jpg"
+    ]
+  },
+  {
+    "id": "wat-jong-kham",
+    "name": {
+      "en": "Wat Jong Kham",
+      "my": "ဝပ်ကျုံးခမ်းဘုရား"
+    },
+    "category": "pagoda",
+    "description": {
+      "en": "One of the oldest and most revered temples in Kengtung, with a golden stupa and Shan-Lanna style architecture. Said to date back over 2,000 years.",
+      "my": "ကျိုင်းတုံ၏ အသက်အကြီးဆုံးနှင့် အလေးအမြတ်ထားရသော ဘုရားတစ်ဆူဖြစ်သည်။ ရွှေစေတီနှင့် ရှမ်း-လန်နာ ဗိသုကာလက်ရာကို တွေ့ရသည်။"
+    },
+    "address": {
+      "en": "Jong Kham Quarter, Kengtung",
+      "my": "ကျုံးခမ်းရပ်ကွက်၊ ကျိုင်းတုံ"
+    },
+    "lat": 21.2946,
+    "lng": 99.5986,
+    "openHours": "06:00 - 18:00",
+    "rating": 4.8,
+    "tags": [
+      "heritage",
+      "golden stupa"
+    ],
+    "images": [
+      "assets/images/pagoda.jpg",
+      "assets/images/hero_kengtung.jpg"
+    ]
+  },
+  {
+    "id": "standing-buddha",
+    "name": {
+      "en": "Standing Buddha (Yat Taw Mu)",
+      "my": "ရပ်တော်မူ ဘုရား"
+    },
+    "category": "pagoda",
+    "description": {
+      "en": "A towering white standing Buddha image on a hill overlooking Kengtung. The best panoramic viewpoint over the whole valley.",
+      "my": "ကျိုင်းတုံမြို့ကို မျှော်ကြည့်နိုင်သော တောင်ကုန်းပေါ်ရှိ ဖြူဖွေးသော ရပ်တော်မူဘုရားကြီး။ မြို့တစ်ခုလုံးကို မြင်နိုင်သည်။"
+    },
+    "address": {
+      "en": "Hill north of town centre, Kengtung",
+      "my": "မြို့မြောက်ဘက် တောင်ကုန်း၊ ကျိုင်းတုံ"
+    },
+    "lat": 21.2982,
+    "lng": 99.6063,
+    "openHours": "06:00 - 18:00",
+    "rating": 4.7,
+    "tags": [
+      "viewpoint",
+      "landmark"
+    ],
+    "images": [
+      "assets/images/pagoda.jpg"
+    ]
+  },
+  {
+    "id": "wat-mahamuni",
+    "name": {
+      "en": "Wat Mahamuni",
+      "my": "မဟာမုနိဘုရား"
+    },
+    "category": "pagoda",
+    "description": {
+      "en": "A beautiful teak and gilded monastery housing a replica of the famous Mahamuni image.",
+      "my": "ကျွန်းသားနှင့် ရွှေချထားသော လှပသည့် ကျောင်းတော်ကြီးဖြစ်ပြီး မဟာမုနိရုပ်ပွားတော် ပုံတူကို ဌာပနာထားသည်။"
+    },
+    "address": {
+      "en": "Kengtung",
+      "my": "ကျိုင်းတုံ"
+    },
+    "lat": 21.289,
+    "lng": 99.5958,
+    "openHours": "06:00 - 18:00",
+    "rating": 4.5,
+    "tags": [
+      "heritage"
+    ],
+    "images": [
+      "assets/images/pagoda.jpg"
+    ]
+  },
+  {
+    "id": "loi-mwe",
+    "name": {
+      "en": "Loi Mwe Hill Station",
+      "my": "လွယ်မွေး"
+    },
+    "category": "place",
+    "description": {
+      "en": "A cool former British hill station about 35 km south of Kengtung, with colonial-era buildings, a old Catholic church and pine forest views.",
+      "my": "ကျိုင်းတုံမှ တောင်ဘက် ၃၅ ကီလိုမီတာအကွာရှိ အေးမြသော တောင်ပေါ်ဒေသ။ ကိုလိုနီခေတ် အဆောက်အအုံများနှင့် ထင်းရှူးတောကို တွေ့ရသည်။"
+    },
+    "address": {
+      "en": "Loi Mwe, 35 km south of Kengtung",
+      "my": "လွယ်မွေး၊ ကျိုင်းတုံမှ ၃၅ ကီလိုမီတာ"
+    },
+    "lat": 21.0617,
+    "lng": 99.635,
+    "openHours": "Daytime",
+    "rating": 4.4,
+    "tags": [
+      "day trip",
+      "colonial",
+      "nature"
+    ],
+    "images": [
+      "assets/images/hero_kengtung.jpg",
+      "assets/images/lake.jpg"
+    ]
+  },
+  {
+    "id": "one-tree-hill",
+    "name": {
+      "en": "One Tree Hill",
+      "my": "သစ်ပင်တစ်ပင်ကုန်း"
+    },
+    "category": "place",
+    "description": {
+      "en": "A small hilltop with a single old tree and a wide view over Kengtung. A favourite spot for sunset.",
+      "my": "သစ်ပင်ဟောင်းတစ်ပင်တည်းရှိသော တောင်ကုန်းငယ်။ ကျိုင်းတုံမြို့ကို ကျယ်ပြန့်စွာ မြင်ရပြီး နေဝင်ချိန် အကြိုက်ဆုံးနေရာ။"
+    },
+    "address": {
+      "en": "Kengtung",
+      "my": "ကျိုင်းတုံ"
+    },
+    "lat": 21.3022,
+    "lng": 99.593,
+    "openHours": "Open 24 hours",
+    "rating": 4.3,
+    "tags": [
+      "viewpoint",
+      "sunset"
+    ],
+    "images": [
+      "assets/images/hero_kengtung.jpg"
+    ]
+  },
+  {
+    "id": "kengtung-central-market",
+    "name": {
+      "en": "Kengtung Central Market",
+      "my": "ကျိုင်းတုံ ဗဟိုဈေး"
+    },
+    "category": "market",
+    "description": {
+      "en": "The busiest market in Eastern Shan State. Hill-tribe traders from Akha, Lahu, Ann and Palaung villages come to sell produce, textiles and silver. Best before 9am.",
+      "my": "ရှမ်းပြည်အရှေ့ပိုင်း၏ အရှုပ်ဆုံးဈေး။ အခါ၊ လားဟူ၊ အန်း၊ ပလောင် တောင်တန်းသားများ လာရောင်းကြသည်။ မနက် ၉ နာရီမတိုင်မီ သွားသင့်သည်။"
+    },
+    "address": {
+      "en": "Market Road, Kengtung",
+      "my": "ဈေးလမ်း၊ ကျိုင်းတုံ"
+    },
+    "lat": 21.2928,
+    "lng": 99.5972,
+    "openHours": "05:00 - 17:00",
+    "rating": 4.6,
+    "tags": [
+      "market",
+      "hill tribe",
+      "morning"
+    ],
+    "images": [
+      "assets/images/market.jpg"
+    ]
+  },
+  {
+    "id": "morning-market",
+    "name": {
+      "en": "Kengtung Morning Market",
+      "my": "မနက်ခင်းဈေး"
+    },
+    "category": "market",
+    "description": {
+      "en": "Early food market with local Shan breakfast stalls, noodle soup and fresh produce.",
+      "my": "ရှမ်းခေါက်ဆွဲ၊ မနက်စာဆိုင်များနှင့် လတ်ဆတ်သော ကုန်ပစ္စည်းများ ရောင်းချသော မနက်ပိုင်းဈေး။"
+    },
+    "address": {
+      "en": "Kengtung",
+      "my": "ကျိုင်းတုံ"
+    },
+    "lat": 21.2905,
+    "lng": 99.599,
+    "openHours": "04:30 - 10:00",
+    "rating": 4.2,
+    "tags": [
+      "food",
+      "morning"
+    ],
+    "images": [
+      "assets/images/market.jpg"
+    ]
+  },
+  {
+    "id": "kengtung-airport",
+    "name": {
+      "en": "Kengtung Airport (KET)",
+      "my": "ကျိုင်းတုံ လေဆိပ်"
+    },
+    "category": "transport",
+    "description": {
+      "en": "Domestic airport serving Kengtung, with flights to Tachileik, Heho, Mandalay and Yangon.",
+      "my": "ကျိုင်းတုံမြို့၏ ပြည်တွင်းလေဆိပ်။ တာချီလိတ်၊ ဟဲဟိုး၊ မန္တလေး၊ ရန်ကုန် ခရီးစဉ်များရှိသည်။"
+    },
+    "address": {
+      "en": "Airport Road, Kengtung",
+      "my": "လေဆိပ်လမ်း၊ ကျိုင်းတုံ"
+    },
+    "lat": 21.3016,
+    "lng": 99.636,
+    "openHours": "06:00 - 18:00",
+    "rating": 3.9,
+    "tags": [
+      "airport",
+      "flight"
+    ],
+    "images": [
+      "assets/images/transport.jpg"
+    ]
+  },
+  {
+    "id": "kengtung-bus-station",
+    "name": {
+      "en": "Kengtung Bus Station",
+      "my": "ကျိုင်းတုံ ကားဂိတ်"
+    },
+    "category": "transport",
+    "description": {
+      "en": "Main bus and shared-van terminal. Buses to Tachileik, Mong La and Taunggyi depart from here.",
+      "my": "အဓိက ကားဂိတ်။ တာချီလိတ်၊ မိုင်းလား၊ တောင်ကြီး သွားသော ကားများ ထွက်ခွာသည်။"
+    },
+    "address": {
+      "en": "Kengtung",
+      "my": "ကျိုင်းတုံ"
+    },
+    "lat": 21.2862,
+    "lng": 99.604,
+    "openHours": "05:00 - 20:00",
+    "rating": 3.8,
+    "tags": [
+      "bus",
+      "van"
+    ],
+    "images": [
+      "assets/images/transport.jpg"
+    ]
+  },
+  {
+    "id": "motorbike-rental",
+    "name": {
+      "en": "Motorbike & Bicycle Rental",
+      "my": "မော်တော်ဆိုင်ကယ် ငှားရမ်းခြင်း"
+    },
+    "category": "transport",
+    "description": {
+      "en": "Rental shops near the lake offering motorbikes and bicycles by the day - the easiest way to reach nearby villages.",
+      "my": "ကန်အနီးရှိ ဆိုင်ကယ်နှင့် စက်ဘီး ငှားရမ်းဆိုင်များ။ အနီးအနားရွာများသို့ သွားရန် အလွယ်ကူဆုံးနည်းလမ်း။"
+    },
+    "address": {
+      "en": "Near Naung Tung Lake, Kengtung",
+      "my": "နောင်တုံကန်အနီး၊ ကျိုင်းတုံ"
+    },
+    "lat": 21.292,
+    "lng": 99.6015,
+    "openHours": "07:00 - 19:00",
+    "rating": 4,
+    "tags": [
+      "rental",
+      "motorbike"
+    ],
+    "images": [
+      "assets/images/transport.jpg"
+    ]
+  },
+  {
+    "id": "princess-hotel",
+    "name": {
+      "en": "Princess Hotel",
+      "my": "ပရင်းဆက် ဟိုတယ်"
+    },
+    "category": "hotel",
+    "description": {
+      "en": "Comfortable mid-range hotel close to the town centre and the lake.",
+      "my": "မြို့လယ်နှင့် ကန်အနီးရှိ သက်သောင့်သက်သာရှိသော အလယ်အလတ်တန်း ဟိုတယ်။"
+    },
+    "address": {
+      "en": "Kengtung",
+      "my": "ကျိုင်းတုံ"
+    },
+    "lat": 21.2935,
+    "lng": 99.6028,
+    "openHours": "24 hours",
+    "rating": 4.1,
+    "tags": [
+      "hotel"
+    ],
+    "images": [
+      "assets/images/hotel.jpg"
+    ]
+  },
+  {
+    "id": "amazing-kengtung-resort",
+    "name": {
+      "en": "Amazing Kengtung Resort",
+      "my": "အမေဇင်း ကျိုင်းတုံ ရီဆော့"
+    },
+    "category": "hotel",
+    "description": {
+      "en": "Garden resort set in a restored colonial building overlooking the town.",
+      "my": "မြို့ကို မျှော်ကြည့်နိုင်သော ကိုလိုနီခေတ် အဆောက်အအုံဟောင်းတွင် တည်ရှိသည့် ဥယျာဉ်ရီဆော့။"
+    },
+    "address": {
+      "en": "Kengtung",
+      "my": "ကျိုင်းတုံ"
+    },
+    "lat": 21.2968,
+    "lng": 99.6045,
+    "openHours": "24 hours",
+    "rating": 4.3,
+    "tags": [
+      "resort",
+      "colonial"
+    ],
+    "images": [
+      "assets/images/hotel.jpg"
+    ]
+  },
+  {
+    "id": "sam-yweat-guesthouse",
+    "name": {
+      "en": "Sam Yweat Guest House",
+      "my": "သမ်းယွက် တည်းခိုခန်း"
+    },
+    "category": "hotel",
+    "description": {
+      "en": "Budget-friendly guest house popular with backpackers and trekkers.",
+      "my": "ခရီးသွားများ လူကြိုက်များသော သက်သာသည့် တည်းခိုခန်း။"
+    },
+    "address": {
+      "en": "Kengtung",
+      "my": "ကျိုင်းတုံ"
+    },
+    "lat": 21.2899,
+    "lng": 99.5996,
+    "openHours": "24 hours",
+    "rating": 3.9,
+    "tags": [
+      "budget"
+    ],
+    "images": [
+      "assets/images/hotel.jpg"
+    ]
+  },
+  {
+    "id": "golden-banyan",
+    "name": {
+      "en": "Golden Banyan Restaurant",
+      "my": "ရွှေညောင်ပင် စားသောက်ဆိုင်"
+    },
+    "category": "restaurant",
+    "description": {
+      "en": "Local Shan and Chinese dishes served in a garden setting. Try the Shan noodles and fermented tea-leaf salad.",
+      "my": "ဥယျာဉ်အတွင်း ရှမ်းနှင့် တရုတ်အစားအစာများ။ ရှမ်းခေါက်ဆွဲနှင့် လက်ဖက်သုပ် စမ်းကြည့်သင့်သည်။"
+    },
+    "address": {
+      "en": "Kengtung",
+      "my": "ကျိုင်းတုံ"
+    },
+    "lat": 21.2917,
+    "lng": 99.6035,
+    "openHours": "08:00 - 21:00",
+    "rating": 4.4,
+    "tags": [
+      "shan food",
+      "garden"
+    ],
+    "images": [
+      "assets/images/restaurant.jpg"
+    ]
+  },
+  {
+    "id": "lake-view-cafe",
+    "name": {
+      "en": "Lake View Cafe",
+      "my": "ကန်စောင်း ကဖေး"
+    },
+    "category": "restaurant",
+    "description": {
+      "en": "Coffee, tea and light meals with a terrace facing Naung Tung Lake.",
+      "my": "နောင်တုံကန်ကို မျှော်ကြည့်နိုင်သော ကော်ဖီ၊ လက်ဖက်ရည်နှင့် အပေါ့စား အစားအစာဆိုင်။"
+    },
+    "address": {
+      "en": "Lakeside, Kengtung",
+      "my": "ကန်ဘေး၊ ကျိုင်းတုံ"
+    },
+    "lat": 21.2908,
+    "lng": 99.601,
+    "openHours": "07:00 - 20:00",
+    "rating": 4.2,
+    "tags": [
+      "cafe",
+      "coffee",
+      "view"
+    ],
+    "images": [
+      "assets/images/restaurant.jpg"
+    ]
+  },
+  {
+    "id": "shan-noodle-shop",
+    "name": {
+      "en": "Traditional Shan Noodle Shop",
+      "my": "ရိုးရာ ရှမ်းခေါက်ဆွဲဆိုင်"
+    },
+    "category": "restaurant",
+    "description": {
+      "en": "Small family-run shop serving the town's best bowl of Shan khao soi since early morning.",
+      "my": "မိသားစုပိုင် ဆိုင်ငယ်။ မနက်စောစောကတည်းက မြို့၏ အကောင်းဆုံး ရှမ်းခေါက်ဆွဲကို ရောင်းသည်။"
+    },
+    "address": {
+      "en": "Near Central Market, Kengtung",
+      "my": "ဗဟိုဈေးအနီး၊ ကျိုင်းတုံ"
+    },
+    "lat": 21.2931,
+    "lng": 99.598,
+    "openHours": "05:30 - 12:00",
+    "rating": 4.7,
+    "tags": [
+      "noodles",
+      "breakfast",
+      "cheap"
+    ],
+    "images": [
+      "assets/images/restaurant.jpg"
+    ]
+  },
+  {
+    "id": "kengtung-general-hospital",
+    "name": {
+      "en": "Kengtung General Hospital",
+      "my": "ကျိုင်းတုံ ပြည်သူ့ဆေးရုံကြီး"
+    },
+    "category": "emergency",
+    "description": {
+      "en": "The main public hospital for Kengtung and the surrounding townships. 24-hour emergency department.",
+      "my": "ကျိုင်းတုံနှင့် ပတ်ဝန်းကျင်မြို့နယ်များအတွက် အဓိက ပြည်သူ့ဆေးရုံ။ ၂၄ နာရီ အရေးပေါ်ဌာန ရှိသည်။"
+    },
+    "address": {
+      "en": "Hospital Road, Kengtung",
+      "my": "ဆေးရုံလမ်း၊ ကျိုင်းတုံ"
+    },
+    "lat": 21.2888,
+    "lng": 99.6025,
+    "phone": "192",
+    "openHours": "24 hours",
+    "rating": 3.8,
+    "tags": [
+      "hospital",
+      "24h"
+    ],
+    "images": [
+      "assets/images/emergency.jpg"
+    ]
+  },
+  {
+    "id": "kengtung-police-station",
+    "name": {
+      "en": "Kengtung Police Station",
+      "my": "ကျိုင်းတုံ ရဲစခန်း"
+    },
+    "category": "emergency",
+    "description": {
+      "en": "Township police station. Emergency number 199.",
+      "my": "မြို့နယ် ရဲစခန်း။ အရေးပေါ်ဖုန်း ၁၉၉။"
+    },
+    "address": {
+      "en": "Kengtung",
+      "my": "ကျိုင်းတုံ"
+    },
+    "lat": 21.2944,
+    "lng": 99.6008,
+    "phone": "199",
+    "openHours": "24 hours",
+    "tags": [
+      "police",
+      "24h"
+    ],
+    "images": [
+      "assets/images/emergency.jpg"
+    ]
+  },
+  {
+    "id": "private-clinic",
+    "name": {
+      "en": "Kengtung Private Clinic",
+      "my": "ကျိုင်းတုံ ပုဂ္ဂလိက ဆေးခန်း"
+    },
+    "category": "emergency",
+    "description": {
+      "en": "Private clinic for minor illness and travel medicine. Pharmacy attached.",
+      "my": "သေးငယ်သော ရောဂါများနှင့် ခရီးသွားဆေးဝါးအတွက် ပုဂ္ဂလိကဆေးခန်း။ ဆေးဆိုင်ပါရှိသည်။"
+    },
+    "address": {
+      "en": "Kengtung",
+      "my": "ကျိုင်းတုံ"
+    },
+    "lat": 21.2896,
+    "lng": 99.5968,
+    "openHours": "08:00 - 20:00",
+    "tags": [
+      "clinic",
+      "pharmacy"
+    ],
+    "images": [
+      "assets/images/emergency.jpg"
+    ]
+  },
+  {
+    "id": "f",
+    "name": {
+      "en": "MyoMaSportCenter",
+      "my": "မြို့မအားကစားကွင်း"
+    },
+    "category": "place",
+    "description": {
+      "en": "Sport Center located in Kyaing Tong",
+      "my": "အကုန်လုပ်လို့ရတယ်"
+    },
+    "address": {
+      "en": "Naung Tong Street",
+      "my": "နောင်တုံကန်ပတ်လမ်း"
+    },
+    "lat": 21.289483,
+    "lng": 99.601553,
+    "openHours": "6:00AM-600PM",
+    "rating": 4,
+    "tags": [
+      "နေရာ",
+      "လည်ပတ်"
+    ],
+    "images": [
+      "assets/images/emergency.jpg"
+    ]
+  }
+]

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kengtung Guide — Design & Motion Preview</title>
+<style>
+  :root{
+    --jade:#0FA47F; --jade-deep:#07634F; --jade-soft:#E3F5EF;
+    --gold:#FFB020; --gold-deep:#E08A00; --coral:#FF6B5A; --danger:#E5484D;
+    --bg:#F7F8F5; --surface:#FFFFFF; --surface-alt:#F1F3EF;
+    --text:#11231D; --muted:#6E7B76;
+    --ease:cubic-bezier(.16,1,.3,1);
+    --r-lg:24px; --r-md:18px;
+  }
+  body.dark{
+    --bg:#0B1412; --surface:#13201C; --surface-alt:#1A2A25;
+    --text:#E8F1ED; --muted:#8FA39C;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    background:var(--bg); color:var(--text);
+    transition:background .4s var(--ease), color .4s var(--ease);
+  }
+  .wrap{max-width:430px;margin:0 auto;min-height:100vh;background:var(--bg);
+    box-shadow:0 0 60px rgba(0,0,0,.12);position:relative;overflow-x:hidden}
+
+  /* ---------- Parallax hero ---------- */
+  .hero{position:relative;height:280px;overflow:hidden}
+  .hero-bg{position:absolute;inset:-60px 0 0 0;height:360px;
+    background:linear-gradient(135deg,#145C4A 0%,#0FA47F 55%,#7FC9A6 100%);
+    will-change:transform}
+  .hero-bg::after{content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 70% 20%, rgba(255,176,32,.35), transparent 55%)}
+  .scrim{position:absolute;inset:0;
+    background:linear-gradient(to bottom,transparent 35%,rgba(0,0,0,.2) 62%,rgba(0,0,0,.8) 100%)}
+  .hero-text{position:absolute;left:22px;right:22px;bottom:30px;color:#fff;will-change:transform,opacity}
+  .hero-text .eyebrow{font-size:13px;opacity:.85}
+  .hero-text h1{font-size:38px;font-weight:800;letter-spacing:-1.3px;line-height:1.03;margin:2px 0 6px}
+  .hero-text p{font-size:13px;opacity:.9}
+
+  /* ---------- Toolbar ---------- */
+  .toolbar{position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:50;
+    display:flex;gap:8px}
+  .toolbar button{border:0;cursor:pointer;font:inherit;font-size:12px;font-weight:700;
+    padding:9px 16px;border-radius:30px;background:var(--surface);color:var(--text);
+    box-shadow:0 6px 20px rgba(0,0,0,.18);transition:transform .14s var(--ease)}
+  .toolbar button:active{transform:scale(.93)}
+
+  /* ---------- Search ---------- */
+  .search{margin:20px 20px 4px;display:flex;align-items:center;gap:10px;
+    background:var(--surface);border:1px solid rgba(128,128,128,.18);
+    border-radius:var(--r-md);padding:15px 18px;font-size:14px;color:var(--muted);
+    box-shadow:0 8px 20px rgba(0,0,0,.06)}
+
+  /* ---------- Section header ---------- */
+  .sec{display:flex;align-items:center;gap:10px;margin:24px 20px 12px}
+  .sec i{width:4px;height:18px;border-radius:4px;
+    background:linear-gradient(135deg,var(--jade),var(--jade-deep));display:block}
+  .sec h2{font-size:19px;font-weight:800;letter-spacing:-.3px}
+
+  /* ---------- Popular rail (horizontal parallax) ---------- */
+  .rail{display:flex;gap:14px;overflow-x:auto;padding:4px 20px 10px;
+    scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+  .rail::-webkit-scrollbar{display:none}
+  .pcard{flex:0 0 190px;scroll-snap-align:start;cursor:pointer;
+    transition:transform .14s var(--ease)}
+  .pcard:active{transform:scale(.965)}
+  .pcard .frame{height:170px;border-radius:var(--r-lg);overflow:hidden;position:relative}
+  .pcard .img{position:absolute;top:0;left:-18%;width:136%;height:100%;will-change:transform}
+  .pcard .name{font-weight:700;font-size:15px;margin:10px 0 3px}
+  .pcard .addr{font-size:12px;color:var(--muted)}
+  .badge{position:absolute;left:10px;bottom:10px;color:#fff;font-size:10.5px;font-weight:700;
+    padding:5px 9px;border-radius:20px;display:flex;align-items:center;gap:5px}
+  .heart{position:absolute;top:10px;right:10px;width:30px;height:30px;border-radius:50%;
+    background:rgba(255,255,255,.92);display:grid;place-items:center;font-size:14px;
+    box-shadow:0 3px 10px rgba(0,0,0,.14);transition:transform .2s cubic-bezier(.34,1.56,.64,1)}
+  .heart:active{transform:scale(.8)}
+
+  /* ---------- Chips ---------- */
+  .chips{display:flex;gap:8px;overflow-x:auto;padding:0 20px}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{flex:0 0 auto;display:flex;align-items:center;gap:6px;cursor:pointer;
+    padding:11px 16px;border-radius:30px;font-size:13px;font-weight:600;
+    background:var(--surface);border:1px solid rgba(128,128,128,.2);color:var(--text);
+    transition:all .24s var(--ease)}
+  .chip.on{color:#fff;border-color:transparent}
+
+  /* ---------- List cards (vertical parallax) ---------- */
+  .list{padding:18px 20px 40px;display:flex;flex-direction:column;gap:14px}
+  .lcard{display:flex;gap:14px;background:var(--surface);border-radius:var(--r-lg);
+    padding:10px;box-shadow:0 6px 18px rgba(0,0,0,.06);
+    opacity:0;transform:translateY(22px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+  .lcard.in{opacity:1;transform:none}
+  .lcard .frame{flex:0 0 104px;height:104px;border-radius:var(--r-md);overflow:hidden;position:relative}
+  .lcard .img{position:absolute;left:0;top:-20%;width:100%;height:140%;will-change:transform}
+  .lcard .body{flex:1;min-width:0;display:flex;flex-direction:column}
+  .lcard .row1{display:flex;align-items:center;gap:6px}
+  .lcard h3{font-size:15px;font-weight:700;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .star{font-size:12px;color:var(--gold);font-weight:700}
+  .lcard .addr{font-size:12px;color:var(--muted);margin-top:4px;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .btn-mini{margin-top:auto;align-self:flex-start;display:flex;align-items:center;gap:6px;
+    background:linear-gradient(135deg,var(--jade),var(--jade-deep));color:#fff;
+    font-size:12.5px;font-weight:700;padding:9px 14px;border-radius:30px;cursor:pointer;
+    transition:transform .14s var(--ease)}
+  .btn-mini:active{transform:scale(.94)}
+
+  /* ---------- Palette ---------- */
+  .palette{padding:0 20px 40px}
+  .swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:4px}
+  .sw{border-radius:14px;height:64px;display:flex;align-items:flex-end;padding:7px;
+    font-size:9.5px;font-weight:700;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.4)}
+  .note{font-size:12px;color:var(--muted);line-height:1.6;margin-top:14px}
+
+  /* ---------- Bottom nav ---------- */
+  .nav{position:sticky;bottom:0;display:flex;justify-content:space-around;
+    background:var(--surface);padding:14px 0 18px;box-shadow:0 -6px 24px rgba(0,0,0,.08)}
+  .nav div{font-size:21px;opacity:.4;cursor:pointer;padding:6px 20px;border-radius:30px;
+    transition:all .24s var(--ease)}
+  .nav div.on{opacity:1;background:rgba(15,164,127,.14)}
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <button id="themeBtn">🌙 Dark</button>
+  <button id="langBtn">မြန်မာ</button>
+</div>
+
+<div class="wrap" id="wrap">
+  <div class="hero">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="scrim"></div>
+    <div class="hero-text" id="heroText">
+      <div class="eyebrow" data-en="Let's explore in" data-my="လေ့လာကြည့်ရှုရန်">Let's explore in</div>
+      <h1 data-en="Kengtung" data-my="ကျိုင်းတုံ">Kengtung</h1>
+      <p data-en="The Hidden Heart of the Shan Hills" data-my="ရှမ်းတောင်တန်းများ၏ ဖုံးကွယ်နေသော အနှစ်သာရ">The Hidden Heart of the Shan Hills</p>
+    </div>
+  </div>
+
+  <div class="search">🔍 <span data-en="Search places, hotels, food..." data-my="နေရာ၊ ဟိုတယ်၊ အစားအစာ ရှာရန်...">Search places, hotels, food...</span></div>
+
+  <div class="sec"><i></i><h2 data-en="Popular Places" data-my="ရေပန်းစားသော နေရာများ">Popular Places</h2></div>
+  <div class="rail" id="rail"></div>
+
+  <div class="sec"><i></i><h2 data-en="Categories" data-my="အမျိုးအစားများ">Categories</h2></div>
+  <div class="chips" id="chips"></div>
+
+  <div class="list" id="list"></div>
+
+  <div class="sec"><i></i><h2>Palette — Jade &amp; Gold</h2></div>
+  <div class="palette">
+    <div class="swatches" id="swatches"></div>
+    <p class="note">Jade = the Shan hills &amp; Naung Tung Lake · Gold = stupa gilding · Chilli, Indigo, Sky, Rose = category pins · Red reserved for Emergency only. Light surfaces are warm sand; dark mode is forest-night, not pure black.</p>
+  </div>
+
+  <div class="nav">
+    <div class="on">🏠</div><div>🧭</div><div>❤️</div><div>👤</div>
+  </div>
+</div>
+
+<script>
+const CATS = [
+  {id:'all',   en:'All',            my:'အားလုံး',                    c:'#0FA47F', ic:'✦'},
+  {id:'place', en:'Places to Visit',my:'လည်ပတ်စရာနေရာများ',        c:'#0FA47F', ic:'🏞'},
+  {id:'pagoda',en:'Pagodas',        my:'ဘုရားများ',                  c:'#FFB020', ic:'🛕'},
+  {id:'market',en:'Markets',        my:'ဈေးများ',                    c:'#F2762E', ic:'🏪'},
+  {id:'transport',en:'Transportation',my:'သယ်ယူပို့ဆောင်ရေး',      c:'#6C5CE7', ic:'🚌'},
+  {id:'hotel', en:'Hotels',         my:'ဟိုတယ်များ',                 c:'#2E8BF2', ic:'🏨'},
+  {id:'restaurant',en:'Restaurants',my:'စားသောက်ဆိုင်များ',        c:'#E2457A', ic:'🍜'},
+  {id:'emergency',en:'Emergency',   my:'အရေးပေါ်',                   c:'#E5484D', ic:'🏥'},
+];
+
+const PLACES = [
+  {en:'Wat Jong Kham', my:'ဝပ်ကျုံးခမ်းဘုရား', cat:'pagoda', r:4.8, aen:'Jong Kham Quarter', amy:'ကျုံးခမ်းရပ်ကွက်', g:['#F6C453','#D98324']},
+  {en:'Naung Tung Lake', my:'နောင်တုံကန်', cat:'place', r:4.6, aen:'City centre', amy:'မြို့လယ်', g:['#2BB6A3','#0E6E63']},
+  {en:'Standing Buddha', my:'ရပ်တော်မူ ဘုရား', cat:'pagoda', r:4.7, aen:'North hill', amy:'မြောက်ဘက်တောင်ကုန်း', g:['#FFD28A','#E08A00']},
+  {en:'Central Market', my:'ဗဟိုဈေး', cat:'market', r:4.6, aen:'Market Road', amy:'ဈေးလမ်း', g:['#FF9D5C','#D1480F']},
+  {en:'Shan Noodle Shop', my:'ရှမ်းခေါက်ဆွဲဆိုင်', cat:'restaurant', r:4.7, aen:'Near Central Market', amy:'ဗဟိုဈေးအနီး', g:['#F57FA4','#B01A4C']},
+  {en:'Loi Mwe Hill Station', my:'လွယ်မွေး', cat:'place', r:4.4, aen:'35 km south', amy:'တောင်ဘက် ၃၅ ကီလို', g:['#7FC9A6','#145C4A']},
+  {en:'Amazing Kengtung Resort', my:'အမေဇင်း ရီဆော့', cat:'hotel', r:4.3, aen:'Kengtung', amy:'ကျိုင်းတုံ', g:['#7FB8F5','#1B5FA8']},
+  {en:'Kengtung Hospital', my:'ကျိုင်းတုံ ဆေးရုံကြီး', cat:'emergency', r:3.8, aen:'Hospital Road · 24h', amy:'ဆေးရုံလမ်း · ၂၄ နာရီ', g:['#FF8E8E','#B3252A']},
+];
+
+let lang='en';
+const catOf = id => CATS.find(c=>c.id===id);
+const T = (o)=> lang==='my'? o.my : o.en;
+
+// Build popular rail
+document.getElementById('rail').innerHTML = PLACES.slice(0,5).map(p=>{
+  const c = catOf(p.cat);
+  return `<div class="pcard">
+    <div class="frame">
+      <div class="img" style="background:linear-gradient(135deg,${p.g[0]},${p.g[1]})"></div>
+      <div class="scrim"></div>
+      <div class="heart">🤍</div>
+      <div class="badge" style="background:${c.c}">${c.ic} <span data-en="${c.en}" data-my="${c.my}">${c.en}</span></div>
+    </div>
+    <div class="name" data-en="${p.en}" data-my="${p.my}">${p.en}</div>
+    <div class="addr">📍 <span data-en="${p.aen}" data-my="${p.amy}">${p.aen}</span></div>
+  </div>`;
+}).join('');
+
+// Chips
+document.getElementById('chips').innerHTML = CATS.map((c,i)=>
+  `<div class="chip ${i===0?'on':''}" data-c="${c.c}" style="${i===0?`background:${c.c};box-shadow:0 6px 16px ${c.c}59`:''}">
+     <span>${c.ic}</span><span data-en="${c.en}" data-my="${c.my}">${c.en}</span></div>`).join('');
+
+document.querySelectorAll('.chip').forEach(ch=>ch.onclick=()=>{
+  document.querySelectorAll('.chip').forEach(o=>{o.classList.remove('on');o.style.cssText=''});
+  ch.classList.add('on');
+  const c=ch.dataset.c; ch.style.background=c; ch.style.boxShadow=`0 6px 16px ${c}59`;
+});
+
+// List
+document.getElementById('list').innerHTML = PLACES.map(p=>{
+  const c=catOf(p.cat);
+  return `<div class="lcard">
+    <div class="frame"><div class="img" style="background:linear-gradient(135deg,${p.g[0]},${p.g[1]})"></div></div>
+    <div class="body">
+      <div class="row1"><h3 data-en="${p.en}" data-my="${p.my}">${p.en}</h3><span class="star">★ ${p.r}</span></div>
+      <div class="addr">📍 <span data-en="${p.aen}" data-my="${p.amy}">${p.aen}</span></div>
+      <div class="btn-mini">🧭 <span data-en="View in Map" data-my="မြေပုံတွင်ကြည့်ရန်">View in Map</span></div>
+    </div>
+  </div>`;
+}).join('');
+
+// Swatches
+const SW=[['Jade','#0FA47F'],['Jade Deep','#07634F'],['Gold','#FFB020'],['Coral','#FF6B5A'],
+          ['Chilli','#F2762E'],['Indigo','#6C5CE7'],['Sky','#2E8BF2'],['Rose','#E2457A']];
+document.getElementById('swatches').innerHTML = SW.map(([n,c])=>
+  `<div class="sw" style="background:${c}">${n}</div>`).join('');
+
+// ---------- Parallax: hero + vertical cards ----------
+function parallax(){
+  const y = window.scrollY;
+  document.getElementById('heroBg').style.transform = `translateY(${y*0.35}px) scale(${1+Math.min(y/900,.12)})`;
+  const ht = document.getElementById('heroText');
+  ht.style.transform = `translateY(${-y*0.18}px)`;
+  ht.style.opacity = Math.max(0, 1 - y/170);
+
+  const vh = window.innerHeight;
+  document.querySelectorAll('.lcard').forEach(card=>{
+    const r = card.getBoundingClientRect();
+    const f = Math.min(1, Math.max(0, (r.top + r.height/2)/vh));
+    card.querySelector('.img').style.transform = `translateY(${(f-0.5)*-28}px)`;
+    if(r.top < vh*0.92) card.classList.add('in');
+  });
+}
+// Horizontal parallax inside the rail
+const rail=document.getElementById('rail');
+function railParallax(){
+  const rw = rail.clientWidth;
+  rail.querySelectorAll('.pcard').forEach(card=>{
+    const r=card.getBoundingClientRect(), rr=rail.getBoundingClientRect();
+    const f=Math.min(1,Math.max(0,(r.left+r.width/2-rr.left)/rw));
+    card.querySelector('.img').style.transform=`translateX(${(f-0.5)*-46}px)`;
+  });
+}
+rail.addEventListener('scroll',railParallax,{passive:true});
+window.addEventListener('scroll',parallax,{passive:true});
+parallax(); railParallax();
+
+// Theme + language toggles
+document.getElementById('themeBtn').onclick = e=>{
+  document.body.classList.toggle('dark');
+  e.target.textContent = document.body.classList.contains('dark') ? '☀️ Light' : '🌙 Dark';
+};
+document.getElementById('langBtn').onclick = e=>{
+  lang = lang==='en' ? 'my' : 'en';
+  e.target.textContent = lang==='en' ? 'မြန်မာ' : 'English';
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    el.textContent = lang==='my' ? el.dataset.my : el.dataset.en;
+  });
+};
+</script>
+</body>
+</html>
