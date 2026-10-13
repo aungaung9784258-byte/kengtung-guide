@@ -75,3 +75,4 @@ tools/android-sdk/*.zip
 # Editor drafts produced by tools/place-editor.html
 assets/data/places.backup.json
 places*.json.download
+snapshot.txt 
