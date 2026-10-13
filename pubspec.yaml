@@ -41,22 +41,41 @@ dependencies:
   cached_network_image: ^3.3.1
   intl: ^0.20.3
 
+  # Vector animations for the splash and welcome screens.
+  # animated_splash_screen was removed on purpose: it pushes its own
+  # Navigator route, which fights go_router's StatefulShellRoute.
+  lottie: ^3.6.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
+  flutter_launcher_icons: ^0.14.1
+
+dependency_overrides:
+  archive: ^4.5.0
 
 flutter:
   uses-material-design: true
   assets:
     - assets/data/
     - assets/images/
+    - assets/lottie/
   # Padauk (SIL, Open Font License) renders Myanmar Unicode correctly on
   # every device, including phones whose system font is old or Zawgyi-only.
   # It is registered as a FALLBACK, so Latin text keeps the default font.
+flutter_launcher_icons:
+  android: true
+  ios: false
+  web:
+    generate: true
+  image_path: "assets/icon/icon.png"
+  adaptive_icon_background: "#0B3B30"
+  adaptive_icon_foreground: "assets/icon/icon.png"
+  remove_alpha_ios: true
+ 
   fonts:
     - family: Padauk
       fonts:
         - asset: assets/fonts/Padauk-Regular.ttf
-        - asset: assets/fonts/Padauk-Bold.ttf
-          weight: 700
+        

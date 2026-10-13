@@ -6,6 +6,7 @@ import '../../app/theme/app_motion.dart';
 import '../../core/providers/app_providers.dart';
 import '../../l10n/app_localizations.dart';
 import '../../shared/widgets/motion_widgets.dart';
+import 'credits_card.dart';
 import 'offline_maps_card.dart';
 
 class SettingsScreen extends ConsumerWidget {
@@ -23,7 +24,7 @@ class SettingsScreen extends ConsumerWidget {
             parent: AlwaysScrollableScrollPhysics()),
         slivers: [
           SliverAppBar.large(
-            title: Text(t.profile),
+            title: Text(t.settings),
             pinned: true,
             backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           ),
@@ -70,12 +71,16 @@ class SettingsScreen extends ConsumerWidget {
               RevealIn(
                 index: 3,
                 child: _Card(
-                  title: t.t('about'),
+                  title: t.about,
                   icon: Icons.info_outline_rounded,
                   child: Text(t.t('aboutBody'),
                       style: Theme.of(context).textTheme.bodySmall),
                 ),
               ),
+              const SizedBox(height: 16),
+              const RevealIn(index: 4, child: CreditsCard()),
+              const SizedBox(height: 16),
+              const RevealIn(index: 5, child: ThanksCard()),
             ]),
           ),
         ],

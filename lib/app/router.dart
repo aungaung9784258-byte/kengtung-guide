@@ -5,6 +5,7 @@ import '../features/detail/place_detail_screen.dart';
 import '../features/favourites/favourites_screen.dart';
 import '../features/home/home_screen.dart';
 import '../features/map/map_screen.dart';
+import '../splashScreen.dart';
 import '../features/onboarding/welcome_screen.dart';
 import '../features/settings/settings_screen.dart';
 import 'shell.dart';
@@ -14,8 +15,12 @@ final _rootKey = GlobalKey<NavigatorState>();
 
 final appRouter = GoRouter(
   navigatorKey: _rootKey,
-  initialLocation: '/welcome',
+  initialLocation: '/splash',
   routes: [
+    GoRoute(
+      path: '/splash',
+      pageBuilder: (c, s) => _fade(s, const SplashScreen()),
+    ),
     GoRoute(
       path: '/welcome',
       pageBuilder: (c, s) => _fade(s, const WelcomeScreen()),

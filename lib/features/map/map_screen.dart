@@ -14,6 +14,7 @@ import '../../core/services/connectivity_service.dart';
 import '../../core/services/location_service.dart';
 import '../../core/services/navigation_service.dart';
 import '../../core/services/routing_service.dart';
+import '../../core/services/search_service.dart';
 import '../../data/models/place.dart';
 import '../../l10n/app_localizations.dart';
 import '../../shared/widgets/cached_tile_provider.dart';
@@ -335,10 +336,10 @@ class _MapScreenState extends ConsumerState<MapScreen>
                     points: _route!.points,
                     strokeWidth: _routeIsApprox ? 4 : 6,
                     color: _routeIsApprox
-                        ? AppColors.gold
-                        : AppColors.jade,
+                        ? AppColors.routeApprox
+                        : AppColors.routeLine,
                     borderStrokeWidth: 2,
-                    borderColor: Colors.white,
+                    borderColor: AppColors.routeBorder,
                     pattern: _routeIsApprox
                         ? StrokePattern.dashed(segments: const [12, 10])
                         : const StrokePattern.solid(),
@@ -406,29 +407,13 @@ class _MapScreenState extends ConsumerState<MapScreen>
             right: 0,
             child: Column(
               children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: GlassPanel(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 16, vertical: 4),
-                    radius: 18,
-                    child: TextField(
-                      onChanged: (v) => ref
-                          .read(searchQueryProvider.notifier)
-                          .state = v,
-                      decoration: InputDecoration(
-                        hintText: context.l10n.search,
-                        border: InputBorder.none,
-                        focusedBorder: InputBorder.none,
-                        enabledBorder: InputBorder.none,
-                        filled: false,
-                        prefixIcon: const Icon(Icons.search_rounded, size: 20),
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 12),
-                const CategoryChips(),
+                _MapSearchField(onPick: _select),
+                // The suggestion list needs the space, so the category rail
+                // steps aside while the user is typing.
+                if (!ref.watch(isSearchingProvider)) ...[
+                  const SizedBox(height: 12),
+                  const CategoryChips(),
+                ],
                 if (!online) ...[
                   const SizedBox(height: 12),
                   const _OfflineBanner(),
@@ -782,7 +767,8 @@ class _MeDotState extends State<_MeDot>
             height: 26 * _c.value,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: AppColors.jade.withValues(alpha: (1 - _c.value) * 0.45),
+              color: AppColors.myLocationPulse
+                  .withValues(alpha: (1 - _c.value) * 0.45),
             ),
           ),
           Container(
@@ -790,7 +776,7 @@ class _MeDotState extends State<_MeDot>
             height: 14,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: AppColors.jade,
+              color: AppColors.myLocationDot,
               border: Border.all(color: Colors.white, width: 2.5),
             ),
           ),
@@ -1027,7 +1013,7 @@ class _MeArrow extends StatelessWidget {
             height: moving ? 44 : 34,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: AppColors.jade.withValues(alpha: 0.18),
+              color: AppColors.navArrowHalo.withValues(alpha: 0.18),
             ),
           ),
           Container(
@@ -1035,7 +1021,7 @@ class _MeArrow extends StatelessWidget {
             height: 30,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.white,
+              color: AppColors.navArrowDisc,
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withValues(alpha: 0.25),
@@ -1047,7 +1033,7 @@ class _MeArrow extends StatelessWidget {
           ),
           CustomPaint(
             size: const Size(20, 20),
-            painter: _ArrowPainter(AppColors.jade),
+            painter: _ArrowPainter(AppColors.navArrow),
           ),
         ],
       ),
@@ -1262,6 +1248,275 @@ class _NavPanel extends ConsumerWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+
+/// Map search box with a live suggestion list.
+///
+/// Typing updates [searchQueryProvider], which already drives the markers on
+/// the map; the dropdown just surfaces the same ranked results so the user can
+/// jump straight to one instead of hunting for its pin.
+class _MapSearchField extends ConsumerStatefulWidget {
+  const _MapSearchField({required this.onPick});
+
+  final void Function(Place place) onPick;
+
+  @override
+  ConsumerState<_MapSearchField> createState() => _MapSearchFieldState();
+}
+
+class _MapSearchFieldState extends ConsumerState<_MapSearchField> {
+  final _controller = TextEditingController();
+  final _focus = FocusNode();
+
+  /// Hidden after a pick, so the list does not reopen over the chosen pin.
+  bool _open = false;
+
+  static const _maxSuggestions = 6;
+
+  @override
+  void initState() {
+    super.initState();
+    _focus.addListener(() {
+      if (_focus.hasFocus && _controller.text.isNotEmpty) {
+        setState(() => _open = true);
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    _focus.dispose();
+    super.dispose();
+  }
+
+  void _onChanged(String v) {
+    ref.read(searchQueryProvider.notifier).state = v;
+    setState(() => _open = v.trim().isNotEmpty);
+  }
+
+  void _clear() {
+    _controller.clear();
+    ref.read(searchQueryProvider.notifier).state = '';
+    setState(() => _open = false);
+    _focus.unfocus();
+  }
+
+  void _pick(Place p) {
+    final lang = ref.read(langProvider);
+    _controller.text = p.name(lang);
+    // Keep the chosen place visible but stop filtering, so its neighbours
+    // stay on the map for context.
+    ref.read(searchQueryProvider.notifier).state = '';
+    setState(() => _open = false);
+    _focus.unfocus();
+    widget.onPick(p);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final t = context.l10n;
+    final lang = ref.watch(langProvider);
+    final query = ref.watch(searchQueryProvider);
+    final results = ref.watch(searchResultsProvider);
+    final show = _open && query.trim().isNotEmpty;
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          GlassPanel(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+            radius: 18,
+            child: TextField(
+              controller: _controller,
+              focusNode: _focus,
+              textInputAction: TextInputAction.search,
+              onChanged: _onChanged,
+              onSubmitted: (_) {
+                if (results.isNotEmpty) _pick(results.first);
+              },
+              decoration: InputDecoration(
+                hintText: t.search,
+                border: InputBorder.none,
+                focusedBorder: InputBorder.none,
+                enabledBorder: InputBorder.none,
+                filled: false,
+                prefixIcon: const Icon(Icons.search_rounded, size: 20),
+                suffixIcon: _controller.text.isEmpty
+                    ? null
+                    : IconButton(
+                        icon: const Icon(Icons.close_rounded, size: 18),
+                        onPressed: _clear,
+                        tooltip: MaterialLocalizations.of(context)
+                            .cancelButtonLabel,
+                      ),
+              ),
+            ),
+          ),
+          AnimatedSize(
+            duration: AppMotion.fast,
+            curve: AppMotion.easeOutExpoCurve,
+            alignment: Alignment.topCenter,
+            child: !show
+                ? const SizedBox(width: double.infinity)
+                : Padding(
+                    padding: const EdgeInsets.only(top: 8),
+                    child: GlassPanel(
+                      radius: 18,
+                      padding: EdgeInsets.zero,
+                      child: results.isEmpty
+                          ? Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 16, vertical: 18),
+                              child: Row(
+                                children: [
+                                  const Icon(Icons.search_off_rounded,
+                                      size: 18),
+                                  const SizedBox(width: 10),
+                                  Expanded(
+                                    child: Text(
+                                      t.t('noResults'),
+                                      style: const TextStyle(
+                                          fontWeight: FontWeight.w600),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )
+                          : ListView.separated(
+                              shrinkWrap: true,
+                              padding: EdgeInsets.zero,
+                              physics: const ClampingScrollPhysics(),
+                              itemCount: results.length > _maxSuggestions
+                                  ? _maxSuggestions
+                                  : results.length,
+                              separatorBuilder: (_, __) => Divider(
+                                height: 1,
+                                thickness: 1,
+                                color: Theme.of(context)
+                                    .dividerColor
+                                    .withValues(alpha: 0.4),
+                              ),
+                              itemBuilder: (context, i) => _SuggestionTile(
+                                place: results[i],
+                                query: query,
+                                lang: lang,
+                                onTap: () => _pick(results[i]),
+                              ),
+                            ),
+                    ),
+                  ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// One row of the map suggestion list, with the matched span highlighted.
+class _SuggestionTile extends StatelessWidget {
+  const _SuggestionTile({
+    required this.place,
+    required this.query,
+    required this.lang,
+    required this.onTap,
+  });
+
+  final Place place;
+  final String query;
+  final String lang;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final c = place.category.color;
+    final name = place.name(lang);
+
+    return InkWell(
+      onTap: onTap,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 11),
+        child: Row(
+          children: [
+            Container(
+              width: 32,
+              height: 32,
+              decoration: BoxDecoration(
+                color: c.withValues(alpha: 0.16),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Icon(place.category.icon, size: 17, color: c),
+            ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  _Highlighted(text: name, query: query),
+                  const SizedBox(height: 2),
+                  Text(
+                    context.l10n.t(place.category.labelKey),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontSize: 11.5,
+                      height: 1.5,
+                      color: Theme.of(context)
+                          .colorScheme
+                          .onSurface
+                          .withValues(alpha: 0.6),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const Icon(Icons.north_east_rounded, size: 15),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// Bolds the part of [text] that matched [query].
+class _Highlighted extends StatelessWidget {
+  const _Highlighted({required this.text, required this.query});
+
+  final String text;
+  final String query;
+
+  @override
+  Widget build(BuildContext context) {
+    final base = TextStyle(
+      fontSize: 14,
+      height: 1.5,
+      fontWeight: FontWeight.w600,
+      color: Theme.of(context).colorScheme.onSurface,
+    );
+    final hit = base.copyWith(
+      fontWeight: FontWeight.w900,
+      color: AppColors.jade,
+    );
+
+    final r = SearchService.highlightRange(text, query);
+    if (r == null) {
+      return Text(text, maxLines: 1, overflow: TextOverflow.ellipsis, style: base);
+    }
+    final (start, end) = r;
+    return Text.rich(
+      TextSpan(children: [
+        TextSpan(text: text.substring(0, start), style: base),
+        TextSpan(text: text.substring(start, end), style: hit),
+        TextSpan(text: text.substring(end), style: base),
+      ]),
+      maxLines: 1,
+      overflow: TextOverflow.ellipsis,
     );
   }
 }

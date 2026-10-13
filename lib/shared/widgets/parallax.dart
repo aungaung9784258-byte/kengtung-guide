@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 /// Wraps an image so it drifts *inside* its own frame as the list scrolls.
 /// Works for vertical lists and horizontal carousels.

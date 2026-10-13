@@ -8,6 +8,8 @@ enum PlaceCategory {
   transport('transport', Icons.directions_bus_rounded, AppColors.cTransport),
   hotel('hotel', Icons.hotel_rounded, AppColors.cHotel),
   restaurant('restaurant', Icons.restaurant_rounded, AppColors.cRestaurant),
+  education('education', Icons.school_rounded, AppColors.cEducation),
+  bank('bank', Icons.account_balance_rounded, AppColors.cBank),
   emergency('emergency', Icons.local_hospital_rounded, AppColors.cEmergency);
 
   final String id;

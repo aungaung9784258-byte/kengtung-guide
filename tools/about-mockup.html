@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kengtung Guide — App Credits (Option C)</title>
+<style>
+/* =======================================================================
+   Tokens mirrored 1:1 from lib/app/theme/app_colors.dart
+   ======================================================================= */
+:root{
+  --jade:#0FA47F; --jade-deep:#07634F; --jade-soft:#E3F5EF;
+  --gold:#FFB020; --gold-deep:#E08A00; --coral:#FF6B5A;
+  --teal:#00A3A1; --navy:#1F4E8C; --sky:#2E8BF2; --rose:#E2457A;
+  --indigo:#6C5CE7; --chilli:#F2762E;
+
+  --bg:#F7F8F5; --surface:#FFFFFF; --surface-alt:#F1F3EF;
+  --text:#11231D; --muted:#6E7B76;
+  --shadow:0 6px 18px rgba(0,0,0,.05);
+  --hair:rgba(17,35,29,.08);
+}
+body.dark{
+  --bg:#0B1412; --surface:#13201C; --surface-alt:#1A2A25;
+  --text:#E8F1ED; --muted:#8FA39C; --jade-soft:#102E27;
+  --shadow:0 6px 18px rgba(0,0,0,.35);
+  --hair:rgba(232,241,237,.10);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{
+  margin:0;padding:26px 16px 70px;background:var(--bg);color:var(--text);
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans Myanmar","Padauk",sans-serif;
+  transition:background .35s,color .35s;
+}
+body.my .mytext{font-family:"Padauk","Noto Sans Myanmar",system-ui,sans-serif;line-height:1.95}
+
+.bar{max-width:420px;margin:0 auto 22px;display:flex;gap:10px;justify-content:center}
+.bar button{
+  font:inherit;font-size:13px;font-weight:700;padding:9px 18px;border-radius:999px;
+  border:1px solid var(--hair);background:var(--surface);color:var(--text);cursor:pointer;transition:.2s
+}
+.bar button.on{background:linear-gradient(135deg,var(--jade),var(--jade-deep));color:#fff;border-color:transparent}
+h1.page{text-align:center;font-size:18px;margin:0 0 4px;letter-spacing:-.3px}
+p.page{text-align:center;color:var(--muted);font-size:12.5px;margin:0 0 24px}
+
+.phone{
+  width:372px;margin:0 auto;background:var(--bg);border:9px solid #1d1d1f;border-radius:40px;
+  padding:14px 13px 22px;box-shadow:0 24px 54px rgba(0,0,0,.25);transition:background .35s
+}
+
+/* ---- card (= _Card in settings_screen.dart) ---- */
+.card{background:var(--surface);border-radius:24px;padding:18px;box-shadow:var(--shadow);transition:background .35s}
+.card + .card{margin-top:16px}
+.card-head{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.card-ico{
+  width:32px;height:32px;border-radius:12px;display:grid;place-items:center;flex:none;color:#fff;
+  background:linear-gradient(135deg,var(--jade),var(--jade-deep))
+}
+.card-ico.g{background:linear-gradient(135deg,var(--gold),var(--gold-deep))}
+.card-ico svg{width:16px;height:16px;display:block}
+.card-title{font-size:15px;font-weight:700;margin:0}
+.body-sm{font-size:12.5px;color:var(--muted);line-height:1.75;margin:0}
+
+/* ---- section label ---- */
+.sec{
+  display:flex;align-items:center;gap:9px;margin:20px 0 11px
+}
+.sec:first-of-type{margin-top:0}
+.sec .ln{height:1px;background:var(--hair);flex:1}
+.sec span{
+  font-size:9.5px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);
+  white-space:nowrap
+}
+body.my .sec span{font-size:11px;letter-spacing:.02em;text-transform:none}
+
+/* ---- avatars ---- */
+.av{
+  width:46px;height:46px;border-radius:16px;flex:none;display:grid;place-items:center;
+  font-weight:800;font-size:15px;color:#fff;letter-spacing:.5px;
+  background:linear-gradient(135deg,var(--jade),var(--jade-deep));
+  box-shadow:0 5px 13px rgba(0,0,0,.18);font-family:system-ui,sans-serif
+}
+.av.lg{width:62px;height:62px;border-radius:21px;font-size:19px}
+
+/* ---- featured (supervisor / lead) ---- */
+.feat{
+  display:flex;align-items:center;gap:14px;padding:14px;border-radius:20px;
+  background:var(--surface-alt);position:relative;overflow:hidden
+}
+.feat::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:linear-gradient(180deg,var(--gold),var(--gold-deep))
+}
+.feat.lead::before{background:linear-gradient(180deg,var(--jade),var(--jade-deep))}
+.feat .nm{font-size:15px;font-weight:800;margin:0 0 3px;letter-spacing:-.2px}
+.feat .rl{font-size:11px;color:var(--muted);margin:0;font-weight:600}
+
+/* ---- 2-col grid ---- */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gcell{
+  background:var(--surface-alt);border-radius:18px;padding:13px 8px 12px;text-align:center;
+  transition:transform .18s
+}
+.gcell:active{transform:scale(.96)}
+.gcell .av{margin:0 auto 8px}
+.gcell .nm{font-size:12px;font-weight:700;margin:0;line-height:1.4}
+
+/* ---- pair row (designers) ---- */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pcell{
+  display:flex;align-items:center;gap:9px;background:var(--surface-alt);
+  border-radius:16px;padding:10px
+}
+.pcell .av{width:34px;height:34px;border-radius:12px;font-size:11.5px}
+.pcell .nm{font-size:11.5px;font-weight:700;margin:0;line-height:1.35}
+
+/* ---- whole-team banner ---- */
+.whole{
+  display:flex;align-items:center;justify-content:center;gap:9px;
+  background:var(--jade-soft);border-radius:16px;padding:13px;
+  font-size:12.5px;font-weight:700;color:var(--jade)
+}
+.whole svg{width:15px;height:15px}
+
+/* ---- footer ---- */
+.made{text-align:center;margin:20px 0 0;padding-top:16px;border-top:1px solid var(--hair)}
+.made .p1{font-size:11px;color:var(--muted);font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin:0 0 6px}
+body.my .made .p1{letter-spacing:.02em;text-transform:none;font-size:12px}
+.made .p2{font-size:12.5px;font-weight:700;color:var(--text);margin:0;line-height:1.65}
+.made .uni{font-size:11px;color:var(--muted);margin:5px 0 0;font-weight:600;text-align:center;line-height:1.6}
+.made .p3{font-size:11.5px;color:var(--muted);margin:8px 0 0}
+.made .heart{color:var(--coral)}
+.ver{
+  display:inline-block;margin-top:9px;font-size:10px;font-weight:700;letter-spacing:.08em;
+  color:var(--muted);background:var(--surface-alt);padding:3px 10px;border-radius:999px;
+  font-family:system-ui,sans-serif
+}
+
+/* ---- thanks ---- */
+.thanks{margin:0;padding:0;list-style:none}
+.thanks li{font-size:12px;color:var(--muted);padding:7px 0 7px 19px;position:relative;line-height:1.65}
+.thanks li::before{content:"";position:absolute;left:3px;top:14px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.thanks b{color:var(--text);font-weight:700}
+
+
+/* ---- PUKT logo ---- */
+.logo{
+  width:64px;height:64px;border-radius:50%;display:block;margin:0 auto 12px;
+  background:#fff;box-shadow:0 4px 14px rgba(0,0,0,.14);
+  border:1px solid var(--hair)
+}
+body.dark .logo{box-shadow:0 4px 18px rgba(0,0,0,.5)}
+
+/* layout variants */
+.v-centered .fb-inline, .v-centered .fb-mark,
+.v-inline   .fb-centered, .v-inline .fb-mark,
+.v-mark     .fb-centered, .v-mark .fb-inline{display:none}
+
+.fb-inline{display:flex;align-items:center;gap:14px;text-align:left}
+.fb-inline .logo{margin:0;width:56px;height:56px;flex:none}
+.fb-inline .txt{flex:1}
+.fb-inline .p1,.fb-inline .p2{text-align:left}
+
+.fb-mark{position:relative;padding:6px 0 2px}
+.fb-mark .logo{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:124px;height:124px;opacity:.10;box-shadow:none;border:0;background:transparent;
+  pointer-events:none;margin:0
+}
+body.dark .fb-mark .logo{opacity:.16}
+.fb-mark .txt{position:relative}
+
+.note{
+  max-width:620px;margin:40px auto 0;font-size:12.5px;color:var(--muted);line-height:1.85;
+  background:var(--surface);border-radius:20px;padding:20px 22px;box-shadow:var(--shadow)
+}
+.note b{color:var(--text)}
+.note code{font-family:ui-monospace,Consolas,monospace;font-size:11.5px;background:var(--surface-alt);padding:2px 6px;border-radius:6px}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <button id="btnTheme" onclick="toggleTheme()">🌙 Dark</button>
+  <button id="btnLang"  onclick="toggleLang()">🇲🇲 မြန်မာ</button>
+  <button id="btnLogo" onclick="cycleLogo()">🎓 Logo: Centered</button>
+</div>
+
+<h1 class="page">Settings → About</h1>
+<p class="page">Option C · Grid layout · scroll down inside the phone</p>
+
+<div class="phone">
+
+  <!-- ============ About ============ -->
+  <div class="card">
+    <div class="card-head">
+      <div class="card-ico">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16z"/></svg>
+      </div>
+      <h3 class="card-title mytext" data-en="About" data-my="အကြောင်း">About</h3>
+    </div>
+    <p class="body-sm mytext"
+       data-en="Kengtung Guide is a free, offline-first travel companion for Kyaing Tong, Shan State. Maps, places and routes work without an internet connection."
+       data-my="ကျိုင်းတုံလမ်းညွှန်သည် ရှမ်းပြည်နယ်၊ ကျိုင်းတုံမြို့အတွက် အခမဲ့ ခရီးသွားလက်စွဲ ဖြစ်ပါသည်။ မြေပုံ၊ နေရာများနှင့် လမ်းကြောင်းများကို အင်တာနက်မရှိဘဲ အသုံးပြုနိုင်ပါသည်။">
+      Kengtung Guide is a free, offline-first travel companion for Kyaing Tong, Shan State. Maps, places and routes work without an internet connection.
+    </p>
+  </div>
+
+  <!-- ============ App Credits ============ -->
+  <div class="card">
+    <div class="card-head">
+      <div class="card-ico">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 11a4 4 0 10-4-4 4 4 0 004 4zm-8 0A4 4 0 104 7a4 4 0 004 4zm0 2c-2.7 0-8 1.3-8 4v3h8v-3c0-1 .4-2.7 2.5-3.8A14 14 0 008 13zm8 0c-.3 0-.7 0-1.1.1C16.2 14.2 17 15.7 17 17v3h7v-3c0-2.7-5.3-4-8-4z"/></svg>
+      </div>
+      <h3 class="card-title mytext" data-en="App Credits" data-my="ဖန်တီးသူများ">App Credits</h3>
+    </div>
+
+    <!-- Supervisor -->
+    <div class="sec"><span class="mytext" data-en="Project Supervisor" data-my="စီမံကိန်း ကြီးကြပ်သူ">Project Supervisor</span><div class="ln"></div></div>
+    <div class="feat">
+      <div class="av lg" style="background:linear-gradient(135deg,#FFB020,#E08A00)">YC</div>
+      <div>
+        <p class="nm">Dr. Yin Win Chit</p>
+        <p class="rl mytext" data-en="Academic Supervisor" data-my="ပညာရပ်ဆိုင်ရာ ကြီးကြပ်သူ">Academic Supervisor</p>
+      </div>
+    </div>
+
+    <!-- Lead -->
+    <div class="sec"><span class="mytext" data-en="Project Lead &amp; Core Developer" data-my="စီမံကိန်းခေါင်းဆောင်နှင့် ပင်မဆော့ဖ်ဝဲရေးသားသူ">Project Lead &amp; Core Developer</span><div class="ln"></div></div>
+    <div class="feat lead">
+      <div class="av lg">TZ</div>
+      <div>
+        <p class="nm">Thet Zaw Aung</p>
+        <p class="rl mytext" data-en="Flutter Development &amp; Architecture" data-my="Flutter ရေးသားမှုနှင့် ဖွဲ့စည်းပုံ">Flutter Development &amp; Architecture</p>
+      </div>
+    </div>
+
+    <!-- Designers -->
+    <div class="sec"><span class="mytext" data-en="UI / UX Designer" data-my="ဒီဇိုင်းပိုင်း">UI / UX Designer</span><div class="ln"></div></div>
+    <div class="pair">
+      <div class="pcell"><div class="av">TZ</div><p class="nm">Thet Zaw Aung</p></div>
+      <div class="pcell"><div class="av" style="background:linear-gradient(135deg,#55B0FF,#2E8BF2)">HM</div><p class="nm">Hein Myo Myat</p></div>
+    </div>
+
+    <!-- Data team -->
+    <div class="sec"><span class="mytext" data-en="Data Collection &amp; Preparation" data-my="ဒေတာစုဆောင်းရေးနှင့် ပြင်ဆင်ရေးအဖွဲ့">Data Collection &amp; Preparation</span><div class="ln"></div></div>
+    <div class="grid">
+      <div class="gcell"><div class="av" style="background:linear-gradient(135deg,#55B0FF,#2E8BF2)">HM</div><p class="nm">Hein Myo Myat</p></div>
+      <div class="gcell"><div class="av" style="background:linear-gradient(135deg,#FF8A7A,#E2457A)">ZM</div><p class="nm">Zayar Myint</p></div>
+      <div class="gcell"><div class="av" style="background:linear-gradient(135deg,#8B7BF0,#6C5CE7)">HW</div><p class="nm">Htet Wai Yan Moe</p></div>
+      <div class="gcell"><div class="av" style="background:linear-gradient(135deg,#FF9A4D,#F2762E)">KW</div><p class="nm">Kyaw Wanna</p></div>
+      <div class="gcell"><div class="av" style="background:linear-gradient(135deg,#2ACFCB,#00A3A1)">AM</div><p class="nm">Antt Min Aung</p></div>
+      <div class="gcell"><div class="av" style="background:linear-gradient(135deg,#3C76C4,#1F4E8C)">SM</div><p class="nm">San Min Htwe</p></div>
+      <div class="gcell"><div class="av" style="background:linear-gradient(135deg,#FFC94D,#E08A00)">WE</div><p class="nm">Win Ei Phyu</p></div>
+      <div class="gcell"><div class="av" style="background:linear-gradient(135deg,#34C79E,#07634F)">SL</div><p class="nm">Shoon Lae Htoo</p></div>
+      <div class="gcell"><div class="av" style="background:linear-gradient(135deg,#FF8E82,#FF6B5A)">YM</div><p class="nm">Yoon Myat Thiri</p></div>
+    </div>
+
+    <!-- QA -->
+    <div class="sec"><span class="mytext" data-en="Quality Assurance &amp; Testing" data-my="အရည်အသွေးစစ်ဆေးရေးနှင့် စမ်းသပ်ရေး">Quality Assurance &amp; Testing</span><div class="ln"></div></div>
+    <div class="whole">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+      <span class="mytext" data-en="The Whole Team" data-my="အဖွဲ့သား အားလုံး">The Whole Team</span>
+    </div>
+
+    <!-- Footer -->
+    <div class="made">
+
+      <div class="fb-centered">
+        <img class="logo" alt="PUKT" src="data:image/png;base64,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">
+        <p class="p1 mytext" data-en="Proudly developed by" data-my="ဂုဏ်ယူစွာ ဖန်တီးသူများ">Proudly developed by</p>
+        <p class="p2 mytext"
+           data-en="2026–2027 Final Year<br>PUKT Computer Science Students"
+           data-my="၂၀၂၆–၂၀၂၇ ပညာသင်နှစ်<br>PUKT ကွန်ပျူတာသိပ္ပံ နောက်ဆုံးနှစ် ကျောင်းသားများ">
+          2026–2027 Final Year<br>PUKT Computer Science Students
+        </p>
+        <p class="uni mytext"
+           data-en="Polytechnic University (Kyaingtong)"
+           data-my="နည်းပညာတက္ကသိုလ် (ကျိုင်းတုံ)">Polytechnic University (Kyaingtong)</p>
+      </div>
+
+      <div class="fb-inline">
+        <img class="logo" alt="PUKT" src="data:image/png;base64,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">
+        <div class="txt">
+          <p class="p1 mytext" data-en="Proudly developed by" data-my="ဂုဏ်ယူစွာ ဖန်တီးသူများ">Proudly developed by</p>
+          <p class="p2 mytext"
+           data-en="2026–2027 Final Year<br>PUKT Computer Science Students"
+           data-my="၂၀၂၆–၂၀၂၇ ပညာသင်နှစ်<br>PUKT ကွန်ပျူတာသိပ္ပံ နောက်ဆုံးနှစ် ကျောင်းသားများ">
+          2026–2027 Final Year<br>PUKT Computer Science Students
+        </p>
+          <p class="uni mytext"
+           data-en="Polytechnic University (Kyaingtong)"
+           data-my="နည်းပညာတက္ကသိုလ် (ကျိုင်းတုံ)">Polytechnic University (Kyaingtong)</p>
+        </div>
+      </div>
+
+      <div class="fb-mark">
+        <img class="logo" alt="PUKT" src="data:image/png;base64,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">
+        <div class="txt">
+          <p class="p1 mytext" data-en="Proudly developed by" data-my="ဂုဏ်ယူစွာ ဖန်တီးသူများ">Proudly developed by</p>
+          <p class="p2 mytext"
+           data-en="2026–2027 Final Year<br>PUKT Computer Science Students"
+           data-my="၂၀၂၆–၂၀၂၇ ပညာသင်နှစ်<br>PUKT ကွန်ပျူတာသိပ္ပံ နောက်ဆုံးနှစ် ကျောင်းသားများ">
+          2026–2027 Final Year<br>PUKT Computer Science Students
+        </p>
+          <p class="uni mytext"
+           data-en="Polytechnic University (Kyaingtong)"
+           data-my="နည်းပညာတက္ကသိုလ် (ကျိုင်းတုံ)">Polytechnic University (Kyaingtong)</p>
+        </div>
+      </div>
+
+      <p class="p3 mytext"
+           data-en="Made with <span class='heart'>♥</span> in Kengtung, Shan State"
+           data-my="ကျိုင်းတုံမြို့မှ <span class='heart'>♥</span> ဖြင့် ဖန်တီးသည်">
+          Made with <span class="heart">♥</span> in Kengtung, Shan State
+        </p>
+        <span class="ver">v1.0.0 · 2026</span>
+    </div>
+  </div>
+
+  <!-- ============ Thanks To ============ -->
+  <div class="card">
+    <div class="card-head">
+      <div class="card-ico g">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+      </div>
+      <h3 class="card-title mytext" data-en="Thanks To" data-my="ကျေးဇူးတင်လွှာ">Thanks To</h3>
+    </div>
+    <ul class="thanks">
+      <li class="mytext" data-en="Map data © <b>OpenStreetMap</b> contributors" data-my="မြေပုံဒေတာ © <b>OpenStreetMap</b> အဖွဲ့ဝင်များ">Map data © <b>OpenStreetMap</b> contributors</li>
+      <li class="mytext" data-en="Satellite imagery © <b>Esri</b>" data-my="ဂြိုဟ်တုပုံများ © <b>Esri</b>">Satellite imagery © <b>Esri</b></li>
+      <li class="mytext" data-en="Weather data by <b>Open-Meteo</b>" data-my="ရာသီဥတုအချက်အလက် <b>Open-Meteo</b> မှ">Weather data by <b>Open-Meteo</b></li>
+      <li class="mytext" data-en="Routing by <b>OSRM</b>" data-my="လမ်းကြောင်းရှာဖွေမှု <b>OSRM</b> မှ">Routing by <b>OSRM</b></li>
+      <li class="mytext" data-en="Myanmar typeface <b>Padauk</b> by SIL" data-my="မြန်မာဖောင့် <b>Padauk</b> — SIL မှ">Myanmar typeface <b>Padauk</b> by SIL</li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="note">
+  <b>Notes</b><br>
+  • Avatars are gradient tiles with initials — <b>no image files</b>, so the APK size does not change.<br>
+  • Colours, 24 px card radius and shadows come straight from <code>app_colors.dart</code> / <code>_Card</code>.<br>
+  • Section labels switch to a larger, non-uppercase style in Myanmar (uppercase + letter-spacing break Myanmar script).<br>
+  • The <b>Thanks To</b> card also satisfies the OpenStreetMap / Esri attribution requirement.
+</div>
+
+<script>
+function toggleTheme(){
+  const d=document.body.classList.toggle('dark');
+  const b=document.getElementById('btnTheme');
+  b.textContent=d?'☀️ Light':'🌙 Dark'; b.classList.toggle('on',d);
+}
+const MODES=['centered','inline','mark'];
+const MODE_LABEL={centered:'Centered',inline:'Inline',mark:'Watermark'};
+let mode=0;
+function applyLogo(){
+  document.body.classList.remove('v-centered','v-inline','v-mark');
+  document.body.classList.add('v-'+MODES[mode]);
+  document.getElementById('btnLogo').textContent='🎓 Logo: '+MODE_LABEL[MODES[mode]];
+}
+function cycleLogo(){ mode=(mode+1)%MODES.length; applyLogo(); }
+applyLogo();
+
+let my=false;
+function toggleLang(){
+  my=!my;
+  const b=document.getElementById('btnLang');
+  b.textContent=my?'🇬🇧 English':'🇲🇲 မြန်မာ'; b.classList.toggle('on',my);
+  document.body.classList.toggle('my',my);
+  document.querySelectorAll('[data-en]').forEach(el=>{el.innerHTML=my?el.dataset.my:el.dataset.en;});
+}
+</script>
+</body>
+</html>

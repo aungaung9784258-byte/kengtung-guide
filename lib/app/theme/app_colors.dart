@@ -35,7 +35,7 @@ class AppColors {
   // ==========================================================================
 
   /// The road route line (online, real roads).
-  static const routeLine = Color.fromARGB(255, 43, 1, 255);
+  static const routeLine = jade;
 
   /// White casing drawn under the route line so it stays readable on
   /// satellite imagery. Use Colors.transparent to remove it.
@@ -48,7 +48,7 @@ class AppColors {
   static const routeDone = Color(0xFF9CB8AF);
 
   /// The heading arrow shown during navigation.
-  static const navArrow = Color.fromARGB(255, 0, 13, 255);
+  static const navArrow = jade;
 
   /// Disc behind the arrow.
   static const navArrowDisc = Color(0xFFFFFFFF);
@@ -57,8 +57,8 @@ class AppColors {
   static const navArrowHalo = jade;
 
   /// The plain pulsing dot used when NOT navigating.
-  static const myLocationDot = Color.fromARGB(255, 242, 11, 11);
-  static const myLocationPulse = Color.fromARGB(255, 255, 2, 2);
+  static const myLocationDot = jade;
+  static const myLocationPulse = jade;
 
   // ---- Category pins ----
   static const cPlace = Color(0xFF0FA47F); // jade
@@ -67,6 +67,8 @@ class AppColors {
   static const cTransport = Color(0xFF6C5CE7); // indigo
   static const cHotel = Color(0xFF2E8BF2); // sky
   static const cRestaurant = Color(0xFFE2457A); // rose
+  static const cEducation = Color(0xFF00A3A1); // teal
+  static const cBank = Color(0xFF1F4E8C); // navy
   static const cEmergency = Color(0xFFE5484D); // red
 
   // ---- Gradients ----

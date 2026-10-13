@@ -168,56 +168,72 @@
   {
     "id": "kengtung-central-market",
     "name": {
-      "en": "Kengtung Central Market",
-      "my": "ကျိုင်းတုံ ဗဟိုဈေး"
+      "en": "Kyaing Tong MyoMa Market",
+      "my": "ကျိုင်းတုံမြို့မစျေးကြီး"
     },
     "category": "market",
     "description": {
-      "en": "The busiest market in Eastern Shan State. Hill-tribe traders from Akha, Lahu, Ann and Palaung villages come to sell produce, textiles and silver. Best before 9am.",
-      "my": "ရှမ်းပြည်အရှေ့ပိုင်း၏ အရှုပ်ဆုံးဈေး။ အခါ၊ လားဟူ၊ အန်း၊ ပလောင် တောင်တန်းသားများ လာရောင်းကြသည်။ မနက် ၉ နာရီမတိုင်မီ သွားသင့်သည်။"
+      "en": "Kengtung's main market and busiest place each morning. Local traders and hill-tribe villagers sell fresh produce, meat, Shan noodles, clothing and household goods.",
+      "my": "ရှမ်းပြည်အရှေ့ပိုင်း၏ အရှုပ်ဆုံးဈေး။ အခါ၊ လားဟူ၊ အန်း၊ ပလောင် တောင်တန်းသားများမနက်စောစောလာရောက်ရွေ့ ဟင်းသီးဟင်းရွက် အသားငါး အစုံအလင် စည်ကားစွ လာရောက် ရောင်းချကြသည်။ "
     },
     "address": {
-      "en": "Market Road, Kengtung",
-      "my": "ဈေးလမ်း၊ ကျိုင်းတုံ"
+      "en": "Town centre, near Kyaing Tong Tower, Kyaing Tong",
+      "my": "မြို့လည်ခေါင်၊ နာရီစင်အနီး၊ ကျိုင်းတုံမြို့။"
     },
-    "lat": 21.2928,
-    "lng": 99.5972,
-    "openHours": "05:00 - 17:00",
+    "lat": 21.286758921774723,
+    "lng": 99.60334509324566,
+    "openHours": "06:00 AM - 12:30 PM",
     "rating": 4.6,
     "tags": [
       "market",
-      "hill tribe",
-      "morning"
+      "morning",
+      "ဈေး",
+      "ကုန်ပစ္စည်း",
+      "ဈေးဝယ်",
+      "ဈေးတန်း"
     ],
     "images": [
-      "assets/images/market.jpg"
+      "assets/images/kengtung-myoma-1-exterior-view.jpg",
+      "assets/images/kengtung-myoma-2-interior-view.jpg",
+      "assets/images/kengtung-myoma-3-products.jpg",
+      "assets/images/kengtung-myoma-4-market-activity.jpg"
     ]
   },
   {
-    "id": "morning-market",
+    "id": "hyper-market",
     "name": {
-      "en": "Kengtung Morning Market",
-      "my": "မနက်ခင်းဈေး"
+      "en": "Hyper Market (NaungTongZay)",
+      "my": "ဟိုက်ပါမားကတ် (နောင်တုံစျေး)"
     },
     "category": "market",
     "description": {
-      "en": "Early food market with local Shan breakfast stalls, noodle soup and fresh produce.",
-      "my": "ရှမ်းခေါက်ဆွဲ၊ မနက်စာဆိုင်များနှင့် လတ်ဆတ်သော ကုန်ပစ္စည်းများ ရောင်းချသော မနက်ပိုင်းဈေး။"
+      "en": "Hypermarket is a modern shopping center structured with a wide variety of retail stalls and shops. Offering a comprehensive range of stores, it allows shoppers to conveniently find everything they need under one roof. It stands as Kengtung’s sole high-standard marketplace, where visitors can enjoy an all-in-one experience featuring kids' playgrounds, a game zone, a snooker club, a gym, a medical clinic, beauty salons, diverse food stalls, a roller-skating rink, and much more.",
+      "my": "ဟိုက်ပါမားကတ်သည် စျေးဆိုင်ခန်းများဖြင့် ဖွဲ့စည်းတည်ဆောက်ထားပြီး အဆင့်မြင့် စျေးတစ်ခုဖြစ်သည်။\nဆိုင်ခန်းပေါင်းစုံလင်စွာရှိသောကြောင့် လိုချင်သော အရာများကို တစ်နေရာထဲတွင်လှည့်လည် ဝယ်ယူနိုင်ပြီး တခြားသော ကစားကွင်းများ ၊ ဂိမ်းဆိုင်၊ စနူကာရုံ ၊ဂျင် ၊ဆေးခန်း ၊အလှအပ ပြုပြင်ရေး ဆိုင်ခန်းများနှင့် အစားအသောက်ဆိုင်များ ကလေးကစားကွင်း၊ စကိတ်ကွင်း အစရှိသဖြင့် တစ်နေရာထဲတွင် များစွာသော အရာများကို တွေ့ကြုံခံစားနိုင်သည့် ကျိုင်းတုံမြို့ရှိ တစ်ခုတည်းသော အဆင်မြင့်စျေးတစ်ခုဖြစ်ပါသည်။"
     },
     "address": {
-      "en": "Kengtung",
-      "my": "ကျိုင်းတုံ"
+      "en": "NaungKyaut St, Kyaing Tong",
+      "my": "နောင်ကျောက်လမ်း၊ ကျိုင်းတုံမြို့။"
     },
-    "lat": 21.2905,
-    "lng": 99.599,
-    "openHours": "04:30 - 10:00",
-    "rating": 4.2,
+    "lat": 21.288872131340284,
+    "lng": 99.61002615034283,
+    "openHours": "7:00AM - 9:00PM",
+    "rating": 4.5,
     "tags": [
       "food",
-      "morning"
+      "ဈေး",
+      "ဈေးတန်း",
+      "အဆင့်မြင့်စျေး",
+      "shopping mall",
+      "Game",
+      "Snooker",
+      "Skate"
     ],
     "images": [
-      "assets/images/market.jpg"
+      "assets/images/kengtung-naungtong-1-exterior-view.jpg",
+      "assets/images/kengtung-naungtong-2-interior-view.jpg",
+      "assets/images/kengtung-naungtong-3-products.jpg",
+      "assets/images/kengtung-naungtong-4-market-activity.jpg",
+      "assets/images/kengtung-naungtong-5-best-overall-view.jpg"
     ]
   },
   {
@@ -342,8 +358,8 @@
       "en": "Kengtung",
       "my": "ကျိုင်းတုံ"
     },
-    "lat": 21.2968,
-    "lng": 99.6045,
+    "lat": 21.296915,
+    "lng": 99.604492,
     "openHours": "24 hours",
     "rating": 4.3,
     "tags": [
@@ -381,30 +397,46 @@
     ]
   },
   {
-    "id": "golden-banyan",
+    "id": "galaxy-bar",
     "name": {
-      "en": "Golden Banyan Restaurant",
-      "my": "ရွှေညောင်ပင် စားသောက်ဆိုင်"
+      "en": "Galaxy Bar & Restaurant",
+      "my": "Galaxy Bar & Restaurant"
     },
     "category": "restaurant",
     "description": {
-      "en": "Local Shan and Chinese dishes served in a garden setting. Try the Shan noodles and fermented tea-leaf salad.",
-      "my": "ဥယျာဉ်အတွင်း ရှမ်းနှင့် တရုတ်အစားအစာများ။ ရှမ်းခေါက်ဆွဲနှင့် လက်ဖက်သုပ် စမ်းကြည့်သင့်သည်။"
+      "en": "This restaurant is located in Kengtung, Shan State, Myanmar. \nIt offers a welcoming atmosphere where customers can enjoy delicious food and spend quality time with family and friends.\nIt can be a suitable place for dining, relaxing, and experiencing the local food culture. Visitors are encouraged to check the menu, prices, and opening hours before visiting.\n",
+      "my": "ဤစားသောက်ဆိုင်သည် မြန်မာနိုင်ငံ၊ ရှမ်းပြည်နယ်၊ ကျိုင်းတုံမြို့တွင် တည်ရှိပါသည်။ \nဧည့်သည်များသည် နွေးထွေးဖော်ရွေသော ပတ်ဝန်းကျင်တွင် အရသာရှိသော အစားအစာများကို သုံးဆောင်ရင်း မိသားစု၊ သူငယ်ချင်းများနှင့်အတူ အချိန်ကောင်းများကို ဖြတ်သန်းနိုင်ပါသည်။ \nထို့အပြင် အစားအသောက်များ သုံးဆောင်ရန်၊ အပန်းဖြေရန်နှင့် ဒေသခံတို့၏ အစားအသောက်ယဉ်ကျေးမှုကို လေ့လာခံစားရန် သင့်တော်သော နေရာတစ်ခုလည်း ဖြစ်ပါသည်။ ဆိုင်သို့ မသွားရောက်မီ မီနူး၊ ဈေးနှုန်းများနှင့် ဖွင့်လှစ်ချိန်များကို ကြိုတင်စစ်ဆေးရန် အကြံပြုပါသည်။\n"
     },
     "address": {
-      "en": "Kengtung",
-      "my": "ကျိုင်းတုံ"
+      "en": "Airport Rd, Kyaing Tong",
+      "my": "လေယာဉ်ကွင်းလမ်း၊ ကျိုင်းတုံမြို့။"
     },
-    "lat": 21.2917,
-    "lng": 99.6035,
-    "openHours": "08:00 - 21:00",
-    "rating": 4.4,
+    "lat": 21.29392527628243,
+    "lng": 99.60604459045518,
+    "phone": "09 89107779",
+    "openHours": "11:00 AM - 11:00 PM",
+    "rating": 4.5,
     "tags": [
       "shan food",
-      "garden"
+      "garden",
+      "bar",
+      "ဘား",
+      "စားသောက်ဆိုင်",
+      "အကင်",
+      "ပင်လယ်စာ",
+      "အစားအစာ"
     ],
     "images": [
-      "assets/images/restaurant.jpg"
+      "assets/images/galaxy (1).jpg",
+      "assets/images/galaxy (2).jpg",
+      "assets/images/galaxy (3).jpg",
+      "assets/images/galaxy (4).jpg",
+      "assets/images/galaxy (5).jpg",
+      "assets/images/galaxy (6).jpg",
+      "assets/images/galaxy (7).jpg",
+      "assets/images/galaxy (8).jpg",
+      "assets/images/galaxy (9).jpg",
+      "assets/images/galaxy (10).jpg"
     ]
   },
   {
@@ -436,31 +468,45 @@
     ]
   },
   {
-    "id": "shan-noodle-shop",
+    "id": "hot-pot",
     "name": {
-      "en": "Traditional Shan Noodle Shop",
-      "my": "ရိုးရာ ရှမ်းခေါက်ဆွဲဆိုင်"
+      "en": "NCY Hot Pot ",
+      "my": "ငြိမ်းချမ်းရေး ဟော့ပေါ့ "
     },
     "category": "restaurant",
     "description": {
-      "en": "Small family-run shop serving the town's best bowl of Shan khao soi since early morning.",
-      "my": "မိသားစုပိုင် ဆိုင်ငယ်။ မနက်စောစောကတည်းက မြို့၏ အကောင်းဆုံး ရှမ်းခေါက်ဆွဲကို ရောင်းသည်။"
+      "en": "NCY Hotpot Restaurant & Liquor Store is a restaurant located in Kengtung, Shan State, Myanmar. \nIt offers a variety of delicious foods, including hotpot, grilled meat skewers, and steamed buns.\nThe restaurant is a suitable place for friends and families to gather, enjoy meals together, and spend quality time.\nWith its selection of food and lively atmosphere, NCY Hotpot is a good choice for evening dining and social gatherings. \nThe restaurant’s name also suggests that alcoholic beverages may be available.\nThe restaurant has a rating of **4.3 out of 5 stars**, based on **35 reviews**, and is listed as closing at **9:00 PM**.\n",
+      "my": "NCY Hotpot Restaurant  သည် ကျိုင်းတုံမြို့ရှိ ဟော့ပေါ့နှင့် အစားအသောက်များ သုံးဆောင်နိုင်သော စားသောက်ဆိုင်တစ်ဆိုင်ဖြစ်သည်။\nဆိုင်တွင် အသားကင်တုတ်ထိုးများ၊ အသားကင်အမျိုးမျိုးနှင့် ပေါင်းမုန့်ကဲ့သို့သော အစားအသောက်များကို တွေ့မြင်နိုင်ပြီး သူငယ်ချင်းများ၊ မိသားစုဝင်များနှင့်အတူ စားသောက်အပန်းဖြေရန် သင့်တော်သောနေရာတစ်ခုဖြစ်သည်။\nဆိုင်၏အမည်တွင် Liquor Store ပါဝင်သည့်အတွက် အစားအသောက်များအပြင် အရက်အမျိုးအစားများလည်း ရရှိနိုင်ဖွယ်ရှိသည်။ ညနေပိုင်းတွင် သူငယ်ချင်းများနှင့် စုဝေးစားသောက်ရန်နှင့် အချိန်ကောင်းများကို အတူတကွ ဖြတ်သန်းရန် သင့်တော်ပါသည်။\nဆိုင်သည် ကြယ် ၅ ပွင့်အနက် ၄.၃ ပွင့် ရရှိထားပြီး သုံးသပ်ချက် ၃၅ ခု ရှိသည်။ ဖွင့်ချိန်အချက်အလက်အရ ည ၉ နာရီတွင် ပိတ်ပါသည်။\n"
     },
     "address": {
-      "en": "Near Central Market, Kengtung",
-      "my": "ဗဟိုဈေးအနီး၊ ကျိုင်းတုံ"
+      "en": "ZayTanGyi st, Beside Shwe KaBar Hotel, Kyaing Tong",
+      "my": "စျေးတန်းကြီးလမ်း၊ ရွှေကမ္ဘာဟိုတယ်ဘေး ၊ ကျိုင်းတုံမြို့။"
     },
-    "lat": 21.2931,
-    "lng": 99.598,
-    "openHours": "05:30 - 12:00",
-    "rating": 4.7,
+    "lat": 21.29119588469079,
+    "lng": 99.60356623643733,
+    "phone": "095251181",
+    "openHours": "8:00 AM - 9:00 PM",
+    "rating": 4.3,
     "tags": [
       "noodles",
       "breakfast",
-      "cheap"
+      "cheap",
+      "ဟော့ပေါ့",
+      "hotpot",
+      "စားသောက်ဆိုင်",
+      "အစားအစာ"
     ],
     "images": [
-      "assets/images/restaurant.jpg"
+      "assets/images/NCYhotpot (1).jpg",
+      "assets/images/NCYhotpot (2).jpg",
+      "assets/images/NCYhotpot (3).jpg",
+      "assets/images/NCYhotpot (4).jpg",
+      "assets/images/NCYhotpot (5).jpg",
+      "assets/images/NCYhotpot (6).jpg",
+      "assets/images/NCYhotpot (7).jpg",
+      "assets/images/NCYhotpot (8).jpg",
+      "assets/images/NCYhotpot (9).jpg",
+      "assets/images/NCYhotpot (10).jpg"
     ]
   },
   {
@@ -569,6 +615,235 @@
     ],
     "images": [
       "assets/images/emergency.jpg"
+    ]
+  },
+  {
+    "id": "2chilishan",
+    "name": {
+      "en": "Chilli Shan (七里香)",
+      "my": "ချီလီရှမ်း စားသောက်ဆိုင်"
+    },
+    "category": "restaurant",
+    "description": {
+      "en": "**Chilli Shan (七里香)** is a Sichuan restaurant located in Kengtung, Shan State, Myanmar.\n The restaurant offers a variety of flavorful dishes featuring spicy broths, noodles, vegetables, and other ingredients inspired by Sichuan cuisine. \nCustomers can also enjoy refreshing drinks and tea in a cozy dining environment. \nThe restaurant has a rating of 4.5 out of 5 stars based on 4 reviews. It is a suitable place for people who enjoy spicy food and want to explore different Asian flavors.",
+      "my": "Chilli Shan (七里香) သည် မြန်မာနိုင်ငံ၊ ရှမ်းပြည်နယ်၊ ကျိုင်းတုံမြို့တွင် တည်ရှိသော စီချွမ်အစားအစာဆိုင်တစ်ဆိုင် ဖြစ်ပါသည်။\n ဆိုင်တွင် အစပ်အရသာရှိသော ဟင်းရည်များ၊ ခေါက်ဆွဲများ၊ ဟင်းသီးဟင်းရွက်များနှင့် စီချွမ်အစားအစာပုံစံကို အခြေခံထားသည့် အခြားအစားအစာများကို ရရှိနိုင်ပါသည်။ \nအစားအစာများအပြင် အအေးနှင့် လက်ဖက်ရည်တို့ကိုလည်း သုံးဆောင်နိုင်ပါသည်။ ဆိုင်၏ အဆင့်သတ်မှတ်ချက်မှာ သုံးသပ်ချက် ၄ ခုအပေါ် အခြေခံ၍ ကြယ် ၅ ပွင့်အနက် ၄.၅ ပွင့် ရရှိထားပါသည်။ \nအစပ်အစားအစာများကို နှစ်သက်သူများနှင့် အာရှအစားအစာ အရသာမျိုးစုံကို မြည်းစမ်းလိုသူများအတွက် သင့်တော်သော ဆိုင်တစ်ဆိုင်ဖြစ်ပါသည်။"
+    },
+    "address": {
+      "en": ",Kao Kaw street, Kyaing Tong",
+      "my": "ကျိုင်းတုံစျေးအနောက်ဖက်, ကောက်ကော့ ရပ်ကွက်"
+    },
+    "lat": 21.28529002851277,
+    "lng": 99.6029392629338,
+    "phone": "09423267767",
+    "openHours": "12:00PM-9:OOPM",
+    "rating": 4.5,
+    "tags": [
+      "စားသောက်ဆိုင်",
+      "အစားအစာ",
+      "ထမင်းဆိုင်",
+      "ကော်ဖီ",
+      "တရုတ်အစားအစာ"
+    ],
+    "images": [
+      "assets/images/chilishan (1).jpg",
+      "assets/images/chilishan (2).jpg",
+      "assets/images/chilishan (3).jpg",
+      "assets/images/chilishan (4).jpg",
+      "assets/images/chilishan (5).jpg",
+      "assets/images/chilishan (6).jpg",
+      "assets/images/chilishan (7).jpg",
+      "assets/images/chilishan (8).jpg",
+      "assets/images/chilishan (9).jpg",
+      "assets/images/chilishan (10).jpg",
+      "assets/images/chilishan (11).jpg",
+      "assets/images/chilishan (12).jpg",
+      "assets/images/chilishan (13).jpg",
+      "assets/images/chilishan (14).jpg",
+      "assets/images/chilishan (15).jpg",
+      "assets/images/chilishan (16).jpg"
+    ]
+  },
+  {
+    "id": "cbbank0",
+    "name": {
+      "en": "CB Bank",
+      "my": "CB Bank"
+    },
+    "category": "bank",
+    "description": {
+      "en": "CB Bank – Kyaing Tong is a branch of CB Bank located in Kengtung, Shan State, Myanmar. The bank provides a variety of financial services, including savings accounts, deposits, cash withdrawals, money transfers, and other banking services. Customers can visit the branch to manage their bank accounts and carry out daily financial transactions. CB Bank offers banking services for individuals and businesses, helping customers manage their money and meet their financial needs in the Kyaing Tong area.\n",
+      "my": "CB Bank – Kyaing Tong (စီဘီဘဏ် – ကျိုင်းတုံ) သည် မြန်မာနိုင်ငံ၊ ရှမ်းပြည်နယ်၊ ကျိုင်းတုံမြို့တွင် တည်ရှိသော CB Bank ၏ ဘဏ်ခွဲတစ်ခု ဖြစ်ပါသည်။ ဘဏ်တွင် ငွေစုအကောင့်ဖွင့်ခြင်း၊ ငွေအပ်နှံခြင်း၊ ငွေသားထုတ်ယူခြင်း၊ ငွေလွှဲခြင်းနှင့် အခြားဘဏ်လုပ်ငန်းဆိုင်ရာ ဝန်ဆောင်မှုများကို ရရှိနိုင်ပါသည်။ ဖောက်သည်များသည် ဘဏ်ခွဲသို့ လာရောက်၍ မိမိတို့၏ ဘဏ်အကောင့်များကို စီမံခန့်ခွဲခြင်းနှင့် နေ့စဉ်ငွေကြေးဆိုင်ရာ လုပ်ငန်းများကို ဆောင်ရွက်နိုင်ပါသည်။ CB Bank သည် တစ်ဦးချင်းဖောက်သည်များနှင့် စီးပွားရေးလုပ်ငန်းများအတွက် ဘဏ်ဝန်ဆောင်မှုများကို ပေးအပ်ပြီး ကျိုင်းတုံမြို့ရှိ ဖောက်သည်များ၏ ငွေကြေးဆိုင်ရာ လိုအပ်ချက်များကို ဖြည့်ဆည်းပေးလျက်ရှိပါသည်။\n"
+    },
+    "address": {
+      "en": "2nd Keng Ngam st, near MyoMa Market, Kyaing Tong",
+      "my": "ကျိုင်းငမ်း(၂)လမ်း၊ မြို့မစျေးအနီး၊ ကျိုင်းတုံမြို့။"
+    },
+    "lat": 21.287345554956765,
+    "lng": 99.60420341559484,
+    "phone": "084-23414 084-23523 / 084-23525",
+    "rating": 3.5,
+    "tags": [
+      "ဘဏ်",
+      "ATM",
+      "ငွေသွင်း",
+      "ငွေထုတ်စက်",
+      "ငွေလဲ"
+    ],
+    "images": [
+      "assets/images/CB (1).jpg",
+      "assets/images/CB (2).jpg"
+    ]
+  },
+  {
+    "id": "12352akaungkyite",
+    "name": {
+      "en": "A Kaung Kyite BBQ & Restaurant",
+      "my": "အကောင်းကြိုက် စားသောက်ဆိုင်"
+    },
+    "category": "restaurant",
+    "description": {
+      "en": "AKK BBQ & Restaurant is a Chinese restaurant located in Kengtung, Shan State, Myanmar.\nThe restaurant offers a variety of delicious dishes, including barbecue, stir-fried seafood, and mixed meat and vegetable dishes. \nThe food is presented attractively with colorful ingredients, making it appealing to customers who enjoy flavorful meals.\nWith its casual dining atmosphere, AKK BBQ & Restaurant is a suitable place for friends, families, and food lovers to enjoy meals together. \nCustomers can visit the restaurant for lunch or dinner and experience a variety of Chinese-style dishes. \nThe restaurant has a rating of **4.5 out of 5 stars**, based on **2 reviews**, and is listed as closing at **11:00 PM**.\n",
+      "my": "AKK BBQ & Restaurant သည် မြန်မာနိုင်ငံ၊ ရှမ်းပြည်နယ်၊ ကျိုင်းတုံမြို့တွင် တည်ရှိသော တရုတ်အစားအစာများ ရရှိနိုင်သည့် စားသောက်ဆိုင်တစ်ဆိုင်ဖြစ်သည်။\nဆိုင်တွင် အသားကင်အမျိုးမျိုး၊ ပင်လယ်စာကြော်၊ အသားနှင့် ဟင်းသီးဟင်းရွက်များ ရောနှောချက်ပြုတ်ထားသော ဟင်းလျာများအပါအဝင် အရသာရှိသော အစားအသောက်မျိုးစုံကို သုံးဆောင်နိုင်ပါသည်။\nအရောင်အသွေးစုံလင်သော ပါဝင်ပစ္စည်းများဖြင့် လှပစွာပြင်ဆင်ထားသည့် ဟင်းလျာများကြောင့် အစားအသောက်နှစ်သက်သူများအတွက် စိတ်ဝင်စားဖွယ်ကောင်းသော ဆိုင်တစ်ဆိုင်ဖြစ်သည်။\nပေါ့ပေါ့ပါးပါးနှင့် သက်သောင့်သက်သာရှိသော စားသောက်မှုပတ်ဝန်းကျင်ကြောင့် မိသားစုဝင်များ၊ သူငယ်ချင်းများနှင့်အတူ စားသောက်ရန် သင့်တော်ပါသည်။ နေ့လယ်စာနှင့် ညစာများကိုလည်း လာရောက်သုံးဆောင်နိုင်ပါသည်။\nဆိုင်သည် ကြယ် ၅ ပွင့်အနက် ၄.၅ ပွင့် ရရှိထားပြီး သုံးသပ်ချက် ၂ ခု ရှိပါသည်။ ဆိုင်၏ဖွင့်ချိန်အချက်အလက်အရ ည ၁၁ နာရီတွင် ပိတ်ပါသည်။\n"
+    },
+    "address": {
+      "en": "Mong Lah - Airport Road, Kyaing Tong",
+      "my": "မိုင်းလားလမ်း-လေယာဉ်ကွင်းလမ်း၊ ကျိုင်းတုံမြို့"
+    },
+    "lat": 21.299189523306772,
+    "lng": 99.6172577654428,
+    "phone": "09 660 200061",
+    "openHours": "11:00 AM - 11:00 PM",
+    "rating": 4.1,
+    "tags": [
+      "စားသောက်ဆိုင်",
+      "ဘာဘီကျူး",
+      "ထမင်းဆိုင်",
+      "အစားအစာ",
+      "ဘား"
+    ],
+    "images": [
+      "assets/images/akaungkyite (1).jpg",
+      "assets/images/akaungkyite (2).jpg",
+      "assets/images/akaungkyite (3).jpg",
+      "assets/images/akaungkyite (4).jpg",
+      "assets/images/akaungkyite (5).jpg",
+      "assets/images/akaungkyite (6).jpg",
+      "assets/images/akaungkyite (7).jpg",
+      "assets/images/akaungkyite (8).jpg",
+      "assets/images/akaungkyite (9).jpg",
+      "assets/images/akaungkyite (10).jpg",
+      "assets/images/akaungkyite (11).jpg",
+      "assets/images/akaungkyite (12).jpg",
+      "assets/images/akaungkyite (13).jpg"
+    ]
+  },
+  {
+    "id": "cafe21",
+    "name": {
+      "en": "CAFE 21",
+      "my": "CAFE 21"
+    },
+    "category": "restaurant",
+    "description": {
+      "en": "Cafe 21 is a popular café located on Zay Dan Loang Street in Kengtung, Shan State, Myanmar.\nIt offers a cozy and welcoming atmosphere where customers can relax, enjoy delicious food, and spend quality time with friends and family. \nThe café serves a variety of drinks, including coffee, matcha latte, and fresh juice, along with snacks and food such as pizza and desserts. \nWith its comfortable setting and attractive presentation, Cafe 21 is a suitable place for meeting friends, taking photos, studying, or enjoying a relaxing break.\nThe café has a rating of 4.1 stars from 203 reviews and offers a pleasant café experience for visitors.\n",
+      "my": "Cafe 21 သည် မြန်မာနိုင်ငံ၊ ရှမ်းပြည်နယ်၊ ကျိုင်းတုံမြို့ရှိ ဇေဒန်လောင်လမ်းပေါ်တွင် တည်ရှိသော လူကြိုက်များသည့် ကော်ဖီဆိုင်တစ်ဆိုင်ဖြစ်သည်။\nဆိုင်တွင် သက်သောင့်သက်သာရှိပြီး နွေးထွေးဖော်ရွေသော ပတ်ဝန်းကျင်ကို ဖန်တီးပေးထားသဖြင့် မိတ်ဆွေများ၊ မိသားစုဝင်များနှင့်အတူ အချိန်ကောင်းများကို ဖြတ်သန်းနိုင်ပါသည်။\nကော်ဖီ၊ မတ်ချာလတ်တေး (Matcha Latte)၊ သစ်သီးဖျော်ရည်အမျိုးမျိုးအပြင် ပီဇာနှင့် အချိုပွဲများကဲ့သို့သော အစားအသောက်များကိုလည်း ရရှိနိုင်ပါသည်။ \nဆိုင်၏ သက်သောင့်သက်သာရှိသော အပြင်အဆင်နှင့် စားသောက်ဖွယ်ရာများကို လှပစွာပြင်ဆင်ပေးမှုတို့ကြောင့် မိတ်ဆွေများနှင့် တွေ့ဆုံရန်၊ ဓာတ်ပုံရိုက်ရန်၊ စာလေ့လာရန် သို့မဟုတ် အနားယူအပန်းဖြေရန် သင့်တော်သော နေရာတစ်ခုဖြစ်သည်။\nCafe 21 သည် ကြယ် ၅ ပွင့်အနက် ၄.၁ ပွင့် ရရှိထားပြီး သုံးသပ်ချက် ၂၀၃ ခုရှိသည်။ ထို့ကြောင့် ကျိုင်းတုံမြို့တွင် ကော်ဖီနှင့် အစားအသောက်များကို သုံးဆောင်ရင်း အေးအေးဆေးဆေး အနားယူလိုသူများအတွက် သွားရောက်လည်ပတ်သင့်သော ကော်ဖီဆိုင်တစ်ဆိုင်ဖြစ်ပါသည်။\n"
+    },
+    "address": {
+      "en": "ZayTanGyi Street, Ward(3) , Kyaing Tong",
+      "my": "စျေးတန်းကြီးလမ်း၊ ရပ်ကွက်(၃)၊ ကျိုင်းတုံမြို့။"
+    },
+    "lat": 21.290131640074538,
+    "lng": 99.60435861090025,
+    "phone": "09253713655",
+    "openHours": "9:00 AM - 9:00 PM",
+    "rating": 4.1,
+    "tags": [
+      "စားသောက်ဆိုင်",
+      "ကဖေး",
+      "ကော်ဖီ",
+      "အစားအစာ"
+    ],
+    "images": [
+      "assets/images/Cafe21 (1).jpg",
+      "assets/images/Cafe21 (2).jpg",
+      "assets/images/Cafe21 (3).jpg",
+      "assets/images/Cafe21 (4).jpg",
+      "assets/images/Cafe21 (5).jpg",
+      "assets/images/Cafe21 (6).jpg",
+      "assets/images/Cafe21 (7).jpg",
+      "assets/images/Cafe21 (8).jpg",
+      "assets/images/Cafe21 (9).jpg",
+      "assets/images/Cafe21 (10).jpg",
+      "assets/images/Cafe21 (11).jpg",
+      "assets/images/Cafe21 (12).jpg",
+      "assets/images/Cafe21 (13).jpg",
+      "assets/images/Cafe21 (14).jpg",
+      "assets/images/Cafe21 (15).jpg",
+      "assets/images/Cafe21 (16).jpg",
+      "assets/images/Cafe21 (17).jpg",
+      "assets/images/Cafe21 (18).jpg"
+    ]
+  },
+  {
+    "id": "akha-market",
+    "name": {
+      "en": "Akha/MyoThit Market",
+      "my": "အာခါစျေး (မြို့သစ်စျေး)"
+    },
+    "category": "market",
+    "description": {
+      "en": "An open-air street market on the east side of town. Photos show vegetables, fruit and cut flowers sold from stalls and ground mats.",
+      "my": "မြို့၏အရှေ့ဘက်ခြမ်းရှိ လေယာဉ်ကွင်းလမ်းဘေး ညနေစျေးတစ်ခု ဖြစ်သည်။ ဟင်းသီးဟင်းရွက်များ၊ သစ်သီးဝလံများနှင့် အဝတ်အထည်အမျိုးအမျိုး. အသားငါးနှင့် စားသောက်ဖွယ်ရာ မျာ၊ ဘုရားပန်းများကို စျေးဆိုင်ခန်းများနှင့် မြေပြင်ခင်းဖျာများပေါ်မှ ရောင်းချနေသည်ကို တွေ့ရသည်။"
+    },
+    "address": {
+      "en": "Airport Road, Kyaing Tong",
+      "my": "လေယာဉ်ကွင်းလမ်း၊ ကျိုင်းတုံမြို့။"
+    },
+    "lat": 21.298977107779596,
+    "lng": 99.6161172136775,
+    "openHours": "3:00 PM - 7:00PM",
+    "tags": [
+      "ဈေး",
+      "ဈေးတန်း",
+      "ဈေးဝယ်",
+      "ကုန်ပစ္စည်း"
+    ],
+    "images": [
+      "assets/images/kengtung-akha-1-exterior-view (1).jpg",
+      "assets/images/kengtung-akha-2-interior-view (1).jpg",
+      "assets/images/kengtung-akha-3-products (1).jpg",
+      "assets/images/kengtung-akha-4-market-activity.jpg",
+      "assets/images/kengtung-akha-5-best-overall-view.jpg"
+    ]
+  },
+  {
+    "id": "yannkham-zay",
+    "name": {
+      "en": "Yann Kham Zay",
+      "my": "ယန်းခမ်းစျေး"
+    },
+    "category": "market",
+    "description": {
+      "en": "Yan Kham Market is an early morning market located near the highway bus station, making it conveniently accessible for travelers to stroll through and shop. Visitors can purchase a variety of items, including food, clothing, and fresh vegetables.",
+      "my": "ယန်းခမ်းစျေးသည် မနက်ခင်းအစော စျေးတစ်ခုဖြစ်ပြီး အဝေးပြေးကားကြီးကွင်းအနီးတွင်တည်ရှိသောကြောင့် ခရီးသွားများ အလွယ်တကူ စျေးအတွင်းလှည့်ပတ်ဝယ်ယူနိုင်သော စျေးတစ်ခုဖြစ်သည်။ အစားအသောက် ၊ အဝတ်အထည်၊ ဟင်းသီးဟင်းရွက်များအား ဝယ်ယူနိုင်ပါသည်။"
+    },
+    "address": {
+      "en": "Taunggyi-Tachileik Road, near High-way Transportation, Kyaing Tong",
+      "my": "တောင်ကြီး-တာချီလိတ်လမ်း၊ အဝေးပြေး ကားကြီးကွင်းအနီး၊ ကျိုင်းတုံမြို့။"
+    },
+    "lat": 21.288883913948073,
+    "lng": 99.59304844098318,
+    "openHours": "5:00AM - 8:00 AM",
+    "tags": [
+      "ဈေး",
+      "ဈေးတန်း",
+      "ဈေးဝယ်",
+      "ကုန်ပစ္စည်း"
+    ],
+    "images": [
+      "assets/images/kengtung-yankham-1-exterior-view.jpg",
+      "assets/images/kengtung-yankham-2-interior-view.jpg",
+      "assets/images/kengtung-yankham-3-market-activity.jpg"
     ]
   }
 ]
