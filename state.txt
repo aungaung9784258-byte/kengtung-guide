@@ -1,0 +1,92 @@
+3d0c129 before gallery fix
+ac9b7bf before detail screen fix
+628b1c5 ignore snapshot.txt
+6f3cfbd before today+villages feature
+f0e92f7 Kengtung Guide: Flutter travel app for Kengtung, Shan State
+ 
+On branch main
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	state.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+ 
+D:\projects\kengtung-guide\lib\app
+D:\projects\kengtung-guide\lib\core
+D:\projects\kengtung-guide\lib\data
+D:\projects\kengtung-guide\lib\features
+D:\projects\kengtung-guide\lib\l10n
+D:\projects\kengtung-guide\lib\main.dart
+D:\projects\kengtung-guide\lib\shared
+D:\projects\kengtung-guide\lib\splashScreen.dart
+D:\projects\kengtung-guide\lib\app\app.dart
+D:\projects\kengtung-guide\lib\app\router.dart
+D:\projects\kengtung-guide\lib\app\shell.dart
+D:\projects\kengtung-guide\lib\app\theme
+D:\projects\kengtung-guide\lib\app\theme\app_colors.dart
+D:\projects\kengtung-guide\lib\app\theme\app_motion.dart
+D:\projects\kengtung-guide\lib\app\theme\app_theme.dart
+D:\projects\kengtung-guide\lib\core\providers
+D:\projects\kengtung-guide\lib\core\services
+D:\projects\kengtung-guide\lib\core\providers\app_providers.dart
+D:\projects\kengtung-guide\lib\core\providers\today_providers.dart
+D:\projects\kengtung-guide\lib\core\services\basemap.dart
+D:\projects\kengtung-guide\lib\core\services\cache_size_io.dart
+D:\projects\kengtung-guide\lib\core\services\cache_size_stub.dart
+D:\projects\kengtung-guide\lib\core\services\connectivity_service.dart
+D:\projects\kengtung-guide\lib\core\services\location_service.dart
+D:\projects\kengtung-guide\lib\core\services\market_cycle.dart
+D:\projects\kengtung-guide\lib\core\services\myanmar_text.dart
+D:\projects\kengtung-guide\lib\core\services\navigation_service.dart
+D:\projects\kengtung-guide\lib\core\services\offline_map_service.dart
+D:\projects\kengtung-guide\lib\core\services\routing_service.dart
+D:\projects\kengtung-guide\lib\core\services\search_service.dart
+D:\projects\kengtung-guide\lib\core\services\weather_service.dart
+D:\projects\kengtung-guide\lib\data\models
+D:\projects\kengtung-guide\lib\data\repositories
+D:\projects\kengtung-guide\lib\data\sources
+D:\projects\kengtung-guide\lib\data\models\about_content.dart
+D:\projects\kengtung-guide\lib\data\models\place.dart
+D:\projects\kengtung-guide\lib\data\models\place_category.dart
+D:\projects\kengtung-guide\lib\data\models\village.dart
+D:\projects\kengtung-guide\lib\data\repositories\guide_repository.dart
+D:\projects\kengtung-guide\lib\data\repositories\place_repository.dart
+D:\projects\kengtung-guide\lib\features\about
+D:\projects\kengtung-guide\lib\features\category
+D:\projects\kengtung-guide\lib\features\detail
+D:\projects\kengtung-guide\lib\features\favourites
+D:\projects\kengtung-guide\lib\features\home
+D:\projects\kengtung-guide\lib\features\map
+D:\projects\kengtung-guide\lib\features\onboarding
+D:\projects\kengtung-guide\lib\features\settings
+D:\projects\kengtung-guide\lib\features\today
+D:\projects\kengtung-guide\lib\features\villages
+D:\projects\kengtung-guide\lib\features\about\about_kengtung_screen.dart
+D:\projects\kengtung-guide\lib\features\about\widgets
+D:\projects\kengtung-guide\lib\features\about\widgets\about_entry_card.dart
+D:\projects\kengtung-guide\lib\features\about\widgets\frosted_photo.dart
+D:\projects\kengtung-guide\lib\features\detail\place_detail_screen.dart
+D:\projects\kengtung-guide\lib\features\favourites\favourites_screen.dart
+D:\projects\kengtung-guide\lib\features\home\home_screen.dart
+D:\projects\kengtung-guide\lib\features\map\map_screen.dart
+D:\projects\kengtung-guide\lib\features\onboarding\welcome_screen.dart
+D:\projects\kengtung-guide\lib\features\settings\credits_card.dart
+D:\projects\kengtung-guide\lib\features\settings\offline_maps_card.dart
+D:\projects\kengtung-guide\lib\features\settings\settings_screen.dart
+D:\projects\kengtung-guide\lib\features\today\today_screen.dart
+D:\projects\kengtung-guide\lib\features\villages\villages_screen.dart
+D:\projects\kengtung-guide\lib\features\villages\village_detail_screen.dart
+D:\projects\kengtung-guide\lib\l10n\app_localizations.dart
+D:\projects\kengtung-guide\lib\shared\widgets
+D:\projects\kengtung-guide\lib\shared\widgets\cached_tile_provider.dart
+D:\projects\kengtung-guide\lib\shared\widgets\category_chips.dart
+D:\projects\kengtung-guide\lib\shared\widgets\confidence_badge.dart
+D:\projects\kengtung-guide\lib\shared\widgets\motion_widgets.dart
+D:\projects\kengtung-guide\lib\shared\widgets\parallax.dart
+D:\projects\kengtung-guide\lib\shared\widgets\photo_gallery.dart
+D:\projects\kengtung-guide\lib\shared\widgets\place_card.dart
+D:\projects\kengtung-guide\lib\shared\widgets\place_image.dart
+D:\projects\kengtung-guide\lib\shared\widgets\weather_badge.dart

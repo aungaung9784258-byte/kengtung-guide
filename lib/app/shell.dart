@@ -15,21 +15,7 @@ class AppShell extends StatelessWidget {
     final t = context.l10n;
 
     return Scaffold(
-      body: AnimatedSwitcher(
-        duration: AppMotion.base,
-        switchInCurve: AppMotion.easeOutExpoCurve,
-        transitionBuilder: (child, anim) => FadeTransition(
-          opacity: anim,
-          child: ScaleTransition(
-            scale: Tween(begin: 0.99, end: 1.0).animate(anim),
-            child: child,
-          ),
-        ),
-        child: KeyedSubtree(
-          key: ValueKey(navigationShell.currentIndex),
-          child: navigationShell,
-        ),
-      ),
+      body: navigationShell,  
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
           color: Theme.of(context).colorScheme.surface,

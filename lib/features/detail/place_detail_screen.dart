@@ -9,6 +9,7 @@ import '../../core/providers/app_providers.dart';
 import '../../data/models/place.dart';
 import '../../l10n/app_localizations.dart';
 import '../../shared/widgets/motion_widgets.dart';
+import '../../shared/widgets/photo_gallery.dart';
 import '../../shared/widgets/place_image.dart';
 
 class PlaceDetailScreen extends ConsumerStatefulWidget {
@@ -63,40 +64,11 @@ class _PlaceDetailScreenState extends ConsumerState<PlaceDetailScreen> {
             physics: const BouncingScrollPhysics(
                 parent: AlwaysScrollableScrollPhysics()),
             slivers: [
-              // ---------- Parallax photo hero ----------
+              // ---------- Photo hero (plain, tap to enlarge) ----------
               SliverToBoxAdapter(
                 child: SizedBox(
                   height: _heroHeight,
-                  child: Stack(
-                    fit: StackFit.expand,
-                    children: [
-                      // Image drifts at 35% of scroll speed and zooms slightly
-                      Transform.translate(
-                        offset: Offset(0, _offset * AppMotion.parallaxFactor),
-                        child: Transform.scale(
-                          scale: 1 + (_offset < 0 ? -_offset / 400 : 0),
-                          child: Hero(
-                            tag: 'place-img-${place.id}',
-                            child: PlaceImage(place: place),
-                          ),
-                        ),
-                      ),
-                      const Positioned.fill(
-                        child: DecoratedBox(
-                          decoration:
-                              BoxDecoration(gradient: AppColors.heroScrim),
-                        ),
-                      ),
-                      // Thumbnail strip floats above the sheet
-                      if (place.images.length > 1)
-                        Positioned(
-                          left: 20,
-                          right: 20,
-                          bottom: 50,
-                          child: _ThumbStrip(place: place),
-                        ),
-                    ],
-                  ),
+                  child: _HeroCarousel(place: place),
                 ),
               ),
 
@@ -110,10 +82,23 @@ class _PlaceDetailScreenState extends ConsumerState<PlaceDetailScreen> {
                       borderRadius: const BorderRadius.vertical(
                           top: Radius.circular(34)),
                     ),
-                    padding: const EdgeInsets.fromLTRB(20, 26, 20, 140),
+                    padding: const EdgeInsets.fromLTRB(20, 14, 20, 140),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        // Grab handle: a clear break between photo and text,
+                        // so the title no longer looks glued to the image.
+                        Center(
+                          child: Container(
+                            width: 42,
+                            height: 4,
+                            decoration: BoxDecoration(
+                              color: cs.onSurface.withValues(alpha: 0.18),
+                              borderRadius: BorderRadius.circular(3),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 24),
                         RevealIn(
                           index: 0,
                           child: Row(
@@ -274,6 +259,143 @@ class _PlaceDetailScreenState extends ConsumerState<PlaceDetailScreen> {
   }
 }
 
+/// ---------------------------------------------------------------------------
+/// Looping photo carousel used at the top of the detail screen.
+///
+///  * swipe right-to-left to move forward, left-to-right to go back
+///  * after the last photo it wraps round to the first one, endlessly
+///  * tap anywhere to open the full-screen viewer (pinch zoom, drag to close)
+///
+/// The loop is done by starting the PageView in the middle of a very large
+/// virtual range and taking `index % photoCount`. There is no jump or flicker
+/// at the seam because the user never actually reaches either end.
+/// ---------------------------------------------------------------------------
+class _HeroCarousel extends StatefulWidget {
+  const _HeroCarousel({required this.place});
+
+  final Place place;
+
+  @override
+  State<_HeroCarousel> createState() => _HeroCarouselState();
+}
+
+class _HeroCarouselState extends State<_HeroCarousel> {
+  /// Far enough from both ends that it can never be reached by swiping.
+  static const _origin = 100000;
+
+  late final PageController _page = PageController(initialPage: _origin);
+  int _index = 0;
+
+  int get _count =>
+      widget.place.images.isEmpty ? 1 : widget.place.images.length;
+
+  @override
+  void dispose() {
+    _page.dispose();
+    super.dispose();
+  }
+
+  void _openFullscreen() {
+    Navigator.of(context).push(
+      PageRouteBuilder(
+        opaque: false,
+        barrierColor: Colors.black,
+        transitionDuration: AppMotion.base,
+        pageBuilder: (_, a, __) => FadeTransition(
+          opacity: a,
+          child: FullscreenGallery(place: widget.place, initialIndex: _index),
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final single = _count <= 1;
+
+    return Stack(
+      fit: StackFit.expand,
+      children: [
+        PageView.builder(
+          controller: _page,
+          physics: single
+              ? const NeverScrollableScrollPhysics()
+              : const BouncingScrollPhysics(),
+          onPageChanged: (i) => setState(() => _index = i % _count),
+          itemBuilder: (_, i) {
+            final real = i % _count;
+
+            Widget photo = PlaceImage(
+              place: widget.place,
+              index: real,
+              decodeWidth: 1080,
+            );
+
+            // Exactly one page in the tree carries the Hero tag, so it can
+            // never collide with itself while scrolling.
+            if (i == _origin) {
+              photo = Hero(
+                tag: 'place-img-${widget.place.id}',
+                child: photo,
+              );
+            }
+
+            return GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onTap: _openFullscreen,
+              child: photo,
+            );
+          },
+        ),
+
+        // Page dots + counter, bottom-right, clear of the content sheet.
+        if (!single)
+          Positioned(
+            right: 18,
+            bottom: 52,
+            child: IgnorePointer(
+              child: Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 11, vertical: 7),
+                decoration: BoxDecoration(
+                  color: Colors.black.withValues(alpha: 0.42),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    for (var i = 0; i < _count; i++)
+                      AnimatedContainer(
+                        duration: AppMotion.fast,
+                        margin: const EdgeInsets.symmetric(horizontal: 2.5),
+                        width: i == _index ? 16 : 6,
+                        height: 6,
+                        decoration: BoxDecoration(
+                          color: i == _index
+                              ? Colors.white
+                              : Colors.white.withValues(alpha: 0.45),
+                          borderRadius: BorderRadius.circular(3),
+                        ),
+                      ),
+                    const SizedBox(width: 8),
+                    Text(
+                      '${_index + 1}/$_count',
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 11,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+      ],
+    );
+  }
+}
+
 class _FloatingTopBar extends StatelessWidget {
   const _FloatingTopBar({
     required this.progress,
@@ -351,35 +473,6 @@ class _CircleIcon extends StatelessWidget {
   }
 }
 
-class _ThumbStrip extends StatelessWidget {
-  const _ThumbStrip({required this.place});
-  final Place place;
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 62,
-      child: ListView.separated(
-        scrollDirection: Axis.horizontal,
-        physics: const BouncingScrollPhysics(),
-        itemCount: place.images.length,
-        separatorBuilder: (_, __) => const SizedBox(width: 10),
-        itemBuilder: (_, i) => RevealIn(
-          index: i,
-          scaleFrom: 0.8,
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(12),
-            child: SizedBox(
-              width: 72,
-              child: PlaceImage(place: place, index: i),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
 class _Pill extends StatelessWidget {
   const _Pill({required this.icon, required this.label, required this.color});
   final IconData icon;
@@ -426,3 +519,4 @@ class _CallRow extends StatelessWidget {
 extension _FirstOrNull<E> on Iterable<E> {
   E? get firstOrNull => isEmpty ? null : first;
 }
+

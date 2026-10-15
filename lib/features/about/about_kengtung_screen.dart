@@ -125,8 +125,8 @@ class _Section extends StatelessWidget {
     final cs = Theme.of(context).colorScheme;
 
     final bodyStyle = TextStyle(
-      fontSize: _my ? 13.5 : 14,
-      height: _my ? 1.95 : 1.68,
+      fontSize: _my ? 15.5 : 16,
+      height: _my ? 1.95 : 1.72,
       color: cs.onSurface.withValues(alpha: 0.88),
     );
 
@@ -201,7 +201,7 @@ class _Section extends StatelessWidget {
           pad(Text(
             _t(section.disclaimer!),
             style: TextStyle(
-              fontSize: 10.5,
+              fontSize: 11.5,
               height: 1.6,
               fontStyle: FontStyle.italic,
               color: cs.onSurfaceVariant,
@@ -394,7 +394,7 @@ class _Timeline extends StatelessWidget {
                         Text(
                           entries[i].year,
                           style: TextStyle(
-                            fontSize: 12.5,
+                            fontSize: 14,
                             fontWeight: FontWeight.w800,
                             color: cs.onSurface,
                           ),
@@ -403,7 +403,7 @@ class _Timeline extends StatelessWidget {
                         Text(
                           my ? entries[i].text.my : entries[i].text.en,
                           style: TextStyle(
-                            fontSize: my ? 12.5 : 13,
+                            fontSize: my ? 14.5 : 15,
                             height: my ? 1.9 : 1.55,
                             color: cs.onSurfaceVariant,
                           ),
@@ -488,7 +488,7 @@ class _NameGrid extends StatelessWidget {
                     child: Text(
                       names[i].script,
                       style: TextStyle(
-                        fontSize: 11,
+                        fontSize: 12.5,
                         height: 1.7,
                         color: cs.onSurfaceVariant,
                       ),
@@ -498,7 +498,7 @@ class _NameGrid extends StatelessWidget {
                     child: Text(
                       names[i].text,
                       style: TextStyle(
-                        fontSize: 15,
+                        fontSize: 16.5,
                         height: 1.7,
                         fontWeight: FontWeight.w700,
                         color: cs.onSurface,
@@ -581,8 +581,8 @@ class _Landmarks extends StatelessWidget {
                 Text(
                   my ? l.name.my : l.name.en,
                   style: TextStyle(
-                    fontSize: 14,
-                    height: 1.6,
+                    fontSize: 15.5,
+                    height: 1.65,
                     fontWeight: FontWeight.w800,
                     color: cs.onSurface,
                   ),
@@ -591,7 +591,7 @@ class _Landmarks extends StatelessWidget {
                 Text(
                   my ? l.text.my : l.text.en,
                   style: TextStyle(
-                    fontSize: my ? 12.5 : 13,
+                    fontSize: my ? 14.5 : 15,
                     height: my ? 1.9 : 1.55,
                     color: cs.onSurfaceVariant,
                   ),
@@ -640,7 +640,7 @@ class _Rows extends StatelessWidget {
                       Text(
                         my ? r.title.my : r.title.en,
                         style: TextStyle(
-                          fontSize: 13.5,
+                          fontSize: 14.5,
                           height: 1.6,
                           fontWeight: FontWeight.w800,
                           color: cs.onSurface,
@@ -767,7 +767,7 @@ class _SourcesBlock extends StatelessWidget {
             Text(
               '✎  ${my ? sources.correction.my : sources.correction.en}',
               style: const TextStyle(
-                fontSize: 12.5,
+                fontSize: 14,
                 height: 1.6,
                 fontWeight: FontWeight.w700,
                 color: AppColors.jade,
@@ -822,3 +822,4 @@ class _ErrorView extends StatelessWidget {
         ),
       );
 }
+

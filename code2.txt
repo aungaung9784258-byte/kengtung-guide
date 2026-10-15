@@ -1,0 +1,1261 @@
+===FILE lib\features\detail\place_detail_screen.dart=== 
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+import '../../app/theme/app_colors.dart';
+import '../../app/theme/app_motion.dart';
+import '../../core/providers/app_providers.dart';
+import '../../data/models/place.dart';
+import '../../l10n/app_localizations.dart';
+import '../../shared/widgets/motion_widgets.dart';
+import '../../shared/widgets/place_image.dart';
+
+class PlaceDetailScreen extends ConsumerStatefulWidget {
+  const PlaceDetailScreen({super.key, required this.placeId});
+  final String placeId;
+
+  @override
+  ConsumerState<PlaceDetailScreen> createState() => _PlaceDetailScreenState();
+}
+
+class _PlaceDetailScreenState extends ConsumerState<PlaceDetailScreen> {
+  final _scroll = ScrollController();
+  double _offset = 0;
+
+  static const _heroHeight = 380.0;
+
+  @override
+  void initState() {
+    super.initState();
+    _scroll.addListener(() {
+      if (mounted) setState(() => _offset = _scroll.offset);
+    });
+  }
+
+  @override
+  void dispose() {
+    _scroll.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final t = context.l10n;
+    final lang = ref.watch(langProvider);
+    final places = ref.watch(placesProvider).value ?? const <Place>[];
+    final place = places.where((p) => p.id == widget.placeId).firstOrNull;
+
+    if (place == null) {
+      return const Scaffold(body: Center(child: CircularProgressIndicator()));
+    }
+
+    final isFav = ref.watch(favouritesProvider).contains(place.id);
+    final progress = (_offset / _heroHeight).clamp(0.0, 1.0);
+    final cs = Theme.of(context).colorScheme;
+
+    return Scaffold(
+      extendBodyBehindAppBar: true,
+      body: Stack(
+        children: [
+          CustomScrollView(
+            controller: _scroll,
+            physics: const BouncingScrollPhysics(
+                parent: AlwaysScrollableScrollPhysics()),
+            slivers: [
+              // ---------- Parallax photo hero ----------
+              SliverToBoxAdapter(
+                child: SizedBox(
+                  height: _heroHeight,
+                  child: Stack(
+                    fit: StackFit.expand,
+                    children: [
+                      // Image drifts at 35% of scroll speed and zooms slightly
+                      Transform.translate(
+                        offset: Offset(0, _offset * AppMotion.parallaxFactor),
+                        child: Transform.scale(
+                          scale: 1 + (_offset < 0 ? -_offset / 400 : 0),
+                          child: Hero(
+                            tag: 'place-img-${place.id}',
+                            child: PlaceImage(place: place),
+                          ),
+                        ),
+                      ),
+                      const Positioned.fill(
+                        child: DecoratedBox(
+                          decoration:
+                              BoxDecoration(gradient: AppColors.heroScrim),
+                        ),
+                      ),
+                      // Thumbnail strip floats above the sheet
+                      if (place.images.length > 1)
+                        Positioned(
+                          left: 20,
+                          right: 20,
+                          bottom: 50,
+                          child: _ThumbStrip(place: place),
+                        ),
+                    ],
+                  ),
+                ),
+              ),
+
+              // ---------- Rounded content sheet that slides over the photo ----------
+              SliverToBoxAdapter(
+                child: Transform.translate(
+                  offset: const Offset(0, -34),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).scaffoldBackgroundColor,
+                      borderRadius: const BorderRadius.vertical(
+                          top: Radius.circular(34)),
+                    ),
+                    padding: const EdgeInsets.fromLTRB(20, 26, 20, 140),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        RevealIn(
+                          index: 0,
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  place.name(lang),
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headlineMedium,
+                                ),
+                              ),
+                              if (place.rating != null)
+                                Container(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 10, vertical: 6),
+                                  decoration: BoxDecoration(
+                                    color: AppColors.gold.withValues(alpha: 0.15),
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      const Icon(Icons.star_rounded,
+                                          size: 16, color: AppColors.gold),
+                                      const SizedBox(width: 4),
+                                      Text(
+                                        place.rating!.toStringAsFixed(1),
+                                        style: const TextStyle(
+                                            fontWeight: FontWeight.w700,
+                                            fontSize: 13),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                        RevealIn(
+                          index: 1,
+                          child: Row(
+                            children: [
+                              const Icon(Icons.place_rounded,
+                                  size: 15, color: AppColors.jade),
+                              const SizedBox(width: 5),
+                              Expanded(
+                                child: Text(place.address(lang),
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodySmall),
+                              ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(height: 16),
+                        RevealIn(
+                          index: 2,
+                          child: Wrap(
+                            spacing: 8,
+                            runSpacing: 8,
+                            children: [
+                              _Pill(
+                                icon: place.category.icon,
+                                label: t.t(place.category.labelKey),
+                                color: place.category.color,
+                              ),
+                              if (place.openHours != null)
+                                _Pill(
+                                  icon: Icons.schedule_rounded,
+                                  label: place.openHours!,
+                                  color: cs.onSurface.withValues(alpha: 0.55),
+                                ),
+                              ...place.tags.map((tag) => _Pill(
+                                    icon: Icons.sell_rounded,
+                                    label: tag,
+                                    color: cs.onSurface.withValues(alpha: 0.4),
+                                  )),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(height: 26),
+                        RevealIn(
+                          index: 3,
+                          child: Text(t.description,
+                              style:
+                                  Theme.of(context).textTheme.titleMedium),
+                        ),
+                        const SizedBox(height: 8),
+                        RevealIn(
+                          index: 4,
+                          child: Text(place.description(lang),
+                              style: Theme.of(context).textTheme.bodyMedium),
+                        ),
+                        if (place.phone != null &&
+                            place.phone!.isNotEmpty) ...[
+                          const SizedBox(height: 22),
+                          RevealIn(
+                            index: 5,
+                            child: _CallRow(phone: place.phone!),
+                          ),
+                        ],
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+
+          // ---------- Top bar that fades in a solid background on scroll ----------
+          _FloatingTopBar(
+            progress: progress,
+            title: place.name(lang),
+            isFav: isFav,
+            onBack: () => context.pop(),
+            onFav: () =>
+                ref.read(favouritesProvider.notifier).toggle(place.id),
+          ),
+
+          // ---------- Sticky action bar ----------
+          Positioned(
+            left: 20,
+            right: 20,
+            bottom: 24,
+            child: RevealIn(
+              delay: AppMotion.base,
+              offset: const Offset(0, 0.5),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: FilledButton.icon(
+                      onPressed: () => context.go('/map?focus=${place.id}'),
+                      icon: const Icon(Icons.near_me_rounded, size: 18),
+                      label: Text(t.viewInMap),
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: FilledButton.icon(
+                      style: FilledButton.styleFrom(
+                          backgroundColor: AppColors.gold,
+                          foregroundColor: const Color(0xFF3A2600)),
+                      onPressed: () =>
+                          context.go('/map?focus=${place.id}&route=1'),
+                      icon: const Icon(Icons.route_rounded, size: 18),
+                      label: Text(t.findPath),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _FloatingTopBar extends StatelessWidget {
+  const _FloatingTopBar({
+    required this.progress,
+    required this.title,
+    required this.isFav,
+    required this.onBack,
+    required this.onFav,
+  });
+
+  final double progress;
+  final String title;
+  final bool isFav;
+  final VoidCallback onBack;
+  final VoidCallback onFav;
+
+  @override
+  Widget build(BuildContext context) {
+    final bg = Theme.of(context).scaffoldBackgroundColor;
+    return AnimatedContainer(
+      duration: AppMotion.micro,
+      height: MediaQuery.of(context).padding.top + 62,
+      color: bg.withValues(alpha: progress),
+      padding: EdgeInsets.only(
+          top: MediaQuery.of(context).padding.top + 8,
+          left: 16,
+          right: 16),
+      child: Row(
+        children: [
+          _CircleIcon(icon: Icons.arrow_back_rounded, onTap: onBack),
+          const SizedBox(width: 12),
+          Expanded(
+            child: AnimatedOpacity(
+              opacity: progress > 0.6 ? 1 : 0,
+              duration: AppMotion.fast,
+              child: Text(
+                title,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+            ),
+          ),
+          FavouriteButton(isFavourite: isFav, onTap: onFav),
+        ],
+      ),
+    );
+  }
+}
+
+class _CircleIcon extends StatelessWidget {
+  const _CircleIcon({required this.icon, required this.onTap});
+  final IconData icon;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return PressableScale(
+      scale: 0.85,
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.all(9),
+        decoration: BoxDecoration(
+          color: Theme.of(context).colorScheme.surface.withValues(alpha: 0.92),
+          shape: BoxShape.circle,
+          boxShadow: [
+            BoxShadow(
+                color: Colors.black.withValues(alpha: 0.12),
+                blurRadius: 10,
+                offset: const Offset(0, 3)),
+          ],
+        ),
+        child: Icon(icon, size: 20),
+      ),
+    );
+  }
+}
+
+class _ThumbStrip extends StatelessWidget {
+  const _ThumbStrip({required this.place});
+  final Place place;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 62,
+      child: ListView.separated(
+        scrollDirection: Axis.horizontal,
+        physics: const BouncingScrollPhysics(),
+        itemCount: place.images.length,
+        separatorBuilder: (_, __) => const SizedBox(width: 10),
+        itemBuilder: (_, i) => RevealIn(
+          index: i,
+          scaleFrom: 0.8,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(12),
+            child: SizedBox(
+              width: 72,
+              child: PlaceImage(place: place, index: i),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _Pill extends StatelessWidget {
+  const _Pill({required this.icon, required this.label, required this.color});
+  final IconData icon;
+  final String label;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.12),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: color.withValues(alpha: 0.25)),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(icon, size: 13, color: color),
+          const SizedBox(width: 6),
+          Text(label,
+              style: TextStyle(
+                  fontSize: 12, fontWeight: FontWeight.w600, color: color)),
+        ],
+      ),
+    );
+  }
+}
+
+class _CallRow extends StatelessWidget {
+  const _CallRow({required this.phone});
+  final String phone;
+
+  @override
+  Widget build(BuildContext context) {
+    return OutlinedButton.icon(
+      onPressed: () => launchUrl(Uri.parse('tel:$phone')),
+      icon: const Icon(Icons.phone_rounded, size: 18, color: AppColors.danger),
+      label: Text('${context.l10n.call}  $phone'),
+    );
+  }
+}
+
+extension _FirstOrNull<E> on Iterable<E> {
+  E? get firstOrNull => isEmpty ? null : first;
+}
+
+===FILE lib\shared\widgets\photo_gallery.dart=== 
+import 'package:flutter/material.dart';
+
+import '../../app/theme/app_colors.dart';
+import '../../app/theme/app_motion.dart';
+import '../../data/models/place.dart';
+import 'motion_widgets.dart';
+import 'place_image.dart';
+
+/// ---------------------------------------------------------------------------
+/// Hero gallery used at the top of the place-detail screen.
+///
+///  * big photo = swipeable PageView
+///  * thumbnail strip underneath = tap to jump, the active one is highlighted
+///  * tap the big photo (or the expand chip) = full-screen viewer with
+///    two-finger pinch zoom
+/// ---------------------------------------------------------------------------
+class PlaceGallery extends StatefulWidget {
+  const PlaceGallery({
+    super.key,
+    required this.place,
+    this.heroTag,
+  });
+
+  final Place place;
+  final String? heroTag;
+
+  @override
+  State<PlaceGallery> createState() => _PlaceGalleryState();
+}
+
+class _PlaceGalleryState extends State<PlaceGallery> {
+  late final PageController _page = PageController();
+  final _thumbs = ScrollController();
+  int _index = 0;
+
+  int get _count =>
+      widget.place.images.isEmpty ? 1 : widget.place.images.length;
+
+  @override
+  void dispose() {
+    _page.dispose();
+    _thumbs.dispose();
+    super.dispose();
+  }
+
+  void _goTo(int i) {
+    _page.animateToPage(
+      i,
+      duration: AppMotion.base,
+      curve: AppMotion.easeOutExpoCurve,
+    );
+  }
+
+  void _onPage(int i) {
+    setState(() => _index = i);
+    // Keep the active thumbnail in view.
+    if (_thumbs.hasClients) {
+      const itemExtent = 72.0 + 10.0; // width + separator
+      final target = (i * itemExtent) - 90;
+      _thumbs.animateTo(
+        target.clamp(0.0, _thumbs.position.maxScrollExtent),
+        duration: AppMotion.base,
+        curve: Curves.easeOut,
+      );
+    }
+  }
+
+  void _openFullscreen() {
+    Navigator.of(context).push(
+      PageRouteBuilder(
+        opaque: false,
+        barrierColor: Colors.black,
+        transitionDuration: AppMotion.base,
+        pageBuilder: (_, a, __) => FadeTransition(
+          opacity: a,
+          child: FullscreenGallery(
+            place: widget.place,
+            initialIndex: _index,
+          ),
+        ),
+      ),
+    ).then((returned) {
+      // Keep the hero in sync with wherever the user ended up.
+      if (returned is int && returned != _index && mounted) {
+        _page.jumpToPage(returned);
+        _onPage(returned);
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final showThumbs = _count > 1;
+
+    final Widget pager = PageView.builder(
+      controller: _page,
+      onPageChanged: _onPage,
+      physics: const BouncingScrollPhysics(),
+      itemCount: _count,
+      itemBuilder: (_, i) {
+        Widget photo = PlaceImage(
+          place: widget.place,
+          index: i,
+          decodeWidth: 1080,
+        );
+
+        // Only the FIRST photo takes part in the shared-element transition.
+        // The Hero lives inside the item, never around the PageView itself:
+        // wrapping/unwrapping the pager as the index changes would rebuild it
+        // from scratch and throw away the page it was on.
+        if (widget.heroTag != null && i == 0) {
+          photo = Hero(tag: widget.heroTag!, child: photo);
+        }
+
+        return GestureDetector(
+          // Without this, a tap that lands on a transparent pixel of the
+          // image is simply dropped instead of opening the viewer.
+          behavior: HitTestBehavior.opaque,
+          onTap: _openFullscreen,
+          child: photo,
+        );
+      },
+    );
+
+    return Stack(
+      fit: StackFit.expand,
+      children: [
+        pager,
+
+        const Positioned.fill(
+          child: IgnorePointer(
+            child: DecoratedBox(
+              decoration: BoxDecoration(gradient: AppColors.heroScrim),
+            ),
+          ),
+        ),
+
+        // counter + "tap to zoom" affordance
+        Positioned(
+          right: 20,
+          bottom: showThumbs ? 134 : 74,
+          child: GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onTap: _openFullscreen,
+            child: Container(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 11, vertical: 7),
+              decoration: BoxDecoration(
+                color: Colors.black.withValues(alpha: 0.45),
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const Icon(Icons.zoom_out_map_rounded,
+                      size: 13, color: Colors.white),
+                  if (_count > 1) ...[
+                    const SizedBox(width: 7),
+                    Text(
+                      '${_index + 1}/$_count',
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 11.5,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ],
+                ],
+              ),
+            ),
+          ),
+        ),
+
+        // thumbnail strip
+        if (showThumbs)
+          Positioned(
+            left: 20,
+            right: 20,
+            bottom: 66,
+            child: SizedBox(
+              height: 62,
+              child: ListView.separated(
+                controller: _thumbs,
+                scrollDirection: Axis.horizontal,
+                physics: const BouncingScrollPhysics(),
+                itemCount: _count,
+                separatorBuilder: (_, __) => const SizedBox(width: 10),
+                itemBuilder: (_, i) {
+                  final active = i == _index;
+                  return RevealIn(
+                    index: i,
+                    scaleFrom: 0.8,
+                    child: GestureDetector(
+                      behavior: HitTestBehavior.opaque,
+                      onTap: () => _goTo(i),
+                      child: AnimatedContainer(
+                        duration: AppMotion.fast,
+                        curve: AppMotion.springy,
+                        width: active ? 82 : 72,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(
+                            color: active
+                                ? Colors.white
+                                : Colors.white.withValues(alpha: 0.28),
+                            width: active ? 2.5 : 1,
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black
+                                  .withValues(alpha: active ? 0.35 : 0.18),
+                              blurRadius: active ? 14 : 6,
+                              offset: const Offset(0, 4),
+                            ),
+                          ],
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: AnimatedOpacity(
+                            duration: AppMotion.fast,
+                            opacity: active ? 1 : 0.62,
+                            child: PlaceImage(
+                              place: widget.place,
+                              index: i,
+                              decodeWidth: 240,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ),
+      ],
+    );
+  }
+}
+
+/// ---------------------------------------------------------------------------
+/// Full-screen photo viewer: swipe between photos, pinch with two fingers to
+/// zoom, double-tap to toggle 2.5x, drag down to dismiss.
+/// ---------------------------------------------------------------------------
+class FullscreenGallery extends StatefulWidget {
+  const FullscreenGallery({
+    super.key,
+    required this.place,
+    this.initialIndex = 0,
+  });
+
+  final Place place;
+  final int initialIndex;
+
+  @override
+  State<FullscreenGallery> createState() => _FullscreenGalleryState();
+}
+
+class _FullscreenGalleryState extends State<FullscreenGallery>
+    with SingleTickerProviderStateMixin {
+  late final PageController _page =
+      PageController(initialPage: widget.initialIndex);
+  late int _index = widget.initialIndex;
+
+  /// One controller per page so each photo remembers its own zoom.
+  final _zoom = <int, TransformationController>{};
+
+  late final AnimationController _anim = AnimationController(
+    vsync: this,
+    duration: AppMotion.base,
+  );
+  Animation<Matrix4>? _zoomAnim;
+
+  bool get _isZoomed {
+    final c = _zoom[_index];
+    return c != null && c.value.getMaxScaleOnAxis() > 1.02;
+  }
+
+  TransformationController _ctrl(int i) =>
+      _zoom.putIfAbsent(i, () => TransformationController());
+
+  @override
+  void dispose() {
+    _anim.dispose();
+    for (final c in _zoom.values) {
+      c.dispose();
+    }
+    _page.dispose();
+    super.dispose();
+  }
+
+  void _animateTo(Matrix4 target) {
+    final c = _ctrl(_index);
+    _zoomAnim = Matrix4Tween(begin: c.value, end: target)
+        .animate(CurvedAnimation(parent: _anim, curve: AppMotion.emphasized));
+    void listener() => c.value = _zoomAnim!.value;
+    _anim
+      ..removeListener(listener)
+      ..addListener(listener)
+      ..forward(from: 0);
+  }
+
+  void _handleDoubleTap(TapDownDetails d, int i) {
+    final c = _ctrl(i);
+    if (c.value.getMaxScaleOnAxis() > 1.02) {
+      _animateTo(Matrix4.identity());
+    } else {
+      const scale = 2.5;
+      final p = d.localPosition;
+      // Built with setEntry instead of translate()/scale(): those two are
+      // deprecated in current vector_math, and this is the same matrix.
+      _animateTo(
+        Matrix4.identity()
+          ..setEntry(0, 0, scale)
+          ..setEntry(1, 1, scale)
+          ..setEntry(0, 3, -p.dx * (scale - 1))
+          ..setEntry(1, 3, -p.dy * (scale - 1)),
+      );
+    }
+    setState(() {});
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final count =
+        widget.place.images.isEmpty ? 1 : widget.place.images.length;
+
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: Stack(
+        children: [
+          PageView.builder(
+            controller: _page,
+            itemCount: count,
+            // While a photo is zoomed in, dragging should pan it, not flick
+            // to the next photo.
+            physics: _isZoomed
+                ? const NeverScrollableScrollPhysics()
+                : const BouncingScrollPhysics(),
+            onPageChanged: (i) => setState(() => _index = i),
+            itemBuilder: (_, i) {
+              final c = _ctrl(i);
+              return GestureDetector(
+                onDoubleTapDown: (d) => _handleDoubleTap(d, i),
+                onDoubleTap: () {},
+                child: InteractiveViewer(
+                  transformationController: c,
+                  minScale: 1,
+                  maxScale: 5,
+                  // Let the zoomed photo be dragged past its own edges a
+                  // little; it feels much less rigid.
+                  boundaryMargin: const EdgeInsets.all(40),
+                  onInteractionEnd: (_) => setState(() {}),
+                  child: Center(
+                    child: PlaceImage(
+                      place: widget.place,
+                      index: i,
+                      fit: BoxFit.contain,
+                      decodeWidth: 1600,
+                    ),
+                  ),
+                ),
+              );
+            },
+          ),
+
+          // close
+          Positioned(
+            top: MediaQuery.of(context).padding.top + 10,
+            left: 14,
+            child: _GlassIcon(
+              icon: Icons.close_rounded,
+              onTap: () => Navigator.of(context).pop(_index),
+            ),
+          ),
+
+          // counter
+          if (count > 1)
+            Positioned(
+              top: MediaQuery.of(context).padding.top + 18,
+              left: 0,
+              right: 0,
+              child: Center(
+                child: Container(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 14, vertical: 7),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withValues(alpha: 0.14),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Text(
+                    '${_index + 1} / $count',
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 13,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+
+          // page dots
+          if (count > 1)
+            Positioned(
+              bottom: MediaQuery.of(context).padding.bottom + 26,
+              left: 0,
+              right: 0,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: List.generate(
+                  count,
+                  (i) => AnimatedContainer(
+                    duration: AppMotion.fast,
+                    margin: const EdgeInsets.symmetric(horizontal: 3),
+                    width: i == _index ? 20 : 7,
+                    height: 7,
+                    decoration: BoxDecoration(
+                      color: i == _index
+                          ? Colors.white
+                          : Colors.white.withValues(alpha: 0.4),
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+}
+
+class _GlassIcon extends StatelessWidget {
+  const _GlassIcon({required this.icon, required this.onTap});
+  final IconData icon;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return PressableScale(
+      scale: 0.85,
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          color: Colors.white.withValues(alpha: 0.16),
+          shape: BoxShape.circle,
+        ),
+        child: Icon(icon, size: 21, color: Colors.white),
+      ),
+    );
+  }
+}
+
+===FILE lib\shared\widgets\place_card.dart=== 
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../../app/theme/app_colors.dart';
+import '../../app/theme/app_theme.dart';
+import '../../core/providers/app_providers.dart';
+import '../../data/models/place.dart';
+import '../../l10n/app_localizations.dart';
+import 'motion_widgets.dart';
+import 'parallax.dart';
+import 'place_image.dart';
+
+/// Tall card used in the horizontal "Popular Places" rail.
+/// The photo parallaxes horizontally as the rail scrolls.
+class PopularPlaceCard extends ConsumerWidget {
+  const PopularPlaceCard({
+    super.key,
+    required this.place,
+    required this.onTap,
+    this.width = 190,
+  });
+
+  final Place place;
+  final VoidCallback onTap;
+  final double width;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final lang = ref.watch(langProvider);
+    final favs = ref.watch(favouritesProvider);
+    final isFav = favs.contains(place.id);
+
+    return PressableScale(
+      onTap: onTap,
+      child: SizedBox(
+        width: width,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(
+              child: Hero(
+                tag: 'place-img-${place.id}',
+                child: ParallaxItem(
+                  axis: Axis.horizontal,
+                  borderRadius: BorderRadius.circular(AppTheme.rLg),
+                  background: PlaceImage(place: place),
+                  child: Stack(
+                    children: [
+                      const Positioned.fill(
+                        child: DecoratedBox(
+                          decoration:
+                              BoxDecoration(gradient: AppColors.heroScrim),
+                        ),
+                      ),
+                      Positioned(
+                        top: 10,
+                        right: 10,
+                        child: FavouriteButton(
+                          isFavourite: isFav,
+                          onTap: () => ref
+                              .read(favouritesProvider.notifier)
+                              .toggle(place.id),
+                        ),
+                      ),
+                      Positioned(
+                        left: 12,
+                        bottom: 12,
+                        child: _CategoryBadge(place: place),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 10),
+            Text(
+              place.name(lang),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            const SizedBox(height: 3),
+            Row(
+              children: [
+                const Icon(Icons.place_rounded,
+                    size: 13, color: AppColors.jade),
+                const SizedBox(width: 3),
+                Expanded(
+                  child: Text(
+                    place.address(lang),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// Wide horizontal card used in vertical lists (category results, favourites).
+/// The photo parallaxes vertically as the list scrolls.
+class PlaceListCard extends ConsumerWidget {
+  const PlaceListCard({
+    super.key,
+    required this.place,
+    required this.onTap,
+    this.onViewMap,
+    this.distanceKm,
+  });
+
+  final Place place;
+  final VoidCallback onTap;
+  final VoidCallback? onViewMap;
+  final double? distanceKm;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final lang = ref.watch(langProvider);
+    final t = context.l10n;
+    final isFav = ref.watch(favouritesProvider).contains(place.id);
+    final cs = Theme.of(context).colorScheme;
+
+    return PressableScale(
+      onTap: onTap,
+      child: Container(
+        decoration: BoxDecoration(
+          color: cs.surface,
+          borderRadius: BorderRadius.circular(AppTheme.rLg),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 
+                  Theme.of(context).brightness == Brightness.light
+                      ? 0.06
+                      : 0.30),
+              blurRadius: 18,
+              offset: const Offset(0, 6),
+            ),
+          ],
+        ),
+        padding: const EdgeInsets.all(10),
+        child: Row(
+          children: [
+            SizedBox(
+              width: 104,
+              height: 104,
+              child: Hero(
+                tag: 'place-img-${place.id}',
+                child: ParallaxItem(
+                  borderRadius: BorderRadius.circular(AppTheme.rMd),
+                  background: PlaceImage(place: place),
+                  child: const SizedBox.shrink(),
+                ),
+              ),
+            ),
+            const SizedBox(width: 14),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          place.name(lang),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: Theme.of(context).textTheme.titleMedium,
+                        ),
+                      ),
+                      if (place.rating != null) ...[
+                        const Icon(Icons.star_rounded,
+                            size: 16, color: AppColors.gold),
+                        const SizedBox(width: 2),
+                        Text(place.rating!.toStringAsFixed(1),
+                            style: Theme.of(context).textTheme.labelSmall),
+                      ],
+                    ],
+                  ),
+                  const SizedBox(height: 4),
+                  Row(
+                    children: [
+                      const Icon(Icons.place_rounded,
+                          size: 13, color: AppColors.jade),
+                      const SizedBox(width: 3),
+                      Expanded(
+                        child: Text(
+                          distanceKm == null
+                              ? place.address(lang)
+                              : '${place.address(lang)}  ·  ${distanceKm!.toStringAsFixed(1)} ${t.t('distanceKm')}',
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: Theme.of(context).textTheme.bodySmall,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 12),
+                  Row(
+                    children: [
+                      _MiniButton(
+                        icon: Icons.near_me_rounded,
+                        label: t.viewInMap,
+                        onTap: onViewMap ?? onTap,
+                      ),
+                      const Spacer(),
+                      FavouriteButton(
+                        isFavourite: isFav,
+                        size: 18,
+                        background: cs.onSurface.withValues(alpha: 0.05),
+                        onTap: () => ref
+                            .read(favouritesProvider.notifier)
+                            .toggle(place.id),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _MiniButton extends StatelessWidget {
+  const _MiniButton({
+    required this.icon,
+    required this.label,
+    required this.onTap,
+  });
+
+  final IconData icon;
+  final String label;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return PressableScale(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 9),
+        decoration: const BoxDecoration(
+          gradient: AppColors.jadeGradient,
+          borderRadius: BorderRadius.all(Radius.circular(30)),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(icon, size: 15, color: Colors.white),
+            const SizedBox(width: 6),
+            Text(label,
+                style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 12.5,
+                    fontWeight: FontWeight.w700)),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _CategoryBadge extends StatelessWidget {
+  const _CategoryBadge({required this.place});
+  final Place place;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 5),
+      decoration: BoxDecoration(
+        color: place.category.color,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(place.category.icon, size: 12, color: Colors.white),
+          const SizedBox(width: 5),
+          Text(
+            context.l10n.t(place.category.labelKey),
+            style: const TextStyle(
+                color: Colors.white,
+                fontSize: 10.5,
+                fontWeight: FontWeight.w700),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+===FILE lib\shared\widgets\place_image.dart=== 
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
+import '../../data/models/place.dart';
+
+/// Renders a place photo from an asset path or a URL, and falls back to a
+/// tasteful category-coloured gradient + icon when no photo exists yet.
+class PlaceImage extends StatelessWidget {
+  const PlaceImage({
+    super.key,
+    required this.place,
+    this.index = 0,
+    this.fit = BoxFit.cover,
+    this.decodeWidth = 600,
+  });
+
+  final Place place;
+  final int index;
+  final BoxFit fit;
+
+  /// Decode the bitmap at roughly this width instead of its full resolution.
+  ///
+  /// A 1408px photo shown inside a 170px card still costs ~4 MB of RAM and a
+  /// full-size decode unless we cap it here. Pass a larger value on the
+  /// detail screen where the photo really is full width.
+  final int decodeWidth;
+
+  @override
+  Widget build(BuildContext context) {
+    if (place.images.length > index) {
+      final src = place.images[index];
+      if (src.startsWith('http')) {
+        return CachedNetworkImage(
+          imageUrl: src,
+          fit: fit,
+          memCacheWidth: decodeWidth,
+          fadeInDuration: const Duration(milliseconds: 300),
+          placeholder: (_, __) => _fallback(context),
+          errorWidget: (_, __, ___) => _fallback(context),
+        );
+      }
+      return Image.asset(
+        src,
+        fit: fit,
+        cacheWidth: decodeWidth,
+        filterQuality: FilterQuality.medium,
+        errorBuilder: (_, __, ___) => _fallback(context),
+      );
+    }
+    return _fallback(context);
+  }
+
+  Widget _fallback(BuildContext context) {
+    final c = place.category.color;
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            Color.alphaBlend(c.withValues(alpha: 0.85), Colors.black12),
+            Color.alphaBlend(c.withValues(alpha: 0.45), Colors.black38),
+          ],
+        ),
+      ),
+      child: Center(
+        child: Icon(
+          place.category.icon,
+          size: 44,
+          color: Colors.white.withValues(alpha: 0.55),
+        ),
+      ),
+    );
+  }
+}

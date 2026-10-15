@@ -1,5 +1,3 @@
-import 'dart:ui' as ui;
-
 import 'package:flutter/material.dart';
 
 import '../../../app/theme/app_motion.dart';
@@ -7,15 +5,12 @@ import '../../../app/theme/app_motion.dart';
 /// ---------------------------------------------------------------------------
 /// FrostedPhoto
 ///
-/// A photo with two things on top of it:
-///   1. a parallax drift, driven by the scroll position of whatever scrollable
-///      it happens to live inside, and
-///   2. a frosted band along the bottom, so the caption stays readable no
-///      matter how bright or busy the photo is.
+/// A still photo with a dark gradient along its bottom edge so that the
+/// caption printed over it stays readable on any background.
 ///
-/// The band is a *progressive* blur: three stacked BackdropFilters of
-/// increasing sigma. A single blurred rectangle leaves a hard edge where the
-/// blur stops; stacking them makes the transition invisible.
+/// The parallax drift and the progressive BackdropFilter blur that this widget
+/// originally had were removed on request. The `parallax` argument is still
+/// accepted so existing call sites compile unchanged, but it does nothing.
 ///
 /// Reusable anywhere a caption sits on a photo — place detail, village cards.
 /// ---------------------------------------------------------------------------
@@ -36,7 +31,7 @@ class FrostedPhoto extends StatefulWidget {
   final String image;
   final double height;
 
-  /// 0.0 = pinned, 0.30 = drifts a lot. Comes from the JSON per figure.
+  /// Kept for source compatibility only - no longer has any effect.
   final double parallax;
   final String? caption;
 
@@ -54,45 +49,18 @@ class FrostedPhoto extends StatefulWidget {
 }
 
 class _FrostedPhotoState extends State<FrostedPhoto> {
-  ScrollPosition? _position;
-  double _shift = 0;
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    _position?.removeListener(_onScroll);
-    _position = Scrollable.maybeOf(context)?.position;
-    _position?.addListener(_onScroll);
-    WidgetsBinding.instance.addPostFrameCallback((_) => _onScroll());
-  }
-
-  @override
-  void dispose() {
-    _position?.removeListener(_onScroll);
-    super.dispose();
-  }
-
-  void _onScroll() {
-    if (!mounted) return;
-    final box = context.findRenderObject() as RenderBox?;
-    final scrollBox =
-        Scrollable.maybeOf(context)?.context.findRenderObject() as RenderBox?;
-    if (box == null || scrollBox == null || !box.hasSize) return;
-
-    // How far this photo's centre is from the centre of the viewport.
-    final selfCentre =
-        box.localToGlobal(box.size.center(Offset.zero), ancestor: scrollBox).dy;
-    final viewportCentre = scrollBox.size.height / 2;
-    final next = (selfCentre - viewportCentre) * -widget.parallax;
-
-    if ((next - _shift).abs() > 0.3) setState(() => _shift = next);
-  }
+  // NOTE: the scroll listener, the parallax drift and the three stacked
+  // BackdropFilters that used to live here have all been removed on request.
+  // The photo is now completely still and unblurred. Only the dark gradient
+  // at the bottom is kept, because the caption sits on top of it and would be
+  // unreadable over a bright sky without it.
+  //
+  // `parallax` and `bandHeight` are still accepted by the constructor so that
+  // existing call sites keep compiling unchanged; `parallax` is simply ignored.
 
   @override
   Widget build(BuildContext context) {
     final band = widget.bandHeight ?? widget.height * 0.45;
-    // The image is taller than its frame so there is room to drift.
-    final overscan = widget.height * widget.parallax * 2.2;
 
     return ClipRRect(
       borderRadius: widget.borderRadius,
@@ -102,56 +70,41 @@ class _FrostedPhotoState extends State<FrostedPhoto> {
         child: Stack(
           fit: StackFit.expand,
           children: [
-            // ---- the photo, drifting ----
-            Positioned(
-              left: 0,
-              right: 0,
-              top: -overscan / 2 + _shift,
-              height: widget.height + overscan,
-              child: Image.asset(
-                widget.image,
-                fit: BoxFit.cover,
-                semanticLabel: widget.semanticLabel ?? widget.caption,
-                errorBuilder: (_, __, ___) => const ColoredBox(
-                  color: Color(0xFF1A2A25),
-                  child: Center(
-                    child: Icon(Icons.image_not_supported_outlined,
-                        color: Colors.white24, size: 28),
-                  ),
+            // ---- the photo: still, sharp, no drift ----
+            Image.asset(
+              widget.image,
+              fit: BoxFit.cover,
+              semanticLabel: widget.semanticLabel ?? widget.caption,
+              errorBuilder: (_, __, ___) => const ColoredBox(
+                color: Color(0xFF1A2A25),
+                child: Center(
+                  child: Icon(Icons.image_not_supported_outlined,
+                      color: Colors.white24, size: 28),
                 ),
               ),
             ),
 
-            // ---- frosted band ----
+            // ---- plain dark gradient so text over the photo stays readable ----
             Positioned(
               left: 0,
               right: 0,
               bottom: 0,
               height: band,
-              child: IgnorePointer(
-                child: Stack(
-                  fit: StackFit.expand,
-                  children: [
-                    _blurBand(height: band, sigma: 2),
-                    _blurBand(height: band * 0.70, sigma: 7),
-                    _blurBand(height: band * 0.44, sigma: 15),
-                    // Dim on top of the blur, so white skies stay readable.
-                    DecoratedBox(
-                      decoration: const BoxDecoration(
-                        gradient: LinearGradient(
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          colors: [
-                            Color(0x00060C0A),
-                            Color(0x4D060C0A),
-                            Color(0x9E060C0A),
-                            Color(0xCC060C0A),
-                          ],
-                          stops: [0.0, 0.42, 0.78, 1.0],
-                        ),
-                      ),
+              child: const IgnorePointer(
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Color(0x00060C0A),
+                        Color(0x4D060C0A),
+                        Color(0x9E060C0A),
+                        Color(0xCC060C0A),
+                      ],
+                      stops: [0.0, 0.42, 0.78, 1.0],
                     ),
-                  ],
+                  ),
                 ),
               ),
             ),
@@ -171,8 +124,8 @@ class _FrostedPhotoState extends State<FrostedPhoto> {
                       style: widget.captionStyle ??
                           const TextStyle(
                             color: Colors.white,
-                            fontSize: 12,
-                            height: 1.45,
+                            fontSize: 13.5,
+                            height: 1.5,
                             fontWeight: FontWeight.w600,
                             shadows: [
                               Shadow(
@@ -184,13 +137,13 @@ class _FrostedPhotoState extends State<FrostedPhoto> {
                     ),
                     if (widget.disclaimer != null &&
                         widget.disclaimer!.isNotEmpty) ...[
-                      const SizedBox(height: 4),
+                      const SizedBox(height: 5),
                       Text(
                         widget.disclaimer!,
                         style: const TextStyle(
                           color: Color(0xCCFFFFFF),
-                          fontSize: 10,
-                          height: 1.4,
+                          fontSize: 11.5,
+                          height: 1.45,
                           fontStyle: FontStyle.italic,
                         ),
                       ),
@@ -199,22 +152,6 @@ class _FrostedPhotoState extends State<FrostedPhoto> {
                 ),
               ),
           ],
-        ),
-      ),
-    );
-  }
-
-  Widget _blurBand({required double height, required double sigma}) {
-    return Align(
-      alignment: Alignment.bottomCenter,
-      child: SizedBox(
-        height: height,
-        width: double.infinity,
-        child: ClipRect(
-          child: BackdropFilter(
-            filter: ui.ImageFilter.blur(sigmaX: sigma, sigmaY: sigma),
-            child: const SizedBox.expand(),
-          ),
         ),
       ),
     );
@@ -333,3 +270,4 @@ class _ScrollCueState extends State<_ScrollCue>
     );
   }
 }
+

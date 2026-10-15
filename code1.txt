@@ -1,0 +1,394 @@
+===FILE lib\app\shell.dart=== 
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
+import '../l10n/app_localizations.dart';
+import 'theme/app_colors.dart';
+import 'theme/app_motion.dart';
+
+/// Bottom-nav shell. Tab switches cross-fade instead of hard-cutting.
+class AppShell extends StatelessWidget {
+  const AppShell({super.key, required this.navigationShell});
+  final StatefulNavigationShell navigationShell;
+
+  @override
+  Widget build(BuildContext context) {
+    final t = context.l10n;
+
+    return Scaffold(
+      body: AnimatedSwitcher(
+        duration: AppMotion.base,
+        switchInCurve: AppMotion.easeOutExpoCurve,
+        transitionBuilder: (child, anim) => FadeTransition(
+          opacity: anim,
+          child: ScaleTransition(
+            scale: Tween(begin: 0.99, end: 1.0).animate(anim),
+            child: child,
+          ),
+        ),
+        child: KeyedSubtree(
+          key: ValueKey(navigationShell.currentIndex),
+          child: navigationShell,
+        ),
+      ),
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          color: Theme.of(context).colorScheme.surface,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.08),
+              blurRadius: 24,
+              offset: const Offset(0, -6),
+            ),
+          ],
+        ),
+        child: SafeArea(
+          top: false,
+          child: NavigationBar(
+            selectedIndex: navigationShell.currentIndex,
+            onDestinationSelected: (i) => navigationShell.goBranch(
+              i,
+              initialLocation: i == navigationShell.currentIndex,
+            ),
+                     labelBehavior:
+                NavigationDestinationLabelBehavior.onlyShowSelected,
+            height: 68,
+            destinations: [
+              _dest(Icons.home_rounded, Icons.home_outlined, t.home),
+              _dest(Icons.near_me_rounded, Icons.near_me_outlined, t.map),
+              _dest(Icons.today_rounded, Icons.today_outlined, t.t('todayTab')),
+              _dest(Icons.favorite_rounded, Icons.favorite_border_rounded,
+                  t.favourites),
+              _dest(Icons.settings_rounded, Icons.settings_outlined,
+                  t.settings),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  NavigationDestination _dest(IconData sel, IconData unsel, String label) =>
+      NavigationDestination(
+        icon: Icon(unsel),
+        selectedIcon: Icon(sel, color: AppColors.jade),
+        label: label,
+      );
+}
+
+===FILE lib\app\router.dart=== 
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
+import '../features/detail/place_detail_screen.dart';
+import '../features/favourites/favourites_screen.dart';
+import '../features/home/home_screen.dart';
+import '../features/map/map_screen.dart';
+import '../splashScreen.dart';
+import '../features/onboarding/welcome_screen.dart';
+import '../features/settings/settings_screen.dart';
+import '../features/today/today_screen.dart';
+import '../features/villages/village_detail_screen.dart';
+import '../features/villages/villages_screen.dart';
+import 'shell.dart';
+import 'theme/app_motion.dart';
+import '../features/about/about_kengtung_screen.dart';
+
+final _rootKey = GlobalKey<NavigatorState>();
+
+final appRouter = GoRouter(
+  navigatorKey: _rootKey,
+  initialLocation: '/splash',
+  routes: [
+    GoRoute(
+      path: '/splash',
+      pageBuilder: (c, s) => _fade(s, const SplashScreen()),
+    ),
+    GoRoute(
+      path: '/welcome',
+      pageBuilder: (c, s) => _fade(s, const WelcomeScreen()),
+    ),
+    GoRoute(
+      path: '/place/:id',
+      parentNavigatorKey: _rootKey,
+      pageBuilder: (c, s) => _slideUp(
+        s,
+        PlaceDetailScreen(placeId: s.pathParameters['id']!),
+      ),
+    ),
+    GoRoute(
+      path: '/villages',
+      parentNavigatorKey: _rootKey,
+      pageBuilder: (c, s) => _slideUp(s, const VillagesScreen()),
+    ),
+    GoRoute(
+      path: '/village/:id',
+      parentNavigatorKey: _rootKey,
+      pageBuilder: (c, s) => _slideUp(
+        s,
+        VillageDetailScreen(villageId: s.pathParameters['id']!),
+      ),
+    ),
+    GoRoute(
+      path: '/about-kengtung',
+      parentNavigatorKey: _rootKey,
+      pageBuilder: (c, s) => _slideUp(s, const AboutKengtungScreen()),
+    ),
+    StatefulShellRoute.indexedStack(
+      builder: (c, s, shell) => AppShell(navigationShell: shell),
+      branches: [
+        // 0 — Home
+        StatefulShellBranch(routes: [
+          GoRoute(path: '/home', pageBuilder: (c, s) => _fade(s, const HomeScreen())),
+        ]),
+        // 1 — Map
+        StatefulShellBranch(routes: [
+          GoRoute(
+            path: '/map',
+            pageBuilder: (c, s) => _fade(
+              s,
+              MapScreen(
+                focusId: s.uri.queryParameters['focus'],
+                autoRoute: s.uri.queryParameters['route'] == '1',
+              ),
+            ),
+          ),
+        ]),
+        // 2 — Today  (must stay in the middle: shell.dart puts it third too)
+        StatefulShellBranch(routes: [
+          GoRoute(
+              path: '/today',
+              pageBuilder: (c, s) => _fade(s, const TodayScreen())),
+        ]),
+        // 3 — Favourites
+        StatefulShellBranch(routes: [
+          GoRoute(
+              path: '/favourites',
+              pageBuilder: (c, s) => _fade(s, const FavouritesScreen())),
+        ]),
+        // 4 — Settings
+        StatefulShellBranch(routes: [
+          GoRoute(
+              path: '/settings',
+              pageBuilder: (c, s) => _fade(s, const SettingsScreen())),
+        ]),
+      ],
+    ),
+  ],
+);
+
+CustomTransitionPage _fade(GoRouterState s, Widget child) =>
+    CustomTransitionPage(
+      key: s.pageKey,
+      transitionDuration: AppMotion.base,
+      child: child,
+      transitionsBuilder: (c, a, sa, w) {
+        final curved =
+            CurvedAnimation(parent: a, curve: AppMotion.easeOutExpoCurve);
+        return FadeTransition(
+          opacity: curved,
+          child: ScaleTransition(
+            scale: Tween(begin: 0.98, end: 1.0).animate(curved),
+            child: w,
+          ),
+        );
+      },
+    );
+
+CustomTransitionPage _slideUp(GoRouterState s, Widget child) =>
+    CustomTransitionPage(
+      key: s.pageKey,
+      transitionDuration: AppMotion.hero,
+      reverseTransitionDuration: AppMotion.base,
+      child: child,
+      transitionsBuilder: (c, a, sa, w) {
+        final curved =
+            CurvedAnimation(parent: a, curve: AppMotion.easeOutExpoCurve);
+        return FadeTransition(
+          opacity: curved,
+          child: SlideTransition(
+            position: Tween(begin: const Offset(0, 0.06), end: Offset.zero)
+                .animate(curved),
+            child: w,
+          ),
+        );
+      },
+    );
+
+===FILE lib\main.dart=== 
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import 'app/app.dart';
+
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent,
+    systemNavigationBarColor: Colors.transparent,
+  ));
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
+
+  runApp(const ProviderScope(child: KengtungGuideApp()));
+}
+
+===FILE lib\core\providers\app_providers.dart=== 
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import '../../data/models/place.dart';
+import '../../data/models/place_category.dart';
+import '../../data/repositories/place_repository.dart';
+import '../../l10n/app_localizations.dart';
+import '../services/search_service.dart';
+
+/// ---------- Settings (language + theme) ----------
+
+class AppSettings {
+  final Locale locale;
+  final ThemeMode themeMode;
+  const AppSettings({required this.locale, required this.themeMode});
+
+  AppSettings copyWith({Locale? locale, ThemeMode? themeMode}) => AppSettings(
+        locale: locale ?? this.locale,
+        themeMode: themeMode ?? this.themeMode,
+      );
+}
+
+class SettingsNotifier extends StateNotifier<AppSettings> {
+  SettingsNotifier()
+      : super(const AppSettings(
+          locale: Locale('en'), // English is the default
+          themeMode: ThemeMode.system,
+        )) {
+    _restore();
+  }
+
+  static const _kLang = 'lang';
+  static const _kTheme = 'theme';
+
+  Future<void> _restore() async {
+    final p = await SharedPreferences.getInstance();
+    final lang = p.getString(_kLang) ?? 'en';
+    final theme = p.getString(_kTheme) ?? 'system';
+    state = AppSettings(
+      locale: Locale(lang),
+      themeMode: switch (theme) {
+        'light' => ThemeMode.light,
+        'dark' => ThemeMode.dark,
+        _ => ThemeMode.system,
+      },
+    );
+  }
+
+  Future<void> setLocale(Locale l) async {
+    state = state.copyWith(locale: l);
+    (await SharedPreferences.getInstance()).setString(_kLang, l.languageCode);
+  }
+
+  Future<void> setThemeMode(ThemeMode m) async {
+    state = state.copyWith(themeMode: m);
+    (await SharedPreferences.getInstance()).setString(_kTheme, m.name);
+  }
+}
+
+final settingsProvider =
+    StateNotifierProvider<SettingsNotifier, AppSettings>(
+        (ref) => SettingsNotifier());
+
+/// Convenience: current language code ('en' | 'my')
+final langProvider =
+    Provider<String>((ref) => ref.watch(settingsProvider).locale.languageCode);
+
+/// ---------- Places ----------
+
+final placeRepositoryProvider = Provider((ref) => PlaceRepository());
+
+final placesProvider = FutureProvider<List<Place>>(
+    (ref) => ref.watch(placeRepositoryProvider).getAll());
+
+/// Currently selected category filter on Home / Map (null == All)
+final categoryFilterProvider = StateProvider<PlaceCategory?>((ref) => null);
+
+/// Free-text search query
+final searchQueryProvider = StateProvider<String>((ref) => '');
+
+/// True as soon as the user has typed anything at all.
+final isSearchingProvider = Provider<bool>(
+    (ref) => ref.watch(searchQueryProvider).trim().isNotEmpty);
+
+/// Localized category name, used so typing "pagoda" / "ဘုရား" finds places.
+String _categoryLabel(Place p, String lang) {
+  final l = AppLocalizations(Locale(lang));
+  return l.t(p.category.labelKey);
+}
+
+/// Ranked keyword results. Empty list when nothing has been typed.
+///
+/// Unlike the old `contains()` filter this searches name (both languages),
+/// tags, category, address, description and id, requires every typed word to
+/// match, and returns the BEST match first.
+final searchResultsProvider = Provider<List<Place>>((ref) {
+  final all = ref.watch(placesProvider).value ?? const <Place>[];
+  final q = ref.watch(searchQueryProvider);
+  final lang = ref.watch(langProvider);
+  final cat = ref.watch(categoryFilterProvider);
+
+  final pool =
+      cat == null ? all : all.where((p) => p.category == cat).toList();
+
+  return SearchService.rank(
+    pool,
+    q,
+    lang: lang,
+    categoryLabelOf: (p) => _categoryLabel(p, lang),
+  );
+});
+
+/// Places after category + search filtering.
+///
+/// When a query is present this is simply the ranked search result, so the
+/// list on Home and the pins on the Map stay in sync with the suggestions.
+final filteredPlacesProvider = Provider<List<Place>>((ref) {
+  final all = ref.watch(placesProvider).value ?? const <Place>[];
+  final cat = ref.watch(categoryFilterProvider);
+
+  if (ref.watch(isSearchingProvider)) return ref.watch(searchResultsProvider);
+
+  if (cat == null) return all;
+  return all.where((p) => p.category == cat).toList();
+});
+
+/// ---------- Favourites ----------
+
+class FavouritesNotifier extends StateNotifier<Set<String>> {
+  FavouritesNotifier() : super({}) {
+    _restore();
+  }
+  static const _key = 'favourites';
+
+  Future<void> _restore() async {
+    final p = await SharedPreferences.getInstance();
+    state = (p.getStringList(_key) ?? []).toSet();
+  }
+
+  Future<void> toggle(String id) async {
+    final next = {...state};
+    next.contains(id) ? next.remove(id) : next.add(id);
+    state = next;
+    (await SharedPreferences.getInstance())
+        .setStringList(_key, next.toList());
+  }
+
+  bool isFavourite(String id) => state.contains(id);
+}
+
+final favouritesProvider =
+    StateNotifierProvider<FavouritesNotifier, Set<String>>(
+        (ref) => FavouritesNotifier());
+

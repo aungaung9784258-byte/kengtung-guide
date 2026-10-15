@@ -149,7 +149,7 @@ class PlaceListCard extends ConsumerWidget {
               width: 104,
               height: 104,
               child: Hero(
-                tag: 'place-img-${place.id}',
+              tag: 'place-list-${place.id}',
                 child: ParallaxItem(
                   borderRadius: BorderRadius.circular(AppTheme.rMd),
                   background: PlaceImage(place: place),
