@@ -92,26 +92,35 @@ class _PlaceGalleryState extends State<PlaceGallery> {
   Widget build(BuildContext context) {
     final showThumbs = _count > 1;
 
-    Widget pager = PageView.builder(
+    final Widget pager = PageView.builder(
       controller: _page,
       onPageChanged: _onPage,
       physics: const BouncingScrollPhysics(),
       itemCount: _count,
-      itemBuilder: (_, i) => GestureDetector(
-        onTap: _openFullscreen,
-        child: PlaceImage(
+      itemBuilder: (_, i) {
+        Widget photo = PlaceImage(
           place: widget.place,
           index: i,
           decodeWidth: 1080,
-        ),
-      ),
-    );
+        );
 
-    // Only the first photo participates in the shared-element transition,
-    // otherwise Flutter sees duplicate tags mid-swipe.
-    if (widget.heroTag != null && _index == 0) {
-      pager = Hero(tag: widget.heroTag!, child: pager);
-    }
+        // Only the FIRST photo takes part in the shared-element transition.
+        // The Hero lives inside the item, never around the PageView itself:
+        // wrapping/unwrapping the pager as the index changes would rebuild it
+        // from scratch and throw away the page it was on.
+        if (widget.heroTag != null && i == 0) {
+          photo = Hero(tag: widget.heroTag!, child: photo);
+        }
+
+        return GestureDetector(
+          // Without this, a tap that lands on a transparent pixel of the
+          // image is simply dropped instead of opening the viewer.
+          behavior: HitTestBehavior.opaque,
+          onTap: _openFullscreen,
+          child: photo,
+        );
+      },
+    );
 
     return Stack(
       fit: StackFit.expand,
@@ -131,6 +140,7 @@ class _PlaceGalleryState extends State<PlaceGallery> {
           right: 20,
           bottom: showThumbs ? 134 : 74,
           child: GestureDetector(
+            behavior: HitTestBehavior.opaque,
             onTap: _openFullscreen,
             child: Container(
               padding:
@@ -181,6 +191,7 @@ class _PlaceGalleryState extends State<PlaceGallery> {
                     index: i,
                     scaleFrom: 0.8,
                     child: GestureDetector(
+                      behavior: HitTestBehavior.opaque,
                       onTap: () => _goTo(i),
                       child: AnimatedContainer(
                         duration: AppMotion.fast,
