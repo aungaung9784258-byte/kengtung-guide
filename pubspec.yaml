@@ -57,13 +57,22 @@ dependency_overrides:
 
 flutter:
   uses-material-design: true
+
   assets:
     - assets/data/
     - assets/images/
+    - assets/images/about/
+    - assets/images/villages/
     - assets/lottie/
-  # Padauk (SIL, Open Font License) renders Myanmar Unicode correctly on
-  # every device, including phones whose system font is old or Zawgyi-only.
-  # It is registered as a FALLBACK, so Latin text keeps the default font.
+
+  fonts:
+    - family: Padauk
+      fonts:
+        - asset: assets/fonts/Padauk-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Padauk-Bold.ttf
+          weight: 700
+
 flutter_launcher_icons:
   android: true
   ios: false
@@ -72,10 +81,4 @@ flutter_launcher_icons:
   image_path: "assets/icon/icon.png"
   adaptive_icon_background: "#0B3B30"
   adaptive_icon_foreground: "assets/icon/icon.png"
-  remove_alpha_ios: true
- 
-  fonts:
-    - family: Padauk
-      fonts:
-        - asset: assets/fonts/Padauk-Regular.ttf
-        
+  remove_alpha_ios: true     

@@ -1,0 +1,53 @@
+    // ---- Today tab ----
+    'todayTab': 'Today',
+    'marketToday': "TODAY'S MARKET",
+    'marketUnknownName': 'Market name not recorded yet',
+    'marketUnknownHint':
+        'A market is held somewhere in the township today — the five-day rotation says so — but we have not recorded which one. Ask at your hotel, then help us fill it in.',
+    'nextFiveDays': 'Next five days',
+    'comingUp': 'Coming up',
+    'villagesNearby': 'Villages nearby',
+    'seeAll': 'See all',
+    'todayShort': 'Today',
+    'tomorrow': 'Tomorrow',
+    'daysShort': 'days',
+    'minShort': 'min',
+    'happeningToday': 'HAPPENING TODAY',
+    'dateNotAnnounced': 'Date not announced yet',
+    // ---- Confidence ----
+    'confVerified': 'Verified',
+    'confEstimated': 'Estimated',
+    'confUnverified': 'Unconfirmed',
+    'howSureLegend': 'How sure are we?',
+    'confVerifiedHint': 'From an official calendar or a published report.',
+    'confEstimatedHint':
+        'From a guidebook or tour operator. Probably right — worth checking locally.',
+    'confUnverifiedHint':
+        'We do not know this yet. If you find out, please tell us.',
+    // ---- Villages ----
+    'villagesTitle': 'Hill Tribe Villages',
+    'villagesIntro':
+        'Thirteen ethnic groups live in the hills around Kengtung. Visiting a village is the reason most travellers come — go with a local guide, go slowly, and ask before you photograph anyone.',
+    'villageNotFound': 'Village not found',
+    'trekEasy': 'Easy',
+    'trekModerate': 'Moderate',
+    'trekHard': 'Hard',
+    'byCar': 'By car',
+    'onFoot': 'On foot',
+    'difficulty': 'Difficulty',
+    'altitude': 'Altitude',
+    'beforeYouGo': 'Before you go',
+    'needGuide': 'A local guide is needed — for the language, and because it is polite.',
+    'permitYes': 'A permit is required. Arrange it in Kengtung before setting out.',
+    'permitNo': 'No permit needed.',
+    'permitAsk':
+        'Permit rules change. Ask at your hotel or the tourist office before you set out.',
+    'bestSeason': 'Best season',
+    'noGpsYet':
+        'We do not have GPS coordinates for this village yet, so the app cannot navigate you there. The route shown is indicative only.',
+    'respectTitle': 'Visiting respectfully',
+    'pleaseDo': 'PLEASE DO',
+    'pleaseDont': 'PLEASE DO NOT',
+    'whereThisComesFrom': 'Where this comes from',
+    'sourceUnknown': 'Source not recorded',
+    'lastChecked': 'Last checked',

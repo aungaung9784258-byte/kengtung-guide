@@ -1,0 +1,336 @@
+{
+  "version": 1,
+  "lastUpdated": "2026-10",
+  "cover": {
+    "image": "assets/images/lake.jpg",
+    "parallax": 0.30,
+    "kicker": { "en": "EASTERN SHAN STATE", "my": "ရှမ်းပြည်နယ် အရှေ့ပိုင်း" },
+    "title": { "en": "Kyaing Tong", "my": "ကျိုင်းတုံ" },
+    "subtitle": {
+      "en": "The walled city of the hermit Tung",
+      "my": "တုံရသေ့၏ မြို့ရိုးခတ် မြို့တော်"
+    }
+  },
+  "sections": [
+    {
+      "id": "glance",
+      "number": "01",
+      "type": "stats",
+      "title": { "en": "At a glance", "my": "အကျဉ်းချုပ်" },
+      "stats": [
+        {
+          "value": "171,620",
+          "label": { "en": "township population", "my": "မြို့နယ် လူဦးရေ" }
+        },
+        {
+          "value": "44,289",
+          "label": { "en": "in the town itself", "my": "မြို့ပေါ် လူဦးရေ" }
+        },
+        {
+          "value": "2,700",
+          "unit": "ft",
+          "label": { "en": "above sea level", "my": "ပင်လယ်ရေမျက်နှာပြင်အထက်" }
+        },
+        {
+          "value": "13",
+          "unit": "+",
+          "label": { "en": "ethnic groups", "my": "လူမျိုးစု" }
+        }
+      ],
+      "note": {
+        "en": "2014 Myanmar Population and Housing Census. No official count has been published since.",
+        "my": "၂၀၁၄ မြန်မာနိုင်ငံ လူဦးရေနှင့် အိမ်အကြောင်းအရာ သန်းခေါင်စာရင်း။ ထိုနောက်ပိုင်း တရားဝင် စာရင်း ထုတ်ပြန်ခြင်း မရှိသေးပါ။"
+      },
+      "confidence": "verified"
+    },
+    {
+      "id": "where",
+      "number": "02",
+      "type": "prose",
+      "title": { "en": "Where it is", "my": "တည်နေရာ" },
+      "body": [
+        {
+          "en": "Kyaing Tong sits in a bowl of hills between the Salween and the Mekong — and it is much nearer the Mekong. For most of its history the town has been closer, in every sense, to Chiang Mai and Jinghong than to Yangon. It is part of what the world calls the Golden Triangle, within reach of the Thai, Lao and Chinese borders.",
+          "my": "ကျိုင်းတုံသည် သံလွင်မြစ်နှင့် မဲခေါင်မြစ်ကြား တောင်တန်းများ ဝန်းရံထားသော ချိုင့်ဝှမ်းတွင် တည်ရှိသည် — မဲခေါင်နှင့် ပိုနီးသည်။ သမိုင်းတစ်လျှောက် ဤမြို့သည် ရန်ကုန်ထက် ချင်းမိုင်နှင့် ကျင်းဟုန်းတို့နှင့် နီးစပ်ခဲ့သည်။ ကမ္ဘာက ရွှေတြိဂံဟု ခေါ်သော ဒေသ၏ အစိတ်အပိုင်း ဖြစ်ပြီး ထိုင်း၊ လာအိုနှင့် တရုတ် နယ်စပ်များနှင့် နီးသည်။"
+        }
+      ],
+      "figure": {
+        "image": "assets/images/transport.jpg",
+        "parallax": 0.16,
+        "caption": {
+          "en": "The road in from Tachileik climbs through ridge after ridge",
+          "my": "တာချီလိတ်မှ ဝင်လာသော လမ်းသည် တောင်ကြောတစ်ခုပြီးတစ်ခု ဖြတ်တက်ရသည်"
+        }
+      },
+      "confidence": "verified"
+    },
+    {
+      "id": "name",
+      "number": "03",
+      "type": "prose",
+      "title": { "en": "What the name means", "my": "အမည်၏ အဓိပ္ပာယ်" },
+      "body": [
+        {
+          "en": "\"Keng\" is a walled town. \"Tung\" was a hermit. The old chronicles say this valley was once a lake; four hermits came down from the north and drained it, and after seven years and seven months only a small pool was left. That pool is Naung Tung, and the town that grew around it took the hermit's name.",
+          "my": "\"ကျိုင်း\" သည် မြို့ရိုးခတ်ထားသော မြို့။ \"တုံ\" သည် ရသေ့တစ်ပါး၏ အမည်။ ရာဇဝင်ဟောင်းများအရ ဤချိုင့်ဝှမ်းသည် တစ်ချိန်က ရေအိုင်ကြီး ဖြစ်ခဲ့သည်။ မြောက်ဘက်မှ ရသေ့ ၄ ပါး ဆင်းလာပြီး ရေကို နုတ်ချခဲ့ရာ ၇ နှစ် ၇ လကြာမှ ရေကန်ငယ်သာ ကျန်ခဲ့သည်။ ထိုရေကန်မှာ နောင်တုံ ဖြစ်ပြီး ပတ်လည်တွင် ပေါ်ထွက်လာသော မြို့သည် ရသေ့၏ အမည်ကို ယူခဲ့သည်။"
+        }
+      ],
+      "names": [
+        { "script": "မြန်မာ", "text": "ကျိုင်းတုံ" },
+        { "script": "ရှမ်း / ခိုန်", "text": "ၵဵင်းတုင်" },
+        { "script": "ไทย", "text": "เชียงตุง" },
+        { "script": "English", "text": "Kengtung / Kyaingtong" }
+      ],
+      "figure": {
+        "image": "assets/images/lake.jpg",
+        "parallax": 0.16,
+        "caption": {
+          "en": "Naung Tung — the pool the hermits left behind",
+          "my": "နောင်တုံ — ရသေ့များ ချန်ထားခဲ့သော ရေကန်"
+        }
+      },
+      "confidence": "legend"
+    },
+    {
+      "id": "history",
+      "number": "04",
+      "type": "timeline",
+      "title": { "en": "Seven hundred years", "my": "နှစ်ပေါင်း ခုနစ်ရာ" },
+      "timeline": [
+        {
+          "year": "1243",
+          "text": {
+            "en": "Mangrai of Lan Na takes the valley and founds the town.",
+            "my": "လန်နာမင်း မင်းရိုင်း ဤချိုင့်ဝှမ်းကို သိမ်းပိုက်၍ မြို့ကို တည်ထောင်သည်။"
+          },
+          "confidence": "verified"
+        },
+        {
+          "year": "1400s–1700s",
+          "text": {
+            "en": "A Tai Khun state ruled by its own Saopha, pulled between Lan Na, Burma and China.",
+            "my": "မိမိကိုယ်ပိုင် စော်ဘွားက အုပ်ချုပ်သော တိုင်းခွန် ပြည်ထောင် — လန်နာ၊ မြန်မာနှင့် တရုတ်ကြား တွန်းပို့ခံရသည်။"
+          },
+          "confidence": "verified"
+        },
+        {
+          "year": "1903–1906",
+          "text": {
+            "en": "Sao Kawng Kiao Intaleng invites experts from India and builds the Haw Palace — the first cement building in Kyaing Tong.",
+            "my": "စောကွန်းကျိုးအင်တလိန်းသည် အိန္ဒိယမှ ကျွမ်းကျင်သူများကို ဖိတ်ခေါ်၍ ဟော်နန်းတော်ကို ဆောက်လုပ်သည် — ကျိုင်းတုံ၏ ပထမဆုံး ဘိလပ်မြေ အဆောက်အအုံ။"
+          },
+          "confidence": "verified"
+        },
+        {
+          "year": "1959",
+          "text": {
+            "en": "The Saopha's family leaves the palace.",
+            "my": "စော်ဘွားမိသားစု နန်းတော်မှ ထွက်ခွာသည်။"
+          },
+          "confidence": "verified"
+        },
+        {
+          "year": "1962",
+          "text": {
+            "en": "The palace becomes a government office.",
+            "my": "နန်းတော်သည် အစိုးရရုံး ဖြစ်လာသည်။"
+          },
+          "confidence": "verified"
+        },
+        {
+          "year": "1991",
+          "text": {
+            "en": "The Haw Palace is demolished and a hotel is built on the site. The loss is still felt in the town.",
+            "my": "ဟော်နန်းတော်ကို ဖြိုဖျက်ပြီး ထိုနေရာတွင် ဟိုတယ် ဆောက်လုပ်သည်။ ဆုံးရှုံးမှုကို ယနေ့တိုင် မြို့ခံများ ခံစားနေရဆဲ ဖြစ်သည်။"
+          },
+          "confidence": "verified"
+        },
+        {
+          "year": "2021",
+          "text": {
+            "en": "Work begins on a replica of the palace, on the original Haw ground by the Naung Tung circular road.",
+            "my": "နောင်တုံ ပတ်လမ်းရှိ မူရင်း ဟော်ကွင်းတွင် နန်းတော် ပုံတူ တည်ဆောက်မှု စတင်သည်။"
+          },
+          "confidence": "verified"
+        },
+        {
+          "year": "today",
+          "text": {
+            "en": "The replica is open as a museum, showing photographs of the Saopha and his family, household objects and reconstructed rooms.",
+            "my": "ပုံတူ နန်းတော်သည် ပြတိုက်အဖြစ် ဖွင့်လှစ်ထားပြီး စော်ဘွားနှင့် မိသားစု၏ ဓာတ်ပုံများ၊ အသုံးအဆောင်များနှင့် ပြန်လည်တည်ဆောက်ထားသော အခန်းများကို ပြသထားသည်။"
+          },
+          "confidence": "estimated"
+        }
+      ],
+      "figure": {
+        "image": "assets/images/about/haw-palace.jpg",
+        "parallax": 0.14,
+        "caption": {
+          "en": "The Haw Palace as it stood until 1991",
+          "my": "၁၉၉၁ ခုနှစ်အထိ ရပ်တည်ခဲ့သော ဟော်နန်းတော်"
+        },
+        "disclaimer": {
+          "en": "Illustration generated by AI — not a photograph of the real palace.",
+          "my": "ပုံဥပမာ — AI ဖြင့် ဖန်တီးထားသော ပုံဖြစ်ပြီး နန်းတော်အစစ်၏ ဓာတ်ပုံ မဟုတ်ပါ"
+        }
+      },
+      "confidence": "verified"
+    },
+    {
+      "id": "peoples",
+      "number": "05",
+      "type": "pills",
+      "title": { "en": "Thirteen peoples", "my": "လူမျိုးစု ဆယ့်သုံးမျိုး" },
+      "body": [
+        {
+          "en": "The town is Tai Khun, but the hills around it are not. On market day the lanes fill with people who came down from villages a few hours away, each group with its own dress, its own language, its own reason for coming.",
+          "my": "မြို့ပေါ်မှာ တိုင်းခွန် ဖြစ်သော်လည်း ပတ်ဝန်းကျင် တောင်တန်းများမှာ မတူပါ။ ဈေးနေ့တွင် နာရီအနည်းငယ် ဝေးသော ရွာများမှ ဆင်းလာသူများဖြင့် လမ်းများ ပြည့်နှက်သွားသည်။ တစ်စုနှင့်တစ်စု ဝတ်စားဆင်ယင်မှု၊ ဘာသာစကားနှင့် လာရောက်ရသည့် အကြောင်းရင်း ကွဲပြားသည်။"
+        }
+      ],
+      "pills": [
+        "Tai Khun", "Tai Lue", "Shan", "Akha", "Lahu", "Ann", "Wa",
+        "Palaung", "Eng", "Lisu", "Kachin", "Bamar", "Chinese"
+      ],
+      "note": {
+        "en": "Tai Khun has its own script, Tai Tham, still used in monasteries here.",
+        "my": "တိုင်းခွန်တွင် ကိုယ်ပိုင် အက္ခရာ 'တိုင်းထမ်း' ရှိပြီး ဤဒေသရှိ ဘုန်းတော်ကြီးကျောင်းများတွင် ယနေ့တိုင် သုံးနေဆဲ ဖြစ်သည်။"
+      },
+      "figure": {
+        "image": "assets/images/market.jpg",
+        "parallax": 0.16,
+        "caption": {
+          "en": "Market day brings the hills down into the town",
+          "my": "ဈေးနေ့သည် တောင်ပေါ်ဒေသကို မြို့ထဲသို့ ခေါ်ဆောင်လာသည်"
+        }
+      },
+      "confidence": "verified"
+    },
+    {
+      "id": "landmarks",
+      "number": "06",
+      "type": "landmarks",
+      "title": { "en": "What to look for", "my": "ကြည့်သင့်သည့် နေရာများ" },
+      "landmarks": [
+        {
+          "name": { "en": "Wat Zom Kham", "my": "ဝပ်ကျုံခမ်း" },
+          "text": {
+            "en": "The gilded stupa on the ridge, visible from most of the town.",
+            "my": "တောင်ကုန်းပေါ်ရှိ ရွှေစေတီ — မြို့အများစုမှ မြင်နိုင်သည်။"
+          }
+        },
+        {
+          "name": { "en": "Naung Tung Lake", "my": "နောင်တုံရေကန်" },
+          "text": {
+            "en": "The pool from the founding legend. Walk the circular road at dusk.",
+            "my": "မြို့တည်ဒဏ္ဍာရီမှ ရေကန်။ ညနေစောင်းတွင် ပတ်လမ်းကို လမ်းလျှောက်ကြည့်ပါ။"
+          }
+        },
+        {
+          "name": { "en": "Pa Leng Gate", "my": "ပလိန်းတံခါး" },
+          "text": {
+            "en": "The last surviving gate of the old city wall.",
+            "my": "မြို့ရိုးဟောင်း၏ ကျန်ရစ်သော နောက်ဆုံး တံခါးပေါက်။"
+          }
+        },
+        {
+          "name": { "en": "Haw Palace Museum", "my": "ဟော်နန်းတော် ပြတိုက်" },
+          "text": {
+            "en": "The replica on the original ground, by the lake circular road.",
+            "my": "ရေကန်ပတ်လမ်းဘေး၊ မူရင်းဟော်ကွင်းပေါ်ရှိ ပုံတူ နန်းတော်။"
+          }
+        }
+      ],
+      "pair": [
+        {
+          "image": "assets/images/about/standing-buddha.jpg",
+          "parallax": 0.12,
+          "caption": { "en": "Standing Buddha", "my": "ရပ်တော်မူ ဘုရား" }
+        },
+        {
+          "image": "assets/images/about/lone-tree-hill.jpg",
+          "parallax": 0.12,
+          "caption": { "en": "Lone Tree Hill", "my": "တစ်ပင်တိုင် တောင်ကုန်း" }
+        }
+      ],
+      "disclaimer": {
+        "en": "Both illustrations generated by AI — real photographs will replace them.",
+        "my": "ပုံနှစ်ပုံစလုံး AI ဖြင့် ဖန်တီးထားခြင်း ဖြစ်သည် — ဓာတ်ပုံအစစ်များဖြင့် အစားထိုးသွားပါမည်။"
+      },
+      "confidence": "verified"
+    },
+    {
+      "id": "markets",
+      "number": "07",
+      "type": "prose",
+      "title": { "en": "A town of five markets", "my": "ဈေးငါးခု၏ မြို့" },
+      "body": [
+        {
+          "en": "Kyaing Tong keeps a five-day market cycle, not a seven-day week. Each day the big market moves to a different place, and the people who come change with it. If you are here for only a few days, find out which day you have landed on — it decides a lot.",
+          "my": "ကျိုင်းတုံသည် ၇ ရက် တစ်ပတ် မဟုတ်ဘဲ ၅ ရက် ဈေးစက်ဝန်းကို လိုက်နာသည်။ နေ့စဉ် ဈေးကြီးသည် နေရာတစ်ခုမှ တစ်ခုသို့ ပြောင်းရွှေ့ပြီး လာရောက်သူများလည်း လိုက်ပြောင်းသည်။ ရက်အနည်းငယ်သာ နေမည်ဆိုလျှင် ဘယ်ရက်ပေါ် ရောက်နေသည်ကို သိထားပါ — အများကြီး အဆုံးအဖြတ် ပေးပါသည်။"
+        }
+      ],
+      "cta": {
+        "label": { "en": "Which market is on today?", "my": "ယနေ့ ဘယ်ဈေးလဲ?" },
+        "route": "/today"
+      },
+      "confidence": "verified"
+    },
+    {
+      "id": "practical",
+      "number": "08",
+      "type": "rows",
+      "title": { "en": "Before you come", "my": "မလာခင် သိထားသင့်သည်" },
+      "rows": [
+        {
+          "icon": "🛂",
+          "title": { "en": "Permits", "my": "ခွင့်ပြုချက်" },
+          "text": {
+            "en": "Some hill villages need a permit. Ask your guesthouse first — rules change.",
+            "my": "အချို့ တောင်ပေါ်ရွာများသို့ သွားရန် ခွင့်ပြုချက် လိုသည်။ တည်းခိုခန်းတွင် အရင် မေးပါ — စည်းမျဉ်းများ ပြောင်းလဲတတ်သည်။"
+          }
+        },
+        {
+          "icon": "🌦",
+          "title": { "en": "Weather", "my": "ရာသီဥတု" },
+          "text": {
+            "en": "At 2,700 ft the nights are cool all year and genuinely cold from December to February.",
+            "my": "ပေ ၂,၇၀၀ အမြင့်တွင် ညများသည် တစ်နှစ်ပတ်လုံး အေးပြီး ဒီဇင်ဘာမှ ဖေဖော်ဝါရီအတွင်း တကယ် ချမ်းသည်။"
+          }
+        },
+        {
+          "icon": "💵",
+          "title": { "en": "Money", "my": "ငွေကြေး" },
+          "text": {
+            "en": "Carry kyat in cash. Card acceptance is limited and ATMs are not always working.",
+            "my": "ကျပ်ငွေ အမောက်အများ ယူဆောင်လာပါ။ ကတ် လက်ခံမှု အကန့်အသတ် ရှိပြီး ATM များလည်း အမြဲ အလုပ်မလုပ်ပါ။"
+          }
+        },
+        {
+          "icon": "🙏",
+          "title": { "en": "In the villages", "my": "ရွာများတွင်" },
+          "text": {
+            "en": "Ask before photographing people. Buy something small rather than hand out money.",
+            "my": "လူများကို ဓာတ်ပုံမရိုက်မီ ခွင့်တောင်းပါ။ ငွေ ပေးကမ်းမည့်အစား ပစ္စည်းသေးသေး တစ်ခုခု ဝယ်ပေးပါ။"
+          }
+        }
+      ],
+      "confidence": "verified"
+    }
+  ],
+  "sources": {
+    "title": { "en": "Where this comes from", "my": "အချက်အလက် ရင်းမြစ်" },
+    "items": [
+      "2014 Myanmar Population and Housing Census",
+      "Global New Light of Myanmar — Haw Palace replica museum",
+      "Local chronicles and oral history, collected in Kyaing Tong"
+    ],
+    "correction": {
+      "en": "Found a mistake?",
+      "my": "မှားနေတာ တွေ့ပါသလား?"
+    },
+    "correctionBody": {
+      "en": "This page is written by people who live here. Tell us and we will fix it.",
+      "my": "ဤစာမျက်နှာကို ဒီမှာနေထိုင်သူများက ရေးသားထားခြင်း ဖြစ်သည်။ ပြောပြပါ — ပြင်ပေးပါမည်။"
+    }
+  }
+}

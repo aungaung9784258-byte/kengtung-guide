@@ -1,0 +1,271 @@
+[
+  {
+    "id": "loi-mwe",
+    "name": { "en": "Loi Mwe", "my": "လွိုင်မွေ" },
+    "peoples": ["Hill station"],
+    "peoplesMy": ["တောင်ပေါ်မြို့"],
+    "lat": null, "lng": null, "altitude_m": 1600,
+    "distance_km": 32, "driveMinutes": 75, "trekMinutes": 0,
+    "difficulty": "easy", "guideRequired": false, "permitRequired": "no",
+    "bestSeason": "Nov-Feb",
+    "images": ["assets/images/villages/loi-mwe-1.jpg"],
+    "confidence": "verified",
+    "source": "Lonely Planet; Irrawaddy; GlobeRovers",
+    "lastChecked": "2026-10",
+    "summary": {
+      "en": "A British-era hill station at about 1,600 m, 20 miles southeast of Kengtung. Fading colonial houses, a 100-year-old Catholic church and a small artificial lake behind an earthen dam.",
+      "my": "ကျိုင်းတုံ အရှေ့တောင်ဘက် ၂၀ မိုင်အကွာ၊ အမြင့် ၁,၆၀၀ မီတာခန့်ရှိ ဗြိတိသျှခေတ် တောင်ပေါ်မြို့။ ဟောင်းနွမ်းနေသော ကိုလိုနီ အဆောက်အဦများ၊ နှစ် ၁၀၀ ကျော် ကက်သလစ်ဘုရားကျောင်းနှင့် မြေကာတာနောက်ရှိ ရေကန်ငယ်တစ်ခု ရှိသည်။"
+    },
+    "highlight": {
+      "en": "The drive itself is the attraction — a winding road through terraced rice fields and mist.",
+      "my": "လမ်းခရီးကိုယ်တိုင်က အဓိက အစွမ်း — လယ်ကွင်းလှေကားထစ်များနှင့် မြူများကြားမှ ကွေ့ဝိုက်သော လမ်း။"
+    }
+  },
+  {
+    "id": "pin-tauk",
+    "name": { "en": "Pin Tauk", "my": "ပင်းတောက်" },
+    "peoples": ["Akha", "Lahu"],
+    "peoplesMy": ["အာခါ", "လားဟူ"],
+    "lat": null, "lng": null,
+    "distance_km": 14, "driveMinutes": 40, "trekMinutes": 20,
+    "difficulty": "easy", "guideRequired": true, "permitRequired": "ask",
+    "bestSeason": "Nov-Feb",
+    "images": [],
+    "confidence": "estimated",
+    "source": "Lonely Planet — 9 miles north of Kyaingtong",
+    "lastChecked": "2026-10",
+    "summary": {
+      "en": "The most popular day trip from town: several ethnic groups can be visited in a single day. Some families here have converted to Baptism and built a church in the middle of the village.",
+      "my": "မြို့မှ အလူးလားဆုံး တစ်နေ့ခရီးစဉ် — တစ်နေ့တည်းနှင့် လူမျိုးစု အမျိုးမျိုး လည်ပတ်နိုင်သည်။ ဤနေရာမှ မိသားစုအချို့သည် ခရစ်ယာန်ဘာသာသို့ ကူးပြောင်းခဲ့ပြီး ရွာလယ်တွင် ဘုရားကျောင်းတစ်ခု ဆောက်ထားသည်။"
+    }
+  },
+  {
+    "id": "nam-lin-kaung",
+    "name": { "en": "Nam Lin Kaung", "my": "နမ့်လင်းခေါင်" },
+    "peoples": ["Ann"],
+    "peoplesMy": ["အဲန်"],
+    "lat": null, "lng": null,
+    "distance_km": null, "driveMinutes": 45, "trekMinutes": 30,
+    "difficulty": "moderate", "guideRequired": true, "permitRequired": "ask",
+    "bestSeason": "Nov-Feb",
+    "images": [
+      "assets/images/villages/nam-lin-kaung-1.jpg",
+      "assets/images/villages/nam-lin-kaung-2.jpg"
+    ],
+    "confidence": "estimated",
+    "source": "Good Life Myanmar trekking itinerary",
+    "lastChecked": "2026-10",
+    "summary": {
+      "en": "An Ann village. The residents are animists, wear entirely black traditional dress, and lacquer their teeth black with a plant dye.",
+      "my": "အဲန်ရွာတစ်ရွာ။ ရွာသားများသည် နတ်ကိုးကွယ်သူများဖြစ်ပြီး အနက်ရောင်သက်သက် ရိုးရာဝတ်စုံ ဝတ်ဆင်ကာ အပင်ဆေးရည်ဖြင့် သွားများကို အမည်းဆိုးထားကြသည်။"
+    },
+    "etiquette": {
+      "do": {
+        "en": ["Ask before photographing anyone", "Buy something — tea, cloth, handicraft", "Take your shoes off indoors", "Greet the elders first"],
+        "my": ["ဓာတ်ပုံ မရိုက်ခင် ခွင့်တောင်းပါ", "တစ်ခုခု ဝယ်ပါ — လက်ဖက်၊ အထည်၊ လက်မှုပစ္စည်း", "အိမ်ထဲဝင်လျှင် ဖိနပ် ချွတ်ပါ", "သက်ကြီးများကို အရင် နှုတ်ဆက်ပါ"]
+      },
+      "dont": {
+        "en": ["Hand out sweets or money to children", "Touch shrines or spirit gates", "Enter a house uninvited", "Wear revealing clothing"],
+        "my": ["ကလေးများကို သကြားလုံး၊ ပိုက်ဆံ မပေးပါနှင့်", "နတ်စင်၊ နတ်တံခါးများကို မထိပါနှင့်", "ဖိတ်ခေါ်ခြင်းမရှိဘဲ အိမ်ထဲ မဝင်ပါနှင့်", "ဖေါ်ရွဲသော အဝတ်အစား မဝတ်ပါနှင့်"]
+      }
+    }
+  },
+  {
+    "id": "nam-lin-mai",
+    "name": { "en": "Nam Lin Mai", "my": "နမ့်လင်းမိုင်" },
+    "peoples": ["Ann"],
+    "peoplesMy": ["အဲန်"],
+    "lat": null, "lng": null,
+    "distance_km": null, "driveMinutes": null, "trekMinutes": 45,
+    "difficulty": "moderate", "guideRequired": true, "permitRequired": "ask",
+    "bestSeason": "Nov-Feb",
+    "images": [],
+    "confidence": "estimated",
+    "source": "Good Life Myanmar trekking itinerary",
+    "lastChecked": "2026-10",
+    "summary": {
+      "en": "Beautifully placed on a plateau overlooking rice terraces, surrounded by shade trees. Usually combined with Nam Lin Kaung.",
+      "my": "လယ်လှေကားထစ်များကို မျှော်ကြည့်ရသော ကုန်းပြင်မြင့်ပေါ်တွင် လှပစွာ တည်ရှိပြီး အရိပ်ကောင်းသော သစ်ပင်များ ဝန်းရံထားသည်။ များသောအားဖြင့် နမ့်လင်းခေါင်နှင့် တွဲလည်ကြသည်။"
+    }
+  },
+  {
+    "id": "wan-yut",
+    "name": { "en": "Wan Yut", "my": "ဝမ်ယွတ်" },
+    "peoples": ["Loi"],
+    "peoplesMy": ["လွိုင်"],
+    "lat": null, "lng": null,
+    "distance_km": null, "driveMinutes": null, "trekMinutes": 180,
+    "difficulty": "hard", "guideRequired": true, "permitRequired": "ask",
+    "bestSeason": "Nov-Feb",
+    "images": [],
+    "confidence": "estimated",
+    "source": "Mr Myanmar Travel — described as the hardest trek in the Kengtung area",
+    "lastChecked": "2026-10",
+    "summary": {
+      "en": "A mountain-top Loi village of longhouses, five families to a house. The hardest walk in the Kengtung area — an uphill slog the whole way.",
+      "my": "တောင်ထိပ်ရှိ လွိုင်လူမျိုး အိမ်ရှည်ရွာ — တစ်အိမ်လျှင် မိသားစု ၅ စု နေထိုင်ကြသည်။ ကျိုင်းတုံဒေသ၏ အခက်ခဲဆုံး လမ်းခရီးဖြစ်ပြီး လမ်းတစ်လျှောက် တောင်တက်ရသည်။"
+    }
+  },
+  {
+    "id": "wan-seng",
+    "name": { "en": "Wan Seng", "my": "ဝမ်စိန်" },
+    "peoples": ["Loi"],
+    "peoplesMy": ["လွိုင်"],
+    "lat": null, "lng": null,
+    "distance_km": null, "driveMinutes": null, "trekMinutes": 60,
+    "difficulty": "moderate", "guideRequired": true, "permitRequired": "ask",
+    "bestSeason": "Nov-Feb",
+    "images": [],
+    "confidence": "estimated",
+    "source": "Mr Myanmar Travel",
+    "lastChecked": "2026-10",
+    "summary": {
+      "en": "A second Loi village, usually visited in the afternoon after Wan Yut.",
+      "my": "ဒုတိယ လွိုင်ရွာ။ များသောအားဖြင့် ဝမ်ယွတ်ပြီးနောက် နေ့လယ်ပိုင်းတွင် သွားကြသည်။"
+    }
+  },
+  {
+    "id": "mong-zine",
+    "name": { "en": "Mong Zine", "my": "မိုင်းဇိုင်း" },
+    "peoples": ["Khun"],
+    "peoplesMy": ["ခွန်"],
+    "lat": null, "lng": null,
+    "distance_km": null, "driveMinutes": null, "trekMinutes": 90,
+    "difficulty": "moderate", "guideRequired": true, "permitRequired": "ask",
+    "bestSeason": "Nov-Feb",
+    "images": [],
+    "confidence": "estimated",
+    "source": "Mr Myanmar Travel",
+    "lastChecked": "2026-10",
+    "summary": {
+      "en": "A Tai Khun village where blacksmiths still forge traditional knives by hand. The road in runs along a mountain ridge with long views over farms and fish ponds.",
+      "my": "ပန်းပဲဆရာများက ရိုးရာဓားများကို လက်ဖြင့် ထိုးလုပ်နေဆဲဖြစ်သော တိုင်းခွန်ရွာ။ ဝင်လမ်းသည် တောင်ကြောတစ်လျှောက် ဖြတ်သွားပြီး လယ်ယာများနှင့် ငါးကန်များကို ကျယ်ပြန့်စွာ မြင်ရသည်။"
+    }
+  },
+  {
+    "id": "ho-kyim",
+    "name": { "en": "Ho Kyim", "my": "ဟိုကင်" },
+    "peoples": ["Loi", "Akha", "Lahu"],
+    "peoplesMy": ["လွိုင်", "အာခါ", "လားဟူ"],
+    "lat": null, "lng": null,
+    "distance_km": 16, "driveMinutes": 50, "trekMinutes": 30,
+    "difficulty": "easy", "guideRequired": true, "permitRequired": "ask",
+    "bestSeason": "Nov-Feb",
+    "images": [],
+    "confidence": "estimated",
+    "source": "Lonely Planet — approx. 10 miles south of town",
+    "lastChecked": "2026-10",
+    "summary": {
+      "en": "South of town: Loi, Akha and Lahu hamlets living side by side. On the same road is the Tai Khun village of Wan Loi and the hilltop temple of That Jom Loi.",
+      "my": "မြို့တောင်ဘက်တွင် လွိုင်၊ အာခါနှင့် လားဟူ ရွာငယ်များ ယှဉ်တွဲ နေထိုင်ကြသည်။ ထိုလမ်းအတိုင်းပင် တိုင်းခွန်ရွာ ဝမ်လွိုင်နှင့် တောင်ထိပ်ဘုရား သက်ဂျွန်လွိုင် ရှိသည်။"
+    }
+  },
+  {
+    "id": "wan-nyek",
+    "name": { "en": "Wan Nyek", "my": "ဝမ်ညက်" },
+    "peoples": ["Loi"],
+    "peoplesMy": ["လွိုင်"],
+    "lat": null, "lng": null,
+    "distance_km": null, "driveMinutes": null, "trekMinutes": null,
+    "difficulty": "moderate", "guideRequired": true, "permitRequired": "ask",
+    "bestSeason": "Nov-Feb",
+    "images": [],
+    "confidence": "estimated",
+    "source": "Lonely Planet — north of town, off the Mong La road",
+    "lastChecked": "2026-10",
+    "summary": {
+      "en": "North of town off the Mong La road. One of two villages where the Loi people still live in traditional longhouses.",
+      "my": "မြို့မြောက်ဘက်၊ မိုင်းလားလမ်းမှ ခွဲထွက်ရသည်။ လွိုင်လူမျိုးများ ရိုးရာအိမ်ရှည်များတွင် နေထိုင်နေဆဲဖြစ်သော ရွာနှစ်ရွာအနက် တစ်ရွာ။"
+    }
+  },
+  {
+    "id": "wan-saen",
+    "name": { "en": "Wan Saen", "my": "ဝမ်ဆန်" },
+    "peoples": ["Loi"],
+    "peoplesMy": ["လွိုင်"],
+    "lat": null, "lng": null,
+    "distance_km": null, "driveMinutes": null, "trekMinutes": null,
+    "difficulty": "moderate", "guideRequired": true, "permitRequired": "ask",
+    "bestSeason": "Nov-Feb",
+    "images": [],
+    "confidence": "estimated",
+    "source": "Lonely Planet — north of town, off the Mong La road",
+    "lastChecked": "2026-10",
+    "summary": {
+      "en": "The second Loi longhouse village north of town, usually paired with Wan Nyek.",
+      "my": "မြို့မြောက်ဘက်ရှိ ဒုတိယ လွိုင် အိမ်ရှည်ရွာ။ များသောအားဖြင့် ဝမ်ညက်နှင့် တွဲလည်ကြသည်။"
+    }
+  },
+  {
+    "id": "lahu-shi",
+    "name": { "en": "Lahu Shi", "my": "လားဟူရှီး" },
+    "peoples": ["Lahu Shi"],
+    "peoplesMy": ["လားဟူရှီး"],
+    "lat": null, "lng": null,
+    "distance_km": null, "driveMinutes": 40, "trekMinutes": 180,
+    "difficulty": "hard", "guideRequired": true, "permitRequired": "ask",
+    "bestSeason": "Nov-Feb",
+    "images": [],
+    "confidence": "estimated",
+    "source": "Lonely Planet — 40-minute drive northwest, then a three-hour uphill walk",
+    "lastChecked": "2026-10",
+    "summary": {
+      "en": "A remote Lahu village reached only by an arduous three-hour uphill walk from a drop-off point 40 minutes northwest of town. For fit walkers only.",
+      "my": "မြို့အနောက်မြောက် ၄၀ မိနစ်အကွာမှ ဆင်းပြီး သုံးနာရီကြာ တောင်တက်လမ်းလျှောက်မှသာ ရောက်နိုင်သော ဝေးလံသည့် လားဟူရွာ။ ကျန်းမာသန်စွမ်းသူများအတွက်သာ။"
+    }
+  },
+  {
+    "id": "hwe-lon",
+    "name": { "en": "Hwe Lon", "my": "ဟွေလုံ" },
+    "peoples": ["Akha"],
+    "peoplesMy": ["အာခါ"],
+    "lat": null, "lng": null,
+    "distance_km": null, "driveMinutes": null, "trekMinutes": 60,
+    "difficulty": "moderate", "guideRequired": true, "permitRequired": "ask",
+    "bestSeason": "Nov-Feb",
+    "images": [],
+    "confidence": "estimated",
+    "source": "Go Myanmar Tours itinerary",
+    "lastChecked": "2026-10",
+    "summary": {
+      "en": "An Akha village reached on a short trek from town. A common first introduction to Akha customs.",
+      "my": "မြို့မှ ခရီးတိုလမ်းလျှောက်၍ ရောက်နိုင်သော အာခါရွာ။ အာခါဓလေ့များကို စတင်လေ့လာရန် အသင့်တော်ဆုံး။"
+    }
+  },
+  {
+    "id": "wan-ping",
+    "name": { "en": "Wan Ping", "my": "ဝမ်ပင်" },
+    "peoples": ["Akha"],
+    "peoplesMy": ["အာခါ"],
+    "lat": null, "lng": null,
+    "distance_km": null, "driveMinutes": null, "trekMinutes": null,
+    "difficulty": "moderate", "guideRequired": true, "permitRequired": "ask",
+    "bestSeason": "Nov-Feb",
+    "images": [],
+    "confidence": "estimated",
+    "source": "Good Life Myanmar; The Irrawaddy (spelt Wenpin)",
+    "lastChecked": "2026-10",
+    "summary": {
+      "en": "Residents still wear their traditional dress day to day; the usual starting point for longer treks.",
+      "my": "ရွာသားများသည် နေ့စဉ် ရိုးရာဝတ်စုံကို ဝတ်ဆင်နေဆဲဖြစ်သည်။ ခရီးရှည် လမ်းလျှောက်ခရီးစဉ်များ၏ ထွက်ခွာမှတ် ဖြစ်လေ့ရှိသည်။"
+    }
+  },
+  {
+    "id": "wan-lar",
+    "name": { "en": "Wan Lar", "my": "ဝမ်လာ" },
+    "peoples": ["Akha"],
+    "peoplesMy": ["အာခါ"],
+    "lat": null, "lng": null,
+    "distance_km": null, "driveMinutes": null, "trekMinutes": null,
+    "difficulty": "moderate", "guideRequired": true, "permitRequired": "ask",
+    "bestSeason": "Nov-Feb",
+    "images": [],
+    "confidence": "estimated",
+    "source": "Good Life Myanmar itinerary",
+    "lastChecked": "2026-10",
+    "summary": {
+      "en": "Known locally for bird hunting; usually visited in the afternoon.",
+      "my": "ငှက်ပစ်ခြင်းဖြင့် ဒေသတွင်း ထင်ရှားသည်။ များသောအားဖြင့် နေ့လယ်ပိုင်းတွင် သွားရောက်ကြသည်။"
+    }
+  }
+]

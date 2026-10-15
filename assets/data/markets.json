@@ -1,0 +1,89 @@
+{
+  "_comment": "Five-day rotating market cycle of Kengtung Township. anchorDate is a date on which slot 0 was held; every slot repeats every 5 days. Only slot 0 is confirmed — Mekong News reported 2026-03-10 (Tabaung waning 8, Tuesday) as Kat Taung market day. The other four slots are placeholders for the field survey: fill in id/name/lat/lng/confidence and nothing else needs to change.",
+  "cycleLength": 5,
+  "anchorDate": "2026-03-10",
+  "anchorSlot": 0,
+  "slots": [
+    {
+      "slot": 0,
+      "id": "kat-taung-market",
+      "name": { "en": "Kat Taung Market", "my": "ကတ်တောင်ဈေး" },
+      "lat": null,
+      "lng": null,
+      "openHours": "04:00-12:00",
+      "confidence": "verified",
+      "source": "Mekong News, 10 March 2026",
+      "description": {
+        "en": "One of the five markets of the Kengtung cycle. The old market ground here is also where the once-a-year Sawbwa Market Day is held.",
+        "my": "ကျိုင်းတုံ ငါးရက်တစ်ဈေး အလှည့်ကျစနစ်မှ တစ်ခု။ ဤဈေးဟောင်းနေရာသည် တစ်နှစ်တစ်ကြိမ် စော်ဘွားဈေးနေ့ ကျင်းပရာ နေရာလည်း ဖြစ်သည်။"
+      }
+    },
+    {
+      "slot": 1,
+      "id": null,
+      "name": { "en": "Village market — name not yet surveyed", "my": "ရွာဈေး — အမည် မစစ်ဆေးရသေး" },
+      "lat": null,
+      "lng": null,
+      "openHours": "04:00-12:00",
+      "confidence": "unverified",
+      "source": null
+    },
+    {
+      "slot": 2,
+      "id": null,
+      "name": { "en": "Village market — name not yet surveyed", "my": "ရွာဈေး — အမည် မစစ်ဆေးရသေး" },
+      "lat": null,
+      "lng": null,
+      "openHours": "04:00-12:00",
+      "confidence": "unverified",
+      "source": null
+    },
+    {
+      "slot": 3,
+      "id": null,
+      "name": { "en": "Village market — name not yet surveyed", "my": "ရွာဈေး — အမည် မစစ်ဆေးရသေး" },
+      "lat": null,
+      "lng": null,
+      "openHours": "04:00-12:00",
+      "confidence": "unverified",
+      "source": null
+    },
+    {
+      "slot": 4,
+      "id": null,
+      "name": { "en": "Village market — name not yet surveyed", "my": "ရွာဈေး — အမည် မစစ်ဆေးရသေး" },
+      "lat": null,
+      "lng": null,
+      "openHours": "04:00-12:00",
+      "confidence": "unverified",
+      "source": null
+    }
+  ],
+  "permanent": [
+    {
+      "id": "kengtung-central-market",
+      "name": { "en": "Kengtung Central Market", "my": "ကျိုင်းတုံ မြို့မဈေး" },
+      "everyDay": true,
+      "openHours": "04:00-12:00",
+      "confidence": "verified",
+      "source": "Lonely Planet / TripAdvisor",
+      "description": {
+        "en": "Open every morning from about 4 am. Hill-tribe villagers walk through the night to reach it by dawn. Closed completely on Sawbwa Market Day.",
+        "my": "နေ့စဉ် မနက် ၄ နာရီခန့်မှ ဖွင့်သည်။ တောင်ပေါ်ဒေသ ရွာသားများသည် အရုဏ်တက်မီ ရောက်ရန် ညလုံးပေါက် လမ်းလျှောက်လာကြသည်။ စော်ဘွားဈေးနေ့တွင် လုံးဝပိတ်သည်။"
+      }
+    },
+    {
+      "id": "buffalo-market",
+      "name": { "en": "Water Buffalo Market", "my": "ကျွဲနွားဈေး" },
+      "everyDay": false,
+      "twiceWeekly": true,
+      "openHours": null,
+      "confidence": "unverified",
+      "source": "Mr Myanmar Travel — days of the week not stated",
+      "description": {
+        "en": "Held twice a week on the western edge of town. The exact days are not documented online — ask locally.",
+        "my": "မြို့အနောက်ဘက်စွန်းတွင် တစ်ပတ်လျှင် နှစ်ကြိမ် ကျင်းပသည်။ အတိအကျ မည်သည့်နေ့များဖြစ်သည်ကို အွန်လိုင်းတွင် မတွေ့ရပါ — ဒေသခံကို မေးပါ။"
+      }
+    }
+  ]
+}

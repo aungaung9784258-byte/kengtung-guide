@@ -1,0 +1,163 @@
+[
+  {
+    "id": "thadingyut-2026",
+    "name": { "en": "Full Moon of Thadingyut", "my": "သီတင်းကျွတ် လပြည့်" },
+    "date": "2026-10-25",
+    "endDate": "2026-10-27",
+    "kind": "buddhist",
+    "confidence": "verified",
+    "source": "DICA business calendar",
+    "description": {
+      "en": "The end of Buddhist Lent. Houses, monasteries and the whole of Kengtung are lit with candles and paper lanterns for three nights. Children pay respect to parents and teachers.",
+      "my": "ဝါကျွတ်ပွဲတော်။ အိမ်များ၊ ဘုန်းကြီးကျောင်းများနှင့် ကျိုင်းတုံတစ်မြို့လုံးကို ဖယောင်းတိုင်နှင့် မီးအိမ်များဖြင့် သုံးညတိုင် ထွန်းညှိကြသည်။ ကလေးများက မိဘဆရာသမားများကို ကန်တော့ကြသည်။"
+    }
+  },
+  {
+    "id": "shan-new-year-1389",
+    "name": { "en": "Shan New Year", "my": "ရှမ်းနှစ်သစ်ကူး" },
+    "date": "2026-11-09",
+    "kind": "ethnic",
+    "confidence": "estimated",
+    "source": "1st waxing day of Tazaungmone — computed, not yet announced",
+    "description": {
+      "en": "Shan New Year falls on the first waxing day of Tazaungmone. Expect traditional dance, Shan food stalls and processions in Kengtung. The official date is announced locally each year.",
+      "my": "ရှမ်းနှစ်သစ်ကူးသည် တန်ဆောင်မုန်းလဆန်း ၁ ရက်တွင် ကျရောက်သည်။ ကျိုင်းတုံတွင် ရိုးရာအက၊ ရှမ်းအစားအစာဆိုင်များနှင့် အခမ်းအနားများ ရှိတတ်သည်။ တရားဝင်ရက်စွဲကို နှစ်စဉ် ဒေသအလိုက် ကြေညာသည်။"
+    }
+  },
+  {
+    "id": "tazaungdaing-2026",
+    "name": { "en": "Full Moon of Tazaungmone", "my": "တန်ဆောင်မုန်း လပြည့်" },
+    "date": "2026-11-23",
+    "endDate": "2026-11-24",
+    "kind": "buddhist",
+    "confidence": "verified",
+    "source": "DICA business calendar",
+    "description": {
+      "en": "The festival of lights. Weaving contests through the night, hot-air balloons in some towns, and robe-offering ceremonies at the monasteries.",
+      "my": "မီးထွန်းပွဲတော်။ ညဉ့်လုံးပေါက် ယက်ကန်းရက်ပြိုင်ပွဲများ၊ အချို့မြို့များတွင် မီးပုံးပျံများနှင့် ဘုန်းကြီးကျောင်းများတွင် သင်္ကန်းကပ်လှူပွဲများ ကျင်းပသည်။"
+    }
+  },
+  {
+    "id": "national-day-2026",
+    "name": { "en": "National Day", "my": "အမျိုးသားနေ့" },
+    "date": "2026-12-04",
+    "kind": "public",
+    "confidence": "verified",
+    "source": "DICA business calendar"
+  },
+  {
+    "id": "tabaung-2027",
+    "name": { "en": "Full Moon of Tabaung", "my": "တပေါင်း လပြည့်" },
+    "date": "2027-03-22",
+    "kind": "buddhist",
+    "confidence": "verified",
+    "source": "DICA business calendar",
+    "description": {
+      "en": "Pagoda festival season. Many of the smaller stupas around Kengtung hold their annual festival in Tabaung.",
+      "my": "ဘုရားပွဲတော် ရာသီ။ ကျိုင်းတုံပတ်ဝန်းကျင်ရှိ စေတီငယ်များစွာသည် တပေါင်းလတွင် နှစ်စဉ်ပွဲတော် ကျင်းပကြသည်။"
+    }
+  },
+  {
+    "id": "sawbwa-market-2027",
+    "name": { "en": "Sawbwa Market Day", "my": "စော်ဘွားဈေးနေ့" },
+    "date": null,
+    "window": { "from": "2027-03-23", "to": "2027-04-06" },
+    "kind": "local",
+    "confidence": "unverified",
+    "source": "Mekong News / Shan News — date announced only weeks in advance",
+    "highlight": true,
+    "description": {
+      "en": "Kengtung's own festival, held for ONE morning a year and nothing else. The central market closes completely and every trader moves to the old Kat Kaw market ground behind the Sawbwa tombs. Held since 1368 AD — the 639th was in March 2026. The date is chosen in the waning half of Tabaung, on a day that coincides with the Kat Taung market day of the five-day cycle.",
+      "my": "ကျိုင်းတုံ၏ ကိုယ်ပိုင်ပွဲတော်ဖြစ်ပြီး တစ်နှစ်လျှင် မနက်တစ်ပိုင်းသာ ကျင်းပသည်။ မြို့မဈေးကြီးကို လုံးဝပိတ်ထားကာ ဈေးသည်အားလုံး စော်ဘွားအုတ်ဂူနောက်ရှိ ကတ်ကောဝ် ဈေးဟောင်းနေရာသို့ ပြောင်းရွှေ့ရောင်းချကြသည်။ အေဒီ ၁၃၆၈ ခုနှစ်မှစ၍ ကျင်းပလာခဲ့ပြီး ၂၀၂၆ မတ်လတွင် ၆၃၉ ကြိမ်မြောက် ဖြစ်သည်။ ရက်ကို တပေါင်းလဆုတ်အတွင်း ကတ်တောင်ဈေးနေ့နှင့် တိုက်ဆိုင်သည့်ရက်မှ ရွေးချယ်သည်။"
+    }
+  },
+  {
+    "id": "thingyan-2027",
+    "name": { "en": "Thingyan Water Festival", "my": "သင်္ကြန် ရေပက်ပွဲတော်" },
+    "date": "2027-04-13",
+    "endDate": "2027-04-16",
+    "kind": "public",
+    "confidence": "verified",
+    "source": "DICA business calendar",
+    "description": {
+      "en": "Myanmar's biggest festival. Everyone gets a dousing, visitors included.",
+      "my": "မြန်မာနိုင်ငံ၏ အကြီးဆုံး ပွဲတော်။ ဧည့်သည်များအပါအဝင် အားလုံး ရေစိုကြသည်။"
+    }
+  },
+  {
+    "id": "myanmar-new-year-2027",
+    "name": { "en": "Myanmar New Year", "my": "မြန်မာနှစ်သစ်ကူး" },
+    "date": "2027-04-17",
+    "kind": "public",
+    "confidence": "verified",
+    "source": "DICA business calendar"
+  },
+  {
+    "id": "kason-2027",
+    "name": { "en": "Full Moon of Kason", "my": "ကဆုန် လပြည့်" },
+    "date": "2027-05-20",
+    "kind": "buddhist",
+    "confidence": "verified",
+    "source": "DICA business calendar",
+    "description": {
+      "en": "Watering of the sacred bodhi tree, at the hottest time of the year.",
+      "my": "တစ်နှစ်တာ အပူဆုံးအချိန်တွင် ညောင်ရေသွန်းပွဲ ကျင်းပသည်။"
+    }
+  },
+  {
+    "id": "waso-2027",
+    "name": { "en": "Full Moon of Waso", "my": "ဝါဆို လပြည့်" },
+    "date": "2027-07-18",
+    "kind": "buddhist",
+    "confidence": "verified",
+    "source": "DICA business calendar",
+    "description": {
+      "en": "Start of Buddhist Lent. Offering of Waso robes; traditionally no weddings until Thadingyut.",
+      "my": "ဝါတွင်းကာလ အစ။ ဝါဆိုသင်္ကန်း ကပ်လှူကြပြီး သီတင်းကျွတ်အထိ မင်္ဂလာဆောင် မပြုလုပ်ကြပါ။"
+    }
+  },
+  {
+    "id": "thadingyut-2027",
+    "name": { "en": "Full Moon of Thadingyut", "my": "သီတင်းကျွတ် လပြည့်" },
+    "date": "2027-10-14",
+    "endDate": "2027-10-16",
+    "kind": "buddhist",
+    "confidence": "verified",
+    "source": "DICA business calendar"
+  },
+  {
+    "id": "tazaungdaing-2027",
+    "name": { "en": "Full Moon of Tazaungmone", "my": "တန်ဆောင်မုန်း လပြည့်" },
+    "date": "2027-11-12",
+    "endDate": "2027-11-13",
+    "kind": "buddhist",
+    "confidence": "verified",
+    "source": "DICA business calendar"
+  },
+  {
+    "id": "tabaung-2028",
+    "name": { "en": "Full Moon of Tabaung", "my": "တပေါင်း လပြည့်" },
+    "date": "2028-03-10",
+    "kind": "buddhist",
+    "confidence": "verified",
+    "source": "publicholidays.asia"
+  },
+  {
+    "id": "thingyan-2028",
+    "name": { "en": "Thingyan Water Festival", "my": "သင်္ကြန် ရေပက်ပွဲတော်" },
+    "date": "2028-04-13",
+    "endDate": "2028-04-16",
+    "kind": "public",
+    "confidence": "verified",
+    "source": "publicholidays.asia"
+  },
+  {
+    "id": "thadingyut-2028",
+    "name": { "en": "Full Moon of Thadingyut", "my": "သီတင်းကျွတ် လပြည့်" },
+    "date": "2028-10-03",
+    "endDate": "2028-10-05",
+    "kind": "buddhist",
+    "confidence": "verified",
+    "source": "publicholidays.asia"
+  }
+]

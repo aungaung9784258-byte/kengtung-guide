@@ -1,0 +1,1393 @@
+===FILE lib\features\detail\place_detail_screen.dart=== 
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+import '../../app/theme/app_colors.dart';
+import '../../app/theme/app_motion.dart';
+import '../../core/providers/app_providers.dart';
+import '../../data/models/place.dart';
+import '../../l10n/app_localizations.dart';
+import '../../shared/widgets/motion_widgets.dart';
+import '../../shared/widgets/place_image.dart';
+
+class PlaceDetailScreen extends ConsumerStatefulWidget {
+  const PlaceDetailScreen({super.key, required this.placeId});
+  final String placeId;
+
+  @override
+  ConsumerState<PlaceDetailScreen> createState() => _PlaceDetailScreenState();
+}
+
+class _PlaceDetailScreenState extends ConsumerState<PlaceDetailScreen> {
+  final _scroll = ScrollController();
+  double _offset = 0;
+
+  static const _heroHeight = 380.0;
+
+  @override
+  void initState() {
+    super.initState();
+    _scroll.addListener(() {
+      if (mounted) setState(() => _offset = _scroll.offset);
+    });
+  }
+
+  @override
+  void dispose() {
+    _scroll.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final t = context.l10n;
+    final lang = ref.watch(langProvider);
+    final places = ref.watch(placesProvider).value ?? const <Place>[];
+    final place = places.where((p) => p.id == widget.placeId).firstOrNull;
+
+    if (place == null) {
+      return const Scaffold(body: Center(child: CircularProgressIndicator()));
+    }
+
+    final isFav = ref.watch(favouritesProvider).contains(place.id);
+    final progress = (_offset / _heroHeight).clamp(0.0, 1.0);
+    final cs = Theme.of(context).colorScheme;
+
+    return Scaffold(
+      extendBodyBehindAppBar: true,
+      body: Stack(
+        children: [
+          CustomScrollView(
+            controller: _scroll,
+            physics: const BouncingScrollPhysics(
+                parent: AlwaysScrollableScrollPhysics()),
+            slivers: [
+              // ---------- Parallax photo hero ----------
+              SliverToBoxAdapter(
+                child: SizedBox(
+                  height: _heroHeight,
+                  child: Stack(
+                    fit: StackFit.expand,
+                    children: [
+                      // Image drifts at 35% of scroll speed and zooms slightly
+                      Transform.translate(
+                        offset: Offset(0, _offset * AppMotion.parallaxFactor),
+                        child: Transform.scale(
+                          scale: 1 + (_offset < 0 ? -_offset / 400 : 0),
+                          child: Hero(
+                            tag: 'place-img-${place.id}',
+                            child: PlaceImage(place: place),
+                          ),
+                        ),
+                      ),
+                      const Positioned.fill(
+                        child: DecoratedBox(
+                          decoration:
+                              BoxDecoration(gradient: AppColors.heroScrim),
+                        ),
+                      ),
+                      // Thumbnail strip floats above the sheet
+                      if (place.images.length > 1)
+                        Positioned(
+                          left: 20,
+                          right: 20,
+                          bottom: 50,
+                          child: _ThumbStrip(place: place),
+                        ),
+                    ],
+                  ),
+                ),
+              ),
+
+              // ---------- Rounded content sheet that slides over the photo ----------
+              SliverToBoxAdapter(
+                child: Transform.translate(
+                  offset: const Offset(0, -34),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).scaffoldBackgroundColor,
+                      borderRadius: const BorderRadius.vertical(
+                          top: Radius.circular(34)),
+                    ),
+                    padding: const EdgeInsets.fromLTRB(20, 26, 20, 140),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        RevealIn(
+                          index: 0,
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  place.name(lang),
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headlineMedium,
+                                ),
+                              ),
+                              if (place.rating != null)
+                                Container(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 10, vertical: 6),
+                                  decoration: BoxDecoration(
+                                    color: AppColors.gold.withValues(alpha: 0.15),
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      const Icon(Icons.star_rounded,
+                                          size: 16, color: AppColors.gold),
+                                      const SizedBox(width: 4),
+                                      Text(
+                                        place.rating!.toStringAsFixed(1),
+                                        style: const TextStyle(
+                                            fontWeight: FontWeight.w700,
+                                            fontSize: 13),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                        RevealIn(
+                          index: 1,
+                          child: Row(
+                            children: [
+                              const Icon(Icons.place_rounded,
+                                  size: 15, color: AppColors.jade),
+                              const SizedBox(width: 5),
+                              Expanded(
+                                child: Text(place.address(lang),
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodySmall),
+                              ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(height: 16),
+                        RevealIn(
+                          index: 2,
+                          child: Wrap(
+                            spacing: 8,
+                            runSpacing: 8,
+                            children: [
+                              _Pill(
+                                icon: place.category.icon,
+                                label: t.t(place.category.labelKey),
+                                color: place.category.color,
+                              ),
+                              if (place.openHours != null)
+                                _Pill(
+                                  icon: Icons.schedule_rounded,
+                                  label: place.openHours!,
+                                  color: cs.onSurface.withValues(alpha: 0.55),
+                                ),
+                              ...place.tags.map((tag) => _Pill(
+                                    icon: Icons.sell_rounded,
+                                    label: tag,
+                                    color: cs.onSurface.withValues(alpha: 0.4),
+                                  )),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(height: 26),
+                        RevealIn(
+                          index: 3,
+                          child: Text(t.description,
+                              style:
+                                  Theme.of(context).textTheme.titleMedium),
+                        ),
+                        const SizedBox(height: 8),
+                        RevealIn(
+                          index: 4,
+                          child: Text(place.description(lang),
+                              style: Theme.of(context).textTheme.bodyMedium),
+                        ),
+                        if (place.phone != null &&
+                            place.phone!.isNotEmpty) ...[
+                          const SizedBox(height: 22),
+                          RevealIn(
+                            index: 5,
+                            child: _CallRow(phone: place.phone!),
+                          ),
+                        ],
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+
+          // ---------- Top bar that fades in a solid background on scroll ----------
+          _FloatingTopBar(
+            progress: progress,
+            title: place.name(lang),
+            isFav: isFav,
+            onBack: () => context.pop(),
+            onFav: () =>
+                ref.read(favouritesProvider.notifier).toggle(place.id),
+          ),
+
+          // ---------- Sticky action bar ----------
+          Positioned(
+            left: 20,
+            right: 20,
+            bottom: 24,
+            child: RevealIn(
+              delay: AppMotion.base,
+              offset: const Offset(0, 0.5),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: FilledButton.icon(
+                      onPressed: () => context.go('/map?focus=${place.id}'),
+                      icon: const Icon(Icons.near_me_rounded, size: 18),
+                      label: Text(t.viewInMap),
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: FilledButton.icon(
+                      style: FilledButton.styleFrom(
+                          backgroundColor: AppColors.gold,
+                          foregroundColor: const Color(0xFF3A2600)),
+                      onPressed: () =>
+                          context.go('/map?focus=${place.id}&route=1'),
+                      icon: const Icon(Icons.route_rounded, size: 18),
+                      label: Text(t.findPath),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _FloatingTopBar extends StatelessWidget {
+  const _FloatingTopBar({
+    required this.progress,
+    required this.title,
+    required this.isFav,
+    required this.onBack,
+    required this.onFav,
+  });
+
+  final double progress;
+  final String title;
+  final bool isFav;
+  final VoidCallback onBack;
+  final VoidCallback onFav;
+
+  @override
+  Widget build(BuildContext context) {
+    final bg = Theme.of(context).scaffoldBackgroundColor;
+    return AnimatedContainer(
+      duration: AppMotion.micro,
+      height: MediaQuery.of(context).padding.top + 62,
+      color: bg.withValues(alpha: progress),
+      padding: EdgeInsets.only(
+          top: MediaQuery.of(context).padding.top + 8,
+          left: 16,
+          right: 16),
+      child: Row(
+        children: [
+          _CircleIcon(icon: Icons.arrow_back_rounded, onTap: onBack),
+          const SizedBox(width: 12),
+          Expanded(
+            child: AnimatedOpacity(
+              opacity: progress > 0.6 ? 1 : 0,
+              duration: AppMotion.fast,
+              child: Text(
+                title,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+            ),
+          ),
+          FavouriteButton(isFavourite: isFav, onTap: onFav),
+        ],
+      ),
+    );
+  }
+}
+
+class _CircleIcon extends StatelessWidget {
+  const _CircleIcon({required this.icon, required this.onTap});
+  final IconData icon;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return PressableScale(
+      scale: 0.85,
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.all(9),
+        decoration: BoxDecoration(
+          color: Theme.of(context).colorScheme.surface.withValues(alpha: 0.92),
+          shape: BoxShape.circle,
+          boxShadow: [
+            BoxShadow(
+                color: Colors.black.withValues(alpha: 0.12),
+                blurRadius: 10,
+                offset: const Offset(0, 3)),
+          ],
+        ),
+        child: Icon(icon, size: 20),
+      ),
+    );
+  }
+}
+
+class _ThumbStrip extends StatelessWidget {
+  const _ThumbStrip({required this.place});
+  final Place place;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 62,
+      child: ListView.separated(
+        scrollDirection: Axis.horizontal,
+        physics: const BouncingScrollPhysics(),
+        itemCount: place.images.length,
+        separatorBuilder: (_, __) => const SizedBox(width: 10),
+        itemBuilder: (_, i) => RevealIn(
+          index: i,
+          scaleFrom: 0.8,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(12),
+            child: SizedBox(
+              width: 72,
+              child: PlaceImage(place: place, index: i),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _Pill extends StatelessWidget {
+  const _Pill({required this.icon, required this.label, required this.color});
+  final IconData icon;
+  final String label;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.12),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: color.withValues(alpha: 0.25)),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(icon, size: 13, color: color),
+          const SizedBox(width: 6),
+          Text(label,
+              style: TextStyle(
+                  fontSize: 12, fontWeight: FontWeight.w600, color: color)),
+        ],
+      ),
+    );
+  }
+}
+
+class _CallRow extends StatelessWidget {
+  const _CallRow({required this.phone});
+  final String phone;
+
+  @override
+  Widget build(BuildContext context) {
+    return OutlinedButton.icon(
+      onPressed: () => launchUrl(Uri.parse('tel:$phone')),
+      icon: const Icon(Icons.phone_rounded, size: 18, color: AppColors.danger),
+      label: Text('${context.l10n.call}  $phone'),
+    );
+  }
+}
+
+extension _FirstOrNull<E> on Iterable<E> {
+  E? get firstOrNull => isEmpty ? null : first;
+}
+
+===FILE lib\shared\widgets\photo_gallery.dart=== 
+import 'package:flutter/material.dart';
+
+import '../../app/theme/app_colors.dart';
+import '../../app/theme/app_motion.dart';
+import '../../data/models/place.dart';
+import 'motion_widgets.dart';
+import 'place_image.dart';
+
+/// ---------------------------------------------------------------------------
+/// Hero gallery used at the top of the place-detail screen.
+///
+///  * big photo = swipeable PageView
+///  * thumbnail strip underneath = tap to jump, the active one is highlighted
+///  * tap the big photo (or the expand chip) = full-screen viewer with
+///    two-finger pinch zoom
+/// ---------------------------------------------------------------------------
+class PlaceGallery extends StatefulWidget {
+  const PlaceGallery({
+    super.key,
+    required this.place,
+    this.heroTag,
+  });
+
+  final Place place;
+  final String? heroTag;
+
+  @override
+  State<PlaceGallery> createState() => _PlaceGalleryState();
+}
+
+class _PlaceGalleryState extends State<PlaceGallery> {
+  late final PageController _page = PageController();
+  final _thumbs = ScrollController();
+  int _index = 0;
+
+  int get _count =>
+      widget.place.images.isEmpty ? 1 : widget.place.images.length;
+
+  @override
+  void dispose() {
+    _page.dispose();
+    _thumbs.dispose();
+    super.dispose();
+  }
+
+  void _goTo(int i) {
+    _page.animateToPage(
+      i,
+      duration: AppMotion.base,
+      curve: AppMotion.easeOutExpoCurve,
+    );
+  }
+
+  void _onPage(int i) {
+    setState(() => _index = i);
+    // Keep the active thumbnail in view.
+    if (_thumbs.hasClients) {
+      const itemExtent = 72.0 + 10.0; // width + separator
+      final target = (i * itemExtent) - 90;
+      _thumbs.animateTo(
+        target.clamp(0.0, _thumbs.position.maxScrollExtent),
+        duration: AppMotion.base,
+        curve: Curves.easeOut,
+      );
+    }
+  }
+
+  void _openFullscreen() {
+    Navigator.of(context).push(
+      PageRouteBuilder(
+        opaque: false,
+        barrierColor: Colors.black,
+        transitionDuration: AppMotion.base,
+        pageBuilder: (_, a, __) => FadeTransition(
+          opacity: a,
+          child: FullscreenGallery(
+            place: widget.place,
+            initialIndex: _index,
+          ),
+        ),
+      ),
+    ).then((returned) {
+      // Keep the hero in sync with wherever the user ended up.
+      if (returned is int && returned != _index && mounted) {
+        _page.jumpToPage(returned);
+        _onPage(returned);
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final showThumbs = _count > 1;
+
+    Widget pager = PageView.builder(
+      controller: _page,
+      onPageChanged: _onPage,
+      physics: const BouncingScrollPhysics(),
+      itemCount: _count,
+      itemBuilder: (_, i) => GestureDetector(
+        onTap: _openFullscreen,
+        child: PlaceImage(
+          place: widget.place,
+          index: i,
+          decodeWidth: 1080,
+        ),
+      ),
+    );
+
+    // Only the first photo participates in the shared-element transition,
+    // otherwise Flutter sees duplicate tags mid-swipe.
+    if (widget.heroTag != null && _index == 0) {
+      pager = Hero(tag: widget.heroTag!, child: pager);
+    }
+
+    return Stack(
+      fit: StackFit.expand,
+      children: [
+        pager,
+
+        const Positioned.fill(
+          child: IgnorePointer(
+            child: DecoratedBox(
+              decoration: BoxDecoration(gradient: AppColors.heroScrim),
+            ),
+          ),
+        ),
+
+        // counter + "tap to zoom" affordance
+        Positioned(
+          right: 20,
+          bottom: showThumbs ? 134 : 74,
+          child: GestureDetector(
+            onTap: _openFullscreen,
+            child: Container(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 11, vertical: 7),
+              decoration: BoxDecoration(
+                color: Colors.black.withValues(alpha: 0.45),
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const Icon(Icons.zoom_out_map_rounded,
+                      size: 13, color: Colors.white),
+                  if (_count > 1) ...[
+                    const SizedBox(width: 7),
+                    Text(
+                      '${_index + 1}/$_count',
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 11.5,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ],
+                ],
+              ),
+            ),
+          ),
+        ),
+
+        // thumbnail strip
+        if (showThumbs)
+          Positioned(
+            left: 20,
+            right: 20,
+            bottom: 66,
+            child: SizedBox(
+              height: 62,
+              child: ListView.separated(
+                controller: _thumbs,
+                scrollDirection: Axis.horizontal,
+                physics: const BouncingScrollPhysics(),
+                itemCount: _count,
+                separatorBuilder: (_, __) => const SizedBox(width: 10),
+                itemBuilder: (_, i) {
+                  final active = i == _index;
+                  return RevealIn(
+                    index: i,
+                    scaleFrom: 0.8,
+                    child: GestureDetector(
+                      onTap: () => _goTo(i),
+                      child: AnimatedContainer(
+                        duration: AppMotion.fast,
+                        curve: AppMotion.springy,
+                        width: active ? 82 : 72,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(
+                            color: active
+                                ? Colors.white
+                                : Colors.white.withValues(alpha: 0.28),
+                            width: active ? 2.5 : 1,
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black
+                                  .withValues(alpha: active ? 0.35 : 0.18),
+                              blurRadius: active ? 14 : 6,
+                              offset: const Offset(0, 4),
+                            ),
+                          ],
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: AnimatedOpacity(
+                            duration: AppMotion.fast,
+                            opacity: active ? 1 : 0.62,
+                            child: PlaceImage(
+                              place: widget.place,
+                              index: i,
+                              decodeWidth: 240,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ),
+      ],
+    );
+  }
+}
+
+/// ---------------------------------------------------------------------------
+/// Full-screen photo viewer: swipe between photos, pinch with two fingers to
+/// zoom, double-tap to toggle 2.5x, drag down to dismiss.
+/// ---------------------------------------------------------------------------
+class FullscreenGallery extends StatefulWidget {
+  const FullscreenGallery({
+    super.key,
+    required this.place,
+    this.initialIndex = 0,
+  });
+
+  final Place place;
+  final int initialIndex;
+
+  @override
+  State<FullscreenGallery> createState() => _FullscreenGalleryState();
+}
+
+class _FullscreenGalleryState extends State<FullscreenGallery>
+    with SingleTickerProviderStateMixin {
+  late final PageController _page =
+      PageController(initialPage: widget.initialIndex);
+  late int _index = widget.initialIndex;
+
+  /// One controller per page so each photo remembers its own zoom.
+  final _zoom = <int, TransformationController>{};
+
+  late final AnimationController _anim = AnimationController(
+    vsync: this,
+    duration: AppMotion.base,
+  );
+  Animation<Matrix4>? _zoomAnim;
+
+  bool get _isZoomed {
+    final c = _zoom[_index];
+    return c != null && c.value.getMaxScaleOnAxis() > 1.02;
+  }
+
+  TransformationController _ctrl(int i) =>
+      _zoom.putIfAbsent(i, () => TransformationController());
+
+  @override
+  void dispose() {
+    _anim.dispose();
+    for (final c in _zoom.values) {
+      c.dispose();
+    }
+    _page.dispose();
+    super.dispose();
+  }
+
+  void _animateTo(Matrix4 target) {
+    final c = _ctrl(_index);
+    _zoomAnim = Matrix4Tween(begin: c.value, end: target)
+        .animate(CurvedAnimation(parent: _anim, curve: AppMotion.emphasized));
+    void listener() => c.value = _zoomAnim!.value;
+    _anim
+      ..removeListener(listener)
+      ..addListener(listener)
+      ..forward(from: 0);
+  }
+
+  void _handleDoubleTap(TapDownDetails d, int i) {
+    final c = _ctrl(i);
+    if (c.value.getMaxScaleOnAxis() > 1.02) {
+      _animateTo(Matrix4.identity());
+    } else {
+      const scale = 2.5;
+      final p = d.localPosition;
+      // Built with setEntry instead of translate()/scale(): those two are
+      // deprecated in current vector_math, and this is the same matrix.
+      _animateTo(
+        Matrix4.identity()
+          ..setEntry(0, 0, scale)
+          ..setEntry(1, 1, scale)
+          ..setEntry(0, 3, -p.dx * (scale - 1))
+          ..setEntry(1, 3, -p.dy * (scale - 1)),
+      );
+    }
+    setState(() {});
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final count =
+        widget.place.images.isEmpty ? 1 : widget.place.images.length;
+
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: Stack(
+        children: [
+          PageView.builder(
+            controller: _page,
+            itemCount: count,
+            // While a photo is zoomed in, dragging should pan it, not flick
+            // to the next photo.
+            physics: _isZoomed
+                ? const NeverScrollableScrollPhysics()
+                : const BouncingScrollPhysics(),
+            onPageChanged: (i) => setState(() => _index = i),
+            itemBuilder: (_, i) {
+              final c = _ctrl(i);
+              return GestureDetector(
+                onDoubleTapDown: (d) => _handleDoubleTap(d, i),
+                onDoubleTap: () {},
+                child: InteractiveViewer(
+                  transformationController: c,
+                  minScale: 1,
+                  maxScale: 5,
+                  // Let the zoomed photo be dragged past its own edges a
+                  // little; it feels much less rigid.
+                  boundaryMargin: const EdgeInsets.all(40),
+                  onInteractionEnd: (_) => setState(() {}),
+                  child: Center(
+                    child: PlaceImage(
+                      place: widget.place,
+                      index: i,
+                      fit: BoxFit.contain,
+                      decodeWidth: 1600,
+                    ),
+                  ),
+                ),
+              );
+            },
+          ),
+
+          // close
+          Positioned(
+            top: MediaQuery.of(context).padding.top + 10,
+            left: 14,
+            child: _GlassIcon(
+              icon: Icons.close_rounded,
+              onTap: () => Navigator.of(context).pop(_index),
+            ),
+          ),
+
+          // counter
+          if (count > 1)
+            Positioned(
+              top: MediaQuery.of(context).padding.top + 18,
+              left: 0,
+              right: 0,
+              child: Center(
+                child: Container(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 14, vertical: 7),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withValues(alpha: 0.14),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Text(
+                    '${_index + 1} / $count',
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 13,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+
+          // page dots
+          if (count > 1)
+            Positioned(
+              bottom: MediaQuery.of(context).padding.bottom + 26,
+              left: 0,
+              right: 0,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: List.generate(
+                  count,
+                  (i) => AnimatedContainer(
+                    duration: AppMotion.fast,
+                    margin: const EdgeInsets.symmetric(horizontal: 3),
+                    width: i == _index ? 20 : 7,
+                    height: 7,
+                    decoration: BoxDecoration(
+                      color: i == _index
+                          ? Colors.white
+                          : Colors.white.withValues(alpha: 0.4),
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+}
+
+class _GlassIcon extends StatelessWidget {
+  const _GlassIcon({required this.icon, required this.onTap});
+  final IconData icon;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return PressableScale(
+      scale: 0.85,
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          color: Colors.white.withValues(alpha: 0.16),
+          shape: BoxShape.circle,
+        ),
+        child: Icon(icon, size: 21, color: Colors.white),
+      ),
+    );
+  }
+}
+
+===FILE lib\core\services\navigation_service.dart=== 
+import 'dart:async';
+import 'dart:math' as math;
+
+import 'package:flutter/foundation.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:latlong2/latlong.dart';
+
+import 'routing_service.dart';
+
+/// ---------------------------------------------------------------------------
+/// Geometry helpers (equirectangular approximation — accurate well under 1 %
+/// at town scale, and ~100x cheaper than haversine in a per-frame loop).
+/// ---------------------------------------------------------------------------
+class NavGeo {
+  static const double _metersPerDegLat = 111320.0;
+
+  static double _mPerDegLng(double lat) =>
+      _metersPerDegLat * math.cos(lat * math.pi / 180);
+
+  /// Flat-earth metre offsets of [p] relative to [origin].
+  static (double, double) _xy(LatLng p, LatLng origin) => (
+        (p.longitude - origin.longitude) * _mPerDegLng(origin.latitude),
+        (p.latitude - origin.latitude) * _metersPerDegLat,
+      );
+
+  static double distance(LatLng a, LatLng b) {
+    final (dx, dy) = _xy(b, a);
+    return math.sqrt(dx * dx + dy * dy);
+  }
+
+  /// Initial bearing from [a] to [b] in degrees, 0 = north, clockwise.
+  static double bearing(LatLng a, LatLng b) {
+    final (dx, dy) = _xy(b, a);
+    final deg = math.atan2(dx, dy) * 180 / math.pi;
+    return (deg + 360) % 360;
+  }
+
+  /// Perpendicular distance in metres from [p] to the segment a–b, plus the
+  /// fraction (0..1) along the segment where the foot of the perpendicular is.
+  static (double, double) distanceToSegment(LatLng p, LatLng a, LatLng b) {
+    final (ax, ay) = (0.0, 0.0);
+    final (bx, by) = _xy(b, a);
+    final (px, py) = _xy(p, a);
+
+    final dx = bx - ax;
+    final dy = by - ay;
+    final len2 = dx * dx + dy * dy;
+    if (len2 == 0) return (math.sqrt(px * px + py * py), 0);
+
+    var t = ((px - ax) * dx + (py - ay) * dy) / len2;
+    t = t.clamp(0.0, 1.0);
+
+    final cx = ax + t * dx;
+    final cy = ay + t * dy;
+    final ex = px - cx;
+    final ey = py - cy;
+    return (math.sqrt(ex * ex + ey * ey), t);
+  }
+
+  /// Interpolate between two points by fraction [t].
+  static LatLng lerp(LatLng a, LatLng b, double t) => LatLng(
+        a.latitude + (b.latitude - a.latitude) * t,
+        a.longitude + (b.longitude - a.longitude) * t,
+      );
+
+  /// Shortest signed difference between two bearings, in (-180, 180].
+  static double angleDelta(double from, double to) {
+    var d = (to - from) % 360;
+    if (d > 180) d -= 360;
+    if (d <= -180) d += 360;
+    return d;
+  }
+
+  /// Rotate [current] towards [target] by at most [maxStep] degrees.
+  /// Keeps the compass from snapping when GPS heading is noisy.
+  static double smoothAngle(double current, double target, double factor) =>
+      current + angleDelta(current, target) * factor;
+}
+
+/// Where the user is relative to the route right now.
+class RouteProgress {
+  const RouteProgress({
+    required this.snapped,
+    required this.segmentIndex,
+    required this.offRouteMeters,
+    required this.remainingMeters,
+    required this.courseBearing,
+  });
+
+  /// The user's position projected onto the route line.
+  final LatLng snapped;
+  final int segmentIndex;
+
+  /// Perpendicular distance from the route line.
+  final double offRouteMeters;
+  final double remainingMeters;
+
+  /// Direction the route is heading at this point (degrees, 0 = north).
+  final double courseBearing;
+}
+
+/// ---------------------------------------------------------------------------
+/// Live turn-by-turn-ish navigation session.
+///
+/// Google-Maps-like behaviour, built only from free pieces:
+///   * follows the GPS stream and keeps the blue arrow on the user
+///   * snaps the user onto the route line and counts down the remaining
+///     distance / time
+///   * detects when the user leaves the route and automatically fetches a new
+///     one (throttled, so a bad GPS fix can't spam the router)
+///   * reports arrival
+///
+/// It is a plain [ChangeNotifier] so the map screen can listen without
+/// rebuilding anything else.
+/// ---------------------------------------------------------------------------
+class NavSession extends ChangeNotifier {
+  NavSession({
+    required this.destination,
+    required this.mode,
+    required RouteResult initialRoute,
+    required this.isOnline,
+    this.offRouteThresholdMeters = 45,
+    this.arriveThresholdMeters = 35,
+  }) : _route = initialRoute;
+
+  final LatLng destination;
+  TravelMode mode;
+
+  /// Called by the owner so the session knows whether the router is reachable.
+  final bool Function() isOnline;
+
+  final double offRouteThresholdMeters;
+  final double arriveThresholdMeters;
+
+  RouteResult _route;
+  RouteResult get route => _route;
+
+  StreamSubscription<Position>? _sub;
+
+  LatLng? _me;
+  LatLng? get me => _me;
+
+  /// Smoothed heading used to rotate the arrow and the camera.
+  double _bearing = 0;
+  double get bearing => _bearing;
+
+  double _speedMps = 0;
+  double get speedMps => _speedMps;
+
+  RouteProgress? _progress;
+  RouteProgress? get progress => _progress;
+
+  bool _rerouting = false;
+  bool get rerouting => _rerouting;
+
+  bool _arrived = false;
+  bool get arrived => _arrived;
+
+  int _rerouteCount = 0;
+  int get rerouteCount => _rerouteCount;
+
+  /// Consecutive fixes that were off the line. Requiring a few in a row stops
+  /// one noisy GPS reading from triggering a pointless reroute.
+  int _offRouteStrikes = 0;
+  DateTime _lastReroute = DateTime.fromMillisecondsSinceEpoch(0);
+
+  /// Set false as soon as the user pans the map themselves.
+  bool followCamera = true;
+
+  /// Course-up (rotate the map with the user) vs north-up.
+  bool courseUp = true;
+
+  double get remainingMeters =>
+      _progress?.remainingMeters ?? _route.distanceMeters;
+
+  /// Remaining time, recomputed from the remaining distance so the ETA
+  /// actually counts down as you drive.
+  double get remainingSeconds {
+    final total = _route.distanceMeters;
+    if (total <= 0) return 0;
+    return _route.durationSeconds * (remainingMeters / total);
+  }
+
+  String get remainingDistanceLabel => remainingMeters < 1000
+      ? '${remainingMeters.round()} m'
+      : '${(remainingMeters / 1000).toStringAsFixed(1)} km';
+
+  String get remainingTimeLabel {
+    final m = (remainingSeconds / 60).round();
+    if (m < 1) return '<1 min';
+    if (m < 60) return '$m min';
+    return '${m ~/ 60} h ${m % 60} min';
+  }
+
+  /// Fraction of the route already travelled, 0..1 — drives the progress bar.
+  double get completion {
+    final total = _route.distanceMeters;
+    if (total <= 0) return 0;
+    return (1 - remainingMeters / total).clamp(0.0, 1.0);
+  }
+
+  // -------------------------------------------------------------------------
+
+  void start({LatLng? initialPosition}) {
+    if (initialPosition != null) _ingest(initialPosition, null, null);
+
+    _sub = Geolocator.getPositionStream(
+      locationSettings: const LocationSettings(
+        accuracy: LocationAccuracy.bestForNavigation,
+        // 4 m keeps the arrow lively while walking without burning battery.
+        distanceFilter: 4,
+      ),
+    ).listen(
+      (p) => _ingest(
+        LatLng(p.latitude, p.longitude),
+        p.heading,
+        p.speed,
+      ),
+      onError: (_) {},
+    );
+  }
+
+  Future<void> setMode(TravelMode m) async {
+    if (m == mode) return;
+    mode = m;
+    await _reroute(force: true);
+  }
+
+  void _ingest(LatLng pos, double? gpsHeading, double? speed) {
+    _me = pos;
+    _speedMps = (speed ?? 0).abs();
+
+    final prog = _computeProgress(pos);
+    _progress = prog;
+
+    // --- heading -----------------------------------------------------------
+    // Below walking pace the GPS compass is noise, so follow the route's own
+    // direction instead. Above it, trust the device.
+    double target;
+    if (_speedMps > 0.7 && gpsHeading != null && gpsHeading >= 0) {
+      target = gpsHeading;
+    } else if (prog != null) {
+      target = prog.courseBearing;
+    } else {
+      target = _bearing;
+    }
+    // Low-pass filter: 35 % of the way to the new angle each fix.
+    _bearing = (NavGeo.smoothAngle(_bearing, target, 0.35) + 360) % 360;
+
+    // --- arrival -----------------------------------------------------------
+    if (!_arrived &&
+        NavGeo.distance(pos, destination) <= arriveThresholdMeters) {
+      _arrived = true;
+      notifyListeners();
+      return;
+    }
+
+    // --- off-route detection ----------------------------------------------
+    if (prog != null && prog.offRouteMeters > offRouteThresholdMeters) {
+      _offRouteStrikes++;
+      if (_offRouteStrikes >= 2) _reroute();
+    } else {
+      _offRouteStrikes = 0;
+    }
+
+    notifyListeners();
+  }
+
+  RouteProgress? _computeProgress(LatLng pos) {
+    final pts = _route.points;
+    if (pts.length < 2) return null;
+
+    var bestDist = double.infinity;
+    var bestIdx = 0;
+    var bestT = 0.0;
+
+    for (var i = 0; i < pts.length - 1; i++) {
+      final (d, t) = NavGeo.distanceToSegment(pos, pts[i], pts[i + 1]);
+      if (d < bestDist) {
+        bestDist = d;
+        bestIdx = i;
+        bestT = t;
+      }
+    }
+
+    final snapped = NavGeo.lerp(pts[bestIdx], pts[bestIdx + 1], bestT);
+
+    // Remaining = rest of the current segment + every segment after it.
+    var remaining = NavGeo.distance(snapped, pts[bestIdx + 1]);
+    for (var i = bestIdx + 1; i < pts.length - 1; i++) {
+      remaining += NavGeo.distance(pts[i], pts[i + 1]);
+    }
+
+    return RouteProgress(
+      snapped: snapped,
+      segmentIndex: bestIdx,
+      offRouteMeters: bestDist,
+      remainingMeters: remaining,
+      courseBearing: NavGeo.bearing(pts[bestIdx], pts[bestIdx + 1]),
+    );
+  }
+
+  Future<void> _reroute({bool force = false}) async {
+    if (_rerouting) return;
+
+    // Never hammer the free OSRM demo server.
+    final since = DateTime.now().difference(_lastReroute);
+    if (!force && since < const Duration(seconds: 8)) return;
+
+    final from = _me;
+    if (from == null) return;
+
+    _rerouting = true;
+    _lastReroute = DateTime.now();
+    notifyListeners();
+
+    RouteResult? fresh;
+    if (isOnline()) {
+      fresh = await RoutingService.route([from, destination], mode: mode);
+    }
+    fresh ??= RoutingService.straightLine(from, destination, mode: mode);
+
+    _route = fresh;
+    _offRouteStrikes = 0;
+    _rerouteCount++;
+    _rerouting = false;
+    _progress = _computeProgress(from);
+    notifyListeners();
+  }
+
+  @override
+  void dispose() {
+    _sub?.cancel();
+    super.dispose();
+  }
+}
+
+===FILE lib\core\services\search_service.dart=== 
+import '../../data/models/place.dart';
+import 'myanmar_text.dart';
+
+/// ---------------------------------------------------------------------------
+/// Keyword search + ranking.
+///
+/// Goals:
+///   * one letter is enough to get useful suggestions
+///   * searches EVERY field: name (both languages), tags, category, address,
+///     description, even the id
+///   * multiple words behave like AND ("shan noodle", "lake cafe")
+///   * results come back RANKED, so the best match is first instead of
+///     whatever order places.json happens to be in
+/// ---------------------------------------------------------------------------
+class SearchService {
+  SearchService._();
+
+  // --- Myanmar script normalisation ----------------------------------------
+  //
+  // All of the hard work lives in MyanmarText. Briefly:
+  //   * Zawgyi text gets converted to Unicode
+  //   * left-rendering vowels (ေ ြ) typed before their consonant get moved
+  //     back where Unicode stores them
+  // Without this, "ဈေး" typed on a phone never matches "ဈေး" in places.json
+  // even though the two are pixel-identical on screen.
+
+  /// Consonant skeleton, used for the relaxed fallback pass.
+  static String skeleton(String s) => MyanmarText.skeleton(s);
+
+  /// Lowercase, repair Myanmar encoding + ordering, collapse whitespace.
+  static String normalize(String s) => MyanmarText.canonical(s.toLowerCase())
+      .replaceAll(RegExp(r'\s+'), ' ')
+      .trim();
+
+  static List<String> terms(String query) => normalize(query)
+      .split(' ')
+      .where((w) => w.isNotEmpty)
+      .toList(growable: false);
+
+  /// How well a single haystack matches a single term.
+  /// 0 = no match. Higher = better.
+  static int _fieldScore(String haystack, String term, int weight) {
+    if (haystack.isEmpty) return 0;
+    final h = normalize(haystack);
+
+    if (h == term) return weight * 4; // exact field
+    if (h.startsWith(term)) return weight * 3; // "nau" -> "Naung Tung Lake"
+
+    // Start of any word: "tung" -> "Naung Tung Lake"
+    for (final w in h.split(' ')) {
+      if (w.startsWith(term)) return weight * 2;
+    }
+
+    if (h.contains(term)) return weight; // anywhere
+    return 0;
+  }
+
+  /// Total score for one place against one term, across all its fields.
+  static int _termScore(Place p, String term, String lang, String categoryLabel) {
+    var best = 0;
+
+    void take(int v) {
+      if (v > best) best = v;
+    }
+
+    // Name in the language on screen matters most.
+    take(_fieldScore(p.name(lang), term, 100));
+    take(_fieldScore(p.name.en, term, 80));
+    take(_fieldScore(p.name.my, term, 80));
+
+    for (final tag in p.tags) {
+      take(_fieldScore(tag, term, 60));
+    }
+
+    take(_fieldScore(categoryLabel, term, 45));
+    take(_fieldScore(p.category.id, term, 40));
+    take(_fieldScore(p.address(lang), term, 25));
+    take(_fieldScore(p.address.en, term, 20));
+    take(_fieldScore(p.description(lang), term, 10));
+    take(_fieldScore(p.description.en, term, 8));
+    take(_fieldScore(p.id.replaceAll('-', ' '), term, 30));
+
+    return best;
+  }
+
+  /// Rank [all] against [query]. Empty query returns an empty list — the
+  /// caller decides what to show when nothing has been typed.
+  ///
+  /// [categoryLabelOf] lets the caller pass the localized category name
+  /// ("Pagodas" / "ဘုရားများ") so typing a category also works.
+  static List<Place> rank(
+    List<Place> all,
+    String query, {
+    required String lang,
+    required String Function(Place) categoryLabelOf,
+    int limit = 50,
+  }) {
+    final ts = terms(query);
+    if (ts.isEmpty) return const [];
+
+    final scored = <(Place, int)>[];
+
+    for (final p in all) {
+      final label = categoryLabelOf(p);
+      var total = 0;
+      var matchedAll = true;
+
+      for (final term in ts) {
+        final s = _termScore(p, term, lang, label);
+        if (s == 0) {
+          matchedAll = false;
+          break;
+        }
+        total += s;
+      }
+
+      if (!matchedAll) continue;
+
+      // Nudge well-rated places up when scores tie.
+      total = total * 10 + ((p.rating ?? 0) * 2).round();
+      scored.add((p, total));
+    }
+
+    scored.sort((a, b) => b.$2.compareTo(a.$2));
+
+    if (scored.isNotEmpty) {
+      return scored.take(limit).map((e) => e.$1).toList();
+    }
+
+    // Nothing matched exactly. Retry on the consonant skeleton so a missing
+    // or extra tone mark does not produce an empty screen.
+    return _relaxed(all, ts, lang, categoryLabelOf, limit);
+  }
+
+  static List<Place> _relaxed(
+    List<Place> all,
+    List<String> ts,
+    String lang,
+    String Function(Place) categoryLabelOf,
+    int limit,
+  ) {
+    final skeletons = ts.map(skeleton).where((e) => e.isNotEmpty).toList();
+    if (skeletons.isEmpty) return const [];
+
+    final out = <Place>[];
+    for (final p in all) {
+      final hay = skeleton(normalize([
+        p.name(lang),
+        p.name.en,
+        p.name.my,
+        categoryLabelOf(p),
+        p.tags.join(' '),
+        p.address(lang),
+      ].join(' ')));
+
+      if (skeletons.every(hay.contains)) out.add(p);
+      if (out.length >= limit) break;
+    }
+    return out;
+  }
+
+  /// Index of the first term inside [text], for highlighting the matched
+  /// part in the suggestion list. Returns (start, end) or null.
+  static (int, int)? highlightRange(String text, String query) {
+    final ts = terms(query);
+    if (ts.isEmpty) return null;
+    final h = normalize(text);
+
+    for (final term in ts) {
+      final i = h.indexOf(term);
+      // The normalized string can be shorter than the original; only use the
+      // range when the lengths still line up, otherwise skip highlighting
+      // rather than slice the wrong characters.
+      if (i >= 0 && h.length == text.length) return (i, i + term.length);
+    }
+    return null;
+  }
+}
+

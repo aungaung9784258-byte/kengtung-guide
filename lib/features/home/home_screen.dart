@@ -11,6 +11,7 @@ import '../../l10n/app_localizations.dart';
 import '../../shared/widgets/category_chips.dart';
 import '../../shared/widgets/motion_widgets.dart';
 import '../../shared/widgets/place_card.dart';
+import '../about/widgets/about_entry_card.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
@@ -125,6 +126,20 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 ),
               ),
 
+              // ---------- About Kyaing Tong ----------              // ADD ↓
+              // Single entry point to /about-kengtung. Hidden while
+              // searching, same as Popular and Categories below.
+              if (!searching)
+                const SliverToBoxAdapter(
+                  child: RevealIn(
+                    index: 1,
+                    child: AboutEntryCard(
+                      // Page gutter is 20 everywhere else on Home.
+                      margin: EdgeInsets.fromLTRB(20, 16, 20, 0),
+                    ),
+                  ),
+                ),                                                  // ADD ↑
+
               // ---------- Suggestion header (search mode) ----------
               if (searching)
                 SliverToBoxAdapter(
@@ -135,14 +150,14 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               if (!searching)
                 SliverToBoxAdapter(
                   child: RevealIn(
-                    index: 1,
+                    index: 2,
                     child: _SectionHeader(title: t.popularPlaces),
                   ),
                 ),
               if (!searching)
                 SliverToBoxAdapter(
                 child: RevealIn(
-                  index: 2,
+                  index: 3,
                   child: SizedBox(
                     height: 230,
                     child: ListView.separated(
@@ -165,13 +180,13 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               if (!searching)
                 SliverToBoxAdapter(
                   child: RevealIn(
-                    index: 3,
+                    index: 4,
                     child: _SectionHeader(title: t.categories),
                   ),
                 ),
               if (!searching)
                 const SliverToBoxAdapter(
-                  child: RevealIn(index: 4, child: CategoryChips()),
+                  child: RevealIn(index: 5, child: CategoryChips()),
                 ),
 
               const SliverToBoxAdapter(child: SizedBox(height: 18)),

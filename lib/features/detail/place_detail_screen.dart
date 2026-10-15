@@ -9,7 +9,7 @@ import '../../core/providers/app_providers.dart';
 import '../../data/models/place.dart';
 import '../../l10n/app_localizations.dart';
 import '../../shared/widgets/motion_widgets.dart';
-import '../../shared/widgets/photo_gallery.dart';
+import '../../shared/widgets/place_image.dart';
 
 class PlaceDetailScreen extends ConsumerStatefulWidget {
   const PlaceDetailScreen({super.key, required this.placeId});
@@ -23,9 +23,7 @@ class _PlaceDetailScreenState extends ConsumerState<PlaceDetailScreen> {
   final _scroll = ScrollController();
   double _offset = 0;
 
-  // Taller hero: the old 380 left the title squeezed right against the
-  // photo once the rounded sheet slid up over it.
-  static const _heroHeight = 420.0;
+  static const _heroHeight = 380.0;
 
   @override
   void initState() {
@@ -72,18 +70,31 @@ class _PlaceDetailScreenState extends ConsumerState<PlaceDetailScreen> {
                   child: Stack(
                     fit: StackFit.expand,
                     children: [
-                      // Swipeable gallery; drifts at 35% of scroll speed
-                      // and zooms slightly on overscroll.
+                      // Image drifts at 35% of scroll speed and zooms slightly
                       Transform.translate(
                         offset: Offset(0, _offset * AppMotion.parallaxFactor),
                         child: Transform.scale(
                           scale: 1 + (_offset < 0 ? -_offset / 400 : 0),
-                          child: PlaceGallery(
-                            place: place,
-                            heroTag: 'place-img-${place.id}',
+                          child: Hero(
+                            tag: 'place-img-${place.id}',
+                            child: PlaceImage(place: place),
                           ),
                         ),
                       ),
+                      const Positioned.fill(
+                        child: DecoratedBox(
+                          decoration:
+                              BoxDecoration(gradient: AppColors.heroScrim),
+                        ),
+                      ),
+                      // Thumbnail strip floats above the sheet
+                      if (place.images.length > 1)
+                        Positioned(
+                          left: 20,
+                          right: 20,
+                          bottom: 50,
+                          child: _ThumbStrip(place: place),
+                        ),
                     ],
                   ),
                 ),
@@ -99,23 +110,10 @@ class _PlaceDetailScreenState extends ConsumerState<PlaceDetailScreen> {
                       borderRadius: const BorderRadius.vertical(
                           top: Radius.circular(34)),
                     ),
-                    padding: const EdgeInsets.fromLTRB(20, 14, 20, 140),
+                    padding: const EdgeInsets.fromLTRB(20, 26, 20, 140),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        // Grab handle: visually separates the sheet from the
-                        // photo so the title no longer looks glued to it.
-                        Center(
-                          child: Container(
-                            width: 42,
-                            height: 4,
-                            decoration: BoxDecoration(
-                              color: cs.onSurface.withValues(alpha: 0.18),
-                              borderRadius: BorderRadius.circular(3),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(height: 22),
                         RevealIn(
                           index: 0,
                           child: Row(
@@ -126,20 +124,11 @@ class _PlaceDetailScreenState extends ConsumerState<PlaceDetailScreen> {
                                   place.name(lang),
                                   style: Theme.of(context)
                                       .textTheme
-                                      .headlineMedium
-                                      ?.copyWith(
-                                        // Myanmar stacks diacritics above and
-                                        // below, so it needs a taller line box.
-                                        height: lang == 'my' ? 1.65 : 1.22,
-                                        letterSpacing:
-                                            lang == 'my' ? 0 : -0.4,
-                                      ),
+                                      .headlineMedium,
                                 ),
                               ),
-                              const SizedBox(width: 10),
                               if (place.rating != null)
                                 Container(
-                                  margin: const EdgeInsets.only(top: 4),
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 10, vertical: 6),
                                   decoration: BoxDecoration(
@@ -164,7 +153,7 @@ class _PlaceDetailScreenState extends ConsumerState<PlaceDetailScreen> {
                             ],
                           ),
                         ),
-                        const SizedBox(height: 12),
+                        const SizedBox(height: 10),
                         RevealIn(
                           index: 1,
                           child: Row(
@@ -357,6 +346,35 @@ class _CircleIcon extends StatelessWidget {
           ],
         ),
         child: Icon(icon, size: 20),
+      ),
+    );
+  }
+}
+
+class _ThumbStrip extends StatelessWidget {
+  const _ThumbStrip({required this.place});
+  final Place place;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 62,
+      child: ListView.separated(
+        scrollDirection: Axis.horizontal,
+        physics: const BouncingScrollPhysics(),
+        itemCount: place.images.length,
+        separatorBuilder: (_, __) => const SizedBox(width: 10),
+        itemBuilder: (_, i) => RevealIn(
+          index: i,
+          scaleFrom: 0.8,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(12),
+            child: SizedBox(
+              width: 72,
+              child: PlaceImage(place: place, index: i),
+            ),
+          ),
+        ),
       ),
     );
   }
