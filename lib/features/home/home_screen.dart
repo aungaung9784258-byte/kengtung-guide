@@ -12,6 +12,7 @@ import '../../shared/widgets/category_chips.dart';
 import '../../shared/widgets/motion_widgets.dart';
 import '../../shared/widgets/place_card.dart';
 import '../about/widgets/about_entry_card.dart';
+import '../../shared/widgets/update_dialog.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
@@ -90,7 +91,13 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             physics: const BouncingScrollPhysics(
                 parent: AlwaysScrollableScrollPhysics()),
             slivers: [
+              // Checks for a new release and pops the update card.
+              // Renders nothing and takes no space.
+              const SliverToBoxAdapter(child: UpdateGate()),
+
               // ---------- Parallax hero header ----------
+              // ---------- Parallax hero header ----------
+
               SliverAppBar(
                 expandedHeight: 260,
                 pinned: true,

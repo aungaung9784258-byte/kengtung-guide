@@ -7,7 +7,7 @@ import '../../shared/widgets/motion_widgets.dart';
 /// One credited person. [initials] is derived automatically but can be
 /// overridden when the automatic pick reads badly.
 class _Person {
-  const _Person(this.name, this.colors, {this.initials, this.role});
+  const _Person(this.name, this.colors, {this.initials}) : role = null;
   final String name;
   final List<Color> colors;
   final String? initials;

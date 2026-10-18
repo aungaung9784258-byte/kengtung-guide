@@ -3,7 +3,6 @@ import 'package:go_router/go_router.dart';
 
 import '../l10n/app_localizations.dart';
 import 'theme/app_colors.dart';
-import 'theme/app_motion.dart';
 
 /// Bottom-nav shell. Tab switches cross-fade instead of hard-cutting.
 class AppShell extends StatelessWidget {

@@ -45,6 +45,7 @@ dependencies:
   # animated_splash_screen was removed on purpose: it pushes its own
   # Navigator route, which fights go_router's StatefulShellRoute.
   lottie: ^3.6.1
+  package_info_plus: ^10.2.2
 
 dev_dependencies:
   flutter_test:
