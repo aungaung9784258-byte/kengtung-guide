@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-
+import 'widgets/about_hero_carousel.dart';
 import '../../app/theme/app_colors.dart';
 import '../../core/providers/app_providers.dart';
 import '../../data/models/about_content.dart';
@@ -70,9 +70,8 @@ class _AboutBody extends StatelessWidget {
           ),
           slivers: [
             SliverToBoxAdapter(
-              child: FrostedCover(
-                image: cover.image,
-                parallax: cover.parallax,
+              child: AboutHeroCarousel(
+                images: cover.images,
                 kicker: _t(cover.kicker),
                 title: _t(cover.title),
                 subtitle: _t(cover.subtitle),

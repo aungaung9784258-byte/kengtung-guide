@@ -7,8 +7,8 @@
     },
     "category": "place",
     "description": {
-      "en": "The calm lake at the centre of Kengtung and the heart of local life. A paved walking path circles the water, and the evening light over the hills is the town's classic view.",
-      "my": "ကျိုင်းတုံမြို့လယ်ရှိ အေးချမ်းသော ရေကန်ဖြစ်ပြီး ဒေသခံတို့၏ ဘဝနှင့် တွဲဖက်နေသည်။ ကန်ပတ်လမ်းလျှောက်နိုင်ပြီး ညနေခင်း အလင်းရောင်မှာ အလွန်လှပသည်။"
+      "en": "Naung Tong Lake is a remarkable natural treasure and one of the most scenic landmarks in Kyaing Tong.The tranquil lake, surrounded by gentle morning mist, offers a serene atmosphere that brings a sense of peace and relaxation. As a popular retreat for local residents, it is also a must-visit destination for travelers who wish to experience the natural beauty of Kyaing Tong.",
+      "my": "နောင်တုံကန်သည် ကျိုင်းတုံမြို့၏ အလှပဆုံး အထင်ကရနေရာများထဲမှ တစ်ခုဖြစ်ပြီး ထူးခြားဆန်းပြားသော သဘာဝရတနာတစ်ပါး ဖြစ်ပါသည်။ နံနက်ခင်း မြူခိုးပါးပါး လွှမ်းခြုံထားသည့် ဆိတ်ငြိမ်အေးချမ်းသော ကန်ရေပြင်သည် စိတ်ကို ငြိမ်းချမ်းမှုနှင့် အနားယူမှုရသကို ပေးစွမ်းသည်။ ဒေသခံပြည်သူများ အပန်းဖြေရာ လူကြိုက်များသော နေရာတစ်ခုဖြစ်သလို ကျိုင်းတုံမြို့၏ သဘာဝအလှတရားကို ခံစားလိုသည့် ခရီးသွားများ မဖြစ်မနေ သွားရောက်လည်ပတ်သင့်သော နေရာတစ်ခုလည်း ဖြစ်ပါသည်။"
     },
     "address": {
       "en": "City centre, Kengtung",
@@ -21,39 +21,61 @@
     "tags": [
       "lake",
       "walk",
-      "sunset"
+      "sunset",
+      "လည်ပတ်",
+      "ရေကန်",
+      "ရှုခင်း"
     ],
     "images": [
-      "assets/images/lake.jpg",
-      "assets/images/hero_kengtung.jpg"
+      "assets/images/naungtong (1).jpg",
+      "assets/images/naungtong (2).jpg",
+      "assets/images/naungtong (3).jpg",
+      "assets/images/naungtong (4).jpg",
+      "assets/images/naungtong (5).jpg",
+      "assets/images/naungtong (6).jpg",
+      "assets/images/naungtong (7).jpg"
     ]
   },
   {
     "id": "wat-jong-kham",
     "name": {
-      "en": "Wat Jong Kham",
-      "my": "ဝပ်ကျုံးခမ်းဘုရား"
+      "en": "Sune Taung Kham Pagoda",
+      "my": "စွန်တောင်းခမ်း စေတီ"
     },
     "category": "pagoda",
     "description": {
-      "en": "One of the oldest and most revered temples in Kengtung, with a golden stupa and Shan-Lanna style architecture. Said to date back over 2,000 years.",
-      "my": "ကျိုင်းတုံ၏ အသက်အကြီးဆုံးနှင့် အလေးအမြတ်ထားရသော ဘုရားတစ်ဆူဖြစ်သည်။ ရွှေစေတီနှင့် ရှမ်း-လန်နာ ဗိသုကာလက်ရာကို တွေ့ရသည်။"
+      "en": "Kyaing Tong Som Thaung Pagoda (Som Kham Pagoda) is a historic and prominent ancient heritage pagoda in Kyaing Tong, Eastern Shan State. It is solemnly situated on the elevated Som Thaung Hill, to the east of Naung Tong Lake, which is one of the landmarks of Kyaing Tong. It takes only 3 minutes (0.7 miles) to drive by car or motorbike from Kyaok Taing to Jom Kham, and an 14-minute walk (0.7 miles) if you go on foot.",
+      "my": "ကျိုင်းတုံစွမ်ထောင်းစေတီတော် (စွမ်ခမ်းစေတီတော်) သည် ရှမ်းပြည်နယ်အရှေ့ပိုင်း၊ ကျိုင်းတုံမြို့ရှိ သမိုင်းဝင် ထင်ရှားသော ရှေးဟောင်းအမွေအနှစ် စေတီတော်တစ်ဆူ ဖြစ်ပါသည်။ စေတီတော်သည် ကျိုင်းတုံမြို့၏ အမှတ်သင်္ကေတများထဲမှ တစ်ခုဖြစ်သည့် နောင်တုံကန်၏ အရှေ့ဘက်၊ မြင့်မားသော စွမ်ထောင်းတောင်ကုန်းပေါ်တွင် သပ္ပါယ်စွာ ကိန်းဝပ်စံပယ်လျက် ရှိပါသည်။ ကျောက်တိုင်မှ စွမ်ခမ်းစေတီတော်သို့ မော်တော်ကား သို့မဟုတ် မော်တော်ဆိုင်ကယ်ဖြင့် သွားရောက်ပါက မိုင်ဝက်ကျော် (၀.၇ မိုင်) မျှသာ ကွာဝေးပြီး ၃ မိနစ်ခန့်သာ ကြာမြင့်မည်ဖြစ်ကာ၊ ခြေလျင်လျှောက်သွားပါက ၁၄ မိနစ်ခန့် ကြာမြင့်မည် ဖြစ်ပါသည်။"
     },
     "address": {
-      "en": "Jong Kham Quarter, Kengtung",
-      "my": "ကျုံးခမ်းရပ်ကွက်၊ ကျိုင်းတုံ"
+      "en": "Sune Kham Quarter, Kengtung",
+      "my": "စွန်ခမ်းရပ်ကွက်၊ ကျိုင်းတုံ"
     },
-    "lat": 21.2946,
-    "lng": 99.5986,
+    "lat": 21.29427439643481,
+    "lng": 99.60247641015386,
     "openHours": "06:00 - 18:00",
     "rating": 4.8,
     "tags": [
       "heritage",
-      "golden stupa"
+      "golden stupa",
+      "စေတီ",
+      "ဘုရား"
     ],
     "images": [
-      "assets/images/pagoda.jpg",
-      "assets/images/hero_kengtung.jpg"
+      "assets/images/စွန်တောင်း (1).jpg",
+      "assets/images/စွန်တောင်း (2).jpg",
+      "assets/images/စွန်တောင်း (3).jpg",
+      "assets/images/စွန်တောင်း (4).jpg",
+      "assets/images/စွန်တောင်း (5).jpg",
+      "assets/images/စွန်တောင်း (6).jpg",
+      "assets/images/စွန်တောင်း (7).jpg",
+      "assets/images/စွန်တောင်း (8).jpg",
+      "assets/images/စွန်တောင်း (9).jpg",
+      "assets/images/စွန်တောင်း (10).jpg",
+      "assets/images/စွန်တောင်း (11).jpg",
+      "assets/images/စွန်တောင်း (12).jpg",
+      "assets/images/စွန်တောင်း (13).jpg",
+      "assets/images/စွန်တောင်း (14).jpg"
     ]
   },
   {
@@ -64,105 +86,152 @@
     },
     "category": "pagoda",
     "description": {
-      "en": "A towering white standing Buddha image on a hill overlooking Kengtung. The best panoramic viewpoint over the whole valley.",
-      "my": "ကျိုင်းတုံမြို့ကို မျှော်ကြည့်နိုင်သော တောင်ကုန်းပေါ်ရှိ ဖြူဖွေးသော ရပ်တော်မူဘုရားကြီး။ မြို့တစ်ခုလုံးကို မြင်နိုင်သည်။"
+      "en": "The Yat Taw Mu Buddha is located on Som Sak Hill, just southwest of Naung Tong Lake in central Kyaing Tong.",
+      "my": "ဗျာဒိတ်တော်ပေး ရပ်တော်မူဘုရားကြီးသည် ဆွမ်ဆပ်ကုန်း ပေါ်တွင်တည်ရှိပြီး နောင်တုံ ကန်မှ တောင်ဘက် ကျိုင်းတုံ မြို့လည် တွင်တည်ရှိပါသည်။ ကျိုင်းတုံမြို့တမြို့လုံးကို ရပ်တော်မူ ဘုရားတည်ထားသော ကုန်းပေါမှ ရှုမြင်နိုင်ပါသည် ။ \n"
     },
     "address": {
-      "en": "Hill north of town centre, Kengtung",
-      "my": "မြို့မြောက်ဘက် တောင်ကုန်း၊ ကျိုင်းတုံ"
+      "en": "Swam Sat Kone, Ward No.(1), KengTung, Eastern Shan State",
+      "my": "ဆွမ်ဆပ်ကုန်း၊ ရပ်ကွက် (၁)၊ ကျိုင်းတုံမြို့။"
     },
-    "lat": 21.2982,
-    "lng": 99.6063,
-    "openHours": "06:00 - 18:00",
+    "lat": 21.287717754801864,
+    "lng": 99.5966938128764,
+    "phone": "+95 9427985826",
+    "openHours": "06:00AM - 9:00PM",
     "rating": 4.7,
     "tags": [
       "viewpoint",
-      "landmark"
+      "landmark",
+      "ဘုရား",
+      "ရပ်တော်မူ"
     ],
     "images": [
-      "assets/images/pagoda.jpg"
+      "assets/images/ytm (2).jpg",
+      "assets/images/ytm (3).jpg",
+      "assets/images/ytm (4).jpg",
+      "assets/images/ytm (5).jpg",
+      "assets/images/STD (1).jpg",
+      "assets/images/STD (2).jpg",
+      "assets/images/STD (3).jpg",
+      "assets/images/STD (4).jpg",
+      "assets/images/STD (5).jpg",
+      "assets/images/STD (6).jpg",
+      "assets/images/STD (7).jpg"
     ]
   },
   {
     "id": "wat-mahamuni",
     "name": {
-      "en": "Wat Mahamuni",
-      "my": "မဟာမုနိဘုရား"
+      "en": "Maha Myat Muni Pago",
+      "my": "မဟာမြတ်မုနိဘုရား"
     },
     "category": "pagoda",
     "description": {
-      "en": "A beautiful teak and gilded monastery housing a replica of the famous Mahamuni image.",
-      "my": "ကျွန်းသားနှင့် ရွှေချထားသော လှပသည့် ကျောင်းတော်ကြီးဖြစ်ပြီး မဟာမုနိရုပ်ပွားတော် ပုံတူကို ဌာပနာထားသည်။"
+      "en": "The Maha Myat Muni Pagoda (Maha Muni Pagoda), one of Kengtung's iconic religious landmarks, is a very famous pagoda among both locals and tourists.\nHistory & Architecture: The Maha Myat Muni Pagoda in Kengtung houses a replica of the famous Maha Muni Buddha Statue located in Mandalay. The Buddha image features a serene face, beautifully blending traditional Burmese and Shan artistic styles.\n\nLocation: Situated right in the heart of Kengtung city, it is easily accessible and serves as a central landmark for both locals and travelers.\n\nHighlights: The pagoda compound offers a peaceful and sacred atmosphere, making it a key religious and cultural site in Eastern Shan State. It provides a tranquil setting for visitors and pilgrims to pray, meditate, and appreciate the local Buddhist heritage.",
+      "my": "ကျိုင်းတုံမြို့၏ အထင်ကရ သာသနိကအဆောက်အအုံများထဲမှ တစ်ခုဖြစ်သော မဟာမြတ်မုနိဘုရား (မဟာမုနိဘုရား) သည် ဒေသခံများ သာမက ခရီးသွားဧည့်သည်များကြားတွင်ပါ အလွန်ထင်ရှားသည့် ဘုရားတစ်ဆူ ဖြစ်ပါသည်။\nသမိုင်းကြောင်းနှင့် အနုပညာ: မန္တလေးမြို့ရှိ မဟာမုနိရုပ်ရှင်တော်မြတ်ကြီး၏ ပုံစံတူ သွန်းလောင်းပူဇော်ထားခြင်း ဖြစ်ပါသည်။ ဘုရားရုပ်ပွားတော်မြတ်ကြီး၏ မျက်နှာတော်သည် ကြည်ညိုဖွယ်ရာ ကောင်းလှပြီး ရှိးရာရှမ်းအနုပညာ စတိုင်လ်များနှင့် ပေါင်းစပ်တည်ဆောက်ထားသည်။\n\nတည်နေရာ: ကျိုင်းတုံမြို့၏ ဗဟိုချက်မတွင် တည်ရှိပြီး သွားလာရလွယ်ကူသော မြို့လယ်ခေါင် ဘုရားတစ်ဆူ ဖြစ်သည်။\n\nထူးခြားချက်: ဘုရားဝင်းအတွင်း၌ ငြိမ်းချမ်းသာယာသော ပတ်ဝန်းကျင်ရှိပြီး၊ ရှမ်းပြည်နယ် အရှေ့ပိုင်း၏ ယဉ်ကျေးမှုနှင့် သာသနာရေးဆိုင်ရာ တန်ဖိုးကြီးမားသော ဗဟိုချက်တစ်ခုအဖြစ် တည်ရှိနေပါသည်။ ဘုရားဖူးလာရောက်သူများအတွက် အေးချမ်းစွာ ဝတ်ပြုဆုတောင်းနိုင်သော နေရာတစ်ခု ဖြစ်သည်။"
     },
     "address": {
-      "en": "Kengtung",
-      "my": "ကျိုင်းတုံ"
+      "en": "ZayDanLoang St, Ward (3), Kyaing Tong",
+      "my": "စျေးတန်းလုံ(ခ)စျေးတန်းကြီးလမ်း၊ ရပ်ကွက်(၃)၊ ကျိုင်းတုံမြို့။"
     },
-    "lat": 21.289,
-    "lng": 99.5958,
-    "openHours": "06:00 - 18:00",
+    "lat": 21.291499953108396,
+    "lng": 99.60298190472996,
+    "openHours": "06:00 AM- 8:00 PM",
     "rating": 4.5,
     "tags": [
-      "heritage"
+      "heritage",
+      "ဘုရား",
+      "စေတီ",
+      "ဘုရားကြီး"
     ],
     "images": [
-      "assets/images/pagoda.jpg"
+      "assets/images/မဟာမြတ်မုနိ (1).jpg",
+      "assets/images/မဟာမြတ်မုနိ (2).jpg",
+      "assets/images/မဟာမြတ်မုနိ (3).jpg",
+      "assets/images/မဟာမြတ်မုနိ (4).jpg",
+      "assets/images/မဟာမြတ်မုနိ (5).jpg",
+      "assets/images/မဟာမြတ်မုနိ (6).jpg",
+      "assets/images/မဟာမြတ်မုနိ (7).jpg",
+      "assets/images/မဟာမြတ်မုနိ (9).jpg",
+      "assets/images/မဟာမြတ်မုနိ (10).jpg",
+      "assets/images/မဟာမြတ်မုနိ (11).jpg",
+      "assets/images/မဟာမြတ်မုနိ (12).jpg",
+      "assets/images/မဟာမြတ်မုနိ (13).jpg"
     ]
   },
   {
     "id": "loi-mwe",
     "name": {
-      "en": "Loi Mwe Hill Station",
-      "my": "လွယ်မွေး"
+      "en": "Buddha Garden",
+      "my": "ဗုဒ္ဓဥယျာဉ် (သို့မဟုတ် ပန်ကွဲဗုဒ္ဓဥယျာဉ်)"
     },
-    "category": "place",
+    "category": "pagoda",
     "description": {
-      "en": "A cool former British hill station about 35 km south of Kengtung, with colonial-era buildings, a old Catholic church and pine forest views.",
-      "my": "ကျိုင်းတုံမှ တောင်ဘက် ၃၅ ကီလိုမီတာအကွာရှိ အေးမြသော တောင်ပေါ်ဒေသ။ ကိုလိုနီခေတ် အဆောက်အအုံများနှင့် ထင်းရှူးတောကို တွေ့ရသည်။"
+      "en": "Kyaing Tong Buddhist Garden (or Pan Kwe Buddhist Garden) is a prominent new religious and pilgrimage destination located near Pan Kwe Village in Kyaing Tong Township, Eastern Shan State. Situated on a hilltop, it attracts pilgrims and tourists because of its peaceful, pleasant, and beautiful surroundings.",
+      "my": "ကျိုင်းတုံ ဗုဒ္ဓဥယျာဉ် (သို့မဟုတ် ပန်ကွဲဗုဒ္ဓဥယျာဉ်) သည် ရှမ်းပြည်နယ်အရှေ့ပိုင်း၊ ကျိုင်းတုံမြို့နယ် ပန်းကွဲ (ပန်ကွဲ) ကျေးရွာအနီး တည်ရှိသော အထူးထင်ရှားသည့် သာသနာရေးဆိုင်ရာ ဖူးမြော်လည်ပတ်စရာ နေရာသစ်ကြီးတစ်ခု ဖြစ်သည်။ တောင်ကုန်းမြင့်ပေါ်တွင် တည်ရှိပြီး အေးချမ်းသာယာလှပသော ပတ်ဝန်းကျင်ကြောင့် ဘုရားဖူးများနှင့် ခရီးသွားများ စိတ်ဝင်တစား လာရောက်ကြသည်"
     },
     "address": {
-      "en": "Loi Mwe, 35 km south of Kengtung",
-      "my": "လွယ်မွေး၊ ကျိုင်းတုံမှ ၃၅ ကီလိုမီတာ"
+      "en": "21 km (13 miles) east of Kyaing Tong town center, directly on the Kengtung–Tachileik Highway next to Pan Kwai Village.",
+      "my": "ပန်ကွဲကျေးရွာ ၊ ကျိုင်းတုံမြို့အနီး။"
     },
-    "lat": 21.0617,
-    "lng": 99.635,
-    "openHours": "Daytime",
+    "lat": 21.151714299006102,
+    "lng": 99.72672059737116,
+    "openHours": "24 HR",
     "rating": 4.4,
     "tags": [
       "day trip",
       "colonial",
-      "nature"
+      "nature",
+      "ဘုရား",
+      "ကျောင်း",
+      "စေတီ",
+      "ဘာသာရေး"
     ],
     "images": [
-      "assets/images/hero_kengtung.jpg",
-      "assets/images/lake.jpg"
+      "assets/images/bdgd (1).jpg",
+      "assets/images/bdgd (2).jpg",
+      "assets/images/bdgd (3).jpg",
+      "assets/images/bdgd (4).jpg",
+      "assets/images/bdgd (5).jpg",
+      "assets/images/bdgd (6).jpg",
+      "assets/images/bdgd (7).jpg",
+      "assets/images/bdgd (8).jpg",
+      "assets/images/bdgd (9).jpg",
+      "assets/images/bdgd (10).jpg",
+      "assets/images/bdgd (11).jpg"
     ]
   },
   {
-    "id": "one-tree-hill",
+    "id": "kabar-aye",
     "name": {
-      "en": "One Tree Hill",
-      "my": "သစ်ပင်တစ်ပင်ကုန်း"
+      "en": "Kabar Aye Pagoda",
+      "my": "ကမ္ဘာအေးစေတီ"
     },
-    "category": "place",
+    "category": "pagoda",
     "description": {
-      "en": "A small hilltop with a single old tree and a wide view over Kengtung. A favourite spot for sunset.",
-      "my": "သစ်ပင်ဟောင်းတစ်ပင်တည်းရှိသော တောင်ကုန်းငယ်။ ကျိုင်းတုံမြို့ကို ကျယ်ပြန့်စွာ မြင်ရပြီး နေဝင်ချိန် အကြိုက်ဆုံးနေရာ။"
+      "en": "Kyaing Tong Dhat Zoam Doi Monastery (KaBa Aye Monastery) is a very peaceful hilltop religious site with beautiful scenic views, located on the eastern side of Kyaing Tong, Eastern Shan State, along the road to Mong La.",
+      "my": "ကျိုင်းတုံ ကမ္ဘာအေးစေတီ (ဒေသအခေါ် ဓာတ်စွမ်လွဲစေတီတော်) သည် ရှမ်းပြည်နယ်အရှေ့ပိုင်း၊ ကျိုင်းတုံမြို့၏ အရှေ့ဘက် မိုင်းလားသွားရာလမ်းဘက်တွင် တည်ရှိသည့် အလွန်အေးချမ်းသာယာသော တောင်ကုန်းမြင့် ရှုခင်းသာဘုရား တစ်ဆူ ဖြစ်သည်။"
     },
     "address": {
-      "en": "Kengtung",
-      "my": "ကျိုင်းတုံ"
+      "en": "the eastern side of Kyaing Tong",
+      "my": "ကျိုင်းတုံမြို့ အရှေ့ဖက် ကျိုင်းတုံမြို့"
     },
-    "lat": 21.3022,
-    "lng": 99.593,
-    "openHours": "Open 24 hours",
+    "lat": 21.332473739625286,
+    "lng": 99.70406638564502,
     "rating": 4.3,
     "tags": [
-      "viewpoint",
-      "sunset"
+      "ကျောင်း",
+      "ဘုရား",
+      "ဘာသာရေး",
+      "စေတီ"
     ],
     "images": [
-      "assets/images/hero_kengtung.jpg"
+      "assets/images/kabaraye (1).jpg",
+      "assets/images/kabaraye (2).jpg",
+      "assets/images/kabaraye (3).jpg",
+      "assets/images/kabaraye (4).jpg",
+      "assets/images/kabaraye (5).jpg",
+      "assets/images/kabaraye (6).jpg",
+      "assets/images/kabaraye (7).jpg"
     ]
   },
   {
@@ -174,11 +243,11 @@
     "category": "market",
     "description": {
       "en": "Kengtung's main market and busiest place each morning. Local traders and hill-tribe villagers sell fresh produce, meat, Shan noodles, clothing and household goods.",
-      "my": "ရှမ်းပြည်အရှေ့ပိုင်း၏ အရှုပ်ဆုံးဈေး။ အခါ၊ လားဟူ၊ အန်း၊ ပလောင် တောင်တန်းသားများမနက်စောစောလာရောက်ရွေ့ ဟင်းသီးဟင်းရွက် အသားငါး အစုံအလင် စည်ကားစွ လာရောက် ရောင်းချကြသည်။ "
+      "my": "ရှမ်းပြည်အရှေ့ပိုင်း၏ အစည်ကားဆုံးဈေး။ အာခါ၊ လားဟူ၊ အင်န်၊ ပလောင် တောင်တန်းသားများ ဒေသထွက်သီးနှံ၊ ယက်ကန်းထည်နှင့် ငွေထည်များ လာရောက်ရောင်းချကြသည်။ ၅ ရက်တစ်ကြိမ် ဈေးနေ့တွင် အစည်ကားဆုံးဖြစ်ပြီး မနက် ၉ နာရီ မတိုင်မီ သွားသင့်သည်။ အခါ၊ လားဟူ၊ အန်း၊ ပလောင် တောင်တန်းသားများမနက်စောစောလာရောက်ရွေ့ ဟင်းသီးဟင်းရွက် အသားငါး အစုံအလင် စည်ကားစွ လာရောက် ရောင်းချကြသည်။ "
     },
     "address": {
-      "en": "Town centre, near Kyaing Tong Tower, Kyaing Tong",
-      "my": "မြို့လည်ခေါင်၊ နာရီစင်အနီး၊ ကျိုင်းတုံမြို့။"
+      "en": "Market Road, Yan Aung ward, Kengtung",
+      "my": "ဈေးလမ်း၊ ရန်အောင်ရပ်ကွက်၊ ကျိုင်းတုံ"
     },
     "lat": 21.286758921774723,
     "lng": 99.60334509324566,
@@ -291,56 +360,81 @@
     ]
   },
   {
-    "id": "motorbike-rental",
+    "id": "akartha-resort",
     "name": {
-      "en": "Motorbike & Bicycle Rental",
-      "my": "မော်တော်ဆိုင်ကယ် ငှားရမ်းခြင်း"
+      "en": "AkarTha Resort",
+      "my": "အာကာသ အပန်းဖြေစခန်း"
     },
-    "category": "transport",
+    "category": "place",
     "description": {
-      "en": "Rental shops near the lake offering motorbikes and bicycles by the day - the easiest way to reach nearby villages.",
-      "my": "ကန်အနီးရှိ ဆိုင်ကယ်နှင့် စက်ဘီး ငှားရမ်းဆိုင်များ။ အနီးအနားရွာများသို့ သွားရန် အလွယ်ကူဆုံးနည်းလမ်း။"
+      "en": "Kyaing Tong Arr Kar Tha is located near Kyaing Tong and is a peaceful getaway surrounded by beautiful natural scenery. With mountains and lush green trees all around, visitors can escape the noise of the city and enjoy the tranquility of nature.It is an ideal destination for nature lovers, those looking for a relaxing weekend getaway, and visitors who want to take beautiful photos surrounded by scenic landscapes.",
+      "my": "ကျိုင်းတုံ အာကာသအပန်းဖြေစခန်းသည် ကျိုင်းတုံမြို့အနီးတွင် တည်ရှိပြီး လှပသော သဘာဝရှုခင်းများ ခြံရံထားသည့် အေးချမ်းသော အပန်းဖြေစခန်းတစ်ခု ဖြစ်ပါသည်။ ပတ်ဝန်းကျင်တစ်ခုလုံးတွင် တောင်တန်းများနှင့် စိမ်းလန်းစိုပြည်သော သစ်ပင်များ ဝိုင်းရံထားသဖြင့် လာရောက်လည်ပတ်သူများသည် မြို့၏ဆူညံသံများမှ ရုန်းထွက်ကာ သဘာဝတရား၏ အေးချမ်းဆိတ်ငြိမ်မှုကို ပြည့်ဝစွာ ခံစားနိုင်မည် ဖြစ်ပါသည်။ သဘာဝတရားကို မြတ်နိုးသူများ၊ စိတ်လက်ပေါ့ပါးစွာ ဧည့်နားလိုသူများနှင့် လှပသော သဘာဝရှုခင်းများကြားတွင် ဓာတ်ပုံလှလှလေးများ ရိုက်ကူးချင်သူများအတွက် အလွန်ပင် သင့်တော်ကောင်းမွန်သော နေရာတစ်ခု ဖြစ်ပါသည်။ ညအိပ် နေလို့ရသောအပန်းဖြေနေရာတစ်ခုဖြစ်ပါတယ်။"
     },
     "address": {
-      "en": "Near Naung Tung Lake, Kengtung",
-      "my": "နောင်တုံကန်အနီး၊ ကျိုင်းတုံ"
+      "en": "Kat Htaik village, kyaing tong",
+      "my": "ကတ်ထိုက်ကျေးရွာ၊ ကျိုင်းတုံမြို့။"
     },
-    "lat": 21.292,
-    "lng": 99.6015,
-    "openHours": "07:00 - 19:00",
+    "lat": 21.382537631644826,
+    "lng": 99.53955138670412,
+    "phone": "09780091711",
+    "openHours": "24hr",
     "rating": 4,
     "tags": [
-      "rental",
-      "motorbike"
+      "အပန်းဖြေစခန်း",
+      "ရှုခင်း",
+      "လည်ပတ်",
+      "နေရာ",
+      "အာကာသ"
     ],
     "images": [
-      "assets/images/transport.jpg"
+      "assets/images/akartha (1).jpg",
+      "assets/images/akartha (2).jpg",
+      "assets/images/akartha (3).jpg",
+      "assets/images/akartha (4).jpg",
+      "assets/images/akartha (5).jpg",
+      "assets/images/akartha (6).jpg",
+      "assets/images/akartha (7).jpg",
+      "assets/images/akartha (8).jpg",
+      "assets/images/akartha (9).jpg",
+      "assets/images/akartha (10).jpg",
+      "assets/images/akartha (11).jpg"
     ]
   },
   {
-    "id": "princess-hotel",
+    "id": "loimwe-hillstation",
     "name": {
-      "en": "Princess Hotel",
-      "my": "ပရင်းဆက် ဟိုတယ်"
+      "en": "Loi Mwe Hill Station",
+      "my": "လွိုင်မွေ တောင်ပေါ်စခန်းမြို့"
     },
-    "category": "hotel",
+    "category": "place",
     "description": {
-      "en": "Comfortable mid-range hotel close to the town centre and the lake.",
-      "my": "မြို့လယ်နှင့် ကန်အနီးရှိ သက်သောင့်သက်သာရှိသော အလယ်အလတ်တန်း ဟိုတယ်။"
+      "en": "Loimwe, known locally as “Loimwe,” is a mountain town located about 27 miles from Kyaing Tong, at an elevation of approximately 5,542–6,012 feet above sea level. The name is associated with “mountain” and “snow,” reflecting its cool climate and frequent misty weather.Loimwe is famous for its beautiful cherry blossom trees and mountain scenery. An annual Cherry Blossom Festival is held in January, attracting visitors who come to enjoy the colorful blossoms and cool, peaceful atmosphere. The town is also known for its local fruit wines and tea.Visitors can enjoy scenic mountain views from viewpoints along the road to Loimwe. The winter season is an ideal time to visit and experience the misty landscapes, cherry blossoms, and refreshing mountain climate. If you visit Kyaing Tong, Loimwe is a must-visit destination for nature and culture lovers.",
+      "my": "လွိုင်မွေသည် ကျိုင်းတုံမြို့မှ ၂၇ မိုင်ခန့်အကွာ၊ ပင်လယ်ရေမျက်နှာပြင်အထက် ပေ ၅,၅၄၂ မှ ၆,၀၁၂ ပေခန့် အမြင့်တွင် တည်ရှိသော တောင်ပေါ်မြို့ကလေး ဖြစ်ပါသည်။ \"လွိုင်မွေ\" ဟူသော အမည်သည် \"တောင်\" နှင့် \"နှင်း\" တို့ကို ရည်ညွှန်းပြီး မြို့၏ အေးမြသော ရာသီဥတုနှင့် ခါးဝတ်ခြုံထားသကဲ့သို့ မကြာခဏ ကျရောက်တတ်သည့် မြူခိုးများကို ဖော်ညွှန်းနေပါသည်။ လွိုင်မွေသည် လှပသော ချယ်ရီပန်းပင်များနှင့် တောင်တန်းရှုခင်းများကြောင့် အထူးထင်ရှားပါသည်။ နှစ်စဉ် ဇန်နဝါရီလတွင် ချယ်ရီပန်းပွဲတော်ကို ကျင်းပလေ့ရှိပြီး ရောင်စုံဖူးပွင့်နေသည့် ချယ်ရီပန်းများနှင့် အေးချမ်းဆိတ်ငြိမ်သော လေထုကို ခံစားရန် ခရီးသွားများ လာရောက်လည်ပတ်ကြပါသည်။ ထို့အပြင် စိုက်ပျိုးထွက်ရှိသော ဒေသထွက် သစ်သီးဝိုင်များနှင့် လက်ဖက်ခြောက်တို့ကြောင့်လည်း လူသိများပါသည်။လွိုင်မွေသို့ သွားရာ လမ်းတစ်လျှောက်ရှိ ရှုခင်းကြည့်နေရာများမှ ရှုမောမဝနိုင်သော တောင်တန်းကြီးများ၏ အလှကို ကြည့်ရှုခံစားနိုင်ပါသည်။ ဆောင်းရာသီသည် မြူခိုးဝိုင်းရံနေသော သဘာဝရှုခင်းများ၊ ချယ်ရီပန်းများနှင့် လန်းဆန်းစိုပြည်သည့် တောင်ပေါ်ရာသီဥတုကို ခံစားရန် အကောင်းဆုံးအချိန် ဖြစ်ပါသည်။ သင်သည် ကျိုင်းတုံသို့ ရောက်ရှိပါက လွိုင်မွေသည် သဘာဝတရားနှင့် ဒေသန္တရယဉ်ကျေးမှုကို မြတ်နိုးသူများအတွက် မဖြစ်မနေ သွားရောက်လည်ပတ်သင့်သည့် နေရာတစ်ခု ဖြစ်ပါသည်။"
     },
     "address": {
-      "en": "Kengtung",
-      "my": "ကျိုင်းတုံ"
+      "en": "estimate 18.8 miles away from kyaing tong",
+      "my": "ခန့်မှန်းချေ ကျိုင်းတုံမြို့ မှ ၁၈.၈ မိုင် အကွာတွင်တည်ရှိသည်"
     },
-    "lat": 21.2935,
-    "lng": 99.6028,
+    "lat": 21.172054600876038,
+    "lng": 99.75378581820041,
     "openHours": "24 hours",
     "rating": 4.1,
     "tags": [
-      "hotel"
+      "hill station",
+      "တောင်ပေါ်",
+      "ချယ်ရီပန်း",
+      "ဝိုင်",
+      "လည်ပတ်",
+      "ရှုခင်း",
+      "နှစ်တစ်ရာ"
     ],
     "images": [
-      "assets/images/hotel.jpg"
+      "assets/images/loimwe (1).jpg",
+      "assets/images/loimwe (2).jpg",
+      "assets/images/loimwe (3).jpg",
+      "assets/images/loimwe (4).jpg",
+      "assets/images/loimwe (5).jpg",
+      "assets/images/loimwe (6).jpg"
     ]
   },
   {
@@ -440,31 +534,36 @@
     ]
   },
   {
-    "id": "lake-view-cafe",
+    "id": "haw-nann",
     "name": {
-      "en": "Lake View Cafe",
-      "my": "ကန်စောင်း ကဖေး"
+      "en": "Kyaing Tong Haw Nann",
+      "my": "ကျိုင်းတုံဟော်နန်း"
     },
-    "category": "restaurant",
+    "category": "place",
     "description": {
-      "en": "Coffee, tea and light meals with a terrace facing Naung Tung Lake.",
-      "my": "နောင်တုံကန်ကို မျှော်ကြည့်နိုင်သော ကော်ဖီ၊ လက်ဖက်ရည်နှင့် အပေါ့စား အစားအစာဆိုင်။"
+      "en": "Kyaing Tong Haw Palace is a significant historical and cultural landmark located near Naung Tong Lake in Eastern Shan State. Once the residence of the Shan Saophas, the palace now serves as a museum where visitors can learn about Shan history, culture, and traditional heritage. It is a worthwhile destination for anyone visiting Kyaing Tong who wants to explore the region’s rich history and cultural heritage.",
+      "my": "ကျိုင်းတုံ ဟော်နန်းသည် အရှေ့ပိုင်းရှမ်းပြည်နယ်၊ နောင်တုံကန်အနီးတွင် တည်ရှိပြီး သမိုင်းနှင့် ယဉ်ကျေးမှုဆိုင်ရာ အထက်တန်းကျသော အထင်ကရနေရာတစ်ခု ဖြစ်ပါသည်။ ယခင်က ရှမ်းစောဘွားများ စံမြန်းရာ ဟော်နန်းဖြစ်ခဲ့ပြီး ယခုအခါ ရှမ်းလူမျိုးတို့၏ သမိုင်း၊ ယဉ်ကျေးမှုနှင့် ရိုးရာအမွေအနှစ်များကို လေ့လာနိုင်သည့် ပြတိုက်အဖြစ် ဆောင်ရွက်လျက်ရှိသည်။ ကျိုင်းတုံသို့ ရောက်ရှိပြီး ဒေသ၏ ကြွယ်ဝလှသော သမိုင်းနှင့် ယဉ်ကျေးမှုအမွေအနှစ်များကို လေ့လာစုံစမ်းချင်သူ မည်သူမဆို မဖြစ်မနေ သွားရောက်လည်ပတ်သင့်သည့် နေရာတစ်ခု ဖြစ်ပါသည်။"
     },
     "address": {
-      "en": "Lakeside, Kengtung",
-      "my": "ကန်ဘေး၊ ကျိုင်းတုံ"
+      "en": "Naung Tong Lakeside, Kengtung",
+      "my": "နောင်တုံကန်ဘေး၊ ကျိုင်းတုံ"
     },
-    "lat": 21.2908,
-    "lng": 99.601,
-    "openHours": "07:00 - 20:00",
+    "lat": 21.291189480951783,
+    "lng": 99.60078210562811,
     "rating": 4.2,
     "tags": [
-      "cafe",
-      "coffee",
-      "view"
+      "လည်ပတ်",
+      "စော်ဘွား",
+      "ပြတိုက်",
+      "ရှေးဟောင်း",
+      "နေရာ"
     ],
     "images": [
-      "assets/images/restaurant.jpg"
+      "assets/images/hawnann (1).jpg",
+      "assets/images/hawnann (2).jpg",
+      "assets/images/hawnann (3).jpg",
+      "assets/images/hawnann (4).jpg",
+      "assets/images/hawnann (5).jpg"
     ]
   },
   {
@@ -510,31 +609,40 @@
     ]
   },
   {
-    "id": "kengtung-general-hospital",
+    "id": "thittapin-taung",
     "name": {
-      "en": "Kengtung General Hospital",
-      "my": "ကျိုင်းတုံ ပြည်သူ့ဆေးရုံကြီး"
+      "en": "The Lone Tree (Thit Ta Pin Taung)",
+      "my": "သစ်တစ်ပင်တောင်"
     },
-    "category": "emergency",
+    "category": "place",
     "description": {
-      "en": "The main public hospital for Kengtung and the surrounding townships. 24-hour emergency department.",
-      "my": "ကျိုင်းတုံနှင့် ပတ်ဝန်းကျင်မြို့နယ်များအတွက် အဓိက ပြည်သူ့ဆေးရုံ။ ၂၄ နာရီ အရေးပေါ်ဌာန ရှိသည်။"
+      "en": "Thit Ta Pin Mountain is one of the notable natural landmarks of Kyaing Tong. A white fig tree believed to be around 590 years old stands on the hill, and the mountain was named after this remarkable tree.As a unique symbol closely associated with Kyaing Tong and a place where visitors can enjoy the natural surroundings, Thit Ta Pin Mountain is a worthwhile destination to explore when visiting Kyaing Tong.",
+      "my": "သစ်တစ်ပင်တောင်သည် ကျိုင်းတုံမြို့၏ ထင်ရှားသော သဘာဝအထင်ကရ နေရာများထဲမှ တစ်ခုဖြစ်ပါသည်။ တောင်ကုန်းပေါ်တွင် သက်တမ်း ၅၉၀ နှစ်ခန့်ရှိပြီဟု ယူဆရသော ညောင်ဖြူပင်ကြီးတစ်ပင် တည်ရှိပြီး ထိုထူးခြားဆန်းပြားသော သစ်ပင်ကြီးကို အစွဲပြု၍ တောင်အမည်ကို ခေါ်တွင်ခဲ့ခြင်း ဖြစ်ပါသည်။ ကျိုင်းတုံမြို့နှင့် ခွဲခြား၍မရသော ထူးခြားသည့် သင်္ကေတတစ်ခုဖြစ်ပြီး သဘာဝပတ်ဝန်းကျင် အလှတရားကို ပြည့်ဝစွာ ခံစားနိုင်သော နေရာဖြစ်သည့်အတွက် သစ်တစ်ပင်တောင်သည် ကျိုင်းတုံသို့ ရောက်ရှိပါက သွားရောက်လေ့လာသင့်သည့် နေရာကောင်းတစ်ခု ဖြစ်ပါသည်။"
     },
     "address": {
-      "en": "Hospital Road, Kengtung",
-      "my": "ဆေးရုံလမ်း၊ ကျိုင်းတုံ"
+      "en": "Jawm Moan Hill, near MyoMa Market, Kyaing Tong",
+      "my": "စွမ်မုန့်တောင်ကုန်းပေါ် ၊ မြို့မစျေးအနီး၊ ကျိုင်းတုံမြို့။"
     },
-    "lat": 21.2888,
-    "lng": 99.6025,
-    "phone": "192",
-    "openHours": "24 hours",
-    "rating": 3.8,
+    "lat": 21.281288041759797,
+    "lng": 99.60546516326343,
+    "phone": "09426277757",
+    "openHours": "8:00 AM - 9:00 PM",
+    "rating": 4.3,
     "tags": [
-      "hospital",
-      "24h"
+      "ခရီးသွား",
+      "ရှုခင်း",
+      "လည်ပတ်",
+      "သစ်တစ်ပင်",
+      "နေရာ"
     ],
     "images": [
-      "assets/images/emergency.jpg"
+      "assets/images/သစ်တစ်ပင် (1).jpg",
+      "assets/images/သစ်တစ်ပင် (2).jpg",
+      "assets/images/သစ်တစ်ပင် (3).jpg",
+      "assets/images/သစ်တစ်ပင် (4).jpg",
+      "assets/images/သစ်တစ်ပင် (5).jpg",
+      "assets/images/သစ်တစ်ပင် (6).jpg",
+      "assets/images/သစ်တစ်ပင် (7).jpg"
     ]
   },
   {
@@ -549,72 +657,86 @@
       "my": "မြို့နယ် ရဲစခန်း။ အရေးပေါ်ဖုန်း ၁၉၉။"
     },
     "address": {
-      "en": "Kengtung",
-      "my": "ကျိုင်းတုံ"
+      "en": "near Independent Monument , Kyaing Tong",
+      "my": "ငြိမ်းချမ်းရေးကျောက်တိုင်း အဝိုင်းပတ်အနီး၊ ကျိုင်းတုံမြို့။"
     },
-    "lat": 21.2944,
-    "lng": 99.6008,
+    "lat": 21.28800500890301,
+    "lng": 99.60200258639043,
     "phone": "199",
     "openHours": "24 hours",
     "tags": [
       "police",
-      "24h"
+      "24h",
+      "ဆေးရုံ",
+      "ရဲစခန်း",
+      "အရေးပေါ်",
+      "ဆေးခန်း"
     ],
     "images": [
-      "assets/images/emergency.jpg"
+      "assets/images/police.png"
     ]
   },
   {
     "id": "private-clinic",
     "name": {
-      "en": "Kengtung Private Clinic",
-      "my": "ကျိုင်းတုံ ပုဂ္ဂလိက ဆေးခန်း"
+      "en": "Keng Tung General Hospital",
+      "my": "ကျိုင်းတုံ ပြည်သူ့ဆေးရုံကြီး"
     },
     "category": "emergency",
     "description": {
-      "en": "Private clinic for minor illness and travel medicine. Pharmacy attached.",
-      "my": "သေးငယ်သော ရောဂါများနှင့် ခရီးသွားဆေးဝါးအတွက် ပုဂ္ဂလိကဆေးခန်း။ ဆေးဆိုင်ပါရှိသည်။"
+      "en": "General Hospital of Kyaing Tong.",
+      "my": "ကျိုင်းတုံမြို့ အထွေထွေရောဂါကု ဆေးရုံကြီးဖြစ်ပါသည်။"
     },
     "address": {
-      "en": "Kengtung",
-      "my": "ကျိုင်းတုံ"
+      "en": "KengTung - Tachileik Road, near Golf Club, Kyaing Tong",
+      "my": "ကျိုင်းတုံ-တာချီလိတ်လမ်း ၊ ဂေါက်ကွင်းအနီး၊ ကျိုင်းတုံမြို့။"
     },
-    "lat": 21.2896,
-    "lng": 99.5968,
-    "openHours": "08:00 - 20:00",
+    "lat": 21.260193204051284,
+    "lng": 99.61604514006822,
+    "openHours": "24 hr",
+    "rating": 4.5,
     "tags": [
-      "clinic",
-      "pharmacy"
+      "pharmacy",
+      "ဆေးရုံ",
+      "အရေးပေါ်",
+      "ဆေးခန်း"
     ],
     "images": [
-      "assets/images/emergency.jpg"
+      "assets/images/Hospital.jpg"
     ]
   },
   {
-    "id": "f",
+    "id": "kthot-spring",
     "name": {
-      "en": "MyoMaSportCenter",
-      "my": "မြို့မအားကစားကွင်း"
+      "en": "Mya Shwe Yee Hot Spring",
+      "my": "မြရွှေရည် ရေပူစမ်း"
     },
     "category": "place",
     "description": {
-      "en": "Sport Center located in Kyaing Tong",
-      "my": "အကုန်လုပ်လို့ရတယ်"
+      "en": "Kyaing Tong Hot Spring is a natural hot spring located near Kyaing Tong, offering a peaceful setting for relaxation and rejuvenation. Its naturally warm water provides a refreshing experience and helps ease tiredness after traveling. With its calm and soothing atmosphere, it is a recommended destination for visitors looking to relax and enjoy a pleasant experience in Kyaing Tong.",
+      "my": "ကျိုင်းတုံ ရေပူစမ်းသည် ကျိုင်းတုံမြို့အနီးတွင် တည်ရှိသော သဘာဝရေပူစမ်းတစ်ခုဖြစ်ပြီး အပန်းဖြေနားနေရန်နှင့် စိတ်ရောကိုယ်ပါ လန်းဆန်းစေရန်အတွက် အေးချမ်းသော ပတ်ဝန်းကျင်ကို ပေးစွမ်းပါသည်။ ၎င်း၏ သဘာဝအတိုင်း နွေးထွေးနေသော ရေသည် လန်းဆန်းမှုရသကို ပေးစွမ်းနိုင်ပြီး ခရီးသွားလာပြီးနောက် ပင်ပန်းနွမ်းနယ်မှုများကို ပြေပျောက်စေရန် ကူညီပေးပါသည်။ အေးချမ်းဆိတ်ငြိမ်ပြီး စိတ်ကြည်နူးဖွယ်ကောင်းသော လေထုကြောင့် ကျိုင်းတုံမြို့သို့ ရောက်ရှိစဉ် အနားယူကာ သာယာကြည်နူးဖွယ် အတွေ့အကြုံကို ခံစားလိုသော ခရီးသွားများအတွက် အထူးအကြံပြုလိုသည့် နေရာတစ်ခု ဖြစ်ပါသည်။"
     },
     "address": {
-      "en": "Naung Tong Street",
-      "my": "နောင်တုံကန်ပတ်လမ်း"
+      "en": "Kyaing Phoung Village, Near Kyaing Tong University",
+      "my": "ကျိုင်းဖောင်းကျေးရွာ၊ ကျိုင်းတုံ တကသိုလ်အနီး"
     },
-    "lat": 21.289483,
-    "lng": 99.601553,
-    "openHours": "6:00AM-600PM",
-    "rating": 4,
+    "lat": 21.294902720860218,
+    "lng": 99.55302052404052,
+    "openHours": "6:00AM-9:00PM",
+    "rating": 4.2,
     "tags": [
       "နေရာ",
-      "လည်ပတ်"
+      "လည်ပတ်",
+      "ရေပူစမ်း",
+      "ရှုခင်း"
     ],
     "images": [
-      "assets/images/emergency.jpg"
+      "assets/images/ရေပူစမ်း (1).jpg",
+      "assets/images/ရေပူစမ်း (2).jpg",
+      "assets/images/ရေပူစမ်း (3).jpg",
+      "assets/images/ရေပူစမ်း (4).jpg",
+      "assets/images/ရေပူစမ်း (5).jpg",
+      "assets/images/ရေပူစမ်း (6).jpg"
     ]
   },
   {
@@ -844,6 +966,277 @@
       "assets/images/kengtung-yankham-1-exterior-view.jpg",
       "assets/images/kengtung-yankham-2-interior-view.jpg",
       "assets/images/kengtung-yankham-3-market-activity.jpg"
+    ]
+  },
+  {
+    "id": "akha-lay",
+    "name": {
+      "en": "Akha Lay Waterfall",
+      "my": "အာခါလေးရေတံခွန်"
+    },
+    "category": "place",
+    "description": {
+      "en": "Akha Lay Waterfall is a natural attraction near Kyaing Tong, surrounded by lush greenery and beautiful mountain scenery. The cool, refreshing environment provides a peaceful escape from the busy city and a pleasant place to relax in nature.It is an ideal destination for nature lovers and those who enjoy waterfalls and scenic landscapes. Visitors to Kyaing Tong should consider exploring Akha Lay Waterfall to experience the area’s natural beauty and tranquility.",
+      "my": "အာခါလေး ရေတံခွန်သည် ကျိုင်းတုံမြို့အနီးတွင် တည်ရှိပြီး စိမ်းလန်းစိုပြည်သော သစ်တောများနှင့် လှပသော တောင်တန်းရှုခင်းများ ခြံရံထားသည့် သဘာဝ အပန်းဖြေနေရာတစ်ခု ဖြစ်ပါသည်။ အေးမြဆန်းသစ်သော ပတ်ဝန်းကျင်က မြို့၏ ရှုပ်ထွေးဆူညံမှုများမှ ရုန်းထွက်ကာ သဘာဝတရားကြား အေးချမ်းစွာ အနားယူနိုင်မည့် အခွင့်အရေးကို ပေးစွမ်းသည်။ သဘာဝတရားကို မြတ်နိုးသူများ၊ ရေတံခွန်နှင့် သဘာဝရှုခင်းများကို နှစ်သက်သူများအတွက် အလွန်ပင် သင့်တော်ကောင်းမွန်သော နေရာတစ်ခု ဖြစ်ပါသည်။ ကျိုင်းတုံသို့ လာရောက်သူများအနေဖြင့် အဆိုပါ ဒေသ၏ သဘာဝအလှတရားနှင့် အေးချမ်းဆိတ်ငြိမ်မှုကို ခံစားနိုင်ရန် အာခါလေး ရေတံခွန်သို့ သွားရောက်လေ့လာသင့်ပါသည်။"
+    },
+    "address": {
+      "en": "WanMaing Village, near Polytechnic University Kyaing Tong",
+      "my": "ဝမ်မိုင်ကျေးရွာ၊ နည်းပညာတက္ကသိုလ် အနီး ကျိုင်းတုံမြို့ "
+    },
+    "lat": 21.252611721087412,
+    "lng": 99.64159987800875,
+    "openHours": "09:00 AM - 08:00 PM",
+    "rating": 4.2,
+    "tags": [
+      "လည်ပတ်",
+      "နေရာ",
+      "ငါးကန်",
+      "အပန်းဖြေ",
+      "ရေတံခွန်",
+      "ရှုခင်း"
+    ],
+    "images": [
+      "assets/images/akharlay (1).jpg",
+      "assets/images/akharlay (2).jpg",
+      "assets/images/akharlay (3).jpg",
+      "assets/images/akharlay (4).jpg",
+      "assets/images/akharlay (5).jpg",
+      "assets/images/akharlay (6).jpg",
+      "assets/images/akharlay (7).jpg"
+    ]
+  },
+  {
+    "id": "kyaingtong-waterfall",
+    "name": {
+      "en": "Kyaing Tong Waterfall ",
+      "my": "ကျိုင်းတုံ ရေတံခွန်"
+    },
+    "category": "place",
+    "description": {
+      "en": "Kyaing Tong Waterfall is located in Hoi Yang Village, about 10 miles from Kyaing Tong in Eastern Shan State. Naturally formed by the Hoi Yang Stream, the waterfall consists of seven tiers. Visitors can enjoy the refreshing waterfall, terraced farms, and beautiful rural scenery from the nearby viewing tower. The scenic garden also features colorful flower beds and a small zoo with various animals and rare birds. Early in the morning, visitors can admire the beautiful sea of clouds from the viewing tower. With accommodation,cafe, and local food, Kyaing Tong Waterfall is a peaceful and enjoyable destination for relaxation and nature lovers.",
+      "my": "ကျိုင်းတုံ ရေတံခွန်သည် အရှေ့ပိုင်းရှမ်းပြည်နယ်၊ ကျိုင်းတုံမြို့မှ ၁၀ မိုင်ခန့်အကွာ ဟိုယန်းကျေးရွာတွင် တည်ရှိပါသည်။ ဟိုယန်းချောင်းမှ သဘာဝအတိုင်း ဖြစ်ပေါ်လာသော အဆိုပါ ရေတံခွန်သည် အဆင့် ၇ ဆင့် ပါဝင်သည်။ လာရောက်လည်ပတ်သူများသည် အေးမြသော ရေတံခွန်အလှ၊ လှေကားထစ် စိုက်ခင်းများနှင့် လှပသော ကျေးလက်သဘာဝ ရှုခင်းများကို အနီးရှိ မျှော်စင်ပေါ်မှ ကြည့်ရှုခံစားနိုင်ပါသည်။အလှစိုက်ဥယျာဉ်အတွင်း ရောင်စုံပန်းခင်းများနှင့် တိရစ္ဆာန်မျိုးစုံ၊ ရှားပါးငှက်မျိုးစိတ်များ ရှိသည့် တိရစ္ဆာန်ရုံငယ်လေးတစ်ခုလည်း ပါဝင်သည်။ နံနက်စောစောအချိန်များတွင် မျှော်စင်ပေါ်မှနေ၍ လှပဆန်းပြားသော မြူခိုး ပင်လယ်ပြင်ကြီးကို ရှုမောနိုင်ပါသည်။ တည်းခိုရန် နေရာများ၊ ကော်ဖီဆိုင်နှင့် ဒေသထွက် အစားအစာများ ရရှိနိုင်သဖြင့် ကျိုင်းတုံ ရေတံခွန်သည် အနားယူလိုသူများနှင့် သဘာဝတရားကို မြတ်နိုးသူများအတွက် အေးချမ်းပျော်ရွှင်ဖွယ်ကောင်းသော အပန်းဖြေစခန်းတစ်ခု ဖြစ်ပါသည်။"
+    },
+    "address": {
+      "en": "Hoyang village, Kyaing Tong",
+      "my": "ဟိုယန်း ကျေးရွာ ၊ ကျိုင်းတုံမြို့။"
+    },
+    "lat": 21.41354382301905,
+    "lng": 99.55603517746529,
+    "phone": "09253817700",
+    "openHours": "06:00 AM - 06:PM",
+    "rating": 4.5,
+    "tags": [
+      "waterfall",
+      "ရေတံခွန်",
+      "ပန်းပွဲတော်",
+      "လည်ပတ်",
+      "ရှုခင်း"
+    ],
+    "images": [
+      "assets/images/waterfall (1).jpg",
+      "assets/images/waterfall (2).jpg",
+      "assets/images/waterfall (3).jpg",
+      "assets/images/waterfall (4).jpg",
+      "assets/images/waterfall (5).jpg",
+      "assets/images/waterfall (6).jpg"
+    ]
+  },
+  {
+    "id": "golf-club",
+    "name": {
+      "en": "Kyaing Tong Golf Club",
+      "my": "ကျိုင်းတုံ ဂေါက်ကွင်း"
+    },
+    "category": "place",
+    "description": {
+      "en": "Located on the mountainside just on the outskirts of Kengtung, the Golden Triangle Golf Club is surrounded by breathtaking mountain ranges, valley sceneries, and stunning natural landscapes. The golf course features 18 holes with a total range of 6,554 yards. It offers an ideal getaway for golf enthusiasts to enjoy the refreshing highland climate and scenic views of Eastern Shan State while playing.",
+      "my": "ကျိုင်းတုံမြို့၏ အပြင်ဘက် တောင်စောင်းပေါ်တွင် တည်ရှိသော ရွှေတြိဂံ ဂေါက်ကွင်း (Golden Triangle Golf Club) သည် သာယာလှပသော ရှမ်းရိုးမတောင်တန်းများ၊ တောင်ကြားရှုခင်းများနှင့် သဘာဝဝန်းကျင်တို့ဖြင့် ဝန်းရံထားသော နေရာတစ်ခု ဖြစ်သည်။ အဆိုပါ ဂေါက်ကွင်းတွင် ဂေါက်သီးရိုက်ပေါက် (Holes) ၁၈ ပေါက်ပါရှိပြီး စုစုပေါင်း အလျားမှာ ၆,၅၅৪ ကိုက် (Yards) ရှိသည်။ ရှမ်းပြည်နယ် အရှေ့ပိုင်း၏ အေးမြသော ရာသီဥတုနှင့် စိမ်းလန်းစိုပြေသည့် သဘာဝရှုခင်းများကို ခံစားရင်း အားကစားပြုလုပ်ရန်နှင့် အနားယူအပန်းဖြေရန်အတွက် အထူးသင့်လျော်သော နေရာတစ်ခု ဖြစ်ပေသည်။"
+    },
+    "address": {
+      "en": "near HwayKhar Village, Kyaing Tong-Tachileik Road",
+      "my": "ဟွေခါးကျေးရွာအနီး ၊ ကျိုင်းတုံ-တာချီလိတ် လမ်းမကြီး ဘေး"
+    },
+    "lat": 21.26352097095776,
+    "lng": 99.62064215453755,
+    "rating": 4,
+    "tags": [
+      "golf",
+      "sport",
+      "activity",
+      "ဂေါက်ရိုက်"
+    ],
+    "images": [
+      "assets/images/golf (1).png",
+      "assets/images/golf (2).png",
+      "assets/images/golf (3).png",
+      "assets/images/golf (4).png"
+    ]
+  },
+  {
+    "id": "kbz-bank-2",
+    "name": {
+      "en": "KBZ Bank - 2",
+      "my": "KBZ Bank - 2"
+    },
+    "category": "bank",
+    "description": {
+      "en": "Kyaing Tong is a branch of KBZ Bank located in Kengtung, Shan State, Myanmar. The bank provides a variety of financial services, including savings accounts, deposits, cash withdrawals, money transfers, and other banking services. Customers can visit the branch to manage their bank accounts and carry out daily financial transactions. KBZ Bank is one of the major private commercial banks in Myanmar. It serves individuals and businesses that need convenient banking services in the Kyaing Tong area.\n",
+      "my": "(ကမ္ဘောဇဘဏ် – ကျိုင်းတုံ) သည် မြန်မာနိုင်ငံ၊ ရှမ်းပြည်နယ်၊ ကျိုင်းတုံမြို့တွင် တည်ရှိသော ကမ္ဘောဇဘဏ်၏ ဘဏ်ခွဲတစ်ခု ဖြစ်ပါသည်။ ဘဏ်တွင် ငွေစုအကောင့်ဖွင့်ခြင်း၊ အပ်ငွေဝန်ဆောင်မှုများ၊ ငွေသားထုတ်ယူခြင်း၊ ငွေလွှဲခြင်းနှင့် အခြားဘဏ်လုပ်ငန်းဆိုင်ရာ ဝန်ဆောင်မှုများကို ရရှိနိုင်ပါသည်။ ဖောက်သည်များသည် ဘဏ်ခွဲသို့ လာရောက်၍ မိမိတို့၏ ဘဏ်အကောင့်များကို စီမံခန့်ခွဲခြင်းနှင့် နေ့စဉ်ငွေကြေးဆိုင်ရာ လုပ်ငန်းများကို ဆောင်ရွက်နိုင်ပါသည်။ KBZ Bank သည် မြန်မာနိုင်ငံရှိ အဓိကပုဂ္ဂလိက ကူးသန်းရောင်းဝယ်ရေးဘဏ်များထဲမှ တစ်ခုဖြစ်ပြီး ကျိုင်းတုံမြို့ရှိ တစ်ဦးချင်းဖောက်သည်များနှင့် စီးပွားရေးလုပ်ငန်းများအတွက် ဘဏ်ဝန်ဆောင်မှုများကို ပေးအပ်လျက်ရှိပါသည်။"
+    },
+    "address": {
+      "en": "NO(14), KYAING LANN(1) ST,,(2) QTR, KYAING TONG, SHAN STATE (EAST)",
+      "my": "အမှတ်(၁၄)၊ ကျိုင်းလန်း(၁) လမ်း၊ ရပ်ကွက်(၂)၊ ကျိုင်းတုံမြို့။"
+    },
+    "lat": 21.286500849756095,
+    "lng": 99.60605966411048,
+    "phone": "(084) 21640,21641,22548 Fax: (084) 21624,21629",
+    "rating": 4,
+    "tags": [
+      "ဘဏ်",
+      "ATM",
+      "ငွေလဲ",
+      "ငွေသွင်း",
+      "ငွေထုတ်စက်"
+    ],
+    "images": [
+      "assets/images/kbz-1.jpg"
+    ]
+  },
+  {
+    "id": "mwd-bank",
+    "name": {
+      "en": "MWD Bank",
+      "my": "မြ၀တီ ဘဏ်"
+    },
+    "category": "bank",
+    "description": {
+      "en": "Kyaing Tong (Myawaddy Bank) is a branch of Myawaddy Bank located in Kengtung, Shan State, Myanmar. The bank provides a variety of financial services, including deposits, lending, money transfers, remittance services, card payments, and other banking services. The Kyaing Tong branch is located near the Regional Stadium and Triangle Region Command on the Tachileik–Kyaing Tong Road. MWD Bank serves individual customers and businesses by providing banking services to support their financial transactions and money management needs.\n",
+      "my": "(မြဝတီဘဏ် – ကျိုင်းတုံ) သည် မြန်မာနိုင်ငံ၊ ရှမ်းပြည်နယ်၊ ကျိုင်းတုံမြို့တွင် တည်ရှိသော မြဝတီဘဏ်၏ ဘဏ်ခွဲတစ်ခု ဖြစ်ပါသည်။ ဘဏ်တွင် ငွေအပ်နှံခြင်း၊ ချေးငွေရယူခြင်း၊ ငွေလွှဲခြင်း၊ ငွေလွှဲဝန်ဆောင်မှုများ၊ ကတ်ဖြင့် ငွေပေးချေခြင်းနှင့် အခြားဘဏ်လုပ်ငန်းဆိုင်ရာ ဝန်ဆောင်မှုများကို ရရှိနိုင်ပါသည်။ ကျိုင်းတုံဘဏ်ခွဲသည် ဒေသဆိုင်ရာ အားကစားကွင်းနှင့် တြိဂံဒေသတိုင်းစစ်ဌာနချုပ်အနီး၊ တာချီလိတ်–ကျိုင်းတုံလမ်းပေါ်တွင် တည်ရှိပါသည်။ မြဝတီဘဏ်သည် တစ်ဦးချင်းဖောက်သည်များနှင့် စီးပွားရေးလုပ်ငန်းများ၏ ငွေကြေးဆိုင်ရာ လုပ်ငန်းများနှင့် ငွေကြေးစီမံခန့်ခွဲမှုလိုအပ်ချက်များကို ဖြည့်ဆည်းပေးသည့် ဘဏ်ဝန်ဆောင်မှုများကို ပေးအပ်လျက်ရှိပါသည်။"
+    },
+    "address": {
+      "en": "Nan Chap Ward, near golden triangle tennis club, kyaing tong",
+      "my": "နမ့်ချပ်ရပ်ကွက်၊ ရွှေတြိဂံ တင်းနစ်ကလပ် အနီး၊ ကျိုင်းတုံမြို့။"
+    },
+    "lat": 21.282113747916334,
+    "lng": 99.61011492883557,
+    "rating": 3.5,
+    "tags": [
+      "ဘဏ်",
+      "ငွေလဲ",
+      "ငွေသွင်း"
+    ],
+    "images": [
+      "assets/images/MWD.jpg"
+    ]
+  },
+  {
+    "id": "apex-bank",
+    "name": {
+      "en": "Myanmar Apex Bank",
+      "my": "မြန်မာ့ရှေ့ဆောင်ဘဏ်"
+    },
+    "category": "bank",
+    "description": {
+      "en": "",
+      "my": ""
+    },
+    "address": {
+      "en": "Parloh 1st st, Kyaing Tong ",
+      "my": "ပါလို့(၁)လမ်း၊ ကျိုင်းတုံမြို့။"
+    },
+    "lat": 21.28786666978036,
+    "lng": 99.60389267146135,
+    "openHours": "09:00 AM",
+    "rating": 4,
+    "tags": [
+      "ATM",
+      "ငွေထုတ်စက်",
+      "ငွေလဲ",
+      "ဘဏ်"
+    ],
+    "images": [
+      "assets/images/apex bank (1).png",
+      "assets/images/apex bank (2).png"
+    ]
+  },
+  {
+    "id": "business-bank",
+    "name": {
+      "en": "Myanmar Business Bank ",
+      "my": "မြန်မာ့စီးပွားရေးဘဏ်"
+    },
+    "category": "bank",
+    "description": {
+      "en": "",
+      "my": ""
+    },
+    "address": {
+      "en": "Tar Yaw Street, Ward(2), Kyaing Tong",
+      "my": "တာယောလမ်း ၊ ရပ်ကွက်(၂) ၊ကျိုင်းတုံမြို့။"
+    },
+    "lat": 21.28873060787929,
+    "lng": 99.60357469438607,
+    "rating": 4,
+    "tags": [
+      "ငွေထုတ်စက်",
+      "ငွေလဲ",
+      "ATM",
+      "ငွေသွင်း",
+      "ဘဏ်"
+    ]
+  },
+  {
+    "id": "kbz-bank",
+    "name": {
+      "en": "KBZ Bank",
+      "my": "KBZ Bank"
+    },
+    "category": "bank",
+    "description": {
+      "en": "",
+      "my": ""
+    },
+    "address": {
+      "en": "ZayDanLoang St, Ward(3) , Kyaing Tong",
+      "my": "စျေးတန်းလုံ လမ်း၊ ရပ်ကွက်(၃)၊ ကျိုင်းတုံမြို့။"
+    },
+    "lat": 21.290856203597713,
+    "lng": 99.60333100457828,
+    "rating": 4,
+    "tags": [
+      "ဘဏ်",
+      "ငွေထုတ်စက်",
+      "ငွေလဲ",
+      "ATM",
+      "ငွေသွင်း"
+    ],
+    "images": [
+      "assets/images/kbz1.jpg"
+    ]
+  },
+  {
+    "id": "saytana-myint",
+    "name": {
+      "en": "SayTaNarMyint",
+      "my": "စေတနာမြင့် ဆေးကုခန်း"
+    },
+    "category": "emergency",
+    "description": {
+      "en": "",
+      "my": ""
+    },
+    "address": {
+      "en": "No(30), Kyaing Ngyan(2) st, Ward 2, Kyaing Tong",
+      "my": "အမှတ်(30)၊ကျိုင်းငမ်း(2)လမ်း၊ ရပ်ကွက်, 2, Kyaing Tong"
+    },
+    "lat": 21.28846416583546,
+    "lng": 99.60425425802472,
+    "rating": 3.5,
+    "tags": [
+      "ဆေးခန်း"
+    ],
+    "images": [
+      "assets/images/စေတနာမြင့်.jpg"
     ]
   }
 ]

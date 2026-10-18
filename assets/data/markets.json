@@ -1,5 +1,5 @@
 {
-  "_comment": "Five-day rotating market cycle of Kengtung Township. anchorDate is a date on which slot 0 was held; every slot repeats every 5 days. Only slot 0 is confirmed — Mekong News reported 2026-03-10 (Tabaung waning 8, Tuesday) as Kat Taung market day. The other four slots are placeholders for the field survey: fill in id/name/lat/lng/confidence and nothing else needs to change.",
+  "_comment": "Five-day rotating market cycle of Kengtung Township. anchorDate is a date on which slot 0 was held; every slot repeats every 5 days. Slot 0 (Kat Taung) is confirmed by Mekong News for 2026-03-10. Slots 1-4 were named from local knowledge supplied by the author (Kengtung resident, Oct 2026): Loi Mwe, Mong Yang, Mine Zin and Mong Khet all hold markets on this cycle, BUT which market falls on which slot is NOT yet confirmed, and coordinates for Loi Mwe, Mong Yang and Mine Zin are local estimates (coordConfidence='estimated'), while Kat Taung and Mong Khet are still missing. slotOrderConfirmed stays false until someone checks four consecutive market days on the ground; the UI must keep showing the 'ask locally' hint while it is false.",
   "cycleLength": 5,
   "anchorDate": "2026-03-10",
   "anchorSlot": 0,
@@ -7,7 +7,10 @@
     {
       "slot": 0,
       "id": "kat-taung-market",
-      "name": { "en": "Kat Taung Market", "my": "ကတ်တောင်ဈေး" },
+      "name": {
+        "en": "Kat Taung Market",
+        "my": "ကတ်တောင်ဈေး"
+      },
       "lat": null,
       "lng": null,
       "openHours": "04:00-12:00",
@@ -16,65 +19,189 @@
       "description": {
         "en": "One of the five markets of the Kengtung cycle. The old market ground here is also where the once-a-year Sawbwa Market Day is held.",
         "my": "ကျိုင်းတုံ ငါးရက်တစ်ဈေး အလှည့်ကျစနစ်မှ တစ်ခု။ ဤဈေးဟောင်းနေရာသည် တစ်နှစ်တစ်ကြိမ် စော်ဘွားဈေးနေ့ ကျင်းပရာ နေရာလည်း ဖြစ်သည်။"
-      }
+      },
+      "peakHours": "06:00-10:00",
+      "slotConfirmed": true,
+      "ethnicGroups": [
+        "Akha",
+        "Lahu",
+        "Ann",
+        "Shan (Tai Khun)",
+        "Wa",
+        "Lisu"
+      ],
+      "coordConfidence": "missing"
     },
     {
       "slot": 1,
-      "id": null,
-      "name": { "en": "Village market — name not yet surveyed", "my": "ရွာဈေး — အမည် မစစ်ဆေးရသေး" },
-      "lat": null,
-      "lng": null,
-      "openHours": "04:00-12:00",
-      "confidence": "unverified",
-      "source": null
+      "id": "loi-mwe-market",
+      "name": {
+        "en": "Loi Mwe Five-Day Market",
+        "my": "လွယ်မွေ ငါးရက်ဈေး"
+      },
+      "lat": 21.1833,
+      "lng": 99.7167,
+      "openHours": "07:00-13:00",
+      "peakHours": "08:00-11:00",
+      "confidence": "estimated",
+      "slotConfirmed": false,
+      "source": "Local knowledge (author, Kengtung resident), October 2026",
+      "distanceFromTownKm": 32,
+      "ethnicGroups": [
+        "Akha",
+        "Lahu"
+      ],
+      "goods": [
+        "avocado",
+        "oranges",
+        "strawberries",
+        "hill tea",
+        "country wine"
+      ],
+      "description": {
+        "en": "Held at Loi Mwe, the old British hill station about 20 miles (32 km) south-east of Kengtung and over 5,000 ft above sea level, so it is noticeably cooler than town. The cool climate shows in what is sold: avocado, oranges, strawberries, hill-grown dried tea, and the local country wine and spirits. Most sellers are Akha and Lahu villagers from the surrounding hills.",
+        "my": "ကျိုင်းတုံမြို့မှ အရှေ့တောင်ဘက် ခရီးမိုင် ၂၀ ခန့်အကွာ၊ ပင်လယ်ရေမျက်နှာပြင်အထက် ပေ ၅,၀၀၀ ကျော်တွင် တည်ရှိသော တောင်စခန်းမြို့ဟောင်း လွယ်မွေတွင် ကျင်းပသည်။ အေးမြသော ရာသီဥတုကြောင့် ထောပတ်သီး၊ လိမ္မော်သီး၊ စတော်ဘယ်ရီ၊ တောင်ပေါ်လက်ဖက်ခြောက်နှင့် ဒေသထွက် ရိုးရာဝိုင်/အရက်များ ရရှိနိုင်သည်။ ရောင်းသူအများစုမှာ ပတ်ဝန်းကျင်တောင်ပေါ်မှ အာခါနှင့် လားဟူ ရွာသားများ ဖြစ်သည်။"
+      },
+      "coordConfidence": "estimated",
+      "ward": {
+        "en": "Loi Mwe market area",
+        "my": "လွယ်မွေ ဈေးတန်းဒေသ"
+      }
     },
     {
       "slot": 2,
-      "id": null,
-      "name": { "en": "Village market — name not yet surveyed", "my": "ရွာဈေး — အမည် မစစ်ဆေးရသေး" },
-      "lat": null,
-      "lng": null,
-      "openHours": "04:00-12:00",
-      "confidence": "unverified",
-      "source": null
+      "id": "mong-yang-market",
+      "name": {
+        "en": "Mong Yang Five-Day Market",
+        "my": "မိုင်းယန်း ငါးရက်ဈေး"
+      },
+      "lat": 21.35,
+      "lng": 99.9167,
+      "openHours": "06:00-12:00",
+      "peakHours": "06:00-10:00",
+      "confidence": "estimated",
+      "slotConfirmed": false,
+      "source": "Local knowledge (author, Kengtung resident), October 2026",
+      "ethnicGroups": [
+        "Ann",
+        "Wa",
+        "Akha"
+      ],
+      "description": {
+        "en": "One of the rotating markets on the Kengtung–Mong Yang road, held in the larger villages along the way. Ann people — known for the tradition of blackened teeth — and Wa people are seen trading here more than at the town market.",
+        "my": "ကျိုင်းတုံ–မိုင်းယန်း လမ်းကြောင်းပေါ်ရှိ ကျေးရွာကြီးများတွင် ၅ ရက်တစ်ကြိမ် လှည့်ပတ်ကျင်းပသော ဈေးများမှ တစ်ခု။ သွားအနက်ရောင်ဆိုးသည့် ရိုးရာရှိသော အင်န် (Ann) တိုင်းရင်းသားများနှင့် ဝ တိုင်းရင်းသားများ မြို့မဈေးထက် ပိုမိုလာရောက် ရောင်းဝယ်ကြသည်။"
+      },
+      "coordConfidence": "estimated",
+      "ward": {
+        "en": "Main village market grounds on the Mong Yang road",
+        "my": "မိုင်းယန်းလမ်းတစ်လျှောက် အဓိကကျေးရွာ ဈေးနေရာများ"
+      }
     },
     {
       "slot": 3,
-      "id": null,
-      "name": { "en": "Village market — name not yet surveyed", "my": "ရွာဈေး — အမည် မစစ်ဆေးရသေး" },
-      "lat": null,
-      "lng": null,
-      "openHours": "04:00-12:00",
-      "confidence": "unverified",
-      "source": null
+      "id": "mine-zin-market",
+      "name": {
+        "en": "Mine Zin Five-Day Market",
+        "my": "မိုင်းဇင်း ငါးရက်ဈေး"
+      },
+      "lat": 21.25,
+      "lng": 99.5333,
+      "openHours": "06:00-11:00",
+      "peakHours": "06:00-10:00",
+      "confidence": "estimated",
+      "slotConfirmed": false,
+      "source": "Local knowledge (author, Kengtung resident), October 2026",
+      "goods": [
+        "wild mushrooms",
+        "bamboo shoots",
+        "fresh greens"
+      ],
+      "description": {
+        "en": "A village market in the Mine Zin Village Tract, just west of town, where upland farmers and forest foragers who cannot get down to Kengtung trade with each other. Wild mushrooms, bamboo shoots, fresh greens and simple country food, all very fresh and very cheap.",
+        "my": "မြို့အနောက်ဘက် မြို့ပြင်အနီး မိုင်းဇင်းကျေးရွာအုပ်စုတွင် ကျင်းပသည်။ မြို့ပေါ်အထိ မဆင်းနိုင်ကြသည့် တောင်ပေါ်စိုက်ပျိုးရေးသမားများနှင့် တောထွက်ပစ္စည်း ရှာဖွေသူများ အဓိက စုဝေးရာ ကျေးလက်ဆန်ဆန် ဈေးပွဲ ဖြစ်သည်။ လတ်ဆတ်သော တောထွက်မှို၊ မျှစ်၊ ဟင်းသီးဟင်းရွက်များနှင့် ဒေသန္တရ စားစရာများ ရရှိသည်။"
+      },
+      "coordConfidence": "estimated",
+      "ward": {
+        "en": "Mine Zin Village Tract",
+        "my": "မိုင်းဇင်း ကျေးရွာအုပ်စု"
+      }
     },
     {
       "slot": 4,
-      "id": null,
-      "name": { "en": "Village market — name not yet surveyed", "my": "ရွာဈေး — အမည် မစစ်ဆေးရသေး" },
+      "id": "mong-khet-market",
+      "name": {
+        "en": "Mong Khet Five-Day Market",
+        "my": "မိုင်းခတ် ငါးရက်ဈေး"
+      },
       "lat": null,
       "lng": null,
-      "openHours": "04:00-12:00",
-      "confidence": "unverified",
-      "source": null
+      "openHours": "06:00-12:00",
+      "peakHours": "06:00-10:00",
+      "confidence": "estimated",
+      "slotConfirmed": false,
+      "source": "Local knowledge (author, Kengtung resident), October 2026",
+      "ethnicGroups": [
+        "Ann",
+        "Wa"
+      ],
+      "description": {
+        "en": "The rotating market on the Kengtung–Mong Khet road, in the hill and border villages on the edge of the township. Like Mong Yang it draws Ann and Wa traders, and it is the least visited of the five by outsiders.",
+        "my": "ကျိုင်းတုံ–မိုင်းခတ် လမ်းကြောင်းပေါ်ရှိ မြို့နယ်စွန်း တောင်ပေါ်/နယ်စပ် ကျေးရွာများတွင် ကျင်းပသည်။ မိုင်းယန်းကဲ့သို့ပင် အင်န်နှင့် ဝ တိုင်းရင်းသားများ လာရောက်ရောင်းဝယ်ပြီး၊ ငါးခုအနက် ပြင်ပဧည့်သည် အရောက်အပေါက် အနည်းဆုံး ဈေး ဖြစ်သည်။"
+      },
+      "coordConfidence": "missing",
+      "ward": {
+        "en": "Hill and border villages on the Mong Khet road",
+        "my": "မိုင်းခတ်လမ်းပေါ်ရှိ တောင်ပေါ်/နယ်စပ် ကျေးရွာများ"
+      }
     }
   ],
   "permanent": [
     {
       "id": "kengtung-central-market",
-      "name": { "en": "Kengtung Central Market", "my": "ကျိုင်းတုံ မြို့မဈေး" },
+      "name": {
+        "en": "Kengtung Central Market",
+        "my": "ကျိုင်းတုံ မြို့မဈေး"
+      },
       "everyDay": true,
-      "openHours": "04:00-12:00",
+      "openHours": "06:00-12:00",
       "confidence": "verified",
-      "source": "Lonely Planet / TripAdvisor",
+      "source": "Lonely Planet / TripAdvisor; ward, coordinates and hours from local knowledge (author), October 2026",
       "description": {
-        "en": "Open every morning from about 4 am. Hill-tribe villagers walk through the night to reach it by dawn. Closed completely on Sawbwa Market Day.",
-        "my": "နေ့စဉ် မနက် ၄ နာရီခန့်မှ ဖွင့်သည်။ တောင်ပေါ်ဒေသ ရွာသားများသည် အရုဏ်တက်မီ ရောက်ရန် ညလုံးပေါက် လမ်းလျှောက်လာကြသည်။ စော်ဘွားဈေးနေ့တွင် လုံးဝပိတ်သည်။"
-      }
+        "en": "The main market of the town, in Yan Aung ward beside Naung Tung lake. Open daily 6 am to noon. Every fifth day, when the rotating cycle falls on town, Akha, Lahu, Shan, Ann, Wa and Lisu villagers come down from the hills in full traditional dress with their own crops and handicrafts, and the whole market is at its liveliest between 6 and 10.30 am. Look for hill spices, fermented bean cake, forest produce, Shan wheat noodles, hand-woven cloth and Shan knives. Closed completely on Sawbwa Market Day.",
+        "my": "မြို့၏ အဓိကဈေးဖြစ်ပြီး နောင်တုံကန်အနီး ရန်အောင်ရပ်ကွက်တွင် တည်ရှိသည်။ နေ့စဉ် နံနက် ၆ နာရီမှ နေ့လယ် ၁၂ နာရီအထိ ဖွင့်သည်။ ၅ ရက်တစ်ကြိမ် အလှည့်ကျ မြို့ပေါ်ကျရောက်သည့် ဈေးနေ့တွင် တောင်ပေါ်ကျေးရွာများမှ အာခါ၊ လားဟူ၊ ရှမ်း၊ အင်န်၊ ဝ နှင့် လီဆူ တိုင်းရင်းသားများသည် ဒေသထွက်သီးနှံနှင့် လက်မှုပစ္စည်းများ ယူဆောင်ကာ ရိုးရာဝတ်စုံ အပြည့်အစုံဖြင့် ဆင်းလာကြသဖြင့် နံနက် ၆ နာရီမှ ၁၀:၃၀ အတွင်း အစည်ကားဆုံး ဖြစ်သည်။ တောင်ပေါ်ထွက် ဟင်းခတ်အမွှေးအကြိုင်၊ ပဲပုပ်၊ သဘာဝတောထွက်သီးနှံ၊ ရှမ်းရိုးရာ ဂျုံခေါက်ဆွဲ၊ လက်ယက်ကန်းထည်နှင့် ရှမ်းဓားများ ရှာဖွေကြည့်ပါ။ စော်ဘွားဈေးနေ့တွင် လုံးဝပိတ်သည်။"
+      },
+      "peakHours": "06:00-10:30",
+      "ethnicGroups": [
+        "Akha",
+        "Lahu",
+        "Ann",
+        "Shan (Tai Khun)",
+        "Wa",
+        "Lisu"
+      ],
+      "goods": [
+        "hill spices",
+        "fermented bean cake (pè bok)",
+        "forest produce",
+        "Shan wheat noodles",
+        "hand-woven textiles",
+        "Shan knives and tools"
+      ],
+      "lat": 21.2864,
+      "lng": 99.6048,
+      "coordConfidence": "estimated",
+      "ward": {
+        "en": "Yan Aung ward (also called the market ward), by Naung Tung lake",
+        "my": "ရန်အောင်ရပ်ကွက် (ဈေးပိုင်းရပ်ကွက်)၊ နောင်တုံကန်အနီး"
+      },
+      "marketDayHours": "06:00-10:30"
     },
     {
       "id": "buffalo-market",
-      "name": { "en": "Water Buffalo Market", "my": "ကျွဲနွားဈေး" },
+      "name": {
+        "en": "Water Buffalo Market",
+        "my": "ကျွဲနွားဈေး"
+      },
       "everyDay": false,
       "twiceWeekly": true,
       "openHours": null,
@@ -84,6 +211,36 @@
         "en": "Held twice a week on the western edge of town. The exact days are not documented online — ask locally.",
         "my": "မြို့အနောက်ဘက်စွန်းတွင် တစ်ပတ်လျှင် နှစ်ကြိမ် ကျင်းပသည်။ အတိအကျ မည်သည့်နေ့များဖြစ်သည်ကို အွန်လိုင်းတွင် မတွေ့ရပါ — ဒေသခံကို မေးပါ။"
       }
+    },
+    {
+      "id": "sawbwa-market-day",
+      "name": {
+        "en": "Sawbwa Market Day",
+        "my": "စော်ဘွားဈေးနေ့"
+      },
+      "everyDay": false,
+      "annual": true,
+      "month": "March",
+      "openHours": "05:00-14:00",
+      "confidence": "estimated",
+      "source": "Local knowledge (author, Kengtung resident), October 2026",
+      "description": {
+        "en": "Held once a year, in early March, on the old market ground. The custom descends from the time of the Sawbwa. Villagers of every ethnic group come into town in full traditional dress and the day is less a market than a festival. The Central Market closes completely so that everyone goes to this one. The exact date follows the Myanmar lunar calendar — ask locally.",
+        "my": "တစ်နှစ်လျှင် တစ်ကြိမ်သာ၊ မတ်လဆန်းပိုင်းတွင် ဈေးဟောင်းနေရာ၌ ကျင်းပသည်။ ရှေးစော်ဘွားများ လက်ထက်မှစ၍ ဆင်းသက်လာသော အစဉ်အလာ ဖြစ်သည်။ တိုင်းရင်းသားပေါင်းစုံ ရိုးရာဝတ်စုံများဖြင့် မြို့ပေါ်သို့ လာရောက်ကြရာ ဈေးတစ်ခုဆိုသည်ထက် ပွဲတော်တစ်ခုနှင့် တူသည်။ ထိုနေ့တွင် မြို့မဈေးကြီး လုံးဝပိတ်သည်။ အတိအကျ ရက်စွဲမှာ မြန်မာသက္ကရာဇ် လပြက္ခဒိန်အလိုက် ရွှေ့လျားသဖြင့် ဒေသခံကို မေးပါ။"
+      }
     }
-  ]
+  ],
+  "slotOrderConfirmed": false,
+  "visitorTips": {
+    "en": [
+      "Five-day markets are busiest between 6 and 10 in the morning — arrive by 7 if you can.",
+      "The cycle shifts against the Western calendar, so ask your hotel or a local guide \"where is the five-day market today?\" before setting out.",
+      "Bring small notes. Ask before photographing people, especially Akha and Ann women."
+    ],
+    "my": [
+      "ငါးရက်ဈေးများသည် နံနက် ၆ နာရီမှ ၁၀ နာရီအတွင်း အစည်ကားဆုံး ဖြစ်သည် — ဖြစ်နိုင်ရင် ၇ နာရီ မတိုင်မီ ရောက်အောင် သွားပါ။",
+      "ဈေးရက်သည် လဆန်း/လဆုတ်အလိုက် ရွှေ့လျားသဖြင့် မထွက်ခင် ဟိုတယ် သို့မဟုတ် ဒေသခံလမ်းပြကို \"ဒီနေ့ ဘယ်နေရာမှာ ၅ ရက်ဈေးနေ့လဲ\" ဟု မေးပါ။",
+      "ငွေစက္ကူအကြွေ ယူသွားပါ။ လူများကို ဓာတ်ပုံမရိုက်ခင် ခွင့်တောင်းပါ — အထူးသဖြင့် အာခါနှင့် အင်န် အမျိုးသမီးများ။"
+    ]
+  }
 }

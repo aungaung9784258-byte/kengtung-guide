@@ -1,3 +1,6 @@
+import 'dart:async';
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -10,7 +13,9 @@ import '../../core/providers/app_providers.dart';
 import '../../core/services/basemap.dart';
 import '../../core/services/connectivity_service.dart';
 import '../../core/services/location_service.dart';
+import '../../core/services/navigation_service.dart';
 import '../../core/services/routing_service.dart';
+import '../../core/services/search_service.dart';
 import '../../data/models/place.dart';
 import '../../l10n/app_localizations.dart';
 import '../../shared/widgets/cached_tile_provider.dart';
@@ -38,6 +43,21 @@ class _MapScreenState extends ConsumerState<MapScreen>
   bool _routeIsApprox = false; // true when offline: straight line only
   BasemapStyle _basemap = BasemapStyle.street;
 
+  // ---- live navigation ----
+  NavSession? _nav;          // non-null while navigating
+  Place? _navTarget;
+  bool _courseUp = true;
+
+  /// Follow mode: while true the camera stays locked on the user. Panning
+  /// the map by hand breaks the lock so people can look ahead, and it
+  /// re-arms itself after a short pause (or instantly via the button).
+  bool _follow = true;
+  Timer? _refollowTimer;     // rotate the map to the direction of travel
+
+  // ---- search suggestions ----
+  final _searchCtrl = TextEditingController();
+  String _query = '';
+
   @override
   void initState() {
     super.initState();
@@ -46,6 +66,14 @@ class _MapScreenState extends ConsumerState<MapScreen>
       if (mounted) setState(() {});
       _applyFocus();
     });
+  }
+
+  @override
+  void dispose() {
+    _refollowTimer?.cancel();
+    _stopNavigation(silent: true);
+    _searchCtrl.dispose();
+    super.dispose();
   }
 
   @override
@@ -106,15 +134,18 @@ class _MapScreenState extends ConsumerState<MapScreen>
       return;
     }
 
-    // Turn-by-turn routing needs a server. Offline, fall back to a direct
-    // line + straight-line distance so the user still knows which way to go.
-    final online = ref.read(onlineProvider);
-    RouteResult? r;
+    // ALWAYS ask the router first.
+    //
+    // This used to be guarded by `if (online)`. The connectivity plugin
+    // reports "offline" far too eagerly - a captive Wi-Fi, a slow mobile
+    // handover or simply a device it does not understand - and when it did,
+    // the app never even attempted a real route and silently showed the
+    // straight-line estimate instead. RoutingService already handles failure
+    // (it tries several mirrors and returns null), so the guard only ever
+    // removed working routes.
+    RouteResult? r = await RoutingService.route([me, p.latLng], mode: _mode);
     var approx = false;
 
-    if (online) {
-      r = await RoutingService.route([me, p.latLng], mode: _mode);
-    }
     if (r == null) {
       r = RoutingService.straightLine(me, p.latLng, mode: _mode);
       approx = true;
@@ -138,6 +169,119 @@ class _MapScreenState extends ConsumerState<MapScreen>
     ));
   }
 
+  // ---------------------------------------------------------------------
+  // Live navigation
+  // ---------------------------------------------------------------------
+
+  void _startNavigation(Place target) {
+    final r = _route;
+    final me = _me;
+    if (r == null || me == null) return;
+
+    _stopNavigation(silent: true);
+
+    final nav = NavSession(
+      destination: target.latLng,
+      mode: _mode,
+      initialRoute: r,
+      isOnline: () => ref.read(onlineProvider),
+    );
+
+    nav.addListener(_onNavTick);
+    nav.start(initialPosition: me);
+
+    setState(() {
+      _nav = nav;
+      _navTarget = target;
+      _selected = null;   // the bottom card gives way to the nav banner
+      _follow = true;
+    });
+    _refollowTimer?.cancel();
+
+    _map.moveAndRotate(me, 17.5, _courseUp ? -nav.bearing : 0);
+  }
+
+  void _stopNavigation({bool silent = false}) {
+    final nav = _nav;
+    if (nav == null) return;
+    _refollowTimer?.cancel();
+    nav.removeListener(_onNavTick);
+    nav.dispose();
+    _nav = null;
+    _navTarget = null;
+    if (!silent && mounted) {
+      setState(() {});
+      _map.rotate(0);
+    }
+  }
+
+  /// Called whenever the user moves the camera themselves during
+  /// navigation: drop the lock and arm the countdown that restores it.
+  void _breakFollow() {
+    _refollowTimer?.cancel();
+    _refollowTimer = Timer(const Duration(seconds: 10), () {
+      if (mounted && _nav != null) _recenter();
+    });
+    if (_follow) setState(() => _follow = false);
+  }
+
+  /// Snap the camera back onto the user and resume following.
+  void _recenter() {
+    _refollowTimer?.cancel();
+    final nav = _nav;
+    final me = nav?.me ?? _me;
+    if (me == null) return;
+    setState(() => _follow = true);
+    _map.moveAndRotate(
+      me,
+      _map.camera.zoom < 16 ? 17.5 : _map.camera.zoom,
+      (nav != null && _courseUp) ? -nav.bearing : _map.camera.rotation,
+    );
+  }
+
+  void _onNavTick() {
+    final nav = _nav;
+    if (nav == null || !mounted) return;
+
+    setState(() => _route = nav.route);
+
+    final me = nav.me;
+    if (me != null) {
+      _me = me;
+      // Only drive the camera while the lock is on, otherwise the map
+      // would snap back under the user's finger every GPS fix.
+      if (_follow) {
+        _map.moveAndRotate(
+          me,
+          _map.camera.zoom < 16 ? 17.5 : _map.camera.zoom,
+          _courseUp ? -nav.bearing : _map.camera.rotation,
+        );
+      }
+    }
+
+    if (nav.arrived) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(context.l10n.t('arrived'))),
+      );
+      _stopNavigation();
+    }
+  }
+
+  /// Suggestions for the search box. Computed on the spot so no extra
+  /// provider is needed and nothing outside this file has to change.
+  List<Place> _suggestions() {
+    if (_query.trim().isEmpty) return const [];
+    final all = ref.read(placesProvider).value ?? const <Place>[];
+    final t = context.l10n;
+    return SearchService.rank(
+      all,
+      _query,
+      lang: ref.read(langProvider),
+      categoryLabelOf: (p) => t.t(p.category.labelKey),
+      limit: 6,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final places = ref.watch(filteredPlacesProvider);
@@ -155,9 +299,33 @@ class _MapScreenState extends ConsumerState<MapScreen>
               minZoom: 9,
               maxZoom: 18,
               onTap: (_, __) => setState(() => _selected = null),
+              // Two-finger twist now rotates the map (was disabled before).
               interactionOptions: const InteractionOptions(
-                flags: InteractiveFlag.all & ~InteractiveFlag.rotate,
+                flags: InteractiveFlag.all,
+                rotationThreshold: 12,
+                pinchZoomThreshold: 0.4,
               ),
+              // If the user twists the map by hand while navigating we drop
+              // out of course-up so the map does not fight the gesture.
+              onMapEvent: (e) {
+                if (_nav == null) return;
+                final byHand = e.source != MapEventSource.mapController &&
+                    e.source != MapEventSource.custom;
+                if (!byHand) return;
+
+                // A twist by hand also leaves course-up, so the map stops
+                // fighting the gesture.
+                if (e is MapEventRotate && _courseUp) {
+                  setState(() => _courseUp = false);
+                }
+                // MapEventWithMove covers drag, fling, pinch and
+                // double-tap zoom in one check.
+                if (e is MapEventWithMove ||
+                    e is MapEventMove ||
+                    e is MapEventRotate) {
+                  _breakFollow();
+                }
+              },
             ),
             children: [
               // FREE basemap: OpenStreetMap raster tiles. No key, no billing.
@@ -207,9 +375,17 @@ class _MapScreenState extends ConsumerState<MapScreen>
                 if (_me != null)
                   Marker(
                     point: _me!,
-                    width: 26,
-                    height: 26,
-                    child: const _MeDot(),
+                    width: _nav == null ? 26 : 46,
+                    height: _nav == null ? 26 : 46,
+                    child: _nav == null
+                        ? const _MeDot()
+                        : _MeArrow(
+                            // Angle relative to the map, so the arrow keeps
+                            // pointing the right way whether the map is
+                            // rotated course-up or locked north-up.
+                            headingDeg:
+                                _nav!.bearing - _map.camera.rotation,
+                          ),
                   ),
                 ...places.map(
                   (p) => Marker(
@@ -233,47 +409,126 @@ class _MapScreenState extends ConsumerState<MapScreen>
             ],
           ),
 
-          // Top: search + category filter rail
-          Positioned(
-            top: MediaQuery.of(context).padding.top + 10,
-            left: 0,
-            right: 0,
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: GlassPanel(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 16, vertical: 4),
-                    radius: 18,
-                    child: TextField(
-                      onChanged: (v) => ref
-                          .read(searchQueryProvider.notifier)
-                          .state = v,
-                      decoration: InputDecoration(
-                        hintText: context.l10n.search,
-                        border: InputBorder.none,
-                        focusedBorder: InputBorder.none,
-                        enabledBorder: InputBorder.none,
-                        filled: false,
-                        prefixIcon: const Icon(Icons.search_rounded, size: 20),
+          // Top: search + category filter rail  (hidden while navigating)
+          if (_nav == null)
+            Positioned(
+              top: MediaQuery.of(context).padding.top + 10,
+              left: 0,
+              right: 0,
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: GlassPanel(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16, vertical: 4),
+                      radius: 18,
+                      child: TextField(
+                        controller: _searchCtrl,
+                        textInputAction: TextInputAction.search,
+                        onChanged: (v) {
+                          ref.read(searchQueryProvider.notifier).state = v;
+                          setState(() => _query = v);
+                        },
+                        decoration: InputDecoration(
+                          hintText: context.l10n.search,
+                          border: InputBorder.none,
+                          focusedBorder: InputBorder.none,
+                          enabledBorder: InputBorder.none,
+                          filled: false,
+                          prefixIcon:
+                              const Icon(Icons.search_rounded, size: 20),
+                          suffixIcon: _query.isEmpty
+                              ? null
+                              : IconButton(
+                                  icon: const Icon(Icons.close_rounded,
+                                      size: 18),
+                                  onPressed: () {
+                                    _searchCtrl.clear();
+                                    ref
+                                        .read(searchQueryProvider.notifier)
+                                        .state = '';
+                                    setState(() => _query = '');
+                                    FocusScope.of(context).unfocus();
+                                  },
+                                ),
+                        ),
                       ),
                     ),
                   ),
-                ),
-                const SizedBox(height: 12),
-                const CategoryChips(),
-                if (!online) ...[
-                  const SizedBox(height: 12),
-                  const _OfflineBanner(),
+
+                  // ---- live suggestions ----
+                  if (_query.trim().isNotEmpty)
+                    Builder(builder: (context) {
+                      final hits = _suggestions();
+                      return Padding(
+                        padding: const EdgeInsets.fromLTRB(20, 8, 20, 0),
+                        child: GlassPanel(
+                          radius: 18,
+                          padding: const EdgeInsets.symmetric(vertical: 6),
+                          child: hits.isEmpty
+                              ? Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 16, vertical: 12),
+                                  child: Text(
+                                    context.l10n.t('noResults'),
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodySmall,
+                                  ),
+                                )
+                              : Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    for (final p in hits)
+                                      _SuggestionTile(
+                                        place: p,
+                                        onTap: () {
+                                          FocusScope.of(context).unfocus();
+                                          _searchCtrl.clear();
+                                          ref
+                                              .read(searchQueryProvider
+                                                  .notifier)
+                                              .state = '';
+                                          setState(() => _query = '');
+                                          _select(p);
+                                        },
+                                      ),
+                                  ],
+                                ),
+                        ),
+                      );
+                    }),
+
+                  if (_query.trim().isEmpty) ...[
+                    const SizedBox(height: 12),
+                    const CategoryChips(),
+                  ],
+                  if (!online && _query.trim().isEmpty) ...[
+                    const SizedBox(height: 12),
+                    const _OfflineBanner(),
+                  ],
                 ],
-              ],
+              ),
             ),
+
+          // Top banner while navigating
+          if (_nav != null) _NavBanner(
+            nav: _nav!,
+            target: _navTarget,
+            mode: _mode,
+            courseUp: _courseUp,
+            onToggleNorth: () {
+              setState(() => _courseUp = !_courseUp);
+              _map.rotate(_courseUp ? -_nav!.bearing : 0);
+            },
+            onStop: _stopNavigation,
           ),
 
           // Right side controls
-          Positioned(
-            right: 18,
+          if (_nav == null)
+            Positioned(
+              right: 18,
             bottom: _selected == null ? 40 : 250,
             child: AnimatedSlide(
               offset: Offset.zero,
@@ -287,6 +542,7 @@ class _MapScreenState extends ConsumerState<MapScreen>
                       onTap: () => setState(() => _route = null),
                     ),
                   if (_route != null) const SizedBox(height: 10),
+                  _CompassButton(map: _map),
                   _BasemapButton(
                     style: _basemap,
                     onTap: () => setState(() => _basemap = _basemap.next),
@@ -305,8 +561,74 @@ class _MapScreenState extends ConsumerState<MapScreen>
             ),
           ),
 
-          // Route summary chip
-          if (_route != null)
+          // While navigating the control column is hidden, but the basemap
+          // (satellite) switch stays — people want the aerial view most
+          // exactly when they are driving.
+          if (_nav != null)
+            Positioned(
+              right: 18,
+              bottom: 40,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  _BasemapButton(
+                    style: _basemap,
+                    onTap: () => setState(() => _basemap = _basemap.next),
+                  ),
+                ],
+              ),
+            ),
+
+          // Re-centre pill: only while the camera lock is off.
+          if (_nav != null && !_follow)
+            Positioned(
+              left: 0,
+              right: 0,
+              bottom: 44,
+              child: Center(
+                child: RevealIn(
+                  scaleFrom: 0.85,
+                  child: PressableScale(
+                    onTap: _recenter,
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16, vertical: 11),
+                      decoration: BoxDecoration(
+                        color: AppColors.jade,
+                        borderRadius: BorderRadius.circular(24),
+                        boxShadow: [
+                          BoxShadow(
+                            color: AppColors.jade.withValues(alpha: 0.4),
+                            blurRadius: 16,
+                            offset: const Offset(0, 5),
+                          ),
+                        ],
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const Icon(Icons.my_location_rounded,
+                              size: 17, color: Colors.white),
+                          const SizedBox(width: 7),
+                          Text(
+                            ref.watch(langProvider) == 'my'
+                                ? 'ပြန်ချိန်ရန်'
+                                : 'Re-centre',
+                            style: const TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 13),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+
+          // Route summary chip (the nav banner replaces it while navigating)
+          if (_route != null && _nav == null)
             Positioned(
               top: MediaQuery.of(context).padding.top + 120,
               left: 20,
@@ -331,7 +653,8 @@ class _MapScreenState extends ConsumerState<MapScreen>
                       Text(
                           _routeIsApprox
                               ? '${_route!.distanceLabel} · ${context.l10n.t('straightLine')}'
-                              : '${_route!.distanceLabel} · ${_route!.durationLabel}',
+                              : '${_route!.distanceLabel} · '
+                                  '${_Eta.range(_mode, _route!.distanceMeters, ref.watch(langProvider))}',
                           style: const TextStyle(
                               fontWeight: FontWeight.w700, fontSize: 13)),
                     ],
@@ -362,6 +685,10 @@ class _MapScreenState extends ConsumerState<MapScreen>
                       _findPath(_selected!);
                     },
                     onFindPath: () => _findPath(_selected!),
+                    routeMeters:
+                        _routeIsApprox ? null : _route?.distanceMeters,
+                    hasRoute: _route != null && !_routeIsApprox,
+                    onStart: () => _startNavigation(_selected!),
                     onDetail: () =>
                         context.push('/place/${_selected!.id}'),
                   ),
@@ -622,7 +949,10 @@ class _PlaceSheet extends ConsumerWidget {
     required this.onDetail,
     required this.mode,
     required this.onModeChanged,
+    required this.hasRoute,
+    required this.onStart,
     this.distanceKm,
+    this.routeMeters,
     this.loading = false,
   });
 
@@ -631,7 +961,14 @@ class _PlaceSheet extends ConsumerWidget {
   final VoidCallback onDetail;
   final TravelMode mode;
   final ValueChanged<TravelMode> onModeChanged;
+
+  /// A real road route is on screen, so navigation can be started.
+  final bool hasRoute;
+  final VoidCallback onStart;
+
   final double? distanceKm;
+  /// Road distance of the current route, when one has been found.
+  final double? routeMeters;
   final bool loading;
 
   @override
@@ -685,23 +1022,55 @@ class _PlaceSheet extends ConsumerWidget {
               ),
             ],
           ),
+          if (routeMeters != null) ...[
+            const SizedBox(height: 12),
+            _EtaRow(meters: routeMeters!, active: mode, lang: lang),
+          ],
           const SizedBox(height: 14),
           Row(
             children: [
+              // Before a route exists: "Find path".
+              // Once a real road route is drawn: "Start" takes its place and
+              // a small refresh button re-runs the search.
               Expanded(
-                child: FilledButton.icon(
-                  onPressed: loading ? null : onFindPath,
-                  icon: loading
-                      ? const SizedBox(
-                          width: 15,
-                          height: 15,
-                          child: CircularProgressIndicator(
-                              strokeWidth: 2, color: Colors.white))
-                      : const Icon(Icons.route_rounded, size: 17),
-                  label: Text(t.findPath),
-                ),
+                child: hasRoute
+                    ? FilledButton.icon(
+                        style: FilledButton.styleFrom(
+                            backgroundColor: AppColors.jade),
+                        onPressed: onStart,
+                        icon: const Icon(Icons.navigation_rounded, size: 17),
+                        label: Text(t.t('startNavigation')),
+                      )
+                    : FilledButton.icon(
+                        // Gold, matching the "Find path" button on the
+                        // detail screen so the two read as the same action.
+                        style: FilledButton.styleFrom(
+                          backgroundColor: AppColors.gold,
+                          foregroundColor: const Color(0xFF3A2600),
+                        ),
+                        onPressed: loading ? null : onFindPath,
+                        icon: loading
+                            ? const SizedBox(
+                                width: 15,
+                                height: 15,
+                                child: CircularProgressIndicator(
+                                    strokeWidth: 2,
+                                    color: Color(0xFF3A2600)))
+                            : const Icon(Icons.route_rounded, size: 17),
+                        label: Text(t.findPath),
+                      ),
               ),
               const SizedBox(width: 10),
+              if (hasRoute) ...[
+                OutlinedButton(
+                  onPressed: loading ? null : onFindPath,
+                  style: OutlinedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 14)),
+                  child: const Icon(Icons.refresh_rounded, size: 17),
+                ),
+                const SizedBox(width: 10),
+              ],
               Expanded(
                 child: OutlinedButton.icon(
                   onPressed: onDetail,
@@ -724,7 +1093,7 @@ class _ModeSwitch extends StatelessWidget {
 
   static const _icons = {
     TravelMode.walk: Icons.directions_walk_rounded,
-    TravelMode.bike: Icons.pedal_bike_rounded,
+    TravelMode.bike: Icons.two_wheeler_rounded,
     TravelMode.drive: Icons.directions_car_rounded,
   };
 
@@ -751,6 +1120,444 @@ class _ModeSwitch extends StatelessWidget {
                 color: sel
                     ? Colors.white
                     : Theme.of(context).colorScheme.onSurface),
+          ),
+        );
+      }).toList(),
+    );
+  }
+}
+
+/// ---------------------------------------------------------------------------
+/// The user's own position while navigating: a heading arrow instead of a dot.
+/// ---------------------------------------------------------------------------
+class _MeArrow extends StatelessWidget {
+  const _MeArrow({required this.headingDeg});
+
+  final double headingDeg;
+
+  @override
+  Widget build(BuildContext context) {
+    return Transform.rotate(
+      angle: headingDeg * math.pi / 180,
+      child: Container(
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: AppColors.jade.withValues(alpha: 0.45),
+              blurRadius: 14,
+              spreadRadius: 1,
+            ),
+          ],
+        ),
+        padding: const EdgeInsets.all(4),
+        child: const DecoratedBox(
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            gradient: AppColors.jadeGradient,
+          ),
+          child: Center(
+            child: Icon(Icons.navigation_rounded,
+                size: 22, color: Colors.white),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// ---------------------------------------------------------------------------
+/// Banner shown at the top while navigation is running.
+/// ---------------------------------------------------------------------------
+class _NavBanner extends ConsumerWidget {
+  const _NavBanner({
+    required this.nav,
+    required this.target,
+    required this.mode,
+    required this.courseUp,
+    required this.onToggleNorth,
+    required this.onStop,
+  });
+
+  final NavSession nav;
+  final Place? target;
+  final TravelMode mode;
+  final bool courseUp;
+  final VoidCallback onToggleNorth;
+  final VoidCallback onStop;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final t = context.l10n;
+    final lang = ref.watch(langProvider);
+
+    return Positioned(
+      top: MediaQuery.of(context).padding.top + 10,
+      left: 16,
+      right: 16,
+      child: GlassPanel(
+        radius: 22,
+        padding: const EdgeInsets.fromLTRB(16, 12, 12, 12),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Row(
+              children: [
+                const Icon(Icons.navigation_rounded,
+                    size: 20, color: AppColors.jade),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        '${nav.remainingDistanceLabel}  ·  '
+                        '${_Eta.range(mode, nav.remainingMeters, lang)}',
+                        style: const TextStyle(
+                            fontWeight: FontWeight.w800, fontSize: 15),
+                      ),
+                      if (target != null)
+                        Text(
+                          target!.name(lang),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: Theme.of(context).textTheme.bodySmall,
+                        ),
+                    ],
+                  ),
+                ),
+                IconButton(
+                  tooltip: courseUp ? t.t('northUp') : t.t('courseUp'),
+                  onPressed: onToggleNorth,
+                  icon: Icon(
+                    courseUp
+                        ? Icons.explore_rounded
+                        : Icons.navigation_outlined,
+                    size: 20,
+                  ),
+                ),
+                IconButton(
+                  tooltip: t.t('stopNavigation'),
+                  onPressed: onStop,
+                  icon: const Icon(Icons.close_rounded,
+                      size: 20, color: AppColors.danger),
+                ),
+              ],
+            ),
+            if (nav.rerouting) ...[
+              const SizedBox(height: 8),
+              Row(
+                children: [
+                  const SizedBox(
+                      width: 13,
+                      height: 13,
+                      child: CircularProgressIndicator(strokeWidth: 2)),
+                  const SizedBox(width: 10),
+                  Text(t.t('rerouting'),
+                      style: Theme.of(context).textTheme.bodySmall),
+                ],
+              ),
+            ],
+            const SizedBox(height: 8),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(4),
+              child: LinearProgressIndicator(
+                value: nav.completion.clamp(0.0, 1.0),
+                minHeight: 4,
+                backgroundColor:
+                    Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.10),
+                valueColor:
+                    const AlwaysStoppedAnimation<Color>(AppColors.jade),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// ---------------------------------------------------------------------------
+/// One row in the search suggestion list.
+/// ---------------------------------------------------------------------------
+class _SuggestionTile extends ConsumerWidget {
+  const _SuggestionTile({required this.place, required this.onTap});
+
+  final Place place;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final lang = ref.watch(langProvider);
+    final t = context.l10n;
+
+    return InkWell(
+      onTap: onTap,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 9),
+        child: Row(
+          children: [
+            Container(
+              width: 34,
+              height: 34,
+              decoration: BoxDecoration(
+                color: place.category.color.withValues(alpha: 0.15),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Icon(place.category.icon,
+                  size: 17, color: place.category.color),
+            ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    place.name(lang),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                        fontWeight: FontWeight.w700, fontSize: 13.5),
+                  ),
+                  Text(
+                    '${t.t(place.category.labelKey)}  ·  ${place.address(lang)}',
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
+                ],
+              ),
+            ),
+            const Icon(Icons.north_east_rounded, size: 15),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// Compass that appears only when the map is rotated away from north.
+/// Tapping it springs the map back to north-up.
+class _CompassButton extends StatefulWidget {
+  const _CompassButton({required this.map});
+  final MapController map;
+
+  @override
+  State<_CompassButton> createState() => _CompassButtonState();
+}
+
+class _CompassButtonState extends State<_CompassButton> {
+  StreamSubscription<MapEvent>? _sub;
+  double _rot = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _sub = widget.map.mapEventStream.listen((_) {
+      final r = widget.map.camera.rotation;
+      if ((r - _rot).abs() > 0.1) setState(() => _rot = r);
+    });
+  }
+
+  @override
+  void dispose() {
+    _sub?.cancel();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final visible = _rot.abs() % 360 > 0.5 && _rot.abs() % 360 < 359.5;
+    return IgnorePointer(
+      ignoring: !visible,
+      child: AnimatedOpacity(
+        opacity: visible ? 1 : 0,
+        duration: AppMotion.fast,
+        child: AnimatedScale(
+          scale: visible ? 1 : 0.7,
+          duration: AppMotion.fast,
+          curve: AppMotion.springy,
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 10),
+            child: PressableScale(
+              onTap: () {
+                widget.map.rotate(0);
+                setState(() => _rot = 0);
+              },
+              child: Container(
+                width: 46,
+                height: 46,
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.surface,
+                  shape: BoxShape.circle,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: 0.18),
+                      blurRadius: 12,
+                      offset: const Offset(0, 4),
+                    ),
+                  ],
+                ),
+                child: Transform.rotate(
+                  angle: _rot * math.pi / 180,
+                  child: CustomPaint(painter: _CompassPainter()),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _CompassPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final c = size.center(Offset.zero);
+    final r = size.width * 0.3;
+    final north = Path()
+      ..moveTo(c.dx, c.dy - r)
+      ..lineTo(c.dx - r * 0.42, c.dy + r * 0.28)
+      ..lineTo(c.dx, c.dy + r * 0.08)
+      ..close();
+    final south = Path()
+      ..moveTo(c.dx, c.dy + r)
+      ..lineTo(c.dx + r * 0.42, c.dy - r * 0.28)
+      ..lineTo(c.dx, c.dy - r * 0.08)
+      ..close();
+    canvas.drawPath(north, Paint()..color = AppColors.coral);
+    canvas.drawPath(
+      south,
+      Paint()..color = const Color(0xFF9AA5A1),
+    );
+  }
+
+  @override
+  bool shouldRepaint(covariant _CompassPainter oldDelegate) => false;
+}
+
+/// Travel-time estimates calibrated for Kengtung, not for a motorway.
+///
+/// OSRM returns the duration a car would need at the speed limit, which is
+/// far too optimistic here: narrow town lanes, motorbikes everywhere,
+/// unsealed stretches once you leave the grid, and hills on every approach
+/// road. These numbers come from real average speeds rather than limits,
+/// and a range is shown instead of one figure because an honest estimate
+/// is more useful than a precise-looking wrong one.
+class _Eta {
+  /// Average speed in km/h, which rises with distance because short trips
+  /// are all junctions and long ones are mostly open road.
+  static double _kmh(TravelMode m, double km) => switch (m) {
+        TravelMode.walk => km < 2 ? 4.2 : 4.6,
+        // Motorbike: the usual way to get around town.
+        TravelMode.bike => km < 3
+            ? 24
+            : km < 10
+                ? 33
+                : 42,
+        TravelMode.drive => km < 3
+            ? 22
+            : km < 10
+                ? 30
+                : 46,
+      };
+
+  /// Fixed overhead: unlocking and parking a vehicle, waiting at the gate.
+  static double _overheadMin(TravelMode m) => switch (m) {
+        TravelMode.walk => 0,
+        TravelMode.bike => 1.5,
+        TravelMode.drive => 3,
+      };
+
+  static double minutes(TravelMode m, double meters) {
+    final km = meters / 1000;
+    return km / _kmh(m, km) * 60 + _overheadMin(m);
+  }
+
+  /// "12–15 min" / "၁၂–၁၅ မိနစ်" — a plausible band, never a false promise.
+  static String range(TravelMode m, double meters, String lang) {
+    final mid = minutes(m, meters);
+    var lo = (mid * 0.85).round();
+    var hi = (mid * 1.25).round();
+    if (lo < 1) lo = 1;
+    if (hi <= lo) hi = lo + 1;
+    final unit = lang == 'my' ? 'မိနစ်' : 'min';
+    if (hi >= 60) {
+      final h = (mid / 60);
+      final hLabel = h.toStringAsFixed(h < 10 ? 1 : 0);
+      return lang == 'my' ? '$hLabel နာရီခန့်' : '~$hLabel hr';
+    }
+    return '$lo–$hi $unit';
+  }
+}
+
+/// Side-by-side travel times so the choice of vehicle is an informed one.
+class _EtaRow extends StatelessWidget {
+  const _EtaRow({
+    required this.meters,
+    required this.active,
+    required this.lang,
+  });
+
+  final double meters;
+  final TravelMode active;
+  final String lang;
+
+  static const _icons = {
+    TravelMode.drive: Icons.directions_car_rounded,
+    TravelMode.bike: Icons.two_wheeler_rounded,
+    TravelMode.walk: Icons.directions_walk_rounded,
+  };
+
+  @override
+  Widget build(BuildContext context) {
+    final onSurface = Theme.of(context).colorScheme.onSurface;
+    return Row(
+      children: _icons.entries.map((e) {
+        final sel = e.key == active;
+        return Expanded(
+          child: AnimatedContainer(
+            duration: AppMotion.fast,
+            margin: const EdgeInsets.only(right: 8),
+            padding:
+                const EdgeInsets.symmetric(vertical: 8, horizontal: 6),
+            decoration: BoxDecoration(
+              color: sel
+                  ? AppColors.jade.withValues(alpha: 0.13)
+                  : onSurface.withValues(alpha: 0.05),
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(
+                color: sel
+                    ? AppColors.jade.withValues(alpha: 0.5)
+                    : Colors.transparent,
+              ),
+            ),
+            child: Column(
+              children: [
+                Icon(e.value,
+                    size: 16,
+                    color: sel
+                        ? AppColors.jade
+                        : onSurface.withValues(alpha: 0.65)),
+                const SizedBox(height: 3),
+                FittedBox(
+                  child: Text(
+                    _Eta.range(e.key, meters, lang),
+                    style: TextStyle(
+                      fontSize: 11.5,
+                      fontWeight: sel ? FontWeight.w800 : FontWeight.w600,
+                      color: sel
+                          ? AppColors.jade
+                          : onSurface.withValues(alpha: 0.75),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         );
       }).toList(),

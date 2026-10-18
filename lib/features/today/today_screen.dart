@@ -11,7 +11,9 @@ import '../../data/models/village.dart';
 import '../../l10n/app_localizations.dart';
 import '../../shared/widgets/confidence_badge.dart';
 import '../../shared/widgets/motion_widgets.dart';
-
+import '../../shared/widgets/confidence_badge.dart';
+import '../../shared/widgets/motion_widgets.dart';
+import 'markets_guide_screen.dart';
 /// "Today in Kengtung" — the one screen no general travel app can give you.
 ///
 /// It answers three questions a visitor asks every single morning:
@@ -141,7 +143,12 @@ class _TodayHeader extends StatelessWidget {
       expandedHeight: 168,
       backgroundColor: AppColors.jadeDeep,
       foregroundColor: Colors.white,
-      elevation: 0,
+            elevation: 0,
+      actions: [
+        MarketsGuideButton(
+          tooltip: t.isMyanmar ? 'ငါးရက်ဈေး လမ်းညွှန်' : 'Five-day markets',
+        ),
+      ],
       flexibleSpace: FlexibleSpaceBar(
         titlePadding: const EdgeInsetsDirectional.only(start: 20, bottom: 14),
         title: Text(
@@ -355,10 +362,10 @@ class _WeekStrip extends StatelessWidget {
   Widget build(BuildContext context) {
     final t = context.l10n;
     final cs = Theme.of(context).colorScheme;
-    if (days.isEmpty) return const SizedBox(height: 92);
+    if (days.isEmpty) return const SizedBox(height: 112);
 
     return SizedBox(
-      height: 96,
+      height: 112,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         clipBehavior: Clip.none,
@@ -369,7 +376,7 @@ class _WeekStrip extends StatelessWidget {
           final isToday = i == 0;
           final known = d.market.confidence.isKnown;
           return Container(
-            width: 104,
+            width: 116,
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
               gradient: isToday ? AppColors.jadeGradient : null,
@@ -410,7 +417,7 @@ class _WeekStrip extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     fontSize: 11,
-                    height: t.isMyanmar ? 1.6 : 1.25,
+                    height: t.isMyanmar ? 1.35 : 1.25,
                     color: isToday
                         ? Colors.white.withValues(alpha: 0.9)
                         : cs.onSurface.withValues(alpha: 0.7),

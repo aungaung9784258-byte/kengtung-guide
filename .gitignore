@@ -76,3 +76,9 @@ tools/android-sdk/*.zip
 assets/data/places.backup.json
 places*.json.download
 snapshot.txt 
+
+*.bak
+map1.txt
+map2.txt
+map3.txt
+snapshot*.txt

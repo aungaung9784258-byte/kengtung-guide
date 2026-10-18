@@ -1,4 +1,6 @@
 import 'dart:convert';
+
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:latlong2/latlong.dart';
 
@@ -37,13 +39,34 @@ class RouteResult {
 /// For launch, either self-host OSRM (free, a small VPS is enough for one
 /// township) or switch `_host` to another free OSRM mirror.
 class RoutingService {
-  static const _host = 'https://router.project-osrm.org';
-
   static String _profile(TravelMode m) => switch (m) {
         TravelMode.walk => 'foot',
         TravelMode.bike => 'bike',
         TravelMode.drive => 'driving',
       };
+
+  /// Every free OSRM endpoint we know of, tried in order until one answers.
+  ///
+  /// The project-osrm demo server is rate-limited and goes down regularly - a
+  /// single failure there used to drop the app straight to the straight-line
+  /// estimate ("offline"). The FOSSGIS mirrors below are the ones OSM's own
+  /// website uses, and they run a separate instance per travel profile.
+  static List<Uri> _endpoints(String profile, String coords) {
+    const query = 'overview=full&geometries=geojson';
+
+    final fossgis = switch (profile) {
+      'foot' => 'routed-foot',
+      'bike' => 'routed-bike',
+      _ => 'routed-car',
+    };
+
+    return [
+      Uri.parse('https://router.project-osrm.org'
+          '/route/v1/$profile/$coords?$query'),
+      Uri.parse('https://routing.openstreetmap.de/$fossgis'
+          '/route/v1/$profile/$coords?$query'),
+    ];
+  }
 
   /// Supports multiple waypoints: [start, stop1, stop2, ..., end].
   static Future<RouteResult?> route(
@@ -54,34 +77,46 @@ class RoutingService {
 
     final coords =
         waypoints.map((p) => '${p.longitude},${p.latitude}').join(';');
-    final uri = Uri.parse(
-        '$_host/route/v1/${_profile(mode)}/$coords?overview=full&geometries=geojson');
 
-    try {
-      final res = await http.get(uri).timeout(const Duration(seconds: 12));
-      if (res.statusCode != 200) return null;
+    Object? lastError;
 
-      final json = jsonDecode(res.body) as Map<String, dynamic>;
-      final routes = json['routes'] as List?;
-      if (routes == null || routes.isEmpty) return null;
+    for (final uri in _endpoints(_profile(mode), coords)) {
+      try {
+        final res = await http.get(uri).timeout(const Duration(seconds: 12));
+        if (res.statusCode != 200) {
+          lastError = 'HTTP ${res.statusCode} from ${uri.host}';
+          continue;
+        }
 
-      final r = routes.first as Map<String, dynamic>;
-      final coordsList =
-          (r['geometry']['coordinates'] as List).cast<List>();
+        final json = jsonDecode(res.body) as Map<String, dynamic>;
+        final routes = json['routes'] as List?;
+        if (routes == null || routes.isEmpty) {
+          lastError = 'no route in reply from ${uri.host}';
+          continue;
+        }
 
-      return RouteResult(
-        points: coordsList
-            .map((c) => LatLng(
-                  (c[1] as num).toDouble(),
-                  (c[0] as num).toDouble(),
-                ))
-            .toList(),
-        distanceMeters: (r['distance'] as num).toDouble(),
-        durationSeconds: (r['duration'] as num).toDouble(),
-      );
-    } catch (_) {
-      return null;
+        final r = routes.first as Map<String, dynamic>;
+        final coordsList = (r['geometry']['coordinates'] as List).cast<List>();
+
+        return RouteResult(
+          points: coordsList
+              .map((c) => LatLng(
+                    (c[1] as num).toDouble(),
+                    (c[0] as num).toDouble(),
+                  ))
+              .toList(),
+          distanceMeters: (r['distance'] as num).toDouble(),
+          durationSeconds: (r['duration'] as num).toDouble(),
+        );
+      } catch (e) {
+        // Timeout, DNS failure, TLS problem... try the next mirror.
+        lastError = '${uri.host}: $e';
+      }
     }
+
+    // Every mirror failed. The caller falls back to straightLine().
+    debugPrint('[routing] all OSRM endpoints failed. Last error: $lastError');
+    return null;
   }
 
   /// Offline fallback: a direct line between two points with straight-line
@@ -109,3 +144,4 @@ class RoutingService {
     );
   }
 }
+ 

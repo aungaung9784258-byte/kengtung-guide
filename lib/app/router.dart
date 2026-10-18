@@ -14,6 +14,7 @@ import '../features/villages/villages_screen.dart';
 import 'shell.dart';
 import 'theme/app_motion.dart';
 import '../features/about/about_kengtung_screen.dart';
+import '../features/today/markets_guide_screen.dart';
 
 final _rootKey = GlobalKey<NavigatorState>();
 
@@ -54,6 +55,11 @@ final appRouter = GoRouter(
       path: '/about-kengtung',
       parentNavigatorKey: _rootKey,
       pageBuilder: (c, s) => _slideUp(s, const AboutKengtungScreen()),
+    ),
+    GoRoute(
+      path: '/markets-guide',
+      parentNavigatorKey: _rootKey,
+      pageBuilder: (c, s) => _slideUp(s, const MarketsGuideScreen()),
     ),
     StatefulShellRoute.indexedStack(
       builder: (c, s, shell) => AppShell(navigationShell: shell),

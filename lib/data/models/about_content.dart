@@ -233,6 +233,7 @@ class AboutSection {
 class AboutCover {
   const AboutCover({
     required this.image,
+    this.images = const [],
     required this.parallax,
     required this.kicker,
     required this.title,
@@ -240,6 +241,7 @@ class AboutCover {
   });
 
   final String image;
+  final List<String> images;
   final double parallax;
   final L10nText kicker;
   final L10nText title;
@@ -247,6 +249,8 @@ class AboutCover {
 
   factory AboutCover.fromJson(Map<String, dynamic> json) => AboutCover(
         image: json['image'] as String? ?? 'assets/images/hero_kengtung.jpg',
+        images: (json['images'] as List?)?.cast<String>() ??
+            [json['image'] as String? ?? 'assets/images/hero_kengtung.jpg'],
         parallax: (json['parallax'] as num?)?.toDouble() ?? 0.30,
         kicker: L10nText.fromJson(json['kicker']),
         title: L10nText.fromJson(json['title']),

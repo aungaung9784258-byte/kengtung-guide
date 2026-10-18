@@ -8,6 +8,7 @@ import '../../l10n/app_localizations.dart';
 import '../../shared/widgets/motion_widgets.dart';
 import 'credits_card.dart';
 import 'offline_maps_card.dart';
+import 'contact_card.dart';
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
@@ -76,11 +77,14 @@ class SettingsScreen extends ConsumerWidget {
                   child: Text(t.t('aboutBody'),
                       style: Theme.of(context).textTheme.bodySmall),
                 ),
-              ),
+                ),
               const SizedBox(height: 16),
               const RevealIn(index: 4, child: CreditsCard()),
               const SizedBox(height: 16),
               const RevealIn(index: 5, child: ThanksCard()),
+              const SizedBox(height: 16),
+              const RevealIn(index: 6, child: ContactCard()),
+              
             ]),
           ),
         ],
