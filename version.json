@@ -1,0 +1,19 @@
+{
+  "versionName": "1.0.0",
+  "versionCode": 99,
+  "downloadUrl": "https://github.com/aungaung9784258-byte/kengtung-guide/releases/download/v0.1.0-test/KyaingTongGo.apk",
+  "sizeMb": 70,
+  "mandatory": false,
+  "notes": {
+    "en": [
+      "About Kengtung page now has a photo carousel you can zoom",
+      "Real photographs replace the earlier illustrations",
+      "Faster map loading"
+    ],
+    "my": [
+      "ကျိုင်းတုံအကြောင်း စာမျက်နှာမှာ ဓာတ်ပုံ slide နဲ့ ချဲ့ကြည့်နိုင်ပါပြီ",
+      "AI ပုံများအစား ဓာတ်ပုံအစစ်များ အစားထိုးထားပါတယ်",
+      "မြေပုံ ပိုမြန်ပါတယ်"
+    ]
+  }
+}
