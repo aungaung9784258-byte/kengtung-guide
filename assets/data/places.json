@@ -121,7 +121,7 @@
   {
     "id": "wat-mahamuni",
     "name": {
-      "en": "Maha Myat Muni Pago",
+      "en": "Maha Myat Muni Pagoda",
       "my": "မဟာမြတ်မုနိဘုရား"
     },
     "category": "pagoda",
@@ -445,49 +445,63 @@
     },
     "category": "hotel",
     "description": {
-      "en": "Garden resort set in a restored colonial building overlooking the town.",
-      "my": "မြို့ကို မျှော်ကြည့်နိုင်သော ကိုလိုနီခေတ် အဆောက်အအုံဟောင်းတွင် တည်ရှိသည့် ဥယျာဉ်ရီဆော့။"
+      "en": "Designed with grand colonial architecture and traditional Shan motifs, Amazing Kengtong Resort provides the most luxurious stay in Kengtung. Set inside sprawling beautifully landscaped gardens, it offers premium amenities including a large outdoor swimming pool, spa services, lake-view terrace dining, and spacious high-ceiling rooms.\n4. Amenities & Facilities (အဆောက်အဦးနှင့် ဝန်ဆောင်မှုများ)\n\n• Premium Features: Outdoor Swimming Pool (ပြင်ပရေကူးကန်), Luxury Spa & Wellness Center (စပါးနှင့် ကျန်းမာရေးစင်တာ).\n• Dining: Lake-view Restaurant serving Traditional Shan, Myanmar, and European cuisines.\n• Services: Free Buffet Breakfast, Airport Transfer Shuttle, 24-Hour Room Service, Laundry, and Local Trekking/Tour assistance.\n• In-Room: Safe deposit box, mini-bar, bathtub, air conditioning, satellite LCD TV, and premium toiletries.",
+      "my": "Total Rooms: ၄၄ ခန်း (44 Luxury & Deluxe Rooms)\nကျိုင်းတုံမြို့တွင် အကောင်းဆုံးနှင့် အဆင့်မြင့်ဆုံး သတ်မှတ်ထားသော ကိုလိုနီဟန် အဆောက်အဦးပုံစံ ရီဆော့တ်ကြီး ဖြစ်သည်။ နောင်တုံကန်အနီးတွင် တည်ရှိပြီး ရှုခင်းအလွန်လှပသည်။ ကျယ်ဝန်းလှပသော ပန်းခြံဥယျာဉ်ကြီးများ၊ ပြင်ပရေကူးကန်၊ စပါး (Spa) ဝန်ဆောင်မှုနှင့် ကန်ဘောင်ရှုခင်းကြည့် စားသောက်ဆိုင်တို့ ပါဝင်ပြီး အခန်းတွင်း ပရိဘောဂအပြင်အဆင်များမှာ အဆင့်မြင့် ဇိမ်ခံစတိုင်လ် ပြုလုပ်ထားသည်။"
     },
     "address": {
-      "en": "Kengtung",
-      "my": "ကျိုင်းတုံ"
+      "en": "Mong Yang Road, Near Naung Tung Lake, Kyaing Tong, Eastern Shan State, Myanmar.",
+      "my": " မိုင်းယန်းလမ်း၊ နောင်တုံကန်အနီး၊ ကျိုင်းတုံမြို့၊ ရှမ်းပြည်နယ် (အရှေ့ပိုင်း)။"
     },
-    "lat": 21.296915,
-    "lng": 99.604492,
+    "lat": 21.291666526399528,
+    "lng": 99.60176275922927,
     "openHours": "24 hours",
     "rating": 4.3,
     "tags": [
       "resort",
-      "colonial"
+      "colonial",
+      "ဟိုတယ်",
+      "အိပ်ခန်း",
+      "တည်းခို"
     ],
     "images": [
-      "assets/images/hotel.jpg"
+      "assets/images/AMAZING (1).webp",
+      "assets/images/AMAZING (2).webp",
+      "assets/images/AMAZING (3).webp",
+      "assets/images/AMAZING (4).webp",
+      "assets/images/AMAZING (5).webp"
     ]
   },
   {
     "id": "sam-yweat-guesthouse",
     "name": {
       "en": "Sam Yweat Guest House",
-      "my": "သမ်းယွက် တည်းခိုခန်း"
+      "my": "ဆမ်ရွက် ဟိုတယ်"
     },
     "category": "hotel",
     "description": {
-      "en": "Budget-friendly guest house popular with backpackers and trekkers.",
-      "my": "ခရီးသွားများ လူကြိုက်များသော သက်သာသည့် တည်းခိုခန်း။"
+      "en": "Sam Ywet Hotel is a well-known budget flashpacker choice in Kengtung. It features clean rooms with air conditioning, satellite TV, and free Wi-Fi. Entering via a ground-floor car park, the hotel boasts a cozy bar and breakfast area at the rear, and provides helpful local trekking tour bookings.",
+      "my": "ကျိုင်းတုံမြို့မဈေးကြီး အနီးတွင် တည်ရှိပြီး သွားလာရလွယ်ကူသော အခန်း ၂၇ ခန်းပါ ၂ ကြယ်ပွင့် बजက်ဟိုတယ် (သို့မဟုတ်) ဂက်စ်ဟောက်စ် ဖြစ်သည်။ အခန်းများတွင် အဲကွန်း၊ တီဗီ၊ အခမဲ့ဝိုင်ဖိုင်နှင့် မနက်စာ ဝန်ဆောင်မှုများ ပါဝင်သည်။ အောက်ထပ်တွင် ကားပါကင်နှင့် အနောက်ဘက်တွင် သစ်သားဒီဇိုင်းဖြင့် ပြုလုပ်ထားသော ဘားနှင့် မနက်စာစားရန်နေရာ ရှိသည်။ ဒေသတွင်း တောင်တက်ခရီးစဉ် (Trekking tours) များကိုလည်း ဟိုတယ်မှတစ်ဆင့် ချိတ်ဆက်စီစဉ်ပေးလေ့ရှိသည်။"
     },
     "address": {
-      "en": "Kengtung",
-      "my": "ကျိုင်းတုံ"
+      "en": "1st Kyaing Lang st, near Myoma Market, Kyaing Tong",
+      "my": "မြို့မစျေးအနီး ၊ ကျိုင်းလန်း(၁) လမ်း၊ ကျိုင်းတုံမြို့။"
     },
-    "lat": 21.2899,
-    "lng": 99.5996,
+    "lat": 21.286885479221947,
+    "lng": 99.60529452999454,
+    "phone": "08421235",
     "openHours": "24 hours",
     "rating": 3.9,
     "tags": [
-      "budget"
+      "ဟိုတယ်",
+      "တည်းခို",
+      "အိပ်ခန်း"
     ],
     "images": [
-      "assets/images/hotel.jpg"
+      "assets/images/SAMYWAT (1).webp",
+      "assets/images/SAMYWAT (2).webp",
+      "assets/images/SAMYWAT (3).webp",
+      "assets/images/SAMYWAT (4).webp",
+      "assets/images/SAMYWAT (5).webp"
     ]
   },
   {
@@ -1237,6 +1251,937 @@
     ],
     "images": [
       "assets/images/စေတနာမြင့်.jpg"
+    ]
+  },
+  {
+    "id": "behs-5",
+    "name": {
+      "en": "BEHS (5) Kyaing Tong",
+      "my": "အထက (၅) ကျိုင်းတုံ"
+    },
+    "category": "education",
+    "description": {
+      "en": "Schedule: Operates Monday through Saturday from 7:30 AM to 3:45 PM, and remains closed on Sundays.\nAccessibility: Equipped with a wheelchair-accessible entrance and designated parking lot to accommodate visitors and students.\nSchool Description:\nType: It is a state-run public high school operating under Myanmar's Ministry of Education, offering foundational education spanning primary, middle, and high school levels (up to Grade 12 under the current K-12 system).\nCurriculum: The school follows the standard Myanmar National Basic Education Curriculum. Instruction covers core learning areas including the Myanmar language, English, Mathematics, Science, Social Studies, Life Skills, Physical Education, and Moral/Civics, aiming for the all-round intellectual, physical, social, and moral development of students.\nRole in the Community: As a public educational anchor in Kengtung, it serves local families by providing accessible secondary schooling, preparing young people for higher education or vocational paths, and acting as a social hub for youth development and community engagement within the region.\n",
+      "my": "**ကျောင်းအမျိုးအစား:**မြန်မာနိုင်ငံ ပညာရေးဝန်ကြီးဌာနအောက်မှာ တရားဝင်ဖွင့်လှစ်ထားတဲ့ အစိုးရအခြေခံပညာအထက်တန်းကျောင်း ဖြစ်ပါတယ်။ လက်ရှိ K-12 ပညာရေးစနစ်အတိုင်း မူလတန်း၊ အလယ်တန်းနဲ့ အထက်တန်း (Grade 12 အထိ) သင်ကြားပေးနေတဲ့ ကျောင်းလည်း ဖြစ်ပါတယ်။\n**သင်ရိုးညွှန်းတမ်း:**မြန်မာနိုင်ငံ အမျိုးသားအခြေခံပညာ သင်ရိုးညွှန်းတမ်းအတိုင်း သင်ကြားပေးနေတာဖြစ်ပြီး မြန်မာစာ၊ အင်္ဂလိပ်စာ၊ သင်္ချာ၊ သိပ္ပံ၊ လူမှုရေးသိပ္ပံ၊ ဘဝတွက်တာကျွမ်းကျင်မှု၊ ကာယနဲ့ စာရိတ္တ/ပြည်သူ့နီတိ စတဲ့ အဓိကဘာသာရပ်တွေ ပါဝင်ပါတယ်။ ကျောင်းသား/သူတွေရဲ့ အသိပညာ၊ ရုပ်ပိုင်းဆိုင်ရာ၊ ပေါင်းသင်းဆက်ဆံရေးနဲ့ စာရိတ္တပိုင်းတွေ ဘက်စုံဖွံ့ဖြိုးတိုးတက်လာစေဖို့ ရည်ရွယ်သင်ကြားပေးနေခြင်း ဖြစ်ပါတယ်။\n**လူမှုအသိုင်းအဝိုင်းအတွက် အခန်းကဏ္ဍ:**ကျိုင်းတုံမြို့နယ်အတွင်းမှာရှိတဲ့ ဒေသခံမိသားစုတွေအတွက် အရေးပါတဲ့ အစိုးရအထက်တန်းကျောင်းတစ်ကျောင်းဖြစ်ပြီး၊ ဒေသခံလူငယ်တွေကို အခြေခံပညာလက်လှမ်းမီစေရေး၊ တက္ကသိုလ်ပညာရပ် ဒါမှမဟုတ် အသက်မွေးဝမ်းကျောင်းလမ်းကြောင်းတွေဆာ အကူးအပြောင်းအတွက် အနီးကပ်ပြုစုပျိုးထောင်ပေးနေတဲ့အပြင် ဒေသတွင်း လူငယ်ဖွံ့ဖြိုးရေးနဲ့ စာသင်ကျောင်းအခြေပြု လှုပ်ရှားမှုတွေအတွက်ပါ အဓိကမဏ္ဍိုင်တစ်ခုအဖြစ် ပါဝင်ဆောင်ရွက်ပေးလျက်ရှိပါတယ်။\n"
+    },
+    "address": {
+      "en": "along Airport Road in Kengtung, Myanmar, ",
+      "my": "ကျိုင်းတုံလေယာဉ်ကွင်းသွားလမ်း အဝိုင်းပတ်အနီး၊ ကျိုင်းတုံမြို့"
+    },
+    "lat": 21.3011819,
+    "lng": 99.6218861,
+    "openHours": "(Mon-Fri) 7:30 AM - 3:45 PM",
+    "rating": 4,
+    "tags": [
+      "ကျောင်း",
+      "high school"
+    ],
+    "images": [
+      "assets/images/B5(1).jpg",
+      "assets/images/B5(2).jpg",
+      "assets/images/B5(3).jpg",
+      "assets/images/B5(4).jpg",
+      "assets/images/B5(6).jpg"
+    ]
+  },
+  {
+    "id": "behs-6",
+    "name": {
+      "en": "BEHS (6)",
+      "my": "အထက (၆) ကျိုင်းတုံ"
+    },
+    "category": "education",
+    "description": {
+      "en": "Schedule: Operates Monday through Friday from 8:00 AM to 4:00 PM, and is closed on Saturdays and Sundays.\n\nSchool Description:\nType: It is a state-run public high school operating under Myanmar's Ministry of Education, offering foundational education spanning primary, middle, and high school levels (up to Grade 12 under the current K-12 system).\nCurriculum: The school follows the standard Myanmar National Basic Education Curriculum. Instruction covers core subjects such as the Myanmar language, English, Mathematics, Science, Social Studies, Life Skills, Physical Education, and Moral/Civics, designed to support the holistic intellectual, physical, social, and moral development of students.\nRole in the Community: Serving as a prominent educational anchor in the region, it provides accessible secondary schooling to local families, prepares young people for higher education or vocational pathways, and acts as an important community hub for youth development, civic activities, and local engagement.\n",
+      "my": "**ကျောင်းအမျိုးအစား: **မြန်မာနိုင်ငံ ပညာရေးဝန်ကြီးဌာနအောက်မှာ တရားဝင်ဖွင့်လှစ်ထားတဲ့ အစိုးရအခြေခံပညာအထက်တန်းကျောင်း ဖြစ်ပါတယ်။ လက်ရှိ K-12 ပညာရေးစနစ်အတိုင်း မူလတန်း၊ အလယ်တန်းနဲ့ အထက်တန်း (Grade 12 အထိ) သင်ကြားပေးနေတဲ့ ကျောင်းလည်း ဖြစ်ပါတယ်။\nသင်ရိုးညွှန်းတမ်း: မြန်မာနိုင်ငံ အမျိုးသားအခြေခံပညာ သင်ရိုးညွှန်းတမ်းအတိုင်း သင်ကြားပေးနေတာဖြစ်ပြီး မြန်မာစာ၊ အင်္ဂလိပ်စာ၊ သင်္ချာ၊ သိပ္ပံ၊ လူမှုရေးသိပ္ပံ၊ ဘဝတွက်တာကျွမ်းကျင်မှု၊ ကာယနဲ့ စာရိတ္တ/ပြည်သူ့နီတိ စတဲ့ အဓိကဘာသာရပ်တွေ ပါဝင်ပါတယ်။ ကျောင်းသား/သူတွေရဲ့ အသိပညာ၊ ရုပ်ပိုင်းဆိုင်ရာ၊ ပေါင်းသင်းဆက်ဆံရေးနဲ့ စာရိတ္တပိုင်းတွေ ဘက်စုံဖွံ့ဖြိုးတိုးတက်လာစေဖို့ ရည်ရွယ်သင်ကြားပေးနေခြင်း ဖြစ်ပါတယ်။\nလူမှုအသိုင်းအဝိုင်းအတွက် အခန်းကဏ္ဍ: ဒေသတွင်းမှာ ထင်ရှားတဲ့ အစိုးရအထက်တန်းကျောင်းတစ်ကျောင်းဖြစ်ပြီး၊ ဒေသခံမိသားစုတွေအတွက် အခြေခံပညာ လက်လှမ်းမီစေရေး၊ လူငယ်တွေကို တက္ကသိုလ်ပညာရပ် ဒါမှမဟုတ် အသက်မွေးဝမ်းကျောင်း လမ်းကြောင်းတွေဆီ အကူးအပြောင်းအတွက် အနီးကပ်ပြုစုပျိုးထောင်ပေးနေတဲ့အပြင် ဒေသတွင်း လူငယ်ဖွံ့ဖြိုးရေး၊ ပြည်သူ့နီတိဆိုင်ရာ လှုပ်ရှားမှုတွေနဲ့ စာသင်ကျောင်းအခြေပြု စုပေါင်းဆောင်ရွက်မှုတွေအတွက်ပါ အဓိကမဏ္ဍိုင်တစ်ခုအဖြစ် ပါဝင်ဆောင်ရွက်ပေးလျက်ရှိပါတယ်။\n"
+    },
+    "address": {
+      "en": "Ward (5), Kyaing Tong - Taunggyi Road, Kyaing Tong",
+      "my": "ရပ်ကွက်(၅)၊ ကျိုင်းတုံ-တောင်ကြီး လမ်းမကြီး ၊ကားကြီးကွင်းအနီး၊ ကျိုင်းတုံမြို့။"
+    },
+    "lat": 21.2871278,
+    "lng": 99.5907869,
+    "openHours": "(Mon-Fri) 7:30 AM - 3:45 PM",
+    "rating": 4,
+    "tags": [
+      "အထက်တန်းကျောင်း",
+      "high school",
+      "education"
+    ],
+    "images": [
+      "assets/images/B6(1).webp",
+      "assets/images/B6(2).webp",
+      "assets/images/B6(3).webp",
+      "assets/images/B6(4).webp"
+    ]
+  },
+  {
+    "id": "royal-private",
+    "name": {
+      "en": "Royal Private School",
+      "my": "တော်ဝင် ကိုယ်ပိုင်အထက်တန်းကျောင်း"
+    },
+    "category": "education",
+    "description": {
+      "en": "Taw Win Private School\n•  Type: Private Educational Support / Schooling Center\n•  Curriculum: General school-age academic coaching and grade-level progression tracks.\n•  Community Role: Functions as an accessible neighborhood academic resource, supporting students with supplementary tutoring and continuous learning support to keep them on track with their studies.\n",
+      "my": "•\tကျောင်းအမျိုးအစား - ကိုယ်ပိုင် ပညာရေးထောက်ပံ့မှုနှင့် သင်တန်းစင်တာ\n•\tသင်ရိုးညွှန်းတမ်း - အခြေခံပညာအတန်းအလိုက် ဘာသာရပ်ဆိုင်ရာ ဖြည့်စွက်သင်ကြားမှုနှင့် စာမေးပွဲပြင်ဆင်ရေး သင်ရိုးများ ဖြစ်ပါသည်။\n•\tလူမှုအသိုင်းအဝိုင်းအတွက် အခန်းကဏ္ဍ - ရပ်ကွက်အတွင်းရှိ ကျောင်းသားကျောင်းသူများ စာပေလေ့လာရာတွင် လိုအပ်သည့် ကူညီထောက်ပံ့မှုများနှင့် ကျူရှင်/ဖြည့်စွက်သင်ကြားမှုများကို ဆောင်ရွက်ပေးနေသည့် ကျောင်းတစ်ကျောင်း ဖြစ်ပါသည်။\n"
+    },
+    "address": {
+      "en": "near MyoMa Market, Kyaing Tong",
+      "my": "မြို့မစျေးအနောက်ဖက် ၊ ကျိုင်းတုံမြို့"
+    },
+    "lat": 21.286107242263224,
+    "lng": 99.60173532604327,
+    "phone": "095252402",
+    "rating": 4,
+    "tags": [
+      "ကျောင်း",
+      "ပညာရေး",
+      "အထက",
+      "ကိုယ်ပိုင်ကျောင်း",
+      "သင်ကြားရေး"
+    ],
+    "images": [
+      "assets/images/TAWWIN (2).webp",
+      "assets/images/TAWWIN (1).webp"
+    ]
+  },
+  {
+    "id": "tip-aung",
+    "name": {
+      "en": "Tip Aung Private School",
+      "my": "တစ်အောင် ကိုယ်ပိုင် မူလတန်းနှင့်အလယ်တန်းကျောင်း"
+    },
+    "category": "education",
+    "description": {
+      "en": "•\tType: Private Primary and Elementary Learning Institution\n•\tCurriculum: Lower and upper primary educational frameworks blending foundational literacy, numeracy, behavioral routines, and modern digital learning tools/interactive platforms.\n•\tCommunity Role: Serves young families in the Naung Kyoi / Nawng Tung Hotel area by offering a secure, nurturing, and structured early-childhood and primary education environment tailored to children from diverse local backgrounds.\n",
+      "my": "•  ကျောင်းအမျိုးအစား - ကိုယ်ပိုင် မူလတန်းနှင့် အလယ်တန်းကျောင်း\n•  သင်ရိုးညွှန်းတမ်း - စာရေးစာဖတ်၊ သင်္ချာနှင့် အမူအကျင့်ဆိုင်ရာ အခြေခံများကို နည်းပညာသုံး အပြန်အလှန်သင်ယူမှုစနစ်များဖြင့် ပေါင်းစပ်ထားသည့် မူလတန်းအဆင့် သင်ရိုးညွှန်းတမ်း ဖြစ်ပါသည်။\n•  လူမှုအသိုင်းအဝိုင်းအတွက် အခန်းကဏ္ဍ - နောင်ကျော့ရပ်ကွက်/နောင်တုံဟိုတယ် အနီးဝန်းကျင်ရှိ အိမ်ထောင်စုများအတွက် ရင်သွေးငယ်များကို ဘေးကင်းလုံခြုံပြီး နွေးထွေးသည့် ပတ်ဝန်းကျင်တွင် စနစ်တကျ ပညာသင်ကြားနိုင်ရန် ကူညီပေးနေပါသည်။\n"
+    },
+    "address": {
+      "en": "Ward (1), Hyper Market, Naung Kyaut Quarter, Kyaing Tong",
+      "my": "အမှတ် (၁) လမ်း၊ ဟိုက်ပါမားကတ်၊ နောင်ကျော့ရပ်ကွက်၊ ကျိုင်းတုံမြို့ "
+    },
+    "lat": 21.288125,
+    "lng": 99.610087,
+    "rating": 4,
+    "tags": [
+      "ကိုယ်ပိုင်မူလတန်းကျောင်း",
+      "ကျောင်း",
+      "ပညာရေး",
+      "သင်ကြားရေး"
+    ],
+    "images": [
+      "assets/images/TIPAUNG (2).webp",
+      "assets/images/TIPAUNG (1).webp"
+    ]
+  },
+  {
+    "id": "veritas-private-school",
+    "name": {
+      "en": "VERITAS Private School",
+      "my": "VERITAS Private School"
+    },
+    "category": "education",
+    "description": {
+      "en": "Type: Private International / Hybrid Secondary School (Grades 9–12)\nCurriculum: Globally benchmarked, equity-driven international curriculum designed for university admissions worldwide, focusing on foundational high school education, critical thinking, and modern technological integration (including AI strategy concepts and personalized learning tracks).\nCommunity Role: Functions as an inclusive learning center that moves beyond traditional rote learning, preparing local youth with emotional intelligence, social awareness, and international academic readiness to lead with empathy.\n",
+      "my": "•  ကျောင်းအမျိုးအစား - အပြည်ပြည်ဆိုင်ရာ နှင့် ပေါင်းစပ်အထက်တန်းကျောင်း (Grade 9 မှ 12 အထိ)\n•  သင်ရိုးညွှန်းတမ်း - နိုင်ငံတကာတက္ကသိုလ်များသို့ ဝင်ခွင့်ရရှိနိုင်ရေးအတွက် စံချိန်စံညွှန်းမီ ပြင်ဆင်ပေးထားသော နိုင်ငံတကာသင်ရိုးဖြစ်ပါသည်။ ဝေဖန်ပိုင်းခြားနိုင်စွမ်း၊ နည်းပညာသုံး သင်ယူမှုများနှင့် တစ်ဦးချင်း လိုအပ်ချက်အလိုက် လေ့လာနိုင်မည့် သင်ရိုးများ ပါဝင်ပါသည်။\n•  လူမှုအသိုင်းအဝိုင်းအတွက် အခန်းကဏ္ဍ - အလွတ်ကျက်မှတ်သည့် စနစ်ထက် ကျောင်းသားများ၏ စိတ်ဓာတ်၊ လူမှုရေးအသိနှင့် ပညာရေးအရ အဆင်သင့်ဖြစ်မှုကို ပြုစုပျိုးထောင်ပေးပြီး စာနာနားလည်မှုရှိသော မနက်ဖြန်၏ ခေါင်းဆောင်များကို မွေးထုတ်ပေးသည့် လေ့လာသင်ယူမှုဗဟိုဌာန ဖြစ်ပါသည်။\n"
+    },
+    "address": {
+      "en": "WaKhote , Ward(5), Kyaing Tong-Taunggyi Road, Kyaing Tong",
+      "my": "ဝေါ်ခုတ်ကွက်သစ် ရပ်ကွက် ၊ ရပ်ကွက်(၅)၊ ကျိုင်းတုံ-တောင်ကြီးလမ်းမကြီး ဘေး၊ ကျိုင်းတုံမြို့။"
+    },
+    "lat": 21.288295585294996,
+    "lng": 99.58650215241752,
+    "rating": 4,
+    "tags": [
+      "ကျောင်း",
+      "ပညာရေး",
+      "သင်ကြားရေး",
+      "Hybrid Secondary school"
+    ],
+    "images": [
+      "assets/images/V(4).webp",
+      "assets/images/V(3).webp",
+      "assets/images/V(2).webp",
+      "assets/images/V(1).webp"
+    ]
+  },
+  {
+    "id": "yadana-private",
+    "name": {
+      "en": "Yadana Private High School",
+      "my": "ရတနာ ကိုယ်ပိုင်အထက်တန်းကျောင်း"
+    },
+    "category": "education",
+    "description": {
+      "en": "•\tType: Private High School / Secondary Educational Institution\n•\tCurriculum: Official Myanmar Ministry of Education basic education curriculum (covering middle to high school grade levels), preparing students rigorously for national matriculation examinations and university entry.\n•\tCommunity Role: A cornerstone academic institution in the Naung Kham / Airport Road sector, enabling local families to access dependable, high-quality secondary education locally without needing to send children away to larger cities like Yangon or Mandalay.\n",
+      "my": "•  ကျောင်းအမျိုးအစား - ကိုယ်ပိုင်အထက်တန်းကျောင်း\n•  သင်ရိုးညွှန်းတမ်း - မြန်မာနိုင်ငံ ပညာရေးဝန်ကြီးဌာန၏ အခြေခံပညာ (အလယ်တန်းနှင့် အထက်တန်း) သင်ရိုးညွှန်းတမ်းအတိုင်း တိကျစွာ သင်ကြားပေးပြီး၊ တက္ကသိုလ်ဝင်တန်း စာမေးပွဲများနှင့် တက္ကသိုလ်ဝင်ခွင့်များအတွက် စနစ်တကျ ပြင်ဆင်ပေးပါသည်။\n•  လူမှုအသိုင်းအဝိုင်းအတွက် အခန်းကဏ္ဍ - နောင်ခမ်းရပ်ကွက်/လေဆိပ်လမ်း ပတ်ဝန်းကျင်ရှိ ဒေသခံမိသားစုများအတွက် ရန်ကုန်၊ မန္တလေးကဲ့သို့ မြို့ကြီးများသို့ သွားရောက်စရာမလိုဘေး မိမိတို့ဒေသမှာပင် စိတ်ချယုံကြည်ရသည့် အထက်တန်းပညာရေးကို သင်ယူနိုင်ရန် ကူညီပေးနေသော ကျောင်းတစ်ကျောင်း ဖြစ်ပါသည်။\n"
+    },
+    "address": {
+      "en": "18 Airport Rd, Kyaing Tong",
+      "my": "လေယာဉ်ကွင်းလမ်း၊ နောင်ခမ်းမီးပွိုင့်အနီး၊ ကျိုင်းတုံမြို့။"
+    },
+    "lat": 21.295984138486684,
+    "lng": 99.61055847730549,
+    "phone": "095251062",
+    "rating": 4,
+    "tags": [
+      "ပညာရေး",
+      "ကျောင်း",
+      "အထက",
+      "ကိုယ်ပိုင်အထက်တန်းကျောင်း",
+      "သင်ကြားရေး"
+    ],
+    "images": [
+      "assets/images/yadana (1).webp",
+      "assets/images/yadana (2).webp",
+      "assets/images/yadana (3).webp",
+      "assets/images/yadana (4).webp"
+    ]
+  },
+  {
+    "id": "siri-kham",
+    "name": {
+      "en": "Siri Kham Hotels",
+      "my": "ဇီလီခမ်း ဟိုတယ်"
+    },
+    "category": "hotel",
+    "description": {
+      "en": "Siri Kham Hotel is a wonderful and welcoming accommodation located in the charming city of Kengtung, Eastern Shan State. Situated at No. 143, Naung Khite Road, the hotel offers a peaceful retreat while providing convenient access to the city's key attractions, local markets, and cultural landmarks.\n\nFeatures & Services:\n\nComfortable & Clean Rooms: Designed with modern amenities, cozy bedding, and a relaxing ambiance to ensure a restful stay for every guest.\n\nConvenient Location: Centrally situated, making it easy for travelers to explore Kengtung’s scenic beauty, ethnic heritage, and local sights.\n\nWarm Hospitality: Dedicated and friendly staff committed to delivering excellent service and making you feel right at home.\n\nWhether you are visiting Kengtung for leisure or business, Siri Kham Hotel provides a comfortable, safe, and pleasant stay to make your trip memorable.",
+      "my": "ဇီလီခမ်းဟိုတယ် (Siri Kham Hotel) သည် ရှမ်းပြည်နယ်အရှေ့ပိုင်း၊ ကျိုင်းတုံမြို့၏ အငွေ့အသက်များကို အပြည့်အဝခံစားရင်း အေးချမ်းစွာ အနားယူနိုင်ရန် အကောင်းဆုံး ဖန်တီးပေးထားသော ဟိုတယ်တစ်ခု ဖြစ်ပါသည်။ ကျိုင်းတုံမြို့၊ နောင်ခိုက်လမ်း (No. 143, Naung Khite Road) တွင် တည်ရှိပြီး မြို့မဈေးနှင့် အဓိကနေရာများသို့ သွားလာရ အလွန်အဆင်ပြေပါသည်။\n\nထူးခြားချက်များနှင့် ဝန်ဆောင်မှုများ -\n\nသန့်ရှင်းသပ်ရပ်ပြီး သက်တောင့်သက်သာရှိသော အခန်းများ - ခေတ်မီအသုံးအဆောင်ပစ္စည်းများ၊ သန့်ရှင်းလတ်ဆတ်သော အိပ်ရာများနှင့်အတူ နွေးထွေးပျူငှာသော ဧည့်ခံဝန်ဆောင်မှုများကို ခံစားရရှိနိုင်ပါသည်။\n\nကောင်းမွန်သော တည်နေရာ - ကျိုင်းတုံမြို့၏ အထင်ကရနေရာများနှင့် ဒေသန္တရယဉ်ကျေးမှုများကို လွယ်ကူစွာ လေ့လာစူးစမ်းနိုင်ရန် အချက်အချာကျသော နေရာတွင် တည်ရှိပါသည်။\n\nဖော်ရွေသော ဝန်ဆောင်မှု - ဧည့်သည်တော်များ စိတ်ကျေနပ်မှုအပြည့်အဝရရှိစေရန် ရည်ရွယ်၍ အကောင်းဆုံး ဝန်ဆောင်မှုများကို စေတနာအပြည့်ဖြင့် ပံ့ပိုးပေးနေပါသည်။\n\nကျိုင်းတုံမြို့သို့ အလည်အပတ် (သို့မဟုတ်) လုပ်ငန်းကိစ္စဖြင့် ရောက်ရှိလာကြသည့် ဧည့်သည်တော်များအတွက် အိမ်ကဲ့သို့ နွေးထွေးလုံခြုံစွာ တည်းခိုနိုင်မည့် နေရာကောင်းတစ်ခု ဖြစ်ပါသည်။\n\n"
+    },
+    "address": {
+      "en": "No. 143 Naung Khite Road, Kyaing Tong",
+      "my": "အမှတ် ၁၄၃ နောင်ကျောက်လမ်း၊ ရွှေညောင်ပင် အနီး စော်ဘွားရုပ်ထုအနီး၊ကျိုင်းတုံမြို့"
+    },
+    "lat": 21.290496172101363,
+    "lng": 99.60647888025096,
+    "phone": "09886333355",
+    "rating": 4.3,
+    "tags": [
+      "ဟိုတယ်",
+      "တည်းခို",
+      "အိပ်ခန်း"
+    ],
+    "images": [
+      "assets/images/sirikham (1).jpg",
+      "assets/images/sirikham (2).jpg",
+      "assets/images/sirikham (3).jpg",
+      "assets/images/sirikham (4).jpg",
+      "assets/images/sirikham (5).jpg",
+      "assets/images/sirikham (6).jpg"
+    ]
+  },
+  {
+    "id": "naryeezin-hotel",
+    "name": {
+      "en": "Nar Yee Zin Hotel",
+      "my": "နာရီစင် ဟိုတယ်"
+    },
+    "category": "hotel",
+    "description": {
+      "en": "Clock Tower Hotel is a prime accommodation choice located right near the iconic Clock Tower in the heart of Kengtung, Eastern Shan State. Offering unmatched convenience, the hotel puts guests within easy reach of local markets, restaurants, and key city attractions while maintaining a peaceful and comfortable atmosphere.\n\nFeatures & Services:\n\nPrime Central Location: Situated close to the city center and the famous Clock Tower, making it extremely easy for travelers to explore Kengtung and its surrounding culture.\n\nClean & Comfortable Accommodations: Thoughtfully furnished rooms with modern amenities, cozy beds, and a clean setup for a relaxing night’s sleep.\n\nFriendly & Attentive Service: Welcoming staff dedicated to delivering warm hospitality and helping you with everything you need during your stay.\n\nWhether you are visiting Kengtung for sightseeing or business, Clock Tower Hotel provides the ideal combination of location, comfort, and hospitality for an unforgettable journey.",
+      "my": "နာရီစင်ဟိုတယ် (Clock Tower Hotel) သည် ရှမ်းပြည်နယ်အရှေ့ပိုင်း၊ ကျိုင်းတုံမြို့၏ အချက်အချာကျသော နာရီစင်အနီးတွင် တည်ရှိပြီး ခရီးသွားဧည့်သည်များအတွက် သွားလာရလွယ်ကူ အဆင်ပြေဆုံး ဟိုတယ်တစ်ခု ဖြစ်ပါသည်။ မြို့မဈေး၊ စားသောက်ဆိုင်များနှင့် အထင်ကရနေရာများသို့ အလွယ်တကူ သွားရောက်နိုင်သည့်အပြင် တိတ်ဆိတ်အေးချမ်းသည့် ဝန်းကျင်ကိုလည်း ဖန်တီးပေးထားပါသည်။\n\nထူးခြားချက်များနှင့် ဝန်ဆောင်မှုများ -\n\nအချက်အချာကျသော တည်နေရာ - မြို့၏ သင်္ကေတတစ်ခုဖြစ်သည့် နာရီစင်နှင့် အနီးဆုံးတွင် တည်ရှိသောကြောင့် မြို့တွင်းသွားလာလှုပ်ရှားရန်နှင့် ဒေသန္တရယဉ်ကျေးမှုကို လေ့လာရန် အလွန်အဆင်ပြေပါသည်။\n\nသန့်ရှင်းပြီး ခေတ်မီဆန်းသစ်သော အခန်းများ - သက်တောင့်သက်သာရှိသော အိပ်ရာများ၊ ခေတ်မီအသုံးအဆောင်ပစ္စည်းများနှင့် သန့်ရှင်းသပ်ရပ်မှုကြောင့် စိတ်အေးချမ်းစွာ အနားယူနိုင်ပါသည်။\n\nဧည့်ဝတ်ကျေပွန်သော ဝန်ဆောင်မှု - ဖော်ရွေပျူငှာပြီး ကူညီပေးလိုသော ဝန်ထမ်းများက ဧည့်သည်တော်များ လိုအပ်သည်များကို လိုလေသေးမရှိ ဝန်ဆောင်မှုပေးလျက်ရှိပါသည်။\n\nကျိုင်းတုံမြို့သို့ ခရီးသွားလာသူများ၊ စီးပွားရေးကိစ္စဖြင့် လာရောက်သူများအတွက် သွားလာရလွယ်ကူပြီး စိတ်ကျေနပ်မှုအပြည့်အဝပေးနိုင်မည့် တည်းခိုရန် နေရာကောင်းတစ်ခု ဖြစ်ပါသည်။"
+    },
+    "address": {
+      "en": " No(14B), Tachleik Rd., Q2, Keng Tung",
+      "my": "အမှတ် (14B)၊ တာချီလိတ်လမ်း ၊ရပ်ကွက်(၂)၊ ကျိုင်းတုံမြို့။"
+    },
+    "lat": 21.28651447492979,
+    "lng": 99.60615164944502,
+    "phone": "095512888",
+    "rating": 4.9,
+    "tags": [
+      "ဟိုတယ်",
+      "တည်းခို",
+      "အိပ်ခန်း"
+    ],
+    "images": [
+      "assets/images/naryeezin (1).webp",
+      "assets/images/naryeezin (2).webp",
+      "assets/images/naryeezin (3).webp",
+      "assets/images/naryeezin (4).webp",
+      "assets/images/naryeezin (5).webp",
+      "assets/images/naryeezin (6).webp",
+      "assets/images/naryeezin (7).webp",
+      "assets/images/naryeezin (8).webp"
+    ]
+  },
+  {
+    "id": "naung-tonghotel",
+    "name": {
+      "en": "Naung Tong Hotel",
+      "my": "နောင်တုံဟိုတယ်"
+    },
+    "category": "hotel",
+    "description": {
+      "en": "Established in March 2011, Naung Tong Hotel operates as a 5-story budget property featuring 32 functional rooms. It offers practical urban convenience for standard travelers with a 40-seated dining hall, free airport transfers, and basic room setups near the heart of town.\n General: Free Airport Transfer Shuttle (အခမဲ့ လေဆိပ်အကြိုအပို့), Free Wi-Fi, and Valet Parking (ယာဉ်ရပ်နားစခန်း).\n• Dining: 40-Seated Dining Hall serving simple breakfast and room service options.\n• In-Room: Air conditioning, flat-screen TV, desk, and en-suite private bathrooms.\n• Front Desk: 24-Hour front desk operation and local laundry services.",
+      "my": "Total Rooms: ၃၂ ခန်း\n၂၀၁၁ ခုနှစ် မတ်လတွင် စတင်ဖွင့်လှစ်ခဲ့သော ၅ ထပ် ဟိုတယ်အမျိုးအစားဖြစ်ပြီး အခန်းပေါင်း ၃၂ ခန်း ပါဝင်သည်။ ကျိုင်းတုံမြို့မဈေးကြီး၏ ကပ်လျက်နောက်ဘက်တွင် ရှိသောကြောင့် တည်နေရာအရ သွားလာရ အလွန်လွယ်ကူသည်။ လူဦးရေ ၄၀ ဆန့် စားသောက်ခန်းမ၊ အခမဲ့ လေဆိပ်အကြိုအပို့စနစ်များနှင့် ရိုးရှင်းသော အခန်းအပြင်အဆင်များ ပါဝင်သည့် စီးပွားရေးတွက်ခြေကိုက် ဘတ်ဂျက်ဟိုတယ်တစ်ခု ဖြစ်သည်။"
+    },
+    "address": {
+      "en": "Behind Kyaing Tong City Market, Naung Yae, Quarter 1, Kyaing Tong, Eastern Shan State, Myanmar.",
+      "my": "မြို့မဈေးကြီးအနောက်ဘက်၊ နောင်ရဲလမ်း၊ ရပ်ကွက် (၁)၊ ကျိုင်းတုံမြို့၊ ရှမ်းပြည်နယ် (အရှေ့ပိုင်း)။"
+    },
+    "lat": 21.286083295978806,
+    "lng": 99.60224957459042,
+    "phone": "08421781",
+    "openHours": " Check-in time: 14:00 Check-out time: 12:00",
+    "rating": 3.6,
+    "tags": [
+      "ဟိုတယ်",
+      "တည်းခို",
+      "အိပ်ခန်း"
+    ],
+    "images": [
+      "assets/images/NAUNGTONGHOTEL (1).webp",
+      "assets/images/NAUNGTONGHOTEL (2).webp",
+      "assets/images/NAUNGTONGHOTEL (3).webp",
+      "assets/images/NAUNGTONGHOTEL (4).webp",
+      "assets/images/NAUNGTONGHOTEL (5).webp"
+    ]
+  },
+  {
+    "id": "paradise-hotel",
+    "name": {
+      "en": "Paradise Hotel",
+      "my": "ပါရာဒိုက်စ် ဟိုတယ်"
+    },
+    "category": "hotel",
+    "description": {
+      "en": "Paradise Hotel is a charming and peaceful retreat located near the scenic Naung Tong Lake in Kengtung, Eastern Shan State. Surrounded by lush greenery and offering beautiful lake views, the hotel provides a serene atmosphere while keeping guests close to the city's key destinations.\n\nFeatures & Services:\n\nScenic & Peaceful Location: Situated close to Naung Tong Lake, allowing guests to enjoy breathtaking water views and a relaxing, fresh environment.\n\nSpacious & Clean Rooms: Well-appointed accommodations featuring modern amenities, cozy bedding, and a peaceful setup for maximum comfort.\n\nWarm & Hospitable Staff: Attentive and friendly service dedicated to making every guest's stay smooth, memorable, and enjoyable.\n\nWhether you are seeking a restful vacation, exploring the natural beauty of Kengtung, or visiting on business, Paradise Hotel offers a delightful blend of nature, comfort, and warm local hospitality.",
+      "my": "(Paradise Hotel) သည် ရှမ်းပြည်နယ်အရှေ့ပိုင်း၊ ကျိုင်းတုံမြို့၏ သာယာလှပသော နောင်တုံကန် (Naung Tong Lake) အနီးတွင် တည်ရှိပြီး သဘာဝအလှအပနှင့် အေးချမ်းမှုကို နှစ်သက်သူများအတွက် အထူးသင့်လျော်သော ဟိုတယ်တစ်ခု ဖြစ်ပါသည်။ ကန်ရေပြင်၏ လှပသော ရှုခင်းများကို စိမ်းလန်းစိုပြေသည့် ပတ်ဝန်းကျင်နှင့်အတူ တိုက်ရိုက်ခံစားနိုင်ပြီး မြို့တွင်းသို့လည်း သွားလာရ လွယ်ကူအဆင်ပြေပါသည်။\n\nထူးခြားချက်များနှင့် ဝန်ဆောင်မှုများ -\n\nသာယာလှပသော သဘာဝရှုခင်း - နောင်တုံကန်အနီးတွင် တည်ရှိသဖြင့် သာယာသော ကန်ရေပြင်ရှုခင်းနှင့် လတ်ဆတ်သော လေကောင်းလေသန့်ကို အပြည့်အဝ ခံစားရရှိနိုင်ပါသည်။\n\nကျယ်ဝန်းသန့်ရှင်းသော အခန်းများ - ခေတ်မီဆန်းသစ်သော အပြင်အဆင်၊ သက်တောင့်သက်သာရှိသော အိပ်ရာများနှင့် အပြည့်အစုံတပ်ဆင်ထားသော အသုံးအဆောင်များကြောင့် စိတ်လက်ပေါ့ပါးစွာ အနားယူနိုင်ပါသည်။\n\nနွေးထွေးသော ဝန်ဆောင်မှု - ဖော်ရွေပျူငှာသော ဝန်ထမ်းများ၏ အကောင်းဆုံး ဧည့်ဝတ်ကျေပွန်မှုနှင့်အတူ ခရီးသွားဧည့်သည်များ စိတ်ကျေနပ်မှုရရှိစေရန် ပံ့ပိုးပေးထားပါသည်။\n\nကျိုင်းတုံမြို့သို့ ရောက်ရှိချိန်တွင် သဘာဝအလှအပကြား၌ အပန်းဖြေရင်း သက်တောင့်သက်သာရှိသော တည်းခိုမှုအတွေ့အကြုံကို လိုချင်သူများအတွက် အကောင်းဆုံး ရွေးချယ်မှုတစ်ခု ဖြစ်ပါသည်။"
+    },
+    "address": {
+      "en": "near MyoMa Football field, Kyaing Tong",
+      "my": "ကျိုင်းတုံမြို့မအားကစားကွင်းအနီး၊ ကျိုင်းတုံမြို့။"
+    },
+    "lat": 21.29089184909044,
+    "lng": 99.60160244303121,
+    "rating": 3.7,
+    "tags": [
+      "ဟိုတယ်",
+      "တည်းခို",
+      "အိပ်ခန်း"
+    ],
+    "images": [
+      "assets/images/paradise (1).webp",
+      "assets/images/paradise (2).webp",
+      "assets/images/paradise (3).webp",
+      "assets/images/paradise (4).webp",
+      "assets/images/paradise (5).webp",
+      "assets/images/paradise (6).webp"
+    ]
+  },
+  {
+    "id": "570-ent",
+    "name": {
+      "en": "570 Entertainment",
+      "my": "570 Entertainment"
+    },
+    "category": "restaurant",
+    "description": {
+      "en": "",
+      "my": ""
+    },
+    "address": {
+      "en": "Wo Khote, Taunggyi Road, Kyaing Tong",
+      "my": "ဝေါ်ခုတ်မြို့သစ်၊ တောင်ကြီးလမ်း၊ ကျိုင်းတုံမြို့။"
+    },
+    "lat": 21.287332917312302,
+    "lng": 99.58163310488064,
+    "tags": [
+      "အစားအစာ",
+      "ဘား",
+      "ကလပ်",
+      "ဖျော်ဖြေရေး"
+    ]
+  },
+  {
+    "id": "aung-naing",
+    "name": {
+      "en": "Aung Naing Rooftop Restaurant",
+      "my": "အောင်နိုင် (Rooftop Restaurant)"
+    },
+    "category": "restaurant",
+    "description": {
+      "en": "The Ultimate Dining & Nightlife Experience in Kengtung\n\nUnwind and savor the best flavors of Kengtung at [Aung Naing Restaurant]. Whether you are looking for a hearty meal or a relaxing evening with drinks, we offer the perfect ambiance for every occasion.\n\nCuisine: Delicious blend of local Shan specialties, Thai dishes, Chinese favorites, and mouth-watering BBQs.\n\nDrinks: Refreshing signature cocktails, ice-cold beers, and a wide selection of beverages.\n\nAtmosphere: Relaxing lakeview vibes / live music performance, making it the ideal spot to chill with friends and family.",
+      "my": "ကျိုင်းတုံ၏ အကောင်းဆုံး ညနေခင်းအပန်းဖြေရာ - အောင်နိုင် စားသောက်ဆိုင်\n\nသာယာလှပသော ကျိုင်းတုံမြို့၏ ညနေခင်းတွင် အရသာရှိသော အစားအသောက်များနှင့်အတူ စိတ်လက်ပေါ့ပါးစွာ အနားယူဖို့ [အောင်နိုင် စားသောက်ဆိုင်] သို့ ဖိတ်ခေါ်လိုက်ပါသည်။\n\nအစားအသောက် - အသစ်စက်စက် ပြုလုပ်ထားသော ရှမ်း/ထိုင်း/တရုတ် အစားအစာများ၊ ရှမ်းရိုးရာအကင်မျိုးစုံနှင့် အထူးဟင်းလျာများ။\n\nသောက်စရာ - အေးမြဆန်းသစ်သော ကော့တေး (Cocktails)၊ အရည်အသွေးမြင့် ဘီယာများနှင့် အဖျော်ယမကာမျိုးစုံ။\n\nဝန်းကျင် - တိုက်ရိုက်ဂီတဖျော်ဖြေမှု (Live Music) / သာယာသော ကန်ရေပြင်ရှုခင်းများနှင့်အတူ မိသားစု၊ မိတ်ဆွေသူငယ်ချင်းများနှင့်အတူ ပျော်ရွှင်ဖွယ်အချိန်များကို ဖန်တီးပေးနိုင်မည့် နေရာကောင်းတစ်ခု ဖြစ်ပါသည်။"
+    },
+    "address": {
+      "en": " BEHS(2) Street, Kyaing Tong",
+      "my": "ထ၂ လမ်း၊ နောင်တုံကန်ဘေး ၊ ကျိုင်းတုံမြို့။"
+    },
+    "lat": 21.29153654036909,
+    "lng": 99.59752322396007,
+    "phone": "09897717403",
+    "rating": 5,
+    "tags": [
+      "စားသောက်ဆိုင်",
+      "ထမင်းဆိုင်",
+      "အစားအစာ"
+    ],
+    "images": [
+      "assets/images/AUNGNAING (1).webp",
+      "assets/images/AUNGNAING (2).webp",
+      "assets/images/AUNGNAING (3).webp",
+      "assets/images/AUNGNAING (4).webp"
+    ]
+  },
+  {
+    "id": "kt-bar",
+    "name": {
+      "en": "Kyaing Tong Bar & Restaurant",
+      "my": "ကျိုင်းတုံ ဘား နှင့် စားသောက်ဆိုင်"
+    },
+    "category": "restaurant",
+    "description": {
+      "en": "Unwind and savor the best flavors of Kengtung at Kyaing Tong Restaurant & Bar. Whether you are looking for a hearty meal or a relaxing evening with drinks, we offer the perfect ambiance for every occasion.\n\nCuisine: Delicious blend of local Shan specialties, Thai dishes, Chinese favorites, and mouth-watering BBQs.\n\nDrinks: Refreshing signature cocktails, ice-cold beers, and a wide selection of beverages.\n\nAtmosphere: Relaxing lakeview vibes / live music performance, making it the ideal spot to chill with friends and family.",
+      "my": "သာယာလှပသော ကျိုင်းတုံမြို့၏ ညနေခင်းတွင် အရသာရှိသော အစားအသောက်များနှင့်အတူ စိတ်လက်ပေါ့ပါးစွာ အနားယူဖို့ ကျိုင်းတုံဘား သို့ ဖိတ်ခေါ်လိုက်ပါသည်။\n\nအစားအသောက် - အသစ်စက်စက် ပြုလုပ်ထားသော ရှမ်း/ထိုင်း/တရုတ် အစားအစာများ၊ ရှမ်းရိုးရာအကင်မျိုးစုံနှင့် အထူးဟင်းလျာများ။\n\nသောက်စရာ - အေးမြဆန်းသစ်သော ကော့တေး (Cocktails)၊ အရည်အသွေးမြင့် ဘီယာများနှင့် အဖျော်ယမကာမျိုးစုံ။\n\nဝန်းကျင် - တိုက်ရိုက်ဂီတဖျော်ဖြေမှု (Live Music) / သာယာသော ကန်ရေပြင်ရှုခင်းများနှင့်အတူ မိသားစု၊ မိတ်ဆွေသူငယ်ချင်းများနှင့်အတူ ပျော်ရွှင်ဖွယ်အချိန်များကို ဖန်တီးပေးနိုင်မည့် နေရာကောင်းတစ်ခု ဖြစ်ပါသည်။"
+    },
+    "address": {
+      "en": "Naung Tong Lake Road, Kyaing Tong ",
+      "my": "နောင်တုံ ကန်လမ်း၊ ထ(၂) အနောက်ဖက်၊ ကျိုင်းတုံမြို့။"
+    },
+    "lat": 21.291073079776513,
+    "lng": 99.59650034141144,
+    "phone": "09886666050",
+    "tags": [
+      "စားသောက်ဆိုင်",
+      "အစားအစာ",
+      "ဘား",
+      "ဖျော်ဖြေရေး"
+    ],
+    "images": [
+      "assets/images/kyaingtongbar (1).webp",
+      "assets/images/kyaingtongbar (2).webp",
+      "assets/images/kyaingtongbar (3).webp",
+      "assets/images/kyaingtongbar (4).webp",
+      "assets/images/kyaingtongbar (5).webp",
+      "assets/images/kyaingtongbar (6).webp",
+      "assets/images/kyaingtongbar (7).webp",
+      "assets/images/kyaingtongbar (8).webp",
+      "assets/images/kyaingtongbar (9).webp"
+    ]
+  },
+  {
+    "id": "summer-camp",
+    "name": {
+      "en": "Summer Camping ",
+      "my": "Summer Camping"
+    },
+    "category": "restaurant",
+    "description": {
+      "en": "",
+      "my": ""
+    },
+    "address": {
+      "en": "Naung Kham Lake St, Kyaing Tong ",
+      "my": "နောင်ခမ်းကန် ပတ်လမ်း ၊ ကျိုင်းတုံမြို့။"
+    },
+    "lat": 21.295591462517883,
+    "lng": 99.61080820240488,
+    "tags": [
+      "စားသောက်ဆိုင်",
+      "အစားအစာ",
+      "ကော်ဖီ"
+    ]
+  },
+  {
+    "id": "24-restaurant",
+    "name": {
+      "en": "24+1 Bar & Restaurant ",
+      "my": "24+1 Bar & Restaurant "
+    },
+    "category": "restaurant",
+    "description": {
+      "en": "Experience the vibrant charm of Kengtung with delicious food and refreshing drinks, all in one place! Whether you're hanging out with friends or spending quality time with family, our restaurant & bar is the perfect spot to unwind and create unforgettable memories.",
+      "my": "ကျိုင်းတုံမြို့ရဲ့ သာယာလှပတဲ့ အငွေ့အသက်တွေနဲ့အတူ အရသာရှိလှတဲ့ အစားအသောက်တွေ၊ လန်းဆန်းစေမယ့် သောက်စရာမျိုးစုံကို တစ်နေရာတည်းမှာ ရရှိနိုင်မယ့် မိတ်ဆွေတို့ရဲ့ ပျော်ရွှင်စရာ ဆုံစည်းရာနေရာလေးပါ။ မိတ်ဆွေအပေါင်းအသင်းတွေ၊ မိသားစုတွေနဲ့အတူ လွတ်လပ်ပေါ့ပါးစွာ အနားယူစကားစမြည်ပြောရင်း အမှတ်တရ ကောင်းမွန်တဲ့ အချိန်လေးတွေကို ဖန်တီးရယူလိုက်ပါ။"
+    },
+    "address": {
+      "en": "near airport, Naung Kong Village, Kyaing Tong",
+      "my": "လေယာဉ်ကွင်း အနီး၊ နောင်ကုန်ရွာ ၊ကျိုင်းတုံမြို့"
+    },
+    "lat": 21.293282350750253,
+    "lng": 99.62510510820543,
+    "phone": "09897992244",
+    "rating": 3.6,
+    "tags": [
+      "စားသောက်ဆိုင်",
+      "အစားအစာ",
+      "ငါးကန်",
+      "လည်ပတ်"
+    ],
+    "images": [
+      "assets/images/tweltyfour (1).webp",
+      "assets/images/tweltyfour (2).webp",
+      "assets/images/tweltyfour (3).webp",
+      "assets/images/tweltyfour (4).webp",
+      "assets/images/tweltyfour (5).webp",
+      "assets/images/tweltyfour (6).webp",
+      "assets/images/tweltyfour (7).webp",
+      "assets/images/tweltyfour (8).webp",
+      "assets/images/tweltyfour (9).webp",
+      "assets/images/tweltyfour (10).webp"
+    ]
+  },
+  {
+    "id": "sabai-view-bar-restaurant",
+    "name": {
+      "en": "Sabai View Bar & Restaurant",
+      "my": "Sabai View Bar & Restaurant"
+    },
+    "category": "restaurant",
+    "description": {
+      "en": "",
+      "my": ""
+    },
+    "address": {
+      "en": "Naung Kham Lake St, Kyaing Tong",
+      "my": "နောင်ခမ်းကန်ပတ်လမ်း၊ ကျိုင်းတုံမြို့။"
+    },
+    "lat": 21.29635543801452,
+    "lng": 99.6119745643098,
+    "phone": "09964218673",
+    "tags": [
+      "စားသောက်ဆိုင်",
+      "အစားအစာ",
+      "ဘား"
+    ]
+  },
+  {
+    "id": "sate-tinekya",
+    "name": {
+      "en": "Sate Tine Kya Bar & Restaurant",
+      "my": "စိတ်တိုင်းကျ စားသောက်ဆိုင်"
+    },
+    "category": "restaurant",
+    "description": {
+      "en": "",
+      "my": ""
+    },
+    "address": {
+      "en": "airport Road, near Naung Kham Lake, Kyaing Tong",
+      "my": "လေယာဉ်ကွင်းလမ်း၊ နောင်ခမ်းကန်အနီး ၊ကျိုင်းတုံမြို့။"
+    },
+    "lat": 21.298127663567836,
+    "lng": 99.61208739372617,
+    "phone": "09445252292",
+    "rating": 4,
+    "tags": [
+      "စားသောက်ဆိုင်",
+      "အစားအစာ",
+      "ထမင်းဆိုင်",
+      "bar",
+      "ဘား"
+    ]
+  },
+  {
+    "id": "99-bar",
+    "name": {
+      "en": "99 Bar & Restaurant",
+      "my": "99 Bar & Restaurant"
+    },
+    "category": "restaurant",
+    "description": {
+      "en": "",
+      "my": ""
+    },
+    "address": {
+      "en": "",
+      "my": ""
+    },
+    "lat": 21.298253977150967,
+    "lng": 99.60727124465197,
+    "phone": "095252205",
+    "rating": 4.1,
+    "tags": [
+      "ဘား",
+      "စားသောက်ဆိုင်",
+      "dinner",
+      "အစားအစာ"
+    ]
+  },
+  {
+    "id": "iviisit-restaurant",
+    "name": {
+      "en": "i Visit Restaurant",
+      "my": "i Visit စားသောက်ဆိုင်"
+    },
+    "category": "restaurant",
+    "description": {
+      "en": "i Visit Keng Tung is a Burmese restaurant located on Mong Lar Road in Kengtung, Shan State, Myanmar.\nThe restaurant offers a relaxing dining environment where customers can enjoy delicious local Burmese food with family and friends. \nThe restaurant features an open-air seating area with beautiful views of the surrounding countryside, creating a peaceful and comfortable atmosphere for visitors.\nThe restaurant is a suitable place to enjoy local dishes, gather with friends, and relax while appreciating the natural scenery. \nIts spacious outdoor area and chill atmosphere make it an attractive dining spot for both local residents and visitors to Kengtung.\ni Visit Keng Tung has a rating of **3.8 out of 5 stars**, based on **32 reviews**. The opening information shown indicates that it opens at **10:00 AM on Tuesday**.\n",
+      "my": "i Visit Keng Tung သည် မြန်မာနိုင်ငံ၊ ရှမ်းပြည်နယ်၊ ကျိုင်းတုံမြို့၊ မိုင်းလားလမ်းပေါ်တွင် တည်ရှိသော မြန်မာအစားအစာများ ရရှိနိုင်သည့် စားသောက်ဆိုင်တစ်ဆိုင်ဖြစ်သည်။ \nဆိုင်တွင် မိသားစုဝင်များနှင့် သူငယ်ချင်းများအတူ အရသာရှိသော ဒေသအစားအစာများကို သုံးဆောင်ရင်း အေးအေးဆေးဆေး အနားယူနိုင်သော ပတ်ဝန်းကျင်မျိုးကို ဖန်တီးပေးထားပါသည်။\nဆိုင်တွင် အမိုးအကာပါသော အပြင်ဘက်ထိုင်ခုံနေရာများရှိပြီး ပတ်ဝန်းကျင်ရှိ သဘာဝရှုခင်းများကို ခံစားနိုင်ပါသည်။ \nကျယ်ဝန်းသော ထိုင်ခုံနေရာနှင့် အေးချမ်းသက်သောင့်သက်သာရှိသော ပတ်ဝန်းကျင်ကြောင့် မိတ်ဆွေများနှင့် တွေ့ဆုံရန်၊ အစားအသောက်များ သုံးဆောင်ရန်နှင့် သဘာဝရှုခင်းများကို ခံစားရင်း အပန်းဖြေရန် သင့်တော်သော နေရာတစ်ခုဖြစ်သည်။\ni Visit Keng Tung သည် ကြယ် ၅ ပွင့်အနက် ၃.၈ ပွင့် ရရှိထားပြီး သုံးသပ်ချက် ၃၂ ခု ရှိပါသည်။ ဖွင့်ချိန်အချက်အလက်အရ အင်္ဂါနေ့တွင် နံနက် ၁၀ နာရီ ၌ ဖွင့်လှစ်ပါသည်။\n"
+    },
+    "address": {
+      "en": "Mong Lar Road, Kyaing Tong",
+      "my": "မိုင်းလားလမ်း၊ ကျိုင်းတုံမြို့။"
+    },
+    "lat": 21.311201120895113,
+    "lng": 99.62042220418077,
+    "phone": "09 524 2215",
+    "openHours": "10AM-10PM",
+    "rating": 3.8,
+    "tags": [
+      "စားသောက်ဆိုင်",
+      "အစားအစာ",
+      "ထမင်းဆိုင်",
+      "ငါးကန်",
+      "မြို့ပြင်"
+    ],
+    "images": [
+      "assets/images/ivisit (1).webp",
+      "assets/images/ivisit (14).webp",
+      "assets/images/ivisit (15).webp",
+      "assets/images/ivisit (16).webp",
+      "assets/images/ivisit (17).webp",
+      "assets/images/ivisit (18).webp",
+      "assets/images/ivisit (19).webp",
+      "assets/images/ivisit (21).webp",
+      "assets/images/ivisit (22).webp",
+      "assets/images/ivisit (23).webp",
+      "assets/images/ivisit (24).webp",
+      "assets/images/ivisit (25).webp",
+      "assets/images/ivisit (26).webp",
+      "assets/images/ivisit (27).webp",
+      "assets/images/ivisit (28).webp",
+      "assets/images/ivisit (29).webp"
+    ]
+  },
+  {
+    "id": "iron-cross",
+    "name": {
+      "en": "Iron Cross Bar & Restaurant",
+      "my": "Iron Cross Bar & Restaurant"
+    },
+    "category": "restaurant",
+    "description": {
+      "en": "Iron Cross is an eclectic restaurant located near the Iron Cross area in Shan State, Myanmar.\nIt offers a relaxing dining environment where customers can enjoy delicious food, spend time with family and friends, and appreciate the surrounding scenery. \nThe restaurant features an outdoor seating area with beautiful nighttime views, creating a pleasant atmosphere for evening dining.\nThe restaurant appears to serve a variety of dishes, including burgers and other food options. Its open-air setting and scenic surroundings make it a suitable place for social gatherings, casual meals, and relaxing evenings with friends and family.\nIron Cross has a rating of **3.9 out of 5 stars**, based on **50 reviews**, and is listed as closing at **9:00 PM**.\n",
+      "my": "Iron Cross သည် မြန်မာနိုင်ငံ၊ ရှမ်းပြည်နယ်ရှိ စားသောက်ဆိုင်တစ်ဆိုင်ဖြစ်သည်။ \nဆိုင်တွင် သက်သောင့်သက်သာရှိသော စားသောက်မှုပတ်ဝန်းကျင်ကို ဖန်တီးပေးထားပြီး အရသာရှိသော အစားအသောက်များကို သုံးဆောင်ရင်း မိသားစုဝင်များနှင့် သူငယ်ချင်းများအတူ အချိန်ကောင်းများကို ဖြတ်သန်းနိုင်ပါသည်။ \nဆိုင်တွင် အပြင်ဘက်ထိုင်ခုံနေရာများရှိပြီး ညအချိန်တွင် လှပသော ရှုခင်းများကို ခံစားနိုင်သဖြင့် ညနေခင်းတွင် လာရောက်စားသောက်ရန် သင့်တော်သောနေရာတစ်ခုဖြစ်သည်။\nဆိုင်တွင် ဘာဂါနှင့် အခြားအစားအသောက်အမျိုးမျိုးကို ရရှိနိုင်ပုံရသည်။ \nလေကောင်းလေသန့်ရရှိနိုင်သော အပြင်ဘက်ထိုင်ခုံနေရာများနှင့် သာယာလှပသော ပတ်ဝန်းကျင်တို့ကြောင့် မိတ်ဆွေများနှင့် တွေ့ဆုံရန်၊ ပေါ့ပေါ့ပါးပါး စားသောက်ရန်နှင့် မိသားစုနှင့်အတူ အပန်းဖြေရန် သင့်တော်ပါသည်။\nIron Cross သည် ကြယ် ၅ ပွင့်အနက် ၃.၉ ပွင့် ရရှိထားပြီး သုံးသပ်ချက် ၅၀ ခု ရှိပါသည်။ ဆိုင်၏ဖွင့်ချိန်အချက်အလက်အရ ည ၉ နာရီတွင် ပိတ်ပါသည်။"
+    },
+    "address": {
+      "en": "Behs(2) St, near Naung Tong Lake, Kyaing Tong",
+      "my": "ထ(၂) လမ်း၊ နောင်တုံကန်အနီး၊ ကျိုင်းတုံမြို့။"
+    },
+    "lat": 21.290263087214353,
+    "lng": 99.59826798971645,
+    "phone": "+18307694015",
+    "openHours": "8:30AM-9PM",
+    "rating": 3.9,
+    "tags": [
+      "စားသောက်ဆိုင်",
+      "အစားအစာ",
+      "ဘား",
+      "ကော်ဖီ"
+    ],
+    "images": [
+      "assets/images/ironcross (1).webp",
+      "assets/images/ironcross (2).webp",
+      "assets/images/ironcross (3).webp",
+      "assets/images/ironcross (4).webp",
+      "assets/images/ironcross (5).webp",
+      "assets/images/ironcross (6).webp",
+      "assets/images/ironcross (7).webp",
+      "assets/images/ironcross (8).webp",
+      "assets/images/ironcross (9).webp",
+      "assets/images/ironcross (10).webp",
+      "assets/images/ironcross (11).webp",
+      "assets/images/ironcross (12).webp",
+      "assets/images/ironcross (13).webp",
+      "assets/images/ironcross (14).webp",
+      "assets/images/ironcross (15).webp"
+    ]
+  },
+  {
+    "id": "glory-21",
+    "name": {
+      "en": "GLORY 21",
+      "my": "GLORY 21"
+    },
+    "category": "restaurant",
+    "description": {
+      "en": "Glory 21 is a coffee shop located in the Kengtung area of Shan State, Myanmar. \nIt offers a cozy and relaxing atmosphere where customers can enjoy coffee, refreshing drinks, desserts, and a variety of food.\nThe shop features a nature-inspired design with green plants, wooden tables, and comfortable seating, creating a pleasant environment for visitors.\nThe coffee shop serves different food options, including noodle dishes, as well as sweet treats such as ice cream and desserts. \nIt is a suitable place for meeting friends, spending time with family, taking photos, or enjoying a peaceful break. \nWith its attractive surroundings and relaxing atmosphere, Glory 21 is a nice spot for people who enjoy both food and café culture.\nGlory 21 has a rating of **4.4 out of 5 stars**, based on **5 reviews**.\n",
+      "my": "Glory 21 သည် မြန်မာနိုင်ငံ၊ ရှမ်းပြည်နယ်၊ ကျိုင်းတုံမြို့တွင် တည်ရှိသော ကော်ဖီဆိုင်တစ်ဆိုင်ဖြစ်သည်။ \nဆိုင်တွင် သက်သောင့်သက်သာရှိပြီး အေးချမ်းသော ပတ်ဝန်းကျင်ကို ဖန်တီးပေးထားသဖြင့် ကော်ဖီ၊ အအေးမျိုးစုံ၊ အချိုပွဲများနှင့် အစားအသောက်များကို အေးအေးဆေးဆေး သုံးဆောင်နိုင်ပါသည်။ \nဓာတ်ပုံများအရ ဆိုင်ကို သစ်ပင်ပန်းမန်များ၊ သစ်သားစားပွဲများနှင့် လှပသော အပြင်အဆင်များဖြင့် ပြင်ဆင်ထားပြီး သဘာဝဆန်ကာ စိတ်အပန်းပြေစေသော နေရာတစ်ခုဖြစ်သည်။\nဆိုင်တွင် ခေါက်ဆွဲဟင်းလျာများအပါအဝင် အစားအသောက်အမျိုးမျိုးနှင့် ရေခဲမုန့်၊ အချိုပွဲများကိုလည်း တွေ့မြင်နိုင်ပါသည်။ \nသူငယ်ချင်းများနှင့် တွေ့ဆုံရန်၊ မိသားစုနှင့်အတူ အချိန်ဖြုန်းရန်၊ ဓာတ်ပုံရိုက်ရန်နှင့် နေ့စဉ်ဘဝ၏ ပင်ပန်းမှုများမှ ခဏတာ အနားယူရန် သင့်တော်သော နေရာတစ်ခုဖြစ်သည်။\nGlory 21 သည် ကြယ် ၅ ပွင့်အနက် ၄.၄ ပွင့် ရရှိထားပြီး သုံးသပ်ချက် ၅ ခု ရှိပါသည်။"
+    },
+    "address": {
+      "en": "Naung Tong Lake St, Kyaing Tong",
+      "my": "နောင်တုံ ကန်ပတ်လမ်း၊ ကျိုင်းတုံမြို့။"
+    },
+    "lat": 21.295877,
+    "lng": 99.598779,
+    "rating": 4,
+    "tags": [
+      "အစားအစာ",
+      "ကော်ဖီ",
+      "မာလာဟင်း",
+      "ရေခဲလိပ်",
+      "ရေခဲမုန့်",
+      "စားသောက်ဆိုင်"
+    ],
+    "images": [
+      "assets/images/glory21 (1).webp",
+      "assets/images/glory21 (2).webp",
+      "assets/images/glory21 (3).webp",
+      "assets/images/glory21 (4).webp",
+      "assets/images/glory21 (5).webp",
+      "assets/images/glory21 (6).webp",
+      "assets/images/glory21 (7).webp",
+      "assets/images/glory21 (8).webp",
+      "assets/images/glory21 (9).webp",
+      "assets/images/glory21 (10).webp",
+      "assets/images/glory21 (11).webp",
+      "assets/images/glory21 (12).webp",
+      "assets/images/glory21 (13).webp",
+      "assets/images/glory21 (14).webp",
+      "assets/images/glory21 (15).webp",
+      "assets/images/glory21 (16).webp",
+      "assets/images/glory21 (17).webp",
+      "assets/images/glory21 (18).webp",
+      "assets/images/glory21 (19).webp"
+    ]
+  },
+  {
+    "id": "gten-hotpot",
+    "name": {
+      "en": "G-TEN Hotpot",
+      "my": "G-TEN Hotpot"
+    },
+    "category": "restaurant",
+    "description": {
+      "en": "G-TEN Restaurant & Hotpot is a local hot pot restaurant located in Kengtung, Shan State.\nIt offers a relaxing dining environment where customers can enjoy delicious food, spend time with family and friends, and appreciate the surrounding scenery.\nThe restaurant features an outdoor/thatched-roof seating area, creating a pleasant atmosphere for evening dining.\nThe restaurant specializes in hot pot buffet dining and offers wheelchair-accessible amenities. Its open-air setting and scenic surroundings make it a suitable place for social gatherings, casual meals, and relaxing evenings with friends and family.\nG-TEN Restaurant & Hotpot has a rating of 4.1 out of 5 stars, based on 20 reviews, and is listed as closing at 8:00 PM (opens at 5:30 PM).   \n",
+      "my": "G-TEN Restaurant & Hotpot သည် မြန်မာနိုင်ငံ၊ ရှမ်းပြည်နယ်၊ ကျိုင်းတုံမြို့တွင် တည်ရှိသော ဟော့ပေါ့စားသောက်ဆိုင်တစ်ဆိုင် ဖြစ်သည်။\nဆိုင်တွင် သက်သောင့်သက်သာရှိသော စားသောက်မှုပတ်ဝန်းကျင်ကို ဖန်တီးပေးထားပြီး အရသာရှိသော အစားအသောက်များကို သုံးဆောင်ရင်း မိသားစုဝင်များနှင့် သူငယ်ချင်းများအတူ အချိန်ကောင်းများကို ဖြတ်သန်းနိုင်ပါသည်။\nဆိုင်တွင် အပြင်ဘက်ထိုင်ခုံနေရာများရှိပြီး ညနေခင်းတွင် လာရောက်စားသောက်ရန် သင့်တော်သောနေရာတစ်ခုဖြစ်သည်။\nဆိုင်တွင် ဟော့ပေါ့ဘူဖေး နှင့် အခြားအစားအသောက်များကို ရရှိနိုင်ပါသည်။\nလေကောင်းလေသန့်ရရှိနိုင်သော အပြင်ဘက်ထိုင်ခုံနေရာများနှင့် သာယာလှပသော ပတ်ဝန်းကျင်တို့ကြောင့် မိတ်ဆွေများနှင့် တွေ့ဆုံရန်၊ ပေါ့ပေါ့ပါးပါး စားသောက်ရန်နှင့် မိသားစုနှင့်အတူ အပန်းဖြေရန် သင့်တော်ပါသည်။\nG-TEN Restaurant & Hotpot သည် ကြယ် ၅ ပွင့်အနက် ၄.၁ ပွင့် ရရှိထားပြီး သုံးသပ်ချက် ၂၀ ခု ရှိပါသည်။ ဆိုင်၏ဖွင့်ချိန်အချက်အလက်အရ ညနေ ၅:၃၀ နာရီတွင် ဖွင့်ပြီး ည ၈ နာရီတွင် ပိတ်ပါသည်။   \n"
+    },
+    "address": {
+      "en": "Airport Road, Kyaing Tong",
+      "my": "လေယာဉ်ကွင်းလမ်း၊ ကျိုင်းတုံမြို့။"
+    },
+    "lat": 21.29725606952754,
+    "lng": 99.61602223355334,
+    "phone": "095252248",
+    "openHours": "5:30PM-8PM",
+    "rating": 4.1,
+    "tags": [
+      "စားသောက်ဆိုင်",
+      "အဝစား",
+      "ဘူဖေး",
+      "ဟော့ပေါ့",
+      "အစားအစာ"
+    ],
+    "images": [
+      "assets/images/gten (1).webp",
+      "assets/images/gten (2).webp",
+      "assets/images/gten (3).webp",
+      "assets/images/gten (4).webp",
+      "assets/images/gten (5).webp",
+      "assets/images/gten (6).webp",
+      "assets/images/gten (7).webp",
+      "assets/images/gten (8).webp",
+      "assets/images/gten (9).webp"
+    ]
+  },
+  {
+    "id": "ysy-grill",
+    "name": {
+      "en": "YSY Grill & Restaurant",
+      "my": "YSY Grill & Restaurant"
+    },
+    "category": "restaurant",
+    "description": {
+      "en": "YSY Grill & Restaurant is a local barbecue eatery located in Kengtung, Shan State.\nIt offers a relaxing dining environment where customers can enjoy delicious food, spend time with family and friends, and appreciate the surrounding scenery.\nThe restaurant features an outdoor seating area with a warm ambiance, creating a pleasant atmosphere for evening dining.\nThe restaurant serves a variety of grilled dishes, barbecue options, and assorted local meals. It also provides wheelchair-accessible amenities. Its open-air setting and inviting surroundings make it a suitable place for social gatherings, casual meals, and relaxing evenings with friends and family.\nYSY Grill & Restaurant has a rating of **3.9 out of 5 stars**, based on **15 reviews**, and is listed as opening at **12:00 AM**.\n",
+      "my": "YSY Grill & Restaurant သည် မြန်မာနိုင်ငံ၊ ရှမ်းပြည်နယ်၊ ကျိုင်းတုံမြို့တွင် တည်ရှိသော ကင်ဘားနှင့် စားသောက်ဆိုင်တစ်ဆိုင် ဖြစ်သည်။\nဆိုင်တွင် သက်သောင့်သက်သာရှိသော စားသောက်မှုပတ်ဝန်းကျင်ကို ဖန်တီးပေးထားပြီး အရသာရှိသော အစားအသောက်များကို သုံးဆောင်ရင်း မိစုဝင်များနှင့် သူငယ်ချင်းများအတူ အချိန်ကောင်းများကို ဖြတ်သန်းနိုင်ပါသည်။\nဆိုင်တွင် အပြင်ဘက်ထိုင်ခုံနေရာများရှိပြီး ညနေခင်းနှင့် ညအချိန်တွင် လာရောက်စားသောက်ရန် သင့်တော်သောနေရာတစ်ခုဖြစ်သည်။\nဆိုင်တွင် အကင်အမျိုးမျိုးနှင့် အခြားအစားအသောက်များကို ရရှိနိုင်ပါသည်။\nလေကောင်းလေသန့်ရရှိနိုင်သော အပြင်ဘက်ထိုင်ခုံနေရာများနှင့် သာယာလှပသော ပတ်ဝန်းကျင်တို့ကြောင့် မိတ်ဆွေများနှင့် တွေ့ဆုံရန်၊ ပေါ့ပေါ့ပါးပါး စားသောက်ရန်နှင့် မိသားစုနှင့်အတူ အပန်းဖြေရန် သင့်တော်ပါသည်။\nYSY Grill & Restaurant သည် ကြယ် ၅ ပွင့်အနက် **၃.၉ ပွင့်** ရရှိထားပြီး သုံးသပ်ချက် **၁၅ ခု** ရှိပါသည်။ ဆိုင်၏ဖွင့်ချိန်အချက်အလက်အရ မနက် **၁၂:၀၀ နာရီ** တွင် ဖွင့်လှစ်ပါသည်။"
+    },
+    "address": {
+      "en": "Naung Tong Lake St, Kyaing Tong",
+      "my": "နောင်တုံ ကန်ပတ်လမ်း၊ ကျိုင်းတုံမြို့။"
+    },
+    "lat": 21.296160835467298,
+    "lng": 99.59887622637069,
+    "openHours": "12:00AM-11:30PM",
+    "rating": 3.9,
+    "tags": [
+      "မာလာ",
+      "စားသောက်ဆိုင်",
+      "အစားအစာ",
+      "ထမင်းဆိုင်"
+    ],
+    "images": [
+      "assets/images/ysy (1).webp",
+      "assets/images/ysy (2).webp",
+      "assets/images/ysy (3).webp",
+      "assets/images/ysy (4).webp",
+      "assets/images/ysy (5).webp",
+      "assets/images/ysy (6).webp",
+      "assets/images/ysy (7).webp",
+      "assets/images/ysy (8).webp",
+      "assets/images/ysy (9).webp",
+      "assets/images/ysy (10).webp",
+      "assets/images/ysy (11).webp"
+    ]
+  },
+  {
+    "id": "golden-world",
+    "name": {
+      "en": "Golden World Hotel",
+      "my": "ရွှေကမ္ဘာ ဟိုတယ်"
+    },
+    "category": "hotel",
+    "description": {
+      "en": "Golden World Hotel is a centrally located, Chinese-style budget hotel featuring 56 guest rooms. It offers a garden setup, an in-house local restaurant, and a shared leisure lounge. Guests benefit from a 24-hour front desk, free Wi-Fi, and convenient bike rentals for regional exploration. While highly affordable and convenient for city walks, rooms offer traditional and basic setups.\n General: Free Buffet / Continental Breakfast (အခမဲ့ မနက်စာ), Free Wi-Fi, and Free Private Parking.\n• Leisure: Landscaped Garden and Shared Lounge area (ပန်းခြံနှင့် ဘုံနားနေခန်း).\n• In-Room: Individual Air conditioning, flat-screen satellite TV, work desk, refrigerator, and private bathroom with hot shower.\n• Services: 24-Hour Front Desk, Laundry Service, Room Service, Ticket/Tour assistance, and Bike/Motorcycle Rental options.",
+      "my": "ကျိုင်းတုံမြို့လယ်ခေါင် ဗဟိုချက်မတွင် တည်ရှိပြီး အခန်းပေါင်း ၅၆ ခန်း ပါဝင်သော တရုတ်စတိုင်လ် ဘတ်ဂျက်ဟိုတယ်တစ်ခု ဖြစ်သည်။ မဟာမြတ်မုနိဘုရားကြီးနှင့် ဝပ်ဟိုကုံကျောင်းတို့အနီးတွင် ရှိသဖြင့် လမ်းလျှောက်လည်ပတ်ရန် အလွန်နီးပါး ကောင်းမွန်သည်။ ဟိုတယ်တွင်း ပန်းခြံငယ်၊ စားသောက်ဆိုင်၊ ၂၄ နာရီ ဧည့်ကြိုစနစ်၊ အခမဲ့ဝိုင်ဖိုင်နှင့် ဆိုင်ကယ်/စက်ဘီးငှားရမ်းခြင်း ဝန်ဆောင်မှုများ ပါဝင်သည်။ မြို့ထဲသွားလာရ လွယ်ကူပြီး ဈေးနှုန်းသက်သာသော အခြေခံစတိုင်လ် ဟိုတယ်တစ်ခု ဖြစ်သည်။\n"
+    },
+    "address": {
+      "en": "Near Wat Pha Jao, No. 26, Zay Dan Loang Street, Nongkhite Quarter, Kyaing Tong, Eastern Shan State, Myanmar.",
+      "my": "အမှတ် (၂၆)၊ ဈေးတန်းလုံလမ်း၊ ဝပ်ဖာကျောင်းအနီး၊ နောင်ခိုက်ရပ်ကွက်၊ ကျိုင်းတုံမြို့၊ ရှမ်းပြည်နယ် (အရှေ့ပိုင်း)။"
+    },
+    "lat": 21.2913,
+    "lng": 99.6002,
+    "rating": 4.1,
+    "tags": [
+      "ဟိုတယ်",
+      "တည်းခို",
+      "အိပ်ခန်း"
+    ],
+    "images": [
+      "assets/images/goldenworld (1).webp",
+      "assets/images/goldenworld (6).webp",
+      "assets/images/goldenworld (7).webp",
+      "assets/images/goldenworld (8).webp",
+      "assets/images/goldenworld (9).webp",
+      "assets/images/goldenworld (10).webp",
+      "assets/images/goldenworld (11).webp",
+      "assets/images/goldenworld (12).webp",
+      "assets/images/goldenworld (13).webp",
+      "assets/images/goldenworld (14).webp"
+    ]
+  },
+  {
+    "id": "golden-star",
+    "name": {
+      "en": "Golden Star Hotel",
+      "my": "ရွှေစင်ကြယ် ဟိုတယ်"
+    },
+    "category": "hotel",
+    "description": {
+      "en": "Comprising a clean and peaceful 4-story building, Golden Star Hotel offers 53 spacious rooms equipped with air conditioning, minibars, and satellite televisions. Guests can enjoy an on-site restaurant, free Wi-Fi, and a wide private parking area. The hotel is notable for its tour assistance desk, helping travelers arrange local trekking guides and motorcycle rentals. Note that there is no elevator on site.\nAmenities & Facilities (အဆောက်အဦးနှင့် ဝန်ဆောင်မှုများ)\n\n• General Conveniences: Free Breakfast (Simple/Traditional Shan options), Free Wi-Fi, and Free Private Parking with separate entry/exit.\n• Room Comforts: Air conditioning, flat-screen TV, work desk, minibar, and private bathroom (Suite rooms include bath tubs).\n• Services: 24-Hour Front Desk, Concierge service, Laundry service, and local Tour/Trekking Booking coordination.",
+      "my": " Total Rooms: ၅၃ ခန်း (53 Rooms)\nလေဆိပ်လမ်းမကြီးအနီး ရပ်ကွက် (၄) တွင် တည်ရှိပြီး အခန်းပေါင်း ၅၃ ခန်းပါဝင်သော ၄ ထပ် ဟိုတယ်အမျိုးအစားဖြစ်သည်။ သန့်ရှင်း၊ အေးချမ်းပြီး ကားပါကင်အကျယ်ကြီး ပါဝင်သည်။ အခန်းများတွင် အဲကွန်း၊ တီဗီ၊ ရေခဲသေတ္တာအသေးများ ပါဝင်ပြီး ဟိုတယ်တွင်း စားသောက်ဆိုင်၊ အခမဲ့ဝိုင်ဖိုင် တို့ ပါဝင်သည်။ ဒေသတွင်း တောင်တက်ခရီးစဉ်လမ်းညွှန်နှင့် ဆိုင်ကယ်ငှားရမ်းခြင်းလုပ်ငန်းများကိုလည်း ကူညီစီစဉ်ပေးသည်။ (ဓါတ်လှေကား မပါရှိပါ)။"
+    },
+    "address": {
+      "en": "No.164 (A), Airport Road, Quarter 4, Kyaing Tong, Eastern Shan State, Myanmar.",
+      "my": " အမှတ် (၁၆၄-A)၊ လေဆိပ်လမ်း၊ ရပ်ကွက် (၄)၊ ကျိုင်းတုံမြို့၊ ရှမ်းပြည်နယ် (အရှေ့ပိုင်း)။"
+    },
+    "lat": 21.29838065985636,
+    "lng": 99.61518668758042,
+    "phone": "08422411",
+    "rating": 3.8,
+    "tags": [
+      "ဟိုတယ်",
+      "အိပ်ခန်း",
+      "တည်းခို"
+    ],
+    "images": [
+      "assets/images/goldenstar (1).webp",
+      "assets/images/goldenstar (2).webp",
+      "assets/images/goldenstar (3).webp",
+      "assets/images/goldenstar (4).webp",
+      "assets/images/goldenstar (5).webp"
+    ]
+  },
+  {
+    "id": "princess-hotel",
+    "name": {
+      "en": "Princess Hotel",
+      "my": "အိမ်ရှေ့စံ မင်းသမီး ဟိုတယ်"
+    },
+    "category": "hotel",
+    "description": {
+      "en": "Princess Hotel provides a clean, cozy, and well-managed accommodation experience in Kengtung. Features include air-conditioned rooms lined with warm wooden accents, complimentary breakfast, excellent front-desk service, and a peaceful garden sitting area. It stands out for its reliable service and proximity to transport links.\nAmenities & Facilities (အဆောက်အဦးနှင့် ဝန်ဆောင်မှုများ)\n\n• General Perks: Free Daily Breakfast, Free Wi-Fi, and Spacious Private Parking.\n• Room Amenities: Individual Air Conditioning, Flat-screen TV with Satellite Channels, Mini-fridge, Electric kettle, and En-suite bathroom with Hot/Cold shower.\n• Guest Services: 24-Hour Front Desk, Laundry Service, Bicycle/Car Rental, and Airport Transfer Shuttle service upon request.",
+      "my": "Total Rooms: ၃၆ ခန်း (36 Rooms)\nကျိုင်းတုံလေဆိပ်လမ်းပေါ်တွင် တည်ရှိပြီး သန့်ရှင်းသပ်ရပ်မှုနှင့် ဝန်ဆောင်မှုကောင်းမွန်မှုကြောင့် လူသိများသော အဆင့်မြင့် စတန်းဒတ်ဟိုတယ်တစ်ခုဖြစ်သည်။ အခန်းတွင်း သစ်သားဒီဇိုင်း အလှဆင်မှုများ၊ အခမဲ့ မနက်စာ ဝန်ဆောင်မှု၊ သာယာသော ပန်းခြံငယ်နှင့် ခရီးသွားလာရေး အဆင်ပြေစေမည့် ကားအငှား/တောင်တက်ခရီးစဉ် စီစဉ်မှုများ ပါဝင်သည်။\n\n"
+    },
+    "address": {
+      "en": "21, Zaydankalay Road, Kyaing Tong,Eastern, Kyaing Tong 06231",
+      "my": "အမှတ်(၂၁)၊ စျေးတန်းလေး လမ်း၊ ကျိုင်းတုံမြို့။"
+    },
+    "lat": 21.288242518197368,
+    "lng": 99.606946342634,
+    "phone": "095252366",
+    "rating": 3.7,
+    "tags": [
+      "ဟိုတယ်",
+      "တည်းခို",
+      "အိပ်ခန်း"
+    ],
+    "images": [
+      "assets/images/princess (1).webp",
+      "assets/images/princess (2).webp",
+      "assets/images/princess (3).webp",
+      "assets/images/princess (4).webp",
+      "assets/images/princess (5).webp"
+    ]
+  },
+  {
+    "id": "khema-rattha",
+    "name": {
+      "en": "Khema Rattha Hotel",
+      "my": "ခေမာရဋ္ဌ ဟိုတယ်"
+    },
+    "category": "hotel",
+    "description": {
+      "en": "A comfortable 2-star budget hotel offering 25 air-conditioned rooms, free daily breakfast, and essential travel conveniences like airport shuttle, laundry service, and 24-hour front desk support in Kengtung.\nAmenities & Facilities (အဆောက်အဦးနှင့် ဝန်ဆောင်မှုများ)\n\n• Free Wi-Fi (အခမဲ့ အင်တာနက်)\n• Free Parking (အခမဲ့ ကားပါကင်)\n• Free Breakfast (၇:၀၀ AM - ၁၁:၀၀ AM အခမဲ့မနက်စာ)\n• In-house Restaurant & Room Service (ဟိုတယ်တွင်းစားသောက်ဆိုင်နှင့် အခန်းအရောက်ဝန်ဆောင်မှု)\n• Air Conditioning & Laundry Service (လေအေးပေးစက်နှင့် အဝတ်လျှော်ဝန်ဆောင်မှု)\n• 24-Hour Front Desk (၂၄ နာရီ ဧည့်ကြိုကောင်တာ)\n\n📞 5. Contacts (ဆက်သွယ်ရန်)\n\n• Phone: +95 9 883666564, 084-2022691\n• Social Media: Hotel Khema Rattha Facebook Page",
+      "my": "ကျိုင်းတုံမြို့သို့ လာရောက်လည်ပတ်သည့် ခရီးသွားများအတွက် သန့်ရှင်းသပ်ရပ်ပြီး အဆင်ပြေစေမည့် အဲကွန်းအခန်းပေါင်း ၂၅ ခန်း ပါဝင်သော ဟိုတယ်တစ်ခုဖြစ်သည်။ အခမဲ့ မနက်စာ၊ ၂၄ နာရီ ဧည့်ကြိုစနစ်၊ လေဆိပ်အကြိုအပို့နှင့် အဝတ်လျှော်ဝန်ဆောင်မှုများ ပါဝင်ပြီး သွားလာရလွယ်ကူသော တောင်ကြီးလမ်းမပေါ်တွင် တည်ရှိသည်။Amenities & Facilities (အဆောက်အဦးနှင့် ဝန်ဆောင်မှုများ)\n\n• Free Wi-Fi (အခမဲ့ အင်တာနက်)\n• Free Parking (အခမဲ့ ကားပါကင်)\n• Free Breakfast (၇:၀၀ AM - ၁၁:၀၀ AM အခမဲ့မနက်စာ)\n• In-house Restaurant & Room Service (ဟိုတယ်တွင်းစားသောက်ဆိုင်နှင့် အခန်းအရောက်ဝန်ဆောင်မှု)\n• Air Conditioning & Laundry Service (လေအေးပေးစက်နှင့် အဝတ်လျှော်ဝန်ဆောင်မှု)\n• 24-Hour Front Desk (၂၄ နာရီ ဧည့်ကြိုကောင်တာ)\n\n📞 5. Contacts (ဆက်သွယ်ရန်)\n\n• Phone: +95 9 883666564, 084-2022691\n• Social Media: Hotel Khema Rattha Facebook Page"
+    },
+    "address": {
+      "en": "No.25/28(A), Taunggyi Road, Wor Khote Myothit, Kyaing Tong, Eastern Shan State, Myanmar.",
+      "my": "အမှတ် (၂၅/၂၈-A)၊ တောင်ကြီးလမ်း၊ ဝေါ့ခုတ်မြို့သစ်၊ ကျိုင်းတုံမြို့၊ ရှမ်းပြည်နယ် (အရှေ့ပိုင်း)။"
+    },
+    "lat": 21.289215112437333,
+    "lng": 99.58154996827835,
+    "phone": "+95 9 883666564, 084-2022691 ",
+    "rating": 3.8,
+    "tags": [
+      "ဟိုတယ်",
+      "တည်းခို",
+      "အိပ်ခန်း"
+    ],
+    "images": [
+      "assets/images/khemarattha (1).webp",
+      "assets/images/khemarattha (2).webp",
+      "assets/images/khemarattha (3).webp",
+      "assets/images/khemarattha (4).webp",
+      "assets/images/khemarattha (5).webp"
+    ]
+  },
+  {
+    "id": "behs-2",
+    "name": {
+      "en": "BEHS -2 KYAING TONG",
+      "my": "အထက (၂) ကျိုင်းတုံ"
+    },
+    "category": "education",
+    "description": {
+      "en": "School Overview: Basic Education High School No. 2 (B.E.H.S. 2) in Kengtung is one of the well-known and prominent government high schools in the township, providing education from primary up to high school levels.\n\nLocation: Situated along the main Taunggyi Highway in Ward 5, Kengtung, near the school hill area (close to the RCM Church), offering convenient access to various parts of the city.",
+      "my": "ကျိုင်းတုံမြို့ရှိ အထက (၂) ကျိုင်းတုံ (အခြေခံပညာအထက်တန်းကျောင်း အမှတ်-၂) နှင့်ပတ်သက်သည့် အချက်အလက်များကို အောက်ပါအတိုင်း တင်ပြပေးလိုက်ပါတယ်ခင်ဗျာ -   တည်နေရာနှင့် ပတ်ဝန်းကျင်   တည်နေရာ - ကျိုင်းတုံမြို့၊ အမှတ် (၅) ရပ်ကွက်၊ တောင်ကြီးလမ်းမကြီးပေါ်တွင် တည်ရှိပြီး ကျောင်းကုန်းထိပ်အနီး (RCM Church ရှေ့နား) တွင် တည်ရှိပါသည်။   အနီးအနားနေရာများ - ကျောင်း၏ အနောက်ဘက်လမ်းကြားများနှင့် မြို့ပေါ်ရှိ အဓိကနေရာများသို့ သွားလာရ လွယ်ကူအဆင်ပြေသော နေရာတွင် တည်ရှိပါသည်။   ကျောင်း၏ အခန်းကဏ္ဍ   ကျိုင်းတုံမြို့နယ်အတွင်းရှိ လူသိများထင်ရှားပြီး ကျောင်းသား/ကျောင်းသူ အများအပြား ပညာသင်ကြားလျက်ရှိသော အစိုးရအခြေခံပညာအထက်တန်းကျောင်း တစ်ကျောင်း ဖြစ်ပါသည်။   မူလတန်း၊ အလယ်တန်းနှင့် အထက်တန်း အဆင့်အထိ ပညာရေးကို သင်ကြားပေးနေပြီး မြို့နယ်အတွင်း ပညာရေးကဏ္ဍတွင် အဓိက အခန်းကဏ္ဍမှ ပါဝင်နေသည့် ကျောင်းတစ်ကျောင်း ဖြစ်ပါသည်။   "
+    },
+    "address": {
+      "en": "No(5) ward, Taunggyi Road, Kyaing Tong",
+      "my": "အမှတ် (၅) ရပ်ကွက်၊ တောင်ကြီးလမ်းမကြီး၊ ကျိုင်းတုံမြို့။"
+    },
+    "lat": 21.289997,
+    "lng": 99.596923,
+    "tags": [
+      "အထက်တန်းကျောင်း",
+      "ပညာရေး",
+      "အထက",
+      "သင်ကြားရေး",
+      "ကျောင်း"
+    ],
+    "images": [
+      "assets/images/behs2 (1).webp",
+      "assets/images/behs2 (2).webp",
+      "assets/images/behs2 (3).webp",
+      "assets/images/behs2 (4).webp",
+      "assets/images/behs2 (5).webp",
+      "assets/images/behs2 (6).webp",
+      "assets/images/behs2 (7).webp",
+      "assets/images/behs2 (8).webp"
     ]
   }
 ]
