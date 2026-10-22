@@ -11,8 +11,8 @@ import '../../data/models/village.dart';
 import '../../l10n/app_localizations.dart';
 import '../../shared/widgets/confidence_badge.dart';
 import '../../shared/widgets/motion_widgets.dart';
-import '../../shared/widgets/confidence_badge.dart';
-import '../../shared/widgets/motion_widgets.dart';
+
+
 import 'markets_guide_screen.dart';
 /// "Today in Kengtung" — the one screen no general travel app can give you.
 ///

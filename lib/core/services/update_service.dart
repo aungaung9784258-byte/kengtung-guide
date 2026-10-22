@@ -81,14 +81,14 @@ class UpdateService {
   /// version — use it for a "Check for updates" button in Settings.
    static Future<UpdateInfo?> check({bool force = false}) async {
     try {
-      debugPrint('UPD: start');
+      
       final prefs = await SharedPreferences.getInstance();
       final now = DateTime.now().millisecondsSinceEpoch;
 
       if (!force) {
         final last = prefs.getInt(_kLastCheckKey) ?? 0;
         if (now - last < minInterval.inMilliseconds) {
-          debugPrint('UPD: throttled');
+          
           return null;
         }
       }
@@ -96,44 +96,44 @@ class UpdateService {
       final res = await http
           .get(Uri.parse(kVersionManifestUrl))
           .timeout(const Duration(seconds: 8));
-      debugPrint('UPD: http ${res.statusCode}');
+      
       if (res.statusCode != 200) return null;
 
       await prefs.setInt(_kLastCheckKey, now);
 
       final decoded = jsonDecode(utf8.decode(res.bodyBytes));
       if (decoded is! Map<String, dynamic>) {
-        debugPrint('UPD: bad json');
+        
         return null;
       }
 
       final info = UpdateInfo.fromJson(decoded);
       if (info == null) {
-        debugPrint('UPD: parse failed');
+        
         return null;
       }
 
       final installed = await currentBuildNumber();
-      debugPrint('UPD: remote ${info.versionCode} installed $installed');
+      
       if (info.versionCode <= installed) return null;
 
       if (!force && !info.mandatory) {
         final skipped = prefs.getInt(_kSkippedCodeKey) ?? 0;
         if (skipped >= info.versionCode) {
-          debugPrint('UPD: skipped earlier');
+          
           return null;
         }
         final snoozeUntil = prefs.getInt(_kSnoozeUntilKey) ?? 0;
         if (now < snoozeUntil) {
-          debugPrint('UPD: snoozed');
+          
           return null;
         }
       }
 
-      debugPrint('UPD: SHOW ${info.versionName}');
+      
       return info;
     } catch (e) {
-      debugPrint('UPD: error $e');
+      
       return null;
     }
   }
