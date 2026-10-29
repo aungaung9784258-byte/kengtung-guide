@@ -1,4 +1,4 @@
-{
+copy "D:\projects\kengtung-guide\build\app\outputs\flutter-apk\app-arm64-v8a-release.apk" "%USERPROFILE%\Desktop\KyaingTongGo.apk"{
   "versionName": "1.0.0",
   "versionCode": 3,
   "downloadUrl": "https://github.com/aungaung9784258-byte/kengtung-guide/releases/latest/download/KyaingTongGo.apk",
@@ -6,12 +6,12 @@
   "mandatory": false,
   "notes": {
     "en": [
-      "New places and real photographs added",
+      "New places and photos added",
       "Offline maps with GPS navigation",
       "5-day rotating market schedule"
     ],
     "my": [
-      "နေရာအသစ်များနှင့် ဓာတ်ပုံအစစ်များ ထပ်တိုး",
+      "နေရာအသစ်များနှင့် ဓာတ်ပုံအသစ်များ ထပ်တိုး",
       "အော့ဖ်လိုင်း မြေပုံနှင့် GPS လမ်းညွှန်",
       "၅ ရက်တစ်ကြိမ် ဈေးလည်ပတ် ဇယား"
     ]

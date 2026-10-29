@@ -314,7 +314,7 @@
     "category": "transport",
     "description": {
       "en": "Domestic airport serving Kengtung, with flights to Tachileik, Heho, Mandalay and Yangon.",
-      "my": "ကျိုင်းတုံမြို့၏ ပြည်တွင်းလေဆိပ်။ တာချီလိတ်၊ ဟဲဟိုး၊ မန္တလေး၊ ရန်ကုန် ခရီးစဉ်များရှိသည်။"
+      "my": "သမိုင်းကြောင်းနှင့် အခန်းကဏ္ဍ: ကျိုင်းတုံလေဆိပ်သည် ရှမ်းပြည်နယ်အရှေ့ပိုင်းဒေသသို ခရီးသွားလာရေးနှင့် ကုန်စည်ပိုဆောင်ရေးအတွက် အလွန်အရေးပါသော လေဆိပ်တစ်ခု ဖြစ်သည်။ တရုတ်၊ လာအို၊ ထိုင်းစသည့် အိမ်နီးချင်းနိုင်ငံများနှင့် နယ်စပ်ဒေသ ထိစပ်နေသည့် ရွှေတြိဂံဒေသသို လာရောက်ကြသည့် ခရီးသွားများနှင့် လုပ်ငန်းရှင်များအတွက် အဓိကအသုံးပြုသည့် လေကြောင်းပေါက်လည်း ဖြစ်သည်။\n​ပြေးလမ်းနှင့် ဝန်ဆောင်မှု: အလယ်အလတ်စား လေယာဉ်များ ဆင်းသက်နိုင်ရန် ပြုပြင်တည်ဆောက်ထားပြီး၊ ရန်ကုန်၊ မန္တလေး နှင့် တာချီလိတ်စသည့် ပြည်တွင်းမြိုကြီးများသို ပုံမှန်လေကြောင်းလိုင်းများ ပျံသန်းလျက် ရှိသည်။\n​ပထဝီအနေအထား: ရှမ်းရိုးမတောင်တန်းများကြားရှိ တောင်ပေါ်ချိုင့်ဝှမ်းဒေသတွင် တည်ရှိသဖြင့် ပတ်ဝန်းကျင် ရှုခင်းအလွန်လှပပြီး တောင်ပေါ်ဒေသ ရာသီဥတုအခြေအနေပေါ်မူတည်၍ လေယာဉ်ဆင်းသက်ချိန်များ ပြောင်းလဲတတ်ပါသည်။"
     },
     "address": {
       "en": "Airport Road, Kengtung",
@@ -326,17 +326,22 @@
     "rating": 3.9,
     "tags": [
       "airport",
-      "flight"
+      "flight",
+      "သယ်ယူပို့ဆောင်",
+      "လေယာဉ်"
     ],
     "images": [
-      "assets/images/transport.jpg"
+      "assets/images/AIRPORT (1).webp",
+      "assets/images/AIRPORT (2).webp",
+      "assets/images/AIRPORT (3).webp",
+      "assets/images/AIRPORT (4).webp"
     ]
   },
   {
     "id": "kengtung-bus-station",
     "name": {
       "en": "Kengtung Bus Station",
-      "my": "ကျိုင်းတုံ ကားဂိတ်"
+      "my": "ကျိုင်းတုံ အဝေးပြေးကားဂိတ်"
     },
     "category": "transport",
     "description": {
@@ -347,8 +352,8 @@
       "en": "Kengtung",
       "my": "ကျိုင်းတုံ"
     },
-    "lat": 21.2862,
-    "lng": 99.604,
+    "lat": 21.28791245019137,
+    "lng": 99.59288930402263,
     "openHours": "05:00 - 20:00",
     "rating": 3.8,
     "tags": [
@@ -356,7 +361,16 @@
       "van"
     ],
     "images": [
-      "assets/images/transport.jpg"
+      "assets/images/bus (1).webp",
+      "assets/images/bus (2).webp",
+      "assets/images/bus (3).webp",
+      "assets/images/bus (4).webp",
+      "assets/images/bus (5).webp",
+      "assets/images/bus (6).webp",
+      "assets/images/bus (7).webp",
+      "assets/images/bus (8).webp",
+      "assets/images/bus (9).webp",
+      "assets/images/bus (11).webp"
     ]
   },
   {
@@ -1580,20 +1594,29 @@
     },
     "category": "restaurant",
     "description": {
-      "en": "",
-      "my": ""
+      "en": "570 Bar & Restaurant (also known as 570 Entertainment) is a well-known and vibrant entertainment venue, bar, and dining spot located in Kengtung, Eastern Shan State.   Atmosphere & Location: Situated in Kengtung, it is a popular gathering spot frequently visited by locals, youth, and students from the surrounding areas. It serves as a lively hub for nightlife and socialization in the town.   Vibe & Experience: It offers a relaxing and energetic environment, making it an ideal place to unwind in the evenings, enjoy drinks, listen to music, and spend quality time with friends or family.",
+      "my": "570 Bar & Restaurant (570 Entertainment) သည် ရှမ်းပြည်နယ်အရှေ့ပိုင်း၊ ကျိုင်းတုံမြို့တွင် တည်ရှိသော လူငယ်များအကြား ရေပန်းစားပြီး လူသိများသည့် ဖျော်ဖြေရေးနှင့် စားသောက်ဆိုင် (Bar & Entertainment) တစ်ခု ဖြစ်ပါသည်။\n\nတည်နေရာနှင့် ပတ်ဝန်းကျင်: ကျိုင်းတုံမြို့အတွင်းရှိ လူစည်ကားရာ နေရာများနှင့် တက္ကသိုလ်ကျောင်းသား/သူများ အများအပြား သွားလာနေထိုင်ရာ ဧရိယာများနှင့် နီးစပ်သောကြောင့် လူငယ်များ အလွယ်တကူ သွားရောက် စုဝေးပျော်ရွှင်နိုင်သည့် နေရာတစ်ခု ဖြစ်ပါသည်။\n\nဝန်ဆောင်မှုနှင့် ပုံစံ: ညနေခင်းနှင့် ညဘက်များတွင် အနားယူအပန်းဖြေရန်၊ ဖျော်ဖြေရေး အစီအစဉ်များကို ခံစားရန်နှင့် မိသားစု၊ မိတ်ဆွေ သူငယ်ချင်းများနှင့်အတူ စားသောက်ပျော်ရွှင်ရန် သင့်လျော်သော ဝန်းကျင်ကောင်းတစ်ခုကို ဖန်တီးပေးထားသည့် နေရာတစ်ခု ဖြစ်ပါသည်။"
     },
     "address": {
       "en": "Wo Khote, Taunggyi Road, Kyaing Tong",
       "my": "ဝေါ်ခုတ်မြို့သစ်၊ တောင်ကြီးလမ်း၊ ကျိုင်းတုံမြို့။"
     },
-    "lat": 21.287332917312302,
-    "lng": 99.58163310488064,
+    "lat": 21.287250290776857,
+    "lng": 99.58164930120688,
+    "rating": 4,
     "tags": [
       "အစားအစာ",
       "ဘား",
       "ကလပ်",
       "ဖျော်ဖြေရေး"
+    ],
+    "images": [
+      "assets/images/570 (1).webp",
+      "assets/images/570 (2).webp",
+      "assets/images/570 (3).webp",
+      "assets/images/570 (4).webp",
+      "assets/images/570 (5).webp",
+      "assets/images/570 (6).webp"
     ]
   },
   {
@@ -1671,8 +1694,8 @@
     },
     "category": "restaurant",
     "description": {
-      "en": "",
-      "my": ""
+      "en": "Summer Camping is a popular restaurant and relaxing dining spot located along the scenic Nawng Kham Lake circular road in Kengtung.\n\nLocation & Atmosphere: Situated right by the picturesque Nawng Kham Lake, it offers a wonderful view of the water and the surrounding scenery. It is an ideal spot to enjoy the cool evening breeze, take in the serene lake views, and unwind away from the busy parts of town.\n\nVibe & Experience: True to its name, the venue features a cozy, outdoor camp-like ambiance with pleasant lighting at night. It is a favorite gathering place for locals, friends, and families to hang out, chat, and enjoy a relaxing meal or drinks in a refreshing lakeside environment.",
+      "my": "Summer Camping သည် ကျိုင်းတုံမြို့၏ အထင်ကရနေရာတစ်ခုဖြစ်သော နောင်ခမ်းကန် (Nawng Kham Lake) ပတ်လမ်းဘေးတွင် တည်ရှိသည့် လူကြိုက်များသော စားသောက်ဆိုင်နှင့် အပန်းဖြေနေရာတစ်ခု ဖြစ်ပါသည်။\n\nတည်နေရာနှင့် ပတ်ဝန်းကျင်: နောင်ခမ်းကန်၏ ရေပြင်အလှနှင့် သဘာဝရှုခင်းများကို တိုက်ရိုက်ခံစားနိုင်သည့် ကန်ဘောင်ပတ်လမ်းပေါ်တွင် တည်ရှိသောကြောင့် ညနေခင်းလေညင်းခံထွက်ရန်၊ ကန်ပတ်လမ်းတစ်လျှောက် အနားယူရန်နှင့် သာယာလှပသော ရှုခင်းများကို ကြည့်ရှုရင်း စားသောက်ရန် အလွန်လူကြိုက်များသည်။\n\nဆိုင်၏ ပုံစံနှင့် ဝန်ဆောင်မှု: ဆိုင်နာမည်နှင့် လိုက်ဖက်အောင် သဘာဝဆန်ဆန် Camping ပုံစံမျိုး၊ ညဘက်တွင် မီးရောင်စုံလင်စွာဖြင့် အေးချမ်းပျော်ရွှင်စွာ ထိုင်နိုင်သော Vibes ကို ဖန်တီးပေးထားပါသည်။ မိသားစုလိုက်ဖြစ်စေ၊ မိတ်ဆွေသူငယ်ချင်းများနှင့်ဖြစ်စေ စုဝေးစားသောက်ရန်၊ အချိုရည်နှင့် အစားအသောက်များကို တည်ငြိမ်အေးချမ်းစွာ သုံးဆောင်ရင်း အချိန်ဖြုန်းရန် အကောင်းဆုံးနေရာတစ်ခု ဖြစ်ပါသည်။"
     },
     "address": {
       "en": "Naung Kham Lake St, Kyaing Tong ",
@@ -1680,10 +1703,20 @@
     },
     "lat": 21.295591462517883,
     "lng": 99.61080820240488,
+    "phone": "09265703055",
+    "rating": 3.7,
     "tags": [
       "စားသောက်ဆိုင်",
       "အစားအစာ",
       "ကော်ဖီ"
+    ],
+    "images": [
+      "assets/images/SUMMER (1).webp",
+      "assets/images/SUMMER (2).webp",
+      "assets/images/SUMMER (3).webp",
+      "assets/images/SUMMER (4).webp",
+      "assets/images/SUMMER (5).webp",
+      "assets/images/SUMMER (6).webp"
     ]
   },
   {
@@ -1732,8 +1765,8 @@
     },
     "category": "restaurant",
     "description": {
-      "en": "",
-      "my": ""
+      "en": "Seit Tine Kya Restaurant & Recreation Centre is a well-known dining and leisure spot located in Kengtung, Eastern Shan State.\n\nAtmosphere & Vibe: Featuring a spacious and relaxing recreation-style setting, it provides a pleasant atmosphere for families, groups of friends, and travelers looking to enjoy a peaceful meal.\n\nFood & Offerings: The restaurant offers a wide variety of dishes including traditional Shan cuisine, local Myanmar flavors, and popular Chinese/Thai dishes, along with refreshing beverages and drinks.",
+      "my": "စိတ်တိုင်းကျ စားသောက်ဆိုင် (Seit Tine Kya Restaurant) သည် ရှမ်းပြည်နယ်အရှေ့ပိုင်း၊ ကျိုင်းတုံမြို့တွင် တည်ရှိပြီး ဒေသခံများနှင့် ခရီးသွားများအကြား အနားယူစခန်းချ စားသောက်ရန် လူသိများသည့် စားသောက်ဆိုင်နှင့် အပန်းဖြေနေရာတစ်ခု ဖြစ်ပါသည်။\n\nပတ်ဝန်းကျင်နှင့် ပုံစံ: ဆိုင်ဝန်းကွင်း ကျယ်ဝန်းပြီး သဘာဝအတိုင်း အေးချမ်းသည့် အပန်းဖြေစခန်း (Recreation Centre) ပုံစံ ဖန်တီးထားသောကြောင့် မိသားစုလိုက်ဖြစ်စေ၊ မိတ်ဆွေသူငယ်ချင်းများနှင့်ဖြစ်စေ အေးအေးဆေးဆေး စုဝေးစားသောက်ရန် သင့်လျော်ပါသည်။\n\nအစားအသောက်နှင့် ဝန်ဆောင်မှု: ရှမ်းရိုးရာ အစားအစာများ၊ မြန်မာဟင်းလျာများနှင့် တရုတ်/ထိုင်းစတိုင် အစားအသောက်မျိုးစုံအပြင် အအေး၊ ဘီယာနှင့် သရေစာများကိုပါ ရရှိနိုင်သော ဆိုင်တစ်ဆိုင် ဖြစ်ပါသည်။"
     },
     "address": {
       "en": "Naung Kham Lake St, Kyaing Tong",
@@ -1742,10 +1775,22 @@
     "lat": 21.29635543801452,
     "lng": 99.6119745643098,
     "phone": "09964218673",
+    "rating": 4,
     "tags": [
       "စားသောက်ဆိုင်",
       "အစားအစာ",
-      "ဘား"
+      "ဘား",
+      "karaok",
+      "ကာရာအိုကေ"
+    ],
+    "images": [
+      "assets/images/sabai (1).webp",
+      "assets/images/sabai (2).webp",
+      "assets/images/sabai (3).webp",
+      "assets/images/sabai (4).webp",
+      "assets/images/sabai (5).webp",
+      "assets/images/sabai (6).webp",
+      "assets/images/sabai (7).webp"
     ]
   },
   {
@@ -1756,8 +1801,8 @@
     },
     "category": "restaurant",
     "description": {
-      "en": "",
-      "my": ""
+      "en": "Seit Tine Kya Restaurant & Recreation Centre is a well-known dining and leisure spot located in Kengtung, Eastern Shan State.   Atmosphere & Vibe: Featuring a spacious and relaxing recreation-style setting, it provides a pleasant atmosphere for families, groups of friends, and travelers looking to enjoy a peaceful meal.   Food & Offerings: The restaurant offers a wide variety of dishes including traditional Shan cuisine, local Myanmar flavors, and popular Chinese/Thai dishes, along with refreshing beverages and drinks. ",
+      "my": "စိတ်တိုင်းကျ စားသောက်ဆိုင် (Seit Tine Kya Restaurant) သည် ရှမ်းပြည်နယ်အရှေ့ပိုင်း၊ ကျိုင်းတုံမြို့တွင် တည်ရှိပြီး ဒေသခံများနှင့် ခရီးသွားများအကြား အနားယူစခန်းချ စားသောက်ရန် လူသိများသည့် စားသောက်ဆိုင်နှင့် အပန်းဖြေနေရာတစ်ခု ဖြစ်ပါသည်။\n\nပတ်ဝန်းကျင်နှင့် ပုံစံ: ဆိုင်ဝန်းကွင်း ကျယ်ဝန်းပြီး သဘာဝအတိုင်း အေးချမ်းသည့် အပန်းဖြေစခန်း (Recreation Centre) ပုံစံ ဖန်တီးထားသောကြောင့် မိသားစုလိုက်ဖြစ်စေ၊ မိတ်ဆွေသူငယ်ချင်းများနှင့်ဖြစ်စေ အေးအေးဆေးဆေး စုဝေးစားသောက်ရန် သင့်လျော်ပါသည်။\n\nအစားအသောက်နှင့် ဝန်ဆောင်မှု: ရှမ်းရိုးရာ အစားအစာများ၊ မြန်မာဟင်းလျာများနှင့် တရုတ်/ထိုင်းစတိုင် အစားအသောက်မျိုးစုံအပြင် အအေး၊ ဘီယာနှင့် သရေစာများကိုပါ ရရှိနိုင်သော ဆိုင်တစ်ဆိုင် ဖြစ်ပါသည်။"
     },
     "address": {
       "en": "airport Road, near Naung Kham Lake, Kyaing Tong",
@@ -1773,6 +1818,17 @@
       "ထမင်းဆိုင်",
       "bar",
       "ဘား"
+    ],
+    "images": [
+      "assets/images/SdK (1).webp",
+      "assets/images/SdK (2).webp",
+      "assets/images/SdK (3).webp",
+      "assets/images/SdK (4).webp",
+      "assets/images/SdK (5).webp",
+      "assets/images/SdK (6).webp",
+      "assets/images/SdK (7).webp",
+      "assets/images/SdK (8).webp",
+      "assets/images/SdK (9).webp"
     ]
   },
   {
@@ -1783,12 +1839,12 @@
     },
     "category": "restaurant",
     "description": {
-      "en": "",
-      "my": ""
+      "en": "99 Bar & Restaurant is a popular dining and nightlife spot located in Kengtung, Eastern Shan State, favored by both locals and visitors looking for a pleasant place to eat and unwind.\n\nOfferings & Services: The venue serves a variety of delicious meals, snacks, beers, cocktails, and beverages, making it a great spot for both lunch and dinner gatherings.\n\nAtmosphere & Vibe: It features a cozy and welcoming environment, ideal for hanging out with friends, celebrating special occasions, or simply enjoying a relaxing evening in Kengtung.",
+      "my": "99 Bar & Restaurant သည် ရှမ်းပြည်နယ်အရှေ့ပိုင်း၊ ကျိုင်းတုံမြို့တွင် တည်ရှိပြီး ဒေသခံများနှင့် ခရီးသွားဧည့်သည်များအကြား ရေပန်းစား လူသိများသော စားသောက်ဆိုင်နှင့် ဘားတစ်ခု ဖြစ်ပါသည်။\n\nစားသုံးနိုင်သော ပုံစံနှင့် ဝန်ဆောင်မှုများ: နေ့လယ်စာ၊ ညစာနှင့် သရေစာ အစားအသောက်များအပြင် အရက်၊ ဘီယာနှင့် အချိုရည်များကိုပါ ရရှိနိုင်သောကြောင့် မိသားစုလိုက်ဖြစ်စေ၊ မိတ်ဆွေ သူငယ်ချင်းများနှင့်အတူ စုဝေးပျော်ရွှင်ရန်ဖြစ်စေ သင့်လျော်သည့် နေရာတစ်ခု ဖြစ်ပါသည်။\n\nဆိုင်၏ ပတ်ဝန်းကျင်နှင့် အပြင်အဆင်: ဆိုင်အတွင်း သန့်ရှင်းသပ်ရပ်ပြီး သက်တောင့်သက်သာ ထိုင်နိုင်သော Vibes ကို ဖန်တီးပေးထားကာ ကျိုင်းတုံမြို့တွင်း ညဘက်ထွက်လည်ရန်နှင့် အနားယူအပန်းဖြေရန်အတွက် လူကြိုက်များသည့် နေရာတစ်ခု ဖြစ်ပါသည်။"
     },
     "address": {
-      "en": "",
-      "my": ""
+      "en": "Airport Road, Kyaing Tong",
+      "my": "လေယာဉ်ကွင်းလမ်း ၊ ကျိုင်းတုံမြို့။"
     },
     "lat": 21.298253977150967,
     "lng": 99.60727124465197,
@@ -1799,6 +1855,16 @@
       "စားသောက်ဆိုင်",
       "dinner",
       "အစားအစာ"
+    ],
+    "images": [
+      "assets/images/99 (1).webp",
+      "assets/images/99 (2).webp",
+      "assets/images/99 (3).webp",
+      "assets/images/99 (4).webp",
+      "assets/images/99 (5).webp",
+      "assets/images/99 (6).webp",
+      "assets/images/99 (7).webp",
+      "assets/images/99 (8).webp"
     ]
   },
   {
@@ -2182,6 +2248,172 @@
       "assets/images/behs2 (6).webp",
       "assets/images/behs2 (7).webp",
       "assets/images/behs2 (8).webp"
+    ]
+  },
+  {
+    "id": "skyview-airticket",
+    "name": {
+      "en": "Sky View Air Ticket Agent",
+      "my": "Sky View  လေယာဉ်လက်မှတ်အရောင်းဌာန"
+    },
+    "category": "transport",
+    "description": {
+      "en": "Ticket Seller ",
+      "my": "လေယာဉ်လက်မှတ် အရောင်း။"
+    },
+    "address": {
+      "en": "taunggyi road, Kyaing Tong",
+      "my": "တောင်ကြီးလမ်း၊ ကျိုင်းတုံမြို့။"
+    },
+    "lat": 21.288353164190465,
+    "lng": 99.59922179440964,
+    "phone": "08421647",
+    "openHours": "08: 00 AM - 05:00 PM ",
+    "rating": 4.1,
+    "tags": [
+      "သယ်ယူပို့ဆောင်",
+      "လမ်းပန်း",
+      "လက်မှတ်",
+      "လေယာဉ်",
+      "ခရီးစဉ်"
+    ],
+    "images": [
+      "assets/images/SKYVIEW (1).webp",
+      "assets/images/SKYVIEW (2).webp",
+      "assets/images/SKYVIEW (3).webp",
+      "assets/images/SKYVIEW (4).webp"
+    ]
+  },
+  {
+    "id": "pukt-kyaingtong",
+    "name": {
+      "en": "Polytechnic University (Kyaing Tong)",
+      "my": "Polytechnic University (Kyaing Tong)"
+    },
+    "category": "education",
+    "description": {
+      "en": "Polytechnic University (Kyaing Tong) — formerly recognized as Technological University (Kyaing Tong) — is a public higher education institution located in Kengtung Township, Eastern Shan State, Myanmar. Operating under the Ministry of Science and Technology, the campus spans an area of 38.38 acres.   Historical Overview1999: Originally established as the Government Technical Institute (GTI).   2001: Upgraded to the Government Technological College (GTC).   2007: Promoted to full university status as Technological University (Kyaing Tong).   Recent Transition: Re-designated as Polytechnic University (Kyaing Tong) to broaden applied engineering education, practical skills, and technical disciplines.Key Academic DepartmentsDepartment of Civil Engineering   Department of Electronic and Communication Engineering   Department of Electrical Power Engineering   Department of Mechanical Engineering   Supporting Academic Faculties (Mathematics, Physics, Chemistry, English, and Myanmar Literature)",
+      "my": "Polytechnic University (Kyaing Tong) သည် ရှမ်းပြည်နယ်အရှေ့ပိုင်းဒေသတွင် စက်မှုနည်းပညာနှင့် အင်ဂျင်နီယာပညာရပ်များ ဖွံ့ဖြိုးတိုးတက်စေရန်နှင့် ဒေသတွင်း နည်းပညာကျွမ်းကျင် ပညာရှင်များ မွေးထုတ်ပေးရန် ရည်ရွယ်၍ တည်ထောင်ထားသော အစိုးရတက္ကသိုလ်တစ်ခု ဖြစ်ပါသည်။ မြေဧရိယာ ၃၈.၃၈ ဧက ကျယ်ဝန်းပါသည်။   တက္ကသိုလ်၏ သမိုင်းအကျဉ်း၁၉၉၉ ခုနှစ်: အစိုးရစက်မှုလက်မှုသိပ္ပံ — Government Technical Institute (GTI) အဖြစ် စတင်ဖွင့်လှစ်ခဲ့သည်။၂၀၀၁ ခုနှစ်: အစိုးရစက်မှုလက်မှုကောလိပ် — Government Technological College (GTC) အဖြစ် အဆင့်မြှင့်တင်ခဲ့သည်။   ၂၀၀၇ ခုနှစ်: နည်းပညာတက္ကသိုလ် — Technological University (TU) အဖြစ် တက္ကသိုလ်အဆင့်သို့ တိုးမြှင့်ခဲ့သည်။နောက်ပိုင်းကာလများ: သင်ရိုးညွှန်းတမ်းနှင့် အင်ဂျင်နီယာဆိုင်ရာ ဘာသာရပ်များ ပိုမိုစုံလင်စွာ သင်ကြားနိုင်ရေးအတွက် Polytechnic University (Kyaing Tong) အဖြစ် ပြန်လည်အမည်ပြင်ဆင်ပြင်ဆင်ဖွဲ့စည်းခဲ့ပါသည်။သင်ကြားပေးလျက်ရှိသော အင်ဂျင်နီယာဌာနများCivil Engineering Department (မြို့ပြအင်ဂျင်နီယာဌာန)   Electronic and Communication Engineering Department (အီလက်ထရွန်နစ်နှင့် ဆက်သွယ်ရေးအင်ဂျင်နီယာဌာန)   Electrical Power Engineering Department (လျှပ်စစ်စွမ်းအားအင်ဂျင်နီယာဌာန)   Mechanical Engineering Department (စက်မှုအင်ဂျင်နီယာဌာန)   Academic Departments (သဘာဝသိပ္ပံနှင့် စာပေဌာနများ - မြန်မာ၊ အင်္ဂလိပ်၊ သင်္ချာ၊ ဓာတုဗေဒ၊ ရူပဗေဒ)"
+    },
+    "address": {
+      "en": "LoiMwe Rd, Wann Mai Village, Kyaing Tong",
+      "my": "လွယ်မွေလမ်း၊ဝမ်မိုင်ကျေးရွာအနီး၊ ကျိုင်းတုံမြို့။"
+    },
+    "lat": 21.26191816922574,
+    "lng": 99.65830798724829,
+    "phone": "095251551",
+    "openHours": "9:00 AM - 4:00 PM",
+    "rating": 4,
+    "tags": [
+      "တက္ကသိုလ်",
+      "ပညာရေး"
+    ],
+    "images": [
+      "assets/images/PUKT (1).webp",
+      "assets/images/PUKT (2).webp",
+      "assets/images/PUKT (3).webp",
+      "assets/images/PUKT (4).webp",
+      "assets/images/PUKT (5).webp",
+      "assets/images/pukt_logo.png"
+    ]
+  },
+  {
+    "id": "uni-kyaingtong",
+    "name": {
+      "en": "Kyaing Tong University",
+      "my": "ကျိုင်းတုံတက္ကသိုလ်"
+    },
+    "category": "education",
+    "description": {
+      "en": "Kyaing Tong University is a public arts and science university located in Kengtung (Kyaing Tong), Eastern Shan State, Myanmar. Operating under the Department of Higher Education (Ministry of Education), it serves as the primary regional center for higher general education.\n\nHistorical Background\n1993: Initially established as Kengtung College to provide higher education access to local students in Eastern Shan State.\n\n1999: Upgraded to Kyaing Tong Degree College.\n\n2003: Officially promoted to full university status as Kyaing Tong University, enabling the conferral of various Bachelor's (B.A., B.Sc., LL.B.) and Master's degree programs.\n\nAcademic Faculties & Departments\nFaculty of Arts: Department of Myanmar, English, Geography, History, Philosophy, Psychology, and Law.\n\nFaculty of Science: Department of Mathematics, Physics, Chemistry, Zoology, and Botany.",
+      "my": "Kyaing Tong University (ကျိုင်းတုံတက္ကသိုလ်) သည် မြန်မာနိုင်ငံ၊ ရှမ်းပြည်နယ်အရှေ့ပိုင်း ကျိုင်းတုံမြို့တွင် တည်ရှိပြီး ဝိဇ္ဇာနှင့် သိပ္ပံ ဘာသာရပ်များကို အဓိက သင်ကြားပေးလျက်ရှိသော ပညာရေးဝန်ကြီးဌာန (အဆင့်မြင့်ပညာဦးစီးဌာန) လက်အောက်ခံ အစိုးရတက္ကသိုလ်တစ်ခု ဖြစ်ပါသည်။\n\n🇲🇲 မြန်မာဘာသာဖြင့် ဖော်ပြချက် (Burmese Description)\nကျိုင်းတုံတက္ကသိုလ် သည် ရှမ်းပြည်နယ်အရှေ့ပိုင်းဒေသရှိ ကျောင်းသား/သူများ ဝိဇ္ဇာနှင့် သိပ္ပံဆိုင်ရာ အဆင့်မြင့်ပညာရပ်များကို မိမိတို့ဒေသတွင်း၌ပင် အဆင်ပြေလွယ်ကူစွာ သင်ယူနိုင်ရန် ရည်ရွယ်၍ တည်ထောင်ထားသော အစိုးရတက္ကသိုလ်ဖြစ်ပါသည်။\n\nသမိုင်းအကျဉ်း\n၁၉၉၃ ခုနှစ်: ကျိုင်းတုံမြို့တွင် ဒေသကောလိပ် / ကောလိပ်အဆင့်အဖြစ် စတင်ဖွင့်လှစ်ခဲ့သည်။\n\n၁၉၉၉ ခုနှစ်: ကျိုင်းတုံဒီဂရီကောလိပ် (Kyaing Tong Degree College) အဖြစ် အဆင့်မြှင့်တင်ခဲ့သည်။\n\n၂၀၀၃ ခုနှစ်: ဘာသာရပ်အစုံအလင်ဖြင့် ဘွဲ့သင်တန်းများ ပေးအပ်နိုင်သော ကျိုင်းတုံတက္ကသိုလ် (Kyaing Tong University) အဖြစ် သီးခြားတက္ကသိုလ်အဆင့်သို့ တိုးမြှင့်ခဲ့ပါသည်။\n\nသင်ကြားပေးလျက်ရှိသော ဘာသာရပ်ဆိုင်ရာ ဌာနများ (Main Departments)\nဝိဇ္ဇာဘာသာရပ်များ (Arts Disciplines):\n\nမြန်မာစာ (Myanmar)\n\nအင်္ဂလိပ်စာ (English)\n\nပထဝီဝင် (Geography)\n\nသမိုင်း (History)\n\nဒဿနိကဗေဒ (Philosophy)\n\nစိတ်ပညာ (Psychological Studies)\n\nဥပဒေပညာ (Law)\n\nသိပ္ပံဘာသာရပ်များ (Science Disciplines):\n\nသင်္ချာ (Mathematics)\n\nဓာတုဗေဒ (Chemistry)\n\nရူပဗေဒ (Physics)\n\nသတ္တဗေဒ (Zoology)\n\nရုက္ခဗေဒ (Botany)\n\nကွန်ပျူတာသိပ္ပံ / သတင်းအချက်အလက်နည်းပညာ (Computer Studies/IT - မဟာဌာနအရန်)"
+    },
+    "address": {
+      "en": "Taunggyi Road, Kyaing Tong",
+      "my": "ကျိုင်းတုံ-တောင်ကြီးလမ်း၊ ကျိုင်းတုံမြို့။"
+    },
+    "lat": 21.282767954661427,
+    "lng": 99.57368775483484,
+    "rating": 4,
+    "tags": [
+      "တက္ကသိုလ်",
+      "ကျောင်း"
+    ],
+    "images": [
+      "assets/images/unikt (1).webp",
+      "assets/images/unikt (2).webp",
+      "assets/images/unikt (3).webp",
+      "assets/images/unikt (4).webp",
+      "assets/images/unikt (5).webp",
+      "assets/images/unikt (6).webp",
+      "assets/images/unikt (7).webp",
+      "assets/images/unikt (8).webp",
+      "assets/images/unikt (9).webp",
+      "assets/images/unikt (10).webp",
+      "assets/images/unikt (11).webp",
+      "assets/images/unikt (12).webp",
+      "assets/images/unikt (13).webp"
+    ]
+  },
+  {
+    "id": "college-kyaingtong",
+    "name": {
+      "en": "Kyaing Tong Education Degree College",
+      "my": "ကျိုင်းတုံပညာရေးဒီဂရီကောလိပ်"
+    },
+    "category": "education",
+    "description": {
+      "en": "Kyaing Tong Education Degree College is a government teacher-training institution situated in Kengtung (Kyaing Tong), Eastern Shan State, Myanmar. Operating under the Department of Teacher Education and Training (Ministry of Education), it serves as the primary hub for producing qualified educators in the region.\n\nHistorical Transition\nEducation College Status: Originally established as Kyaing Tong Education College, offering 2-year Diploma in Teacher Education (DTEd) programs.\n\nUpgrade to Degree College: Upgraded to Kyaing Tong Education Degree College to align with the national educational reform, offering comprehensive 4-year Bachelor of Education (B.Ed.) degree programs.\n\nKey Functions & Academic Programs\n4-Year B.Ed. Program: A full-time degree program designed to equip future primary, middle, and high school teachers with modern pedagogical and subject-matter skills.\n\nCore Curriculum: Educational Studies, Teaching Methodology, Educational Psychology, Classroom Management, ICT in Education, and Physical/Arts Education.",
+      "my": "ကျိုင်းတုံ ပညာရေးဒီဂရီကောလိပ်သည် ရှမ်းပြည်နယ်အရှေ့ပိုင်းဒေသရှိ အခြေခံပညာကျောင်းများအတွက် ကျွမ်းကျင်ပြီး အရည်အသွေးပြည့်ဝသော ဆရာ/ဆရာမများ မွေးထုတ်ပေးရန်နှင့် ပညာရေးကဏ္ဍ ဖွံ့ဖြိုးတိုးတက်စေရန် ရည်ရွယ်၍ တည်ထောင်ထားခြင်း ဖြစ်ပါသည်။\n\nသမိုင်းအကျဉ်းနှင့် အဆင့်မြှင့်တင်မှု\nစတင်တည်ထောင်ခြင်း: ယခင်က ကျိုင်းတုံ ပညာရေးကောလိပ် (Kyaing Tong Education College) အဖြစ် ၂ နှစ်သင် လုပ်ငန်းခွင်အကြို ဆရာအတတ်ပညာဒီပလိုမာ (DTEd) သင်တန်းများကို လေ့ကျင့်သင်ကြားပေးခဲ့ပါသည်။\n\nဒီဂရီကောလိပ်အဖြစ် အဆင့်မြှင့်တင်ခြင်း: မြန်မာနိုင်ငံတစ်ဝန်းရှိ ပညာရေးကောလိပ်များကို ၄ နှစ်သင် ပညာရေးဘွဲ့ - B.Ed. (Bachelor of Education) သင်တန်းများ ပေးအပ်နိုင်သော ပညာရေးဒီဂရီကောလိပ် (Education Degree College) အဆင့်သို့ အဆင့်မြှင့်တင်ခဲ့သည့် စီမံကိန်းအရ ကျိုင်းတုံပညာရေးကောလိပ်သည်လည်း ဒီဂရီကောလိပ်အဖြစ် သို့ တိုးမြှင့်ခဲ့ပါသည်။\n\nသင်ကြားပေးလျက်ရှိသော သင်တန်းများနှင့် ပညာရပ်များ\n၄ နှစ်သင် ပညာရေးဘွဲ့သင်တန်း (B.Ed. Degree Course): အထက်တန်း၊ အလယ်တန်းနှင့် မူလတန်းပြ ဆရာ/ဆရာမများအတွက် ၄ နှစ်တာ စနစ်တကျ သင်ကြားပေးသော ဘွဲ့သင်တန်း ဖြစ်ပါသည်။\n\nဆရာအတတ်ပညာ ဘာသာရပ်များ: ပညာရေးသီအိုရီ (Educational Theory)၊ သင်ကြားရေးနည်းစနစ်များ (Pedagogy)၊ ကလေးစိတ်ပညာ (Child Psychology) နှင့် ကျောင်းအုပ်ချုပ်ရေးဆိုင်ရာ ဘာသာရပ်များ။\n\nအထွေထွေ ပညာရပ်များ: အင်္ဂလိပ်စာ၊ စာပေ၊ သင်္ချာ၊ သိပ္ပံ၊ လူမှုရေး၊ ကွန်ပျူတာပညာရေး၊ ကာယနှင့် အနုပညာ ပညာရေး။"
+    },
+    "address": {
+      "en": "Taunggyi Road, Kyaing Tong",
+      "my": "တောင်ကြီးလမ်း၊ ကျိုင်းတုံမြို့။"
+    },
+    "lat": 21.285765114371255,
+    "lng": 99.57797771995146,
+    "rating": 4,
+    "tags": [
+      "ကောလိပ်",
+      "ပညာရေး",
+      "တက္ကသိုလ်",
+      "ကျောင်း"
+    ],
+    "images": [
+      "assets/images/degree (1).webp",
+      "assets/images/degree (2).webp",
+      "assets/images/degree (3).webp",
+      "assets/images/degree (4).webp",
+      "assets/images/degree (5).webp",
+      "assets/images/degree (6).webp",
+      "assets/images/degree (7).webp"
+    ]
+  },
+  {
+    "id": "fire-services",
+    "name": {
+      "en": "Kyaing Tong Township Fire Services Department",
+      "my": "ကျိုင်းတုံမြို့နယ် မီးသတ်တပ်ဖွဲ့"
+    },
+    "category": "emergency",
+    "description": {
+      "en": "The Kyaing Tong Township Fire Services Department is the primary emergency response and public safety agency in Kengtung (Kyaing Tong), Eastern Shan State, Myanmar. Operating under the Myanmar Fire Services Department (Ministry of Home Affairs), it is dedicated to fire prevention, firefighting, and emergency rescue operations.\n\nCore Responsibilities\nFire Prevention & Inspection: Conducting regular fire safety inspections across markets, public facilities, and residential areas in Kengtung.\n\nFirefighting Operations: Providing rapid response to municipal and forest fire emergencies.\n\nDisaster Response & Relief: Assisting the community during natural disasters such as flash floods, landslides, and storms, which frequently affect the mountainous Shan Plateau.\n\nSearch and Rescue (SAR): Deploying trained specialized rescue units for road accidents, structural collapses, and emergency situations.",
+      "my": "ကျိုင်းတုံမြို့နယ် မီးသတ်တပ်ဖွဲ့ (Kyaing Tong Township Fire Services Department) သည် ရှမ်းပြည်နယ် (အရှေ့ပိုင်း)၊ ကျိုင်းတုံမြို့နှင့် ပတ်ဝန်းကျင်ဒေသများ၏ မီးဘေးအန္တရာယ် ကာကွယ်တားဆီးရေး၊ သဘာဝဘေးအန္တရာယ် ကူညီကယ်ဆယ်ရေးနှင့် အရေးပေါ် ရှာဖွေကယ်ဆယ်ရေး လုပ်ငန်းများကို တာဝန်ယူ ဆောင်ရွက်လျက်ရှိသော အဓိက အစိုးရအဖွဲ့အစည်းတစ်ခု ဖြစ်ပါသည်။\n\n🇲🇲 မြန်မာဘာသာဖြင့် ဖော်ပြချက် (Burmese Description)\nကျိုင်းတုံမြို့နယ် မီးသတ်တပ်ဖွဲ့သည် ပြည်သူလူထု၏ အသက်အိုးအိမ် စည်းစိမ်ဥစ္စာများကို မီးဘေးအန္တရာယ်နှင့် အခြားသော သဘာဝဘေးအန္တရာယ်များမှ ကာကွယ်စောင့်ရှောက်ရန်အတွက် မီးသတ်ဦးစီးဌာန၏ ရည်မှန်းချက် တာဝန် (၄) ရပ်အတိုင်း စနစ်တကျ တာဝန်ထမ်းဆောင်လျက် ရှိပါသည်။\n\nအဓိက တာဝန်ကြီး (၄) ရပ်\nမီးဘေးကာကွယ်ရေး (Fire Prevention): မြို့နယ်အတွင်း မီးဘေးလုံခြုံရေး စစ်ဆေးခြင်း၊ စေးကပ်စက်ရုံ/အလုပ်ရုံများနှင့် ဈေးများတွင် မီးဘေးစစ်ဆေးခြင်းနှင့် မီးဘေးသတိပေး စည်းရုံးလှုံ့ဆော်ခြင်း။\n\nမီးငြှိမ်းသတ်ရေး (Fire Extinction): မီးလောင်မှုများ ဖြစ်ပွားပါက အချိန်နှင့်တစ်ပြေးညီ သွားရောက်ငြှိမ်းသတ်ခြင်း။\n\nသဘာဝဘေးအန္တရာယ် ကာကွယ်ရေး (Natural Disaster Protection): ရေကြီးခြင်း၊ မြေပြိုခြင်း၊ လေပြင်းတိုက်ခတ်ခြင်း စသည့် သဘာဝဘေးများတွင် ကူညီဆောင်ရွက်ပေးခြင်း။\n\nရှာဖွေကယ်ဆယ်ရေး (Search & Rescue): ယာဉ်မတော်တဆမှုများ၊ အရေးပေါ် ပိတ်မိမှုများနှင့် သဘာဝဘေးအန္တရာယ်များတွင် ရှာဖွေကယ်ဆယ်ရေး တပ်ဖွဲ့ (Search and Rescue Team) ဖြင့် အမြန်ဆုံး ကူညီဆောင်ရွက်ခြင်း။\n\nဖွဲ့စည်းပုံနှင့် စက်ကိရိယာများ\nခရိုင်/မြို့နယ် မီးသတ်စခန်းများ: ကျိုင်းတုံခရိုင် မီးသတ်ဦးစီးမှူးရုံးနှင့် မြို့နယ်မီးသတ်စခန်းတို့ ပါဝင်ပြီး တပ်ဖွဲ့ဝင်များ ၂၄ နာရီ အလှည့်ကျ တာဝန်ထမ်းဆောင်လျက် ရှိပါသည်။\n\nယာဉ်/ယန္တရားများ: မီးသတ်ယာဉ်များ၊ ရေ Bowser ယာဉ်များ၊ အရေးပေါ် ရှာဖွေကယ်ဆယ်ရေး ယာဉ်များနှင့် ရေပန့်စက်များ တပ်ဆင်ထားရှိပါသည်။\n\nကြက်ခြေနီနှင့် လူမှုကူညီရေးအသင်းများ: ဒေသတွင်း ပရဟိတ လူမှုကူညီရေးအသင်းများနှင့် ပူးပေါင်း၍ အရေးပေါ်လူနာတင်ယာဉ် (Ambulance) ဝန်ဆောင်မှုများနှင့် ကူညီရေးလုပ်ငန်းများကို လုပ်ဆောင်ပါသည်။"
+    },
+    "address": {
+      "en": "near MyoMa Market, Kyaing Tong ",
+      "my": "ကျိုင်းတုံမြို့မစျေးအနီး၊ ကျိုင်းတုံမြို့"
+    },
+    "lat": 21.28589168866792,
+    "lng": 99.60436248704055,
+    "phone": "084 - 21222",
+    "tags": [
+      "အရေးပေါ်",
+      "မီးသတ်"
+    ],
+    "images": [
+      "assets/images/fire (1).webp",
+      "assets/images/fire (2).webp"
     ]
   }
 ]

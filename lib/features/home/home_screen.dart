@@ -145,7 +145,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                       margin: EdgeInsets.fromLTRB(20, 16, 20, 0),
                     ),
                   ),
-                ),                                                  // ADD ↑
+                  
+                ),
+                
+                                                          // ADD ↑
+                                                                  // ADD ↑
 
               // ---------- Suggestion header (search mode) ----------
               if (searching)
