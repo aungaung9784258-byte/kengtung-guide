@@ -2,18 +2,18 @@
   "versionName": "1.1.0",
   "versionCode": 4,
   "downloadUrl": "https://github.com/aungaung9784258-byte/kengtung-guide/releases/download/v1.1.0/KyaingTongGo.apk",
-  "sizeMb": 78,
+  "sizeMb": 76,
   "mandatory": false,
   "notes": {
     "en": [
-      "5 new places: fire station, schools and transport",
+      "5 new places including the fire station",
       "Photos for all 14 surrounding villages",
-      "Nearby and suggested places on the home screen"
+      "Smaller, faster app"
     ],
     "my": [
-      "နေရာအသစ် ၅ ခု — မီးသတ်ဌာန၊ ကျောင်းများ၊ ကားဂိတ်",
+      "မီးသတ်ဌာန အပါအဝင် နေရာအသစ် ၅ ခု",
       "ပတ်ဝန်းကျင် ရွာ ၁၄ ရွာလုံးအတွက် ဓာတ်ပုံများ",
-      "ပင်မစာမျက်နှာတွင် အနီးတဝိုက် အကြံပြုနေရာများ"
+      "အက်ပ် ပိုသေးငယ်၊ ပိုမြန်"
     ]
   }
 }
